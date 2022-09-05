@@ -1,0 +1,14 @@
+// functional colors
+$accentColor100: #183891;
+$normalColor:#FFFFFF;
+$neutralColor:#E5E5E5;
+$invertedColor:#000000;
+$primaryColor:#F5F5F5;
+
+:export {
+  accentColor100: $accentColor100;
+  normalColor: $normalColor;
+  neutralColor: $neutralColor;
+  invertedColor: $invertedColor;
+  primaryColor: $primaryColor;
+}

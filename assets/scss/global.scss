@@ -1,0 +1,143 @@
+@use './abstracts' as *;
+@import './reset.scss';
+
+
+body,
+html {
+  font-family: $fontBody;
+}
+
+h1 {
+  font-size: $fontSize700;
+}
+
+h2 {
+  font-size: $fontSize600;
+}
+
+h3 {
+  font-size: $fontSize500;
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+section,
+footer {
+  padding: 4rem 0;
+}
+
+.introducing-page {
+  background-color: $neutralColor;
+  padding: 0;
+
+  .banner {
+    width: 100%;
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-image: url(/images/who-img.webp);
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .items {
+    display: flex;
+    padding: 5rem 0;
+    gap: 6rem;
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.top-banner {
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 80vh;
+  background-image: url(/images/hero-img.webp);
+  background-size: cover;
+  background-position: center center;
+  background-size: 100% 100%;
+}
+
+.services-page .items {
+  display: flex;
+  gap: 7rem;
+  margin: 3rem 0rem 6rem 0;
+
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    font-size: $fontSize300;
+    color: $accentColor100;
+    font-weight: $fontWeightBold;
+  }
+
+  .desc {
+    font-size: $fontSize300;
+  }
+}
+
+.newsletter-page {
+  background-color: $accentColor100;
+  color: $normalColor;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url(/images/blue-bg.jpg);
+  background-size: cover;
+
+  > div {
+    display: flex;
+    gap: 10rem;
+    padding: 5rem 0;   
+  }
+
+  .email-box {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+footer {
+  .link-items {
+    display: flex;
+  }
+}
+
+input {
+  outline: none;
+  box-shadow: none;
+  height: 60px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: 1px solid $normalColor;
+  padding-left: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  color: $normalColor;
+
+  &::placeholder {
+    color: $normalColor;
+  }
+}
+
+button {
+  height: 60px;
+  border: none;
+  width: 200px;
+  border-radius: 6px;
+  color: $accentColor100;
+  cursor: pointer;
+}

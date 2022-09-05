@@ -1,0 +1,12 @@
+$fontWeightLight: 400;
+$fontWeightRegular: 500;
+$fontWeightSemiBold: 600;
+$fontWeightBold: 700;
+
+
+:export {
+  fontWeightLight: $fontWeightLight;
+  fontWeightRegular: $fontWeightRegular;
+  fontWeightBold: $fontWeightBold;
+  fontWeightSemiBold: $fontWeightSemiBold
+}
