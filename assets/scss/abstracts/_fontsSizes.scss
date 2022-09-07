@@ -3,6 +3,7 @@ $fontSize200: 0.875rem; /* 14px */
 $fontSize300: 1rem; /* 16px */
 $fontSize400: 1.25rem; /* 20px */
 $fontSize500: 1.5rem; /* 24px */
+$fontSize550: 1.5rem; /* 32px */
 $fontSize600: 2.25rem; /* 36px */
 $fontSize700: 3rem; /* 48px */
 
@@ -12,6 +13,7 @@ $fontSize700: 3rem; /* 48px */
   fontSize300: $fontSize300;
   fontSize400: $fontSize400;
   fontSize500: $fontSize500;
+  fontSize550: $fontSize550;
   fontSize600: $fontSize600;
   fontSize700: $fontSize700;
 }

@@ -1,14 +1,23 @@
 @use './abstracts' as *;
 @import './reset.scss';
 
-
 body,
 html {
   font-family: $fontBody;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $fontWeightSemiBold;
+}
+
 h1 {
   font-size: $fontSize700;
+  line-height: 60px;
 }
 
 h2 {
@@ -17,6 +26,10 @@ h2 {
 
 h3 {
   font-size: $fontSize500;
+}
+
+p {
+  line-height: 24px;
 }
 
 .container-fluid {
@@ -28,9 +41,82 @@ h3 {
   margin-inline: auto;
 }
 
-section,
-footer {
+section {
   padding: 4rem 0;
+}
+
+.top-banner {
+  padding: 0rem;
+
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0rem 5rem;
+  }
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: $neutralColor;
+    text-align: center;
+
+    .slogan {
+      h3 {
+        font-weight: $fontWeightLight;
+      }
+    }
+  }
+
+  .logo-box {
+    display: flex;
+    align-items: center;
+    color: $neutralColor;
+    padding-top: 1.2rem;
+    gap: 1.5rem;
+    cursor: pointer;
+
+    img {
+      width: 20%;
+    }
+
+    p {
+      font-size: $fontSize550;
+      font-weight: $fontWeightSemiBold;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  ul.nav-item {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  li {
+    list-style: none;
+    font-size: $fontSize300;
+    font-weight: $fontWeightSemiBold;
+    text-decoration: none;
+    color: $neutralColor;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 2rem 1.5rem;
+    transition: all ease 0.3s;
+
+    &.active,
+    &:hover {
+      background-color: $accentColor100;
+    }
+  }
 }
 
 .introducing-page {
@@ -40,15 +126,28 @@ footer {
   .banner {
     width: 100%;
     background-repeat: no-repeat;
-    height: 80vh;
+    height: 70vh;
     background-image: url(/images/who-img.webp);
     background-size: cover;
     background-position: center center;
+    color: $neutralColor;
+
+    .content {
+      background: rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: end;
+      height: 100%;
+      padding: 4rem 0;
+    }
+
+    .container {
+      flex: 1;
+    }
   }
 
   .items {
     display: flex;
-    padding: 5rem 0;
+    padding: 5rem 0 10rem 0;
     gap: 6rem;
 
     h3 {
@@ -101,7 +200,8 @@ footer {
   > div {
     display: flex;
     gap: 10rem;
-    padding: 5rem 0;   
+    padding: 5rem 0;
+    justify-content: space-between;
   }
 
   .email-box {
@@ -110,9 +210,113 @@ footer {
   }
 }
 
-footer {
-  .link-items {
+.testimonial-page {
+  background-image: url(/images/qoute.png);
+  background-repeat: no-repeat;
+  padding: 7rem 0;
+  background-position: left 92%;
+
+  .container {
     display: flex;
+    gap: 8rem;
+
+    div:first-child {
+      flex: 0 0 25em;
+    }
+  }
+
+  h1 {
+    position: relative;
+  }
+
+  h1::after {
+    content: '';
+    width: 70px;
+    height: -8px;
+    padding: 6px;
+    background-color: $accentColor100;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    border: 50%;
+    border-radius: 5px;
+  }
+
+  .testimonial {
+    margin-bottom: 2rem;
+
+    small {
+      font-size: $fontSize200;
+      color: $secondaryColor;
+      font-size: 0.875;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    p {
+      font-size: $fontSize300;
+      font-weight: $fontWeightLight;
+    }
+  }
+}
+
+footer {
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $invertedColor;
+  }
+
+  .link-items {
+    padding: 7rem 0rem;
+    display: flex;
+  }
+
+  .footer-logo {
+    flex: 0 0 25em;
+    text-align: center;
+
+    img {
+      padding: 0;
+      width: 40%;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+    }
+
+    .company-title {
+      font-size: $fontSize550;
+      font-weight: $fontWeightSemiBold;
+    }
+
+    p:last-child {
+      font-size: $fontSize300;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    width: 100%;
+    gap: 7rem;
+
+    > div {
+      flex: 1;
+
+      p {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+    }
+  }
+
+  .all-right-reserved {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5rem;
   }
 }
 

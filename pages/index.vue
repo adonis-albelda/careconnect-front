@@ -2,19 +2,25 @@
   <div id="landing-page">
     <section class="top-banner">
       <nav class="main-nav">
-        <div>
-          <img src="" alt="careconnect logo" />
+        <div class="logo-box">
+          <img src="images/logo.svg" alt="careconnect logo" />
+          <p>Care Connect</p>
         </div>
-        <ul>
-          <li><a href="default.asp">Home</a></li>
-          <li><a href="news.asp">News</a></li>
-          <li><a href="contact.asp">Contact</a></li>
-          <li><a href="about.asp">About</a></li>
+        <ul class="nav-item">
+          <li class="active">Home</li>
+          <li>Services</li>
+          <li>Contact us</li>
+          <li>
+            <span>a</span>
+            <span>b</span>
+          </li>
         </ul>
       </nav>
-      <div class="slogan">
-        <h1>Care That Comes to You</h1>
-        <p>Let us provide you with high-quality care!</p>
+      <div class="banner-content">
+        <div class="slogan">
+          <h1>Care That Comes to You</h1>
+          <h3>Let us provide you with high-quality care!</h3>
+        </div>
       </div>
       <div class="booking-options"></div>
     </section>
@@ -22,7 +28,6 @@
       <h1>Our Services</h1>
       <div class="items">
         <div>
-          <p class="price">C$50 / 1 hr</p>
           <h3 class="title">Home Support Services</h3>
           <p class="desc">
             Recovering from home after surgery can limit you with your daily
@@ -32,7 +37,6 @@
           </p>
         </div>
         <div>
-          <p class="price">C$50 / 1 hr</p>
           <h3 class="title">Personal Care Services</h3>
           <p class="desc">
             Arthritis, physical disabilities, and age-related conditions are
@@ -42,7 +46,6 @@
           </p>
         </div>
         <div>
-          <p class="price">C$50 / 1 hr</p>
           <h3 class="title">Complex Care Services</h3>
           <p class="desc">
             Our experienced and highly trained caregivers provide the highest
@@ -55,9 +58,11 @@
     </section>
     <section class="introducing-page">
       <div class="banner">
-        <div class="container">
-          <h1>Who we are</h1>
-          <p>Let us provide you with high-quality care!</p>
+        <div class="content">
+          <div class="container">
+            <h1>Who we are</h1>
+            <p>Let us provide you with high-quality care!</p>
+          </div>
         </div>
         <!-- <img src="images/who-img.webp" alt="groupie of nurses" /> -->
       </div>
@@ -101,46 +106,51 @@
         </div>
       </div>
     </section>
-    <section class="testimonial-page container">
-      <div>
-        <h1>What Our Clients Say</h1>
-      </div>
-      <div>
-        <div class="testimonial">
-          <p>John Doe</p>
-          <small>60 y/o Veteran</small>
-          <p>
-            “ If you are looking for some awesome, knowledgeable people, these
-            are the people I highly recommend. Their friendliness and
-            result-driven approach is what I love about them. “
-          </p>
+    <section class="testimonial-page">
+      <div class="container">
+        <div>
+          <h1>
+            What <br />
+            Our Clients Say
+          </h1>
         </div>
-        <div class="testimonial">
-          <p>John Doe</p>
-          <small>60 y/o Veteran</small>
-          <p>
-            “ If you are looking for some awesome, knowledgeable people, these
-            are the people I highly recommend. Their friendliness and
-            result-driven approach is what I love about them. “
-          </p>
-        </div>
-        <div class="testimonial">
-          <p>John Doe</p>
-          <small>60 y/o Veteran</small>
-          <p>
-            “ If you are looking for some awesome, knowledgeable people, these
-            are the people I highly recommend. Their friendliness and
-            result-driven approach is what I love about them. “
-          </p>
-        </div>
-        <div class="testimonial">
-          <p>John Doe</p>
-          <small>60 y/o Veteran</small>
-          <p>
-            “ If you are looking for some awesome, knowledgeable people, these
-            are the people I highly recommend. Their friendliness and
-            result-driven approach is what I love about them. “
-          </p>
+        <div>
+          <div class="testimonial">
+            <h3>John Doe</h3>
+            <small>60 y/o Veteran</small>
+            <p>
+              “ If you are looking for some awesome, knowledgeable people, these
+              are the people I highly recommend. Their friendliness and
+              result-driven approach is what I love about them. “
+            </p>
+          </div>
+          <div class="testimonial">
+            <h3>John Doe</h3>
+            <small>60 y/o Veteran</small>
+            <p>
+              “ If you are looking for some awesome, knowledgeable people, these
+              are the people I highly recommend. Their friendliness and
+              result-driven approach is what I love about them. “
+            </p>
+          </div>
+          <div class="testimonial">
+            <h3>John Doe</h3>
+            <small>60 y/o Veteran</small>
+            <p>
+              “ If you are looking for some awesome, knowledgeable people, these
+              are the people I highly recommend. Their friendliness and
+              result-driven approach is what I love about them. “
+            </p>
+          </div>
+          <div class="testimonial">
+            <h3>John Doe</h3>
+            <small>60 y/o Veteran</small>
+            <p>
+              “ If you are looking for some awesome, knowledgeable people, these
+              are the people I highly recommend. Their friendliness and
+              result-driven approach is what I love about them. “
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -158,34 +168,65 @@
     </section>
     <footer class="container">
       <div class="link-items">
-        <div>
-          <h3>Care Connect</h3>
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="careconnect logo" />
+          <p class="company-title">Care Connect</p>
           <p>Care That Comes to You</p>
         </div>
-        <div>
-          <h3>Services</h3>
-          <p><a href="">Home Support Services</a></p>
-          <p><a href="">Personal Care Services</a></p>
-          <p><a href="">Complex Care Services</a></p>
+        <div class="footer-links">
+          <div>
+            <h3>Services</h3>
+            <p><a href="">Home Support Services</a></p>
+            <p><a href="">Personal Care Services</a></p>
+            <p><a href="">Complex Care Services</a></p>
+          </div>
+          <div>
+            <h3>Contact Us</h3>
+            <p>
+              <img src="images/icons/mail.svg" alt="for health" />
+              contact@careconnect.com
+            </p>
+            <p>
+              <img src="images/icons/smartphone.svg" alt="for health" />
+              + 1 819 555 5555
+            </p>
+            <p>
+              <img src="images/icons/location_pin.svg" alt="for health" />
+              1154 Albert Street Stratford, Ontario(ON), N5A 3K5
+            </p>
+          </div>
+          <div>
+            <h3>Social media accounts</h3>
+            <p>
+              <img src="images/icons/facebook.svg" alt="for health" /> Care Connect
+            </p>
+            <p>
+              <img src="images/icons/twitter.svg" alt="for health" /> @careconnectca
+            </p>
+            <p>
+              <img src="images/icons/instagram.svg" alt="for health" /> Care Connect
+            </p>
+          </div>
         </div>
-        <div>
-          <h3>Contact Us</h3>
-          <p>
-            <img src="images/icons/mail.svg" alt="for health" />
-            contact@careconnect.com
-          </p>
-          <p>
-            <img src="images/icons/smartphone.svg" alt="for health" />
-            + 1 819 555 5555
-          </p>
-          <p>
-            <img src="images/icons/location_pin.svg" alt="for health" />
-            1154 Albert Street Stratford, Ontario(ON), N5A 3K5
-          </p>
-        </div>
+        <!-- <di class="footer-links">
+          <div>
+            <h3>Social media accounts</h3>
+            <p>
+              <img src="images/icons/facebook.svg" alt="for health" /> Care Connect
+            </p>
+            <p>
+              <img src="images/icons/twitter.svg" alt="for health" /> @careconnectca
+            </p>
+            <p>
+              <img src="images/icons/instagram.svg" alt="for health" /> Care Connect
+            </p>
+          </div>
+        </di> -->
       </div>
       <div class="all-right-reserved">
         <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
+        <a href="">Terms & Conditions</a>
+        <a href="">Help and Support</a>
       </div>
     </footer>
   </div>
