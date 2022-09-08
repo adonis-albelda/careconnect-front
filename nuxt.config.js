@@ -26,7 +26,10 @@ export default {
   styleResources: {
     scss: ["./assets/scss/*.scss"],
   },
-  plugins: [],
+  plugins: [
+    "~global/components/VueSelect.js",
+    "~global/components/VueDatepicker.js",
+  ],
   components: false,
   buildModules: ['@nuxtjs/eslint-module'],
   modules: ['@nuxtjs/auth-next', '@nuxtjs/axios'],

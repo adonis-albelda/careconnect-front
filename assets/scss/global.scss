@@ -1,5 +1,8 @@
 @use './abstracts' as *;
 @import './reset.scss';
+@import 'vue-select/dist/vue-select.css';
+@import 'vue2-datepicker/index.css';
+@import 'aos/dist/aos.css';
 
 body,
 html {
@@ -45,30 +48,11 @@ section {
   padding: 4rem 0;
 }
 
-.top-banner {
-  padding: 0rem;
-
-  .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 0rem 5rem;
-  }
-
-  .banner-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    color: $neutralColor;
-    text-align: center;
-
-    .slogan {
-      h3 {
-        font-weight: $fontWeightLight;
-      }
-    }
-  }
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0rem 5rem;
 
   .logo-box {
     display: flex;
@@ -85,6 +69,7 @@ section {
     p {
       font-size: $fontSize550;
       font-weight: $fontWeightSemiBold;
+      color: $neutralColor;
 
       &:hover {
         opacity: 0.7;
@@ -96,7 +81,6 @@ section {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 0.5rem;
     align-items: stretch;
   }
 
@@ -106,15 +90,106 @@ section {
     font-weight: $fontWeightSemiBold;
     text-decoration: none;
     color: $neutralColor;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.3rem;
     transition: all ease 0.3s;
+    letter-spacing: 1px;
 
-    &.active,
-    &:hover {
+    &.active {
       background-color: $accentColor100;
+    }
+
+    &:not(.nav-menu-icons):hover {
+      background-color: $neutralColor;
+      color: $accentColor100;
+    }
+
+    span {
+      position: relative;
+      top: 8px;
+    }
+  }
+
+  .nav-menu-icons {
+    margin-left: 2rem;
+    display: flex;
+    gap: 1rem;
+
+    img {
+      color: $neutralColor;
+    }
+  }
+}
+
+.top-banner {
+  padding: 0rem;
+  position: relative;
+  top: -101px;
+  z-index: -1;
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+
+    .slogan {
+      color: $neutralColor;
+
+      h3 {
+        font-weight: $fontWeightLight;
+      }
+    }
+
+    .booking-options {
+      display: flex;
+      align-items: stretch;
+      width: 75%;
+      gap: 1rem;
+      position: absolute;
+      bottom: 5%;
+
+      color: $invertedColor !important;
+
+      .v-select {
+        width: 30%;
+
+        .vs__dropdown-toggle {
+          padding: 0.2rem 1rem;
+          border-radius: 6px !important;
+
+          svg {
+            color: $invertedColor !important;
+          }
+        }
+      }
+
+      #vs1__listbox {
+        margin-top: 1rem !important;
+      }
+
+      .mx-datepicker {
+        width: 20%;
+
+        .mx-input-wrapper {
+          height: 100%;
+          input {
+            height: 100%;
+          }
+        }
+      }
+
+      .book-now-btn {
+        background-color: $accentColor100;
+        color: $neutralColor;
+        font-weight: $fontWeightSemiBold;
+        height: 100%;
+      }
     }
   }
 }
@@ -166,26 +241,62 @@ section {
   background-image: url(/images/hero-img.webp);
   background-size: cover;
   background-position: center center;
-  background-size: 100% 100%;
 }
 
-.services-page .items {
-  display: flex;
-  gap: 7rem;
-  margin: 3rem 0rem 6rem 0;
+.services-page {
+  padding-top: 0;
 
-  .title {
-    margin-bottom: 1rem;
+  .items {
+    display: flex;
+    gap: 4rem;
+    margin: 3rem -2rem 6rem -2rem;
+    cursor: pointer;
+    
+    .title {
+      margin-bottom: 1rem;
+    }
+  
+    .price {
+      font-size: $fontSize300;
+      color: $accentColor100;
+      font-weight: $fontWeightBold;
+    }
+  
+    .desc {
+      font-size: $fontSize300;
+      margin-bottom: 3rem;
+    }
+
+    .service {
+      transition: all ease 0.3s;
+      padding: 2rem;
+      
+      &:hover {
+        background-color: $primaryColor;
+      }
+    }
   }
 
-  .price {
-    font-size: $fontSize300;
-    color: $accentColor100;
-    font-weight: $fontWeightBold;
+  .btn {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
-  .desc {
-    font-size: $fontSize300;
+  .btn.block.accent {
+    width: 100%;
+    background-color: $accentColor100;
+    color: $neutralColor;
+    font-weight: $fontWeightSemiBold;
+  }
+
+  .btn.block.plain {
+    width: 100%;
+    background-color: transparent;
+    color: $invertedColor;
+    font-weight: $fontWeightLight;
   }
 }
 
@@ -307,7 +418,7 @@ footer {
       p {
         margin-bottom: 1rem;
         display: flex;
-        align-items: center;
+        align-items: start;
         gap: 0.6rem;
       }
     }
@@ -318,6 +429,15 @@ footer {
     justify-content: flex-end;
     gap: 5rem;
   }
+}
+
+.float-messenger {
+  padding: 2rem;
+  position: fixed;
+  background-color: $accentColor100;
+  right: 1%;
+  bottom: 2%;
+  border-radius: 50%;
 }
 
 input {

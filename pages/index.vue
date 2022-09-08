@@ -1,33 +1,58 @@
 <template>
   <div id="landing-page">
+    <nav class="main-nav">
+      <div class="logo-box">
+        <img src="images/logo.svg" alt="careconnect logo" />
+        <p>Care Connect</p>
+      </div>
+      <ul class="nav-item">
+        <li class="active"><span>Home</span></li>
+        <li><span>Services</span></li>
+        <li><span>Contact us</span></li>
+        <li class="nav-menu-icons">
+          <span>
+            <img src="images/icons/shopping.png" alt="" />
+          </span>
+          <span>
+            <img src="images/icons/profile.png" alt="" />
+          </span>
+        </li>
+      </ul>
+    </nav>
     <section class="top-banner">
-      <nav class="main-nav">
-        <div class="logo-box">
-          <img src="images/logo.svg" alt="careconnect logo" />
-          <p>Care Connect</p>
-        </div>
-        <ul class="nav-item">
-          <li class="active">Home</li>
-          <li>Services</li>
-          <li>Contact us</li>
-          <li>
-            <span>a</span>
-            <span>b</span>
-          </li>
-        </ul>
-      </nav>
       <div class="banner-content">
         <div class="slogan">
-          <h1>Care That Comes to You</h1>
-          <h3>Let us provide you with high-quality care!</h3>
+          <h1 data-aos="fade-in">Care That Comes to You</h1>
+          <h3 data-aos="fade-up">Let us provide you with high-quality care!</h3>
+        </div>
+        <div class="booking-options container">
+          <VSelect :options="options" placeholder="dsdadad">
+            <template v-slot:option="option">
+              <h4>{{option.title}}</h4><br/>
+              <p>{{option.description}}</p>
+            </template>
+            <template v-slot:no-options="{ search, searching }">
+              <template v-if="searching">
+                No results found for <em>{{ search }}</em
+                >.
+              </template>
+              <em v-else style="opacity: 0.5"
+                >Start typing to search for a country.</em
+              >
+            </template>
+          </VSelect>
+          <VDatePicker valueType="format"></VDatePicker>
+          <VSelect placeholder="dsdadad"> </VSelect>
+          <div>
+            <button class="book-now-btn">BOOK NOW</button>
+          </div>
         </div>
       </div>
-      <div class="booking-options"></div>
     </section>
     <section class="services-page container">
-      <h1>Our Services</h1>
+      <h1 data-aos="fade-up" data-aos-once="true">Our Services</h1>
       <div class="items">
-        <div>
+        <div class="service" data-aos="slide-right" data-aos-once="true">
           <h3 class="title">Home Support Services</h3>
           <p class="desc">
             Recovering from home after surgery can limit you with your daily
@@ -35,8 +60,13 @@
             childbirth, or plastic surgery, our compassionate caregivers can
             assist you to a healthy and complete recovery.
           </p>
+          <button class="btn block accent">BOOK NOW</button>
+          <button class="btn block plain">
+            <img src="images/icons/info.svg" alt="">
+            Learn More
+          </button>
         </div>
-        <div>
+        <div class="service" data-aos="slide-up" data-aos-once="true" data-aos-delay="300">
           <h3 class="title">Personal Care Services</h3>
           <p class="desc">
             Arthritis, physical disabilities, and age-related conditions are
@@ -44,8 +74,13 @@
             themselves. Our caregivers can assist you with daily tasks such as
             mobility, eating, exercising, and grooming.
           </p>
+          <button class="btn block accent">BOOK NOW</button>
+          <button class="btn block plain">
+            <img src="images/icons/info.svg" alt="">
+            Learn More
+          </button>
         </div>
-        <div>
+        <div class="service" data-aos="slide-left" data-aos-once="true">
           <h3 class="title">Complex Care Services</h3>
           <p class="desc">
             Our experienced and highly trained caregivers provide the highest
@@ -53,6 +88,11 @@
             help individuals and their loved ones live happy and fulfilling
             lives.
           </p>
+          <button class="btn block accent">BOOK NOW</button>
+          <button class="btn block plain">
+            <img src="images/icons/info.svg" alt="">
+            Learn More
+          </button>
         </div>
       </div>
     </section>
@@ -60,14 +100,14 @@
       <div class="banner">
         <div class="content">
           <div class="container">
-            <h1>Who we are</h1>
-            <p>Let us provide you with high-quality care!</p>
+            <h1 data-aos="fade" data-aos-once="true">Who we are</h1>
+            <p data-aos="fade-up" data-aos-once="true">Let us provide you with high-quality care!</p>
           </div>
         </div>
         <!-- <img src="images/who-img.webp" alt="groupie of nurses" /> -->
       </div>
       <div class="items container">
-        <div>
+        <div data-aos="slide-right" data-aos-once="true">
           <h3>
             <img src="images/icons/trust.svg" alt="for trust" />
             Caregivers You Can Trust
@@ -80,7 +120,7 @@
             service that you can trust.
           </p>
         </div>
-        <div>
+        <div data-aos="slide-up" data-aos-once="true" data-aos-delay="300">
           <h3>
             <img src="images/icons/supportive.svg" alt="for support" />
             Experienced and Supportive
@@ -92,7 +132,7 @@
             individualized care plan that fits your specific needs.
           </p>
         </div>
-        <div>
+        <div data-aos="slide-left" data-aos-once="true">
           <h3>
             <img src="images/icons/health.svg" alt="for health" />
             Experienced Home Health Aids
@@ -108,14 +148,14 @@
     </section>
     <section class="testimonial-page">
       <div class="container">
-        <div>
+        <div data-aos="fade" data-aos-once="true">
           <h1>
             What <br />
             Our Clients Say
           </h1>
         </div>
         <div>
-          <div class="testimonial">
+          <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="10">
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
             <p>
@@ -124,7 +164,7 @@
               result-driven approach is what I love about them. “
             </p>
           </div>
-          <div class="testimonial">
+          <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="30">
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
             <p>
@@ -133,7 +173,7 @@
               result-driven approach is what I love about them. “
             </p>
           </div>
-          <div class="testimonial">
+          <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="50">
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
             <p>
@@ -142,7 +182,7 @@
               result-driven approach is what I love about them. “
             </p>
           </div>
-          <div class="testimonial">
+          <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="70">
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
             <p>
@@ -198,13 +238,16 @@
           <div>
             <h3>Social media accounts</h3>
             <p>
-              <img src="images/icons/facebook.svg" alt="for health" /> Care Connect
+              <img src="images/icons/facebook.svg" alt="for health" /> Care
+              Connect
             </p>
             <p>
-              <img src="images/icons/twitter.svg" alt="for health" /> @careconnectca
+              <img src="images/icons/twitter.svg" alt="for health" />
+              @careconnectca
             </p>
             <p>
-              <img src="images/icons/instagram.svg" alt="for health" /> Care Connect
+              <img src="images/icons/instagram.svg" alt="for health" /> Care
+              Connect
             </p>
           </div>
         </div>
@@ -229,12 +272,36 @@
         <a href="">Help and Support</a>
       </div>
     </footer>
+    <div class="float-messenger">
+      <img src="images/icons/vector.png" alt="live chat icon" />
+    </div>
   </div>
 </template>
-
 <script>
+import AOS from 'aos'
 export default {
   name: 'LandingPage',
+  data() {
+    return {
+      options: [
+        {
+          title: 'Personal Care Services',
+          description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing'
+        },
+        {
+          title:'Complex Care Services',
+          description:'Complex care refer to services that must be performed by a regulated health professionals.'
+        },
+        {
+          title:'Home Support Service',
+          description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning'
+        }
+      ],
+    }
+  },
+  mounted() {
+    AOS.init()
+  }
 }
 </script>
 <style>
