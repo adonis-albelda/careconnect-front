@@ -3,6 +3,7 @@
 @import 'vue-select/dist/vue-select.css';
 @import 'vue2-datepicker/index.css';
 @import 'aos/dist/aos.css';
+@import './custom-style.scss';
 
 body,
 html {
@@ -401,6 +402,7 @@ section {
 }
 
 footer {
+  padding-bottom: 30px;
   background-color: $normalColor;
 
   h3 {
@@ -413,7 +415,7 @@ footer {
   }
 
   .link-items {
-    padding: 7rem 0rem;
+    padding: 7rem 0rem 4rem 0rem;
     display: flex;
   }
 
@@ -517,7 +519,7 @@ button {
     }
   }
 
-  .content-area {
-    height: 100vh;
-  }
+  // .content-area {
+  //   height: 100vh;
+  // }
 }
