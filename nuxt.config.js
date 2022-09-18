@@ -29,6 +29,7 @@ export default {
   plugins: [
     "~global/components/VueSelect.js",
     "~global/components/VueDatepicker.js",
+    "~global/utils/index.js"
   ],
   components: false,
   buildModules: ['@nuxtjs/eslint-module'],

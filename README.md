@@ -1,5 +1,8 @@
 # careconnect-front
 
+# Requirements for development
+default branch: development
+node version: 15.14.0
 ## Build Setup
 
 ```bash

@@ -7,6 +7,8 @@
 body,
 html {
   font-family: $fontBody;
+  overflow-x: hidden;
+  background-color: $neutralColor;
 }
 
 h1,
@@ -53,17 +55,19 @@ section {
   justify-content: space-between;
   align-items: stretch;
   padding: 0rem 5rem;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
 
   .logo-box {
     display: flex;
     align-items: center;
     color: $neutralColor;
-    padding-top: 1.2rem;
     gap: 1.5rem;
     cursor: pointer;
 
     img {
-      width: 20%;
+      width: 18%;
     }
 
     p {
@@ -97,19 +101,24 @@ section {
     padding: 2rem 1.3rem;
     transition: all ease 0.3s;
     letter-spacing: 1px;
+    height: 100px;
 
     &.active {
       background-color: $accentColor100;
     }
 
-    &:not(.nav-menu-icons):hover {
+    &:hover {
       background-color: $neutralColor;
       color: $accentColor100;
+
+      img {
+        color: $invertedColor;
+      }
     }
 
     span {
       position: relative;
-      top: 8px;
+      top: 10px;
     }
   }
 
@@ -122,13 +131,17 @@ section {
       color: $neutralColor;
     }
   }
+
+  .guest-nav p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .top-banner {
   padding: 0rem;
   position: relative;
-  top: -101px;
-  z-index: -1;
 
   .banner-content {
     display: flex;
@@ -143,6 +156,7 @@ section {
 
       h3 {
         font-weight: $fontWeightLight;
+        margin-top: 1rem;
       }
     }
 
@@ -194,7 +208,7 @@ section {
   }
 }
 
-.introducing-page {
+.introducing-sec {
   background-color: $neutralColor;
   padding: 0;
 
@@ -243,12 +257,11 @@ section {
   background-position: center center;
 }
 
-.services-page {
-  padding-top: 0;
-
+.services-sec {
+  background-color: $normalColor;
+  
   .items {
     display: flex;
-    gap: 4rem;
     margin: 3rem -2rem 6rem -2rem;
     cursor: pointer;
     
@@ -270,9 +283,24 @@ section {
     .service {
       transition: all ease 0.3s;
       padding: 2rem;
+      min-width: calc(100%/3);
       
+      > img {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
       &:hover {
         background-color: $primaryColor;
+      }
+
+      &:hover .actions {
+        display: block;
+      }
+
+      .actions {
+        display: none;
+        transition: all ease 0.3s;
       }
     }
   }
@@ -300,7 +328,7 @@ section {
   }
 }
 
-.newsletter-page {
+.newsletter-sec {
   background-color: $accentColor100;
   color: $normalColor;
   width: 100%;
@@ -321,10 +349,11 @@ section {
   }
 }
 
-.testimonial-page {
+.testimonial-sec {
   background-image: url(/images/qoute.png);
   background-repeat: no-repeat;
   padding: 7rem 0;
+  background-color: $normalColor;
   background-position: left 92%;
 
   .container {
@@ -372,6 +401,8 @@ section {
 }
 
 footer {
+  background-color: $normalColor;
+
   h3 {
     margin-bottom: 1rem;
   }
@@ -387,12 +418,16 @@ footer {
   }
 
   .footer-logo {
-    flex: 0 0 25em;
-    text-align: center;
+    flex: 0 0 30em;
+
+    .content {
+      width: 50%;
+      text-align: center;
+    }
 
     img {
       padding: 0;
-      width: 40%;
+      width: 70%;
       margin: 0 auto;
       margin-bottom: 1rem;
     }
@@ -425,9 +460,7 @@ footer {
   }
 
   .all-right-reserved {
-    display: flex;
-    justify-content: flex-end;
-    gap: 5rem;
+    text-align: center;
   }
 }
 
@@ -464,4 +497,27 @@ button {
   border-radius: 6px;
   color: $accentColor100;
   cursor: pointer;
+}
+
+#service-page {
+  .main-nav {
+    background-color: white;
+
+    li, 
+    .logo-box p {
+      color: $invertedColor;
+    }
+
+    li.active {
+      color: $normalColor;
+    }
+
+    li:not(.active):hover {
+      background-color: transparent;
+    }
+  }
+
+  .content-area {
+    height: 100vh;
+  }
 }

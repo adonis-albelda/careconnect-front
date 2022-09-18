@@ -1,24 +1,5 @@
 <template>
   <div id="landing-page">
-    <nav class="main-nav">
-      <div class="logo-box">
-        <img src="images/logo.svg" alt="careconnect logo" />
-        <p>Care Connect</p>
-      </div>
-      <ul class="nav-item">
-        <li class="active"><span>Home</span></li>
-        <li><span>Services</span></li>
-        <li><span>Contact us</span></li>
-        <li class="nav-menu-icons">
-          <span>
-            <img src="images/icons/shopping.png" alt="" />
-          </span>
-          <span>
-            <img src="images/icons/profile.png" alt="" />
-          </span>
-        </li>
-      </ul>
-    </nav>
     <section class="top-banner">
       <div class="banner-content">
         <div class="slogan">
@@ -49,54 +30,28 @@
         </div>
       </div>
     </section>
-    <section class="services-page container">
-      <h1 data-aos="fade-up" data-aos-once="true">Our Services</h1>
-      <div class="items">
-        <div class="service" data-aos="slide-right" data-aos-once="true">
-          <h3 class="title">Home Support Services</h3>
-          <p class="desc">
-            Recovering from home after surgery can limit you with your daily
-            activities. Whether you are recovering from major surgery,
-            childbirth, or plastic surgery, our compassionate caregivers can
-            assist you to a healthy and complete recovery.
-          </p>
-          <button class="btn block accent">BOOK NOW</button>
-          <button class="btn block plain">
-            <img src="images/icons/info.svg" alt="">
-            Learn More
-          </button>
-        </div>
-        <div class="service" data-aos="slide-up" data-aos-once="true" data-aos-delay="300">
-          <h3 class="title">Personal Care Services</h3>
-          <p class="desc">
-            Arthritis, physical disabilities, and age-related conditions are
-            some of the few circumstances that prevent patients from caring for
-            themselves. Our caregivers can assist you with daily tasks such as
-            mobility, eating, exercising, and grooming.
-          </p>
-          <button class="btn block accent">BOOK NOW</button>
-          <button class="btn block plain">
-            <img src="images/icons/info.svg" alt="">
-            Learn More
-          </button>
-        </div>
-        <div class="service" data-aos="slide-left" data-aos-once="true">
-          <h3 class="title">Complex Care Services</h3>
-          <p class="desc">
-            Our experienced and highly trained caregivers provide the highest
-            quality of care to both patients and their families. Our goal is to
-            help individuals and their loved ones live happy and fulfilling
-            lives.
-          </p>
-          <button class="btn block accent">BOOK NOW</button>
-          <button class="btn block plain">
-            <img src="images/icons/info.svg" alt="">
-            Learn More
-          </button>
+    <section class="services-sec">
+      <div class="container">
+        <h1 data-aos="fade-up" data-aos-once="true">Our Services</h1>
+        <div class="items" >
+          <div class="service" v-for="(service, index) of services" :key="index">
+            <img src="/images/service.png" alt="service default image">
+            <h3 class="title">{{service.title}}</h3>
+            <p class="desc">
+              {{service.description}}
+            </p>
+            <div class="actions">
+              <button class="btn block accent">BOOK NOW</button>
+              <button class="btn block plain">
+                <img src="images/icons/info.svg" alt="">
+                Learn More
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section class="introducing-page">
+    <section class="introducing-sec">
       <div class="banner">
         <div class="content">
           <div class="container">
@@ -146,7 +101,7 @@
         </div>
       </div>
     </section>
-    <section class="testimonial-page">
+    <section class="testimonial-sec">
       <div class="container">
         <div data-aos="fade" data-aos-once="true">
           <h1>
@@ -194,7 +149,7 @@
         </div>
       </div>
     </section>
-    <section class="newsletter-page">
+    <section class="newsletter-sec">
       <div class="container">
         <div>
           <h2>Subscribe to our News letter</h2>
@@ -206,81 +161,13 @@
         </div>
       </div>
     </section>
-    <footer class="container">
-      <div class="link-items">
-        <div class="footer-logo">
-          <img src="images/logo.svg" alt="careconnect logo" />
-          <p class="company-title">Care Connect</p>
-          <p>Care That Comes to You</p>
-        </div>
-        <div class="footer-links">
-          <div>
-            <h3>Services</h3>
-            <p><a href="">Home Support Services</a></p>
-            <p><a href="">Personal Care Services</a></p>
-            <p><a href="">Complex Care Services</a></p>
-          </div>
-          <div>
-            <h3>Contact Us</h3>
-            <p>
-              <img src="images/icons/mail.svg" alt="for health" />
-              contact@careconnect.com
-            </p>
-            <p>
-              <img src="images/icons/smartphone.svg" alt="for health" />
-              + 1 819 555 5555
-            </p>
-            <p>
-              <img src="images/icons/location_pin.svg" alt="for health" />
-              1154 Albert Street Stratford, Ontario(ON), N5A 3K5
-            </p>
-          </div>
-          <div>
-            <h3>Social media accounts</h3>
-            <p>
-              <img src="images/icons/facebook.svg" alt="for health" /> Care
-              Connect
-            </p>
-            <p>
-              <img src="images/icons/twitter.svg" alt="for health" />
-              @careconnectca
-            </p>
-            <p>
-              <img src="images/icons/instagram.svg" alt="for health" /> Care
-              Connect
-            </p>
-          </div>
-        </div>
-        <!-- <di class="footer-links">
-          <div>
-            <h3>Social media accounts</h3>
-            <p>
-              <img src="images/icons/facebook.svg" alt="for health" /> Care Connect
-            </p>
-            <p>
-              <img src="images/icons/twitter.svg" alt="for health" /> @careconnectca
-            </p>
-            <p>
-              <img src="images/icons/instagram.svg" alt="for health" /> Care Connect
-            </p>
-          </div>
-        </di> -->
-      </div>
-      <div class="all-right-reserved">
-        <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
-        <a href="">Terms & Conditions</a>
-        <a href="">Help and Support</a>
-      </div>
-    </footer>
-    <div class="float-messenger">
-      <img src="images/icons/vector.png" alt="live chat icon" />
-    </div>
   </div>
 </template>
 <script>
 import AOS from 'aos'
 export default {
   name: 'LandingPage',
+  layout:'MainLayout',
   data() {
     return {
       options: [
@@ -297,6 +184,20 @@ export default {
           description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning'
         }
       ],
+      services: [
+        {
+          title: 'Home Support Services',
+          description: 'Recovering from home after surgery can limit you with your daily activities. Whether you are recovering from major surgery, childbirth, or plastic surgery, our compassionate caregivers can assist you to a healthy and complete recovery.'
+        },
+        {
+          title: 'Personal Care Services',
+          description: 'Arthritis, physical disabilities, and age-related conditions are some of the few circumstances that prevent patients from caring for themselves. Our caregivers can assist you with daily tasks such as mobility, eating, exercising, and grooming.'
+        },
+        {
+          title: 'Complex Care Services',
+          description: 'Our experienced and highly trained caregivers provide the highest quality of care to both patients and their families. Our goal is to help individuals and their loved ones live happy and fulfilling lives.'
+        }
+      ]
     }
   },
   mounted() {
