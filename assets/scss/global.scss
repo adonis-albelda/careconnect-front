@@ -454,26 +454,3 @@ footer {
   bottom: 2%;
   border-radius: 50%;
 }
-
-#service-page {
-  .main-nav {
-    background-color: white;
-
-    li, 
-    .logo-box p {
-      color: $invertedColor;
-    }
-
-    li.active {
-      color: $normalColor;
-    }
-
-    li:not(.active):hover {
-      background-color: transparent;
-    }
-  }
-
-  // .content-area {
-  //   height: 100vh;
-  // }
-}

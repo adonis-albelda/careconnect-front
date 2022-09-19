@@ -23,6 +23,17 @@
       background-color: transparent;
     }
   }
+
+  .content-area {
+    padding-top: 2rem;
+    
+    h2 {
+      font-size: 2rem;
+      line-height: 3rem;
+      margin-bottom: 30px;
+    }
+  }
+  
 }
 
 .services-sec {
@@ -47,15 +58,6 @@
 
 // SERVICE PAGE
 
-.content-area {
-  padding-top: 2rem;
-  
-  h2 {
-    font-size: 2rem;
-    line-height: 3rem;
-    margin-bottom: 30px;
-  }
-}
 
 .service-wrapper {
   margin-bottom: 80px;
