@@ -6,8 +6,8 @@
         <p>Care Connect</p>
       </div>
       <ul class="nav-item">
-        <li class="active"><span>Home</span></li>
-        <li @click="goTo('services')"><span>Services</span></li>
+        <li :class="{ active : isActive('index')}" @click="goTo('index')"><span>Home</span></li>
+        <li :class="{ active : isActive('services')}" @click="goTo('services')"><span>Services</span></li>
         <li><span>Contact us</span></li>
         <li class="nav-menu-icons">
           <span>

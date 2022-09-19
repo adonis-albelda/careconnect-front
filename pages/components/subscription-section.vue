@@ -7,7 +7,7 @@
         </div>
         <div class="email-box">
           <input type="text" placeholder="Email" />
-          <button>Subscribe</button>
+          <button class="btn">Subscribe</button>
         </div>
       </div>
     </section>

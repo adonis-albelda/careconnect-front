@@ -25,7 +25,7 @@
           <VDatePicker valueType="format"></VDatePicker>
           <VSelect placeholder="dsdadad"> </VSelect>
           <div>
-            <button class="book-now-btn">BOOK NOW</button>
+            <button class="btn accent full">BOOK NOW</button>
           </div>
         </div>
       </div>

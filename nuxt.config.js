@@ -32,7 +32,7 @@ export default {
     "~global/utils/index.js"
   ],
   components: false,
-  buildModules: ['@nuxtjs/eslint-module'],
+  // buildModules: ['@nuxtjs/eslint-module'],
   modules: ['@nuxtjs/auth-next', '@nuxtjs/axios'],
   axios: {
     baseURL: '/',

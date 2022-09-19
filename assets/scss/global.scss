@@ -4,6 +4,8 @@
 @import 'vue2-datepicker/index.css';
 @import 'aos/dist/aos.css';
 @import './custom-style.scss';
+@import './transition.scss';
+@import './components/index.scss';
 
 body,
 html {
@@ -39,11 +41,13 @@ p {
 }
 
 .container-fluid {
-  max-width: 100%;
+  width: 100%;
+  max-width: 1024px;
 }
 
 .container {
-  max-width: 80%;
+  width: 100%;
+  max-width: 1280px;
   margin-inline: auto;
 }
 
@@ -198,13 +202,6 @@ section {
           }
         }
       }
-
-      .book-now-btn {
-        background-color: $accentColor100;
-        color: $neutralColor;
-        font-weight: $fontWeightSemiBold;
-        height: 100%;
-      }
     }
   }
 }
@@ -304,28 +301,6 @@ section {
         transition: all ease 0.3s;
       }
     }
-  }
-
-  .btn {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .btn.block.accent {
-    width: 100%;
-    background-color: $accentColor100;
-    color: $neutralColor;
-    font-weight: $fontWeightSemiBold;
-  }
-
-  .btn.block.plain {
-    width: 100%;
-    background-color: transparent;
-    color: $invertedColor;
-    font-weight: $fontWeightLight;
   }
 }
 
@@ -490,15 +465,6 @@ input {
   &::placeholder {
     color: $normalColor;
   }
-}
-
-button {
-  height: 60px;
-  border: none;
-  width: 200px;
-  border-radius: 6px;
-  color: $accentColor100;
-  cursor: pointer;
 }
 
 #service-page {
