@@ -5,6 +5,7 @@ $fontSize400: 1.25rem; /* 20px */
 $fontSize500: 1.5rem; /* 24px */
 $fontSize550: 2rem; /* 32px */
 $fontSize600: 2.25rem; /* 36px */
+$fontSize650: 2.875;  /* 46 */
 $fontSize700: 3rem; /* 48px */
 
 :export {
@@ -15,5 +16,6 @@ $fontSize700: 3rem; /* 48px */
   fontSize500: $fontSize500;
   fontSize550: $fontSize550;
   fontSize600: $fontSize600;
+  fontSize650: $fontSize650;
   fontSize700: $fontSize700;
 }

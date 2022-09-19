@@ -127,3 +127,96 @@
         }
     }
 }
+
+// LOGIN PAGE
+
+.login-wrapper {
+
+    .login-col-1 {
+        background-image: url('/images/login-img.png');
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 800px;
+        position: relative;
+
+        .login-logo {
+            margin-top: 5%;
+            margin-left: 8%;
+        }
+
+        .login-title {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            h1 {
+                font-size: 3rem;
+                line-height: 3.75rem;
+                color: #fff;
+                font-weight: $fontWeightSemiBold;
+            }
+    
+            p {
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+                color: #fff;
+                font-weight: $fontWeightLight;
+            }
+        }
+
+
+        .login-socmed {
+            display: flex;
+            gap: 30px;
+            position: absolute;
+            bottom: 4%;
+            left: 8%;
+
+            a {
+                font-size: 0.875rem;
+                line-height: 1.313rem;
+                color: #fff;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                text-decoration: none;
+                font-weight: $fontWeightLight;
+            }
+        }
+    }
+
+    display: flex;
+    .login-col-1 {
+        background-color: rgba(24, 56, 145, 0.9);
+    }
+
+    .login-col-2 {
+        .login-menu {
+            a {
+                font-size: $fontSize300;
+                line-height: $fontSize500;
+                color: $invertedColor;
+                font-weight: $fontWeightSemiBold;
+                text-decoration: none;
+            }
+        }
+
+        .login-cont {
+            h2 {
+                font-size: $fontSize550;
+                line-height: $fontSize650;
+                color: $invertedColor;
+            }
+
+            p {
+                font-size: $fontSize500;
+                line-height: $fontSize600;
+                font-weight: $fontWeightLight;
+            }
+
+
+        }
+    }
+}
