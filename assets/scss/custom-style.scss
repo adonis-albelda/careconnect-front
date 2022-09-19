@@ -72,6 +72,43 @@
       gap: 30px;
       width: 70%;
 
+      .book-btn {
+        text-align: center;
+  
+        a {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          text-decoration: none;
+  
+          &:first-child {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 200px;
+            height: 60px;
+            gap: 10px;
+            color: #fff;
+            background: #183891;
+            border-radius: 6px;
+            font-weight: $fontWeightSemiBold;
+          }
+  
+          &:last-child {
+            display: flex;
+            width: 200px;
+            height: 60px;
+            justify-content: center;
+            text-align: center;
+            color: #000000;
+            align-items: center;
+            gap: 10px;
+            font-weight: $fontWeightRegular;
+          }
+        }
+      }
+
       h3 {
         font-size: 1.5rem;
         line-height: 2.25rem;
@@ -108,7 +145,9 @@
     }
 }
 
-// LOGIN PAGE
+}
+
+// LOGIN PAGE AND REGISTER
 
 .login-wrapper {
 
@@ -173,7 +212,15 @@
     }
 
     .login-col-2 {
+        position: relative;
+        background: $normalColor;
+        width: calc(100% - 800px);
         .login-menu {
+            display: flex;
+            gap: 20px;
+            justify-content: end;
+            margin-top: 5%;
+            margin-right: 8%;
             a {
                 font-size: $fontSize300;
                 line-height: $fontSize500;
@@ -184,6 +231,9 @@
         }
 
         .login-cont {
+            width: 540px;
+            margin: auto;
+            margin-top: 5%;
             h2 {
                 font-size: $fontSize550;
                 line-height: $fontSize650;
@@ -196,7 +246,91 @@
                 font-weight: $fontWeightLight;
             }
 
+            .divider {
+                background-color: #E9E9E9;
+                position: relative;
+                height: 2px;
+                margin-top: 20px;
+                margin-bottom: 20px;
 
+                p {
+                    font-size: $fontSize200;
+                    line-height: $fontSize400;
+                    font-weight: $fontWeightRegular;
+                    position: absolute;
+                    top: -2px;
+                    bottom: 0;
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                    display: table;
+                    justify-content: center;
+                    background-color: $normalColor;
+                    padding: 0px 10px;
+                    text-transform: capitalize;
+                }
+            }
+
+            .login-form {
+                .input-cont {
+                    margin-bottom: 20px;
+                    label {
+                        font-size: $fontSize250;
+                        line-height: $fontSize450;
+                        color: $invertedColor;
+                        font-weight: $fontWeightSemiBold;
+                        margin-bottom: 5px;
+                        display: block;
+                    }
+
+
+                }
+                .forgot-pass {
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    div {
+                        label {
+                            font-size: $fontSize250;
+                            line-height: $fontSize450;
+                            color: $invertedColor;
+                            font-weight: $fontWeightRegular;
+                        }
+
+                        p {
+                            font-size: $fontSize250;
+                            line-height: $fontSize450;
+                            color: $accentColor100;
+                            font-weight: $fontWeightRegular;
+                        }
+                    }
+                }
+
+                .no-account {
+                    font-size: $fontSize250;
+                    line-height: $fontSize450;
+                    font-weight: $fontWeightLight;
+
+                    a {
+                        font-size: $fontSize250;
+                        line-height: $fontSize450;
+                        font-weight: $fontWeightSemiBold;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .login-copyright {
+                position: absolute;
+                bottom: 4%;
+                right: 8%;
+                p {
+                    font-size: $fontSize100;
+                    line-height: $fontSize400;
+                    color: $invertedColor;
+                    font-weight: $fontWeightRegular;
+                }
+            }
         }
     }
 }

@@ -37,4 +37,40 @@
   &.full {
     height: 100%;
   }
+
+}
+
+.google-btn {
+  font-size: $fontSize300;
+  line-height: $fontSize500;
+  color: $invertedColor;
+  font-weight: $fontWeightSemiBold;
+  background: #F5F5F5;
+  border-radius: 6px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+
+.login-btn {
+  font-size: $fontSize400;
+  line-height: $fontSize550;
+  text-transform: uppercase;
+  color: $normalColor;
+  font-weight: $fontWeightSemiBold;
+  width: 100%;
+  height: 60px;
+  background: #183891;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

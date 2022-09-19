@@ -6,11 +6,11 @@
   height: 60px;
   font-size: 1.2rem;
   background-color: transparent;
-  border: 1px solid $normalColor;
+  border: 2px solid #E9E9E9;;
   padding-left: 1rem;
   width: 100%;
   border-radius: 5px;
-  color: $normalColor;
+  color: $invertedColor;
   
   &::placeholder {
     color: $normalColor;

@@ -21,10 +21,10 @@
             </div>
 
             <div class="login-cont">
-                <h2>Welcome to Care Connect</h2>
-                <p>Care That Comes to You</p>
+                <h2>Sign Up to Care Connect</h2>
+                <p>Create a new account</p>
                 
-                <a class="google-btn" href="#">Login with Google <img src="/images/icons/google-icon.svg"></a>
+                <a class="google-btn" href="#">Sign up with Google <img src="/images/icons/google-icon.svg"></a>
 
                 <div class="divider">
                     <p>or</p>
@@ -39,21 +39,14 @@
                         <label>Password</label>
                         <input class="text-box" type="password">
                     </div>
-
-                    <div class="forgot-pass">
-                        <div>
-                            <input class="login-form-checkinput" type="checkbox" value="" id="remember" />
-                            <label class="login-form-checklabel" for="remember"> Remember me </label>
-                        </div>
-                        <div>
-                            <p>Forgot Password</p>
-                        </div>
+                    <div class="input-cont">
+                        <label>Repeat Password</label>
+                        <input class="text-box" type="password">
                     </div>
 
+                    <a class="login-btn" href="#">Sign up</a>
 
-                    <a class="login-btn" href="#">login</a>
-
-                    <p class="no-account">Don’t have an account? <a href="#">Signup</a></p>
+                    <p class="no-account">Already a member? <a href="#">Login</a></p>
                 </div>
 
                 <div class="login-copyright">
