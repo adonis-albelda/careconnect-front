@@ -6,9 +6,13 @@
         <p>Care Connect</p>
       </div>
       <ul class="nav-item">
-        <li :class="{ active : isActive('index')}" @click="goTo('index')"><span>Home</span></li>
-        <li :class="{ active : isActive('services')}" @click="goTo('services')"><span>Services</span></li>
-        <li><span>Contact us</span></li>
+        <li :class="{ active: isActive('index') }" @click="goTo('index')">
+          <span>Home</span>
+        </li>
+        <li :class="{ active: isActive('services') }" @click="goTo('services')">
+          <span>Services</span>
+        </li>
+        <li :class="{ active: isActive('contact-us') }" @click="goTo('contact-us')"><span>Contact us</span></li>
         <li class="nav-menu-icons">
           <span>
             <img src="images/icons/shopping.png" alt="" />
@@ -25,7 +29,7 @@
       </ul>
     </nav>
     <Nuxt></Nuxt>
-     <subscriptionSection/>
+    <subscriptionSection />
     <footer>
       <div class="container">
         <div class="link-items">
@@ -86,13 +90,12 @@
   </div>
 </template>
 
-
 <script>
-    import subscriptionSection from '@/pages/components/subscription-section.vue'
+import subscriptionSection from '@/pages/components/subscription-section.vue'
 
-    export default {
-        components: {
-            subscriptionSection
-        }
-    }
+export default {
+  components: {
+    subscriptionSection,
+  },
+}
 </script>
