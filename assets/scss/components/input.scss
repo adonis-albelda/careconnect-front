@@ -15,4 +15,16 @@
   &::placeholder {
     color: $normalColor;
   }
+
+  &.sm {
+    // css for small text box
+  }
+
+  &.md {
+    // css for medium text box
+  }
+
+  &.lg {
+    // css for large text box
+  }
 }
