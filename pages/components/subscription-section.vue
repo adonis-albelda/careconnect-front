@@ -6,7 +6,7 @@
           <p>Sign up to hear from us about specials, sales, and events.</p>
         </div>
         <div class="email-box">
-          <input type="text" placeholder="Email" />
+          <input type="text" class="text-box" placeholder="Email" />
           <button class="btn">Subscribe</button>
         </div>
       </div>

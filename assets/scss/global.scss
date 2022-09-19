@@ -299,6 +299,10 @@ section {
       .actions {
         display: none;
         transition: all ease 0.3s;
+
+        .btn:first-child {
+          margin-bottom: 0.8rem;
+        }
       }
     }
   }
@@ -448,23 +452,6 @@ footer {
   right: 1%;
   bottom: 2%;
   border-radius: 50%;
-}
-
-input {
-  outline: none;
-  box-shadow: none;
-  height: 60px;
-  font-size: 1.2rem;
-  background-color: transparent;
-  border: 1px solid $normalColor;
-  padding-left: 1rem;
-  width: 100%;
-  border-radius: 5px;
-  color: $normalColor;
-
-  &::placeholder {
-    color: $normalColor;
-  }
 }
 
 #service-page {
