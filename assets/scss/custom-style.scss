@@ -1,130 +1,110 @@
 // HOME PAGE
 
 .main-nav li:hover.active {
-    background-color: #183891;
-    color: #E5E5E5;
+  background-color: #183891;
+  color: #e5e5e5;
 }
 
+#service-page {
+  .main-nav {
+    position: relative;
+    background-color: $normalColor;
+
+    li,
+    .logo-box p {
+      color: $invertedColor;
+    }
+
+    li.active {
+      color: $normalColor;
+    }
+
+    li:not(.active):hover {
+      background-color: transparent;
+    }
+  }
+
+  .content-area {
+    padding-top: 2rem;
+    
+    h2 {
+      font-size: 2rem;
+      line-height: 3rem;
+      margin-bottom: 30px;
+    }
+  }
+  
+}
 
 .services-sec {
-    .items {
-        .service {
-
-            &:hover {
-                .desc {
-                    -webkit-line-clamp: inherit;
-                }
-            }
-
-            .desc {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                -webkit-line-clamp: 3;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-            }
+  .items {
+    .service {
+      &:hover {
+        .desc {
+          -webkit-line-clamp: inherit;
         }
+      }
+
+      .desc {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }
     }
+  }
 }
 
 // SERVICE PAGE
 
-.content-area {
-    padding-top: 8%;
-
-    h2 {
-        font-size: 2rem;
-        line-height: 3rem;
-        margin-bottom: 30px;
-    }
-}
 
 .service-wrapper {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
 
-    .service-outer-cont {
-        display: flex;
-        margin-bottom: 35px;
-        justify-content: space-between;
-    
-        .service-inner-cont {
-            display: flex;
-            gap: 30px;
-            width: 70%;
-    
-            h3 {
-                font-size: 1.5rem;
-                line-height: 2.25rem;
-                color: #000;
-                font-weight: $fontWeightSemiBold;
-            }
-    
-            p {
-                font-size: 1rem;
-                line-height: 1.5rem;
-                color: #000;
-                font-weight: $fontWeightRegular;
-            }
-    
-            a {
-                font-size: 0.75rem;
-                line-height: 1.125rem;
-                display: inline-flex;
-                color: #183891;
-                text-decoration: none;
-                flex-direction: row;
-                align-items: center;
-                padding: 6px 16px;
-                gap: 6px;
-                border-radius: 6px;
-                border: 1px solid #183891;
-                font-weight: $fontWeightSemiBold;
-                background: rgba(24, 56, 145, 0.1);
-            }
-    
-            .care-services-cont {
-                margin-top: 20px;
-            }
-        }
-    
-        .book-btn {
-            text-align: center;
-    
-            a {
-                font-size: 1rem;
-                line-height: 1.5rem;
-                text-decoration: none;
-    
-                &:first-child {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 10px;
-                    width: 200px;
-                    height: 60px;
-                    gap: 10px;
-                    color: #fff;
-                    background: #183891;
-                    border-radius: 6px;
-                    font-weight: $fontWeightSemiBold;
-                }
-    
-                &:last-child {
-                    display: flex;
-                    width: 200px;
-                    height: 60px;
-                    justify-content: center;
-                    text-align: center;
-                    color: #000000;
-                    align-items: center;
-                    gap: 10px;
-                    font-weight: $fontWeightRegular;
-                }
-            }
-    
-            
-        }
+  .service-outer-cont {
+    display: flex;
+    margin-bottom: 35px;
+    justify-content: space-between;
+
+    .service-inner-cont {
+      display: flex;
+      gap: 30px;
+      width: 70%;
+
+      h3 {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        color: #000;
+        font-weight: $fontWeightSemiBold;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: #000;
+        font-weight: $fontWeightRegular;
+      }
+
+      a {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+        display: inline-flex;
+        color: #183891;
+        text-decoration: none;
+        flex-direction: row;
+        align-items: center;
+        padding: 6px 16px;
+        gap: 6px;
+        border-radius: 6px;
+        border: 1px solid #183891;
+        font-weight: $fontWeightSemiBold;
+        background: rgba(24, 56, 145, 0.1);
+      }
+
+      .care-services-cont {
+        margin-top: 20px;
+      }
     }
 }
 

@@ -6,6 +6,7 @@
 @import './custom-style.scss';
 @import './transition.scss';
 @import './components/index.scss';
+@import './contact_us.scss';
 
 body,
 html {
@@ -452,27 +453,4 @@ footer {
   right: 1%;
   bottom: 2%;
   border-radius: 50%;
-}
-
-#service-page {
-  .main-nav {
-    background-color: white;
-
-    li, 
-    .logo-box p {
-      color: $invertedColor;
-    }
-
-    li.active {
-      color: $normalColor;
-    }
-
-    li:not(.active):hover {
-      background-color: transparent;
-    }
-  }
-
-  // .content-area {
-  //   height: 100vh;
-  // }
 }
