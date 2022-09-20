@@ -74,3 +74,28 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.personal-care-btn {
+  font-size: $fontSize300;
+  line-height: $fontSize500;
+  color: $normalColor;
+  font-weight: $fontWeightSemiBold;
+  display: flex;
+  height: 60px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  background: #183891;
+  border-radius: 6px;
+}
+
+.back {
+  font-size: $fontSize400;
+  line-height: $fontSize550;
+  color: $invertedColor;
+  font-weight: $fontWeightSemiBold;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
