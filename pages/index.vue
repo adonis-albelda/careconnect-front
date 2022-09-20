@@ -7,7 +7,7 @@
           <h3 data-aos="fade-up">Let us provide you with high-quality care!</h3>
         </div>
         <div class="booking-options container">
-          <VSelect :options="options" placeholder="dsdadad">
+          <VSelect :dropdown-should-open="dropdownShouldOpen" :options="options" placeholder="dsdadad">
             <template v-slot:option="option">
               <h4>{{option.title}}</h4><br/>
               <p>{{option.description}}</p>
@@ -22,8 +22,8 @@
               >
             </template>
           </VSelect>
-          <VDatePicker valueType="format"></VDatePicker>
-          <VSelect placeholder="dsdadad"> </VSelect>
+          <VDatePicker :open="true" valueType="format"></VDatePicker>
+          <VSelect :dropdown-should-open="dropdownShouldOpen"  placeholder="dsdadad"> </VSelect>
           <div>
             <button class="btn accent full">BOOK NOW</button>
           </div>
@@ -190,15 +190,12 @@ export default {
   },
   mounted() {
     AOS.init()
+  },
+  methods: {
+    dropdownShouldOpen(VueSelect) {
+      return true
+    },
   }
 }
 </script>
 <style>
-/* .introducing-page {
-  width: 100%;
-  background-repeat: no-repeat;
-  height: 50vh;
-  background-image: url(/images/who-img.webp);
-  background-size: contain;
-} */
-</style>
