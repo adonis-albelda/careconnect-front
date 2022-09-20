@@ -33,15 +33,24 @@
                 <div class="login-form">
                     <div class="input-cont">
                         <label>Email Address</label>
-                        <input class="text-box" type="email" placeholder="@mail.com">
+                        <div class="for-input error-msg">
+                            <input class="text-box" type="email" placeholder="@mail.com">
+                            <span>Data Required</span>
+                        </div>
                     </div>
                     <div class="input-cont">
                         <label>Password</label>
-                        <input class="text-box" type="password">
+                        <div class="for-input error-msg">
+                            <input class="text-box" type="password">
+                            <span>Data Required</span>
+                        </div>
                     </div>
                     <div class="input-cont">
                         <label>Repeat Password</label>
-                        <input class="text-box" type="password">
+                        <div class="for-input error-msg">
+                            <input class="text-box" type="password">
+                            <span>Data Required</span>
+                        </div>
                     </div>
 
                     <a class="login-btn" href="#">Sign up</a>
@@ -62,7 +71,7 @@
 
     head: {
     bodyAttrs: {
-      id: 'login-page'
+      id: 'register-page'
     }
   }
   }

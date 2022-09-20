@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.error-msg {
+
+    input {
+        border: 1px solid red;
+    }
+
+    span {
+        font-size: $fontSize100;
+        color: red;
+    }
+
+
+
+}

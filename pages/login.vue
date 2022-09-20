@@ -33,11 +33,17 @@
                 <div class="login-form">
                     <div class="input-cont">
                         <label>Email Address</label>
-                        <input class="text-box" type="email" placeholder="@mail.com">
+                        <div class="for-input error-msg">
+                            <input class="text-box" type="email" placeholder="@mail.com">
+                            <span>Data Required</span>
+                        </div>
                     </div>
                     <div class="input-cont">
                         <label>Password</label>
-                        <input class="text-box" type="password">
+                        <div class="for-input error-msg">
+                            <input class="text-box" type="password">
+                            <span>Data Required</span>
+                        </div>
                     </div>
 
                     <div class="forgot-pass">
