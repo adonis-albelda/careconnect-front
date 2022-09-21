@@ -37,6 +37,30 @@
   
 }
 
+.banner-content {
+  ul {
+    background-color: #F5F5F5;
+    padding: 15px 0;
+    li {
+      padding: 0;
+      padding: 15px;
+      white-space: normal;
+
+      &:hover {
+        background-color: $normalColor;
+        color: $invertedColor;
+
+        h4 {
+          font-size: $fontSize400;
+          line-height: 30px;
+          color: $invertedColor;
+          font-weight: $fontWeightSemiBold;
+        }
+      }
+    }
+  }
+}
+
 .services-sec {
   .items {
     .service {
@@ -422,6 +446,115 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+// CONTACT PAGE
+
+.contact-wrapper {
+  background-color: $accentColor100;
+  .contact-banner {
+    background-image: url('/images/contact-banner.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 22em;
+  }
+
+  .contact-inner-cont {
+    display: flex;
+    padding-top: 6%;
+    padding-bottom: 10%;
+
+    .contact-col-1 {
+      width: 50%;
+      padding-right: 11%;
+
+      h2 {
+        font-size: $fontSize550;
+        line-height: $fontSize700;
+        color: $normalColor;
+        font-weight: $fontWeightSemiBold;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: $fontSize400;
+        line-height: 30px;
+        color: $normalColor;
+        font-weight: $fontWeightLight;
+        margin-bottom: 45px;
+      }
+
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: space-between;
+
+        a {
+          font-size: $fontSize400;
+          line-height: 30px;
+          color: $normalColor;
+          font-weight: $fontWeightLight;
+          text-decoration: none;
+          display: flex;
+          gap: 10px;
+        }
+      }
+
+      .contact-img {
+        position: absolute;
+        left: 0;
+        bottom: -16%;
+      }
+    }
+
+    .contact-col-2 {
+      width: 50%;
+
+      .input-cont {
+        margin-bottom: 20px;
+
+        .input-inner-cont {
+          display: flex;
+          gap: 2%;
+
+          div {
+            width: 48%;
+          }
+        }
+
+        label {
+          font-size: $fontSize250;
+          line-height: $fontSize450;
+          color: $normalColor;
+          font-weight: $fontWeightRegular;
+          margin-bottom: 5px;
+          display: block;
+
+          span {
+            color: #E68A25;
+          }
+        }
+
+        input,
+        textarea {
+          color: $normalColor;
+
+          &::placeholder {
+            font-size: $fontSize300;
+            line-height: $fontSize500;
+            font-weight: $fontWeightRegular;
+            color: rgba(255, 255, 255, 0.2);
+          } 
+        }
+
+        textarea {
+          height: 150px;
         }
       }
     }
