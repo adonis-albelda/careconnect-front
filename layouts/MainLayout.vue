@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="main-nav">
-      <div class="logo-box">
+      <div class="logo-box" @click="goTo('index')">
         <img src="images/logo.png" alt="careconnect logo" />
         <p>Care Connect</p>
       </div>
@@ -12,13 +12,13 @@
         <li :class="{ active: isActive('services') }" @click="goTo('services')">
           <span>Services</span>
         </li>
-        <li :class="{ active: isActive('contact-us') }" @click="goTo('contact-us')"><span>Contact us</span></li>
+        <li :class="{ active: isActive('contact') }" @click="goTo('contact')"><span>Contact us</span></li>
         <li class="nav-menu-icons">
           <span>
             <img src="images/icons/shopping.png" alt="" />
           </span>
         </li>
-        <li class="guest-nav">
+        <li class="guest-nav" :class="{ active: isActive('login') }" @click="goTo('login')">
           <span>
             <p>
               <img src="images/icons/profile.png" alt="" />
