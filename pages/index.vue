@@ -7,9 +7,9 @@
           <h3 data-aos="fade-up">Let us provide you with high-quality care!</h3>
         </div>
         <div class="booking-options container">
-          <VSelect :dropdown-should-open="dropdownShouldOpen" :options="options" placeholder="dsdadad">
+          <VSelect class="list-services" :dropdown-should-open="dropdownShouldOpen" :options="options" placeholder="dsdadad">
             <template v-slot:option="option">
-              <h4>{{option.title}}</h4><br/>
+              <h4>{{option.title}}</h4>
               <p>{{option.description}}</p>
             </template>
             <template v-slot:no-options="{ search, searching }">
@@ -22,8 +22,22 @@
               >
             </template>
           </VSelect>
-          <VDatePicker :open="true" valueType="format"></VDatePicker>
-          <VSelect :dropdown-should-open="dropdownShouldOpen"  placeholder="dsdadad"> </VSelect>
+          <VDatePicker class="home-datepicker" :open="false" valueType="format"></VDatePicker>
+          <VSelect class="time-picker" :options="time" :dropdown-should-open="dropdownShouldOpen"  placeholder="dsdadad"> 
+            <template v-slot:option="time">
+                <div class="time-picker-cont">
+                    <div class="start-cont">
+                      <p>Start Time</p>
+                      <button>{{time.hour}} {{time.period}}</button>
+                    </div>
+
+                    <div class="end-cont">
+                      <p>End time</p>
+                      <button>{{time.hour}} {{time.period}}</button>
+                    </div>
+                </div>
+            </template>
+          </VSelect>
           <div>
             <button class="btn accent full">BOOK NOW</button>
           </div>
@@ -185,6 +199,61 @@ export default {
           title: 'Complex Care Services',
           description: 'Our experienced and highly trained caregivers provide the highest quality of care to both patients and their families. Our goal is to help individuals and their loved ones live happy and fulfilling lives.'
         }
+      ],
+      time : [
+        {
+          hour: '9:00',
+          period: 'AM',
+        },
+        {
+          hour: '9:30',
+          period: 'AM',
+        },
+        {
+          hour: '10:00',
+          period: 'AM',
+        },
+        {
+          hour: '10:30',
+          period: 'PM',
+        },
+        {
+          hour: '11:00',
+          period: 'AM',
+        },
+        {
+          hour: '11:30',
+          period: 'AM',
+        },
+        {
+          hour: '12:00',
+          period: 'PM',
+        },
+        {
+          hour: '12:30',
+          period: 'PM',
+        },
+        {
+          hour: '2:00',
+          period: 'PM',
+        },
+        {
+          hour: '2:30',
+          period: 'PM',
+        },
+        {
+          hour: '3:00',
+          period: 'PM',
+        },
+        {
+          hour: '3:30',
+          period: 'PM',
+        },
+        {
+          hour: '4:00',
+          period: 'PM',
+        },
+        
       ]
     }
   },
