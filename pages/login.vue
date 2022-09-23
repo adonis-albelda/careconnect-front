@@ -1,7 +1,7 @@
 <template>
     <div class="login-wrapper">
         <div class="login-col-1"> 
-            <img class="login-logo" src="/images/login-logo.png">
+            <img class="login-logo" @click="goTo('index')" src="/images/login-logo.png">
             <div class="login-title">
                 <h1>Care That Comes to You</h1>
                 <p>Let us provide you with high-quality care!</p>
@@ -59,7 +59,7 @@
 
                     <a class="login-btn" href="#">login</a>
 
-                    <p class="no-account">Don’t have an account? <a href="#">Signup</a></p>
+                    <p class="no-account">Don’t have an account? <a href="#" @click.prevent="goTo('register')">Signup</a></p>
                 </div>
 
                 <div class="login-copyright">

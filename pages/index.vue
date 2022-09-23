@@ -7,7 +7,15 @@
           <h3 data-aos="fade-up">Let us provide you with high-quality care!</h3>
         </div>
         <div class="booking-options container">
-          <VSelect class="list-services" :dropdown-should-open="dropdownShouldOpen" :options="options" placeholder="dsdadad">
+          <VSelect v-model="author" class="list-services" :dropdown-should-open="dropdownShouldOpen" :options="options" placeholder="dsdadad">
+            <template v-slot:selected-option-container="{ author }">
+              <div style="display: flex; align-items: baseline">
+                <strong>Robertoalbeldac@gmail.com</strong>
+                <em style="margin-left: 0.5rem"
+                  >by test</em
+                >
+              </div>
+            </template>
             <template v-slot:option="option">
               <h4>{{option.title}}</h4>
               <p>{{option.description}}</p>
@@ -167,6 +175,10 @@ export default {
   layout:'MainLayout',
   data() {
     return {
+      author: {
+        title: 'Personal Care Services',
+        lastName: 'Scalzi',
+      },
       options: [
         {
           title: 'Personal Care Services',

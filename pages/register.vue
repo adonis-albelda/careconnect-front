@@ -1,7 +1,7 @@
 <template>
     <div class="login-wrapper">
         <div class="login-col-1"> 
-            <img class="login-logo" src="/images/login-logo.png">
+            <img class="login-logo" @click="goTo('index')" src="/images/login-logo.png">
             <div class="login-title">
                 <h1>Care That Comes to You</h1>
                 <p>Let us provide you with high-quality care!</p>
