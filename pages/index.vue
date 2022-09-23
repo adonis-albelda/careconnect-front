@@ -30,11 +30,6 @@
                       <p>Start Time</p>
                       <button>{{time.hour}} {{time.period}}</button>
                     </div>
-
-                    <div class="end-cont">
-                      <p>End time</p>
-                      <button>{{time.hour}} {{time.period}}</button>
-                    </div>
                 </div>
             </template>
           </VSelect>
