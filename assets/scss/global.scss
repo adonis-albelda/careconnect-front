@@ -50,10 +50,98 @@ p {
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
+
+  @media(max-width: 480px) {
+    width: 90%;
+  }
+
 }
 
 section {
   padding: 4rem 0;
+}
+
+.mobile-header {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: rgba(0,0,0,0.2);
+  padding: 15px 30px;
+
+  @media(max-width: 480px) {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.sidebar-menu {
+  position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    z-index: 9999;
+    background-color: #fff;
+
+    .close-sidebar {
+      position: absolute;
+      right: 10%;
+      top: 4%;
+    }
+
+    .login-row {
+
+      padding: 0;
+      margin-top: 25%;
+
+      li {
+        padding: 12px 0;
+        list-style: none;
+
+        p {
+          font-size: $fontSize400;
+          line-height: 30px;
+          color: $invertedColor;
+          font-weight: $fontWeightSemiBold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+        }
+      }
+    }
+
+    .menus {
+      padding: 0;
+      margin-top: 20%;
+      li {
+        list-style: none;
+
+        font-size: $fontSize400;
+          line-height: 30px;
+          color: $invertedColor;
+          font-weight: $fontWeightSemiBold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          text-transform: uppercase;
+          padding: 20px 0;
+      }
+
+      .mobile-menu-active {
+        background-color: $accentColor100;
+        color: $normalColor;
+      }
+    }
 }
 
 .main-nav {
@@ -64,6 +152,10 @@ section {
   position: absolute;
   width: 100%;
   z-index: 2;
+
+  @media(max-width: 480px) {
+    display: none;
+  }
 
   .logo-box {
     display: flex;
@@ -160,9 +252,21 @@ section {
     .slogan {
       color: $neutralColor;
 
+      h1 {
+        @media(max-width: 480px) {
+          font-size: $fontSize600;
+          line-height: 43px;
+        }
+      }
+
       h3 {
         font-weight: $fontWeightLight;
         margin-top: 1rem;
+
+        @media(max-width: 480px) {
+          font-size: $fontSize300;
+          line-height: $fontSize500;
+        }
       }
     }
 
@@ -175,6 +279,10 @@ section {
       bottom: 5%;
 
       color: $invertedColor !important;
+
+      @media(max-width: 480px) {
+        display: none;
+      }
 
       .v-select {
         width: 30%;
@@ -226,10 +334,24 @@ section {
       align-items: end;
       height: 100%;
       padding: 4rem 0;
+
+      h1 {
+        font-size: $fontSize550;
+        line-height: $fontSize700;
+      }
+
+      p {
+        font-size: $fontSize250;
+        line-height: $fontSize450;
+      }
     }
 
     .container {
       flex: 1;
+
+      @media(max-width: 480px) {
+        flex: inherit;
+      }
     }
   }
 
@@ -238,12 +360,36 @@ section {
     padding: 5rem 0 10rem 0;
     gap: 6rem;
 
-    h3 {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 2rem;
+    @media(max-width:480px) {
+      display: block;
     }
+
+    div {
+
+      margin-bottom: 30px;
+
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 2rem;
+  
+        @media(max-width: 480px){
+          font-size: $fontSize300;
+          line-height: $fontSize500;
+          justify-content: center;
+          margin-bottom: 1rem;
+        }
+      }
+
+      p {
+        @media(max-width: 480px) {
+          font-size: $fontSize200;
+          line-height: 21px;
+        }
+      }
+    }
+
   }
 }
 
@@ -258,11 +404,22 @@ section {
 
 .services-sec {
   background-color: $normalColor;
+
+  h1 {
+    @media(max-width: 480px) {
+      font-size: $fontSize550;
+      line-height: 30px;
+    }
+  }
   
   .items {
     display: flex;
     margin: 3rem -2rem 6rem -2rem;
     cursor: pointer;
+
+    @media(max-width: 480px) {
+      display: block;
+    }
     
     .title {
       margin-bottom: 1rem;
@@ -283,10 +440,18 @@ section {
       transition: all ease 0.3s;
       padding: 2rem;
       min-width: calc(100%/3);
+
+      @media(max-width: 480px) {
+        min-width: 100%;
+      }
       
       > img {
         width: 100%;
         margin-bottom: 1rem;
+
+        @media(max-width: 480px) {
+          display: none;
+        }
       }
 
       &:hover {
@@ -300,9 +465,19 @@ section {
       .actions {
         display: none;
         transition: all ease 0.3s;
-
+        
+        @media(max-width: 480px) {
+          display: block;
+        }
         .btn:first-child {
           margin-bottom: 0.8rem;
+
+        }
+
+        .plain {
+          @media(max-width: 480px) {
+            display: none;
+          }
         }
       }
     }
@@ -322,11 +497,44 @@ section {
     gap: 10rem;
     padding: 5rem 0;
     justify-content: space-between;
+
+    @media(max-width: 480px) {
+      display: block;
+    }
+
+    h2 {
+      font-size: $fontSize550;
+      line-height: $fontSize550;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: $fontSize200;
+      line-height: $fontSize400;
+      margin-bottom: 20px;
+    }
   }
 
   .email-box {
     display: flex;
     gap: 0.5rem;
+
+    @media(max-width: 480px) {
+      display: block;
+    }
+
+    input {
+      @media(max-width: 480px) {
+        margin-bottom: 10px;
+      }
+    }
+
+    button {
+      width: 100%;
+    }
+
+
+
   }
 }
 
@@ -348,6 +556,11 @@ section {
 
   h1 {
     position: relative;
+
+    @media(max-width: 480px) {
+      font-size: $fontSize550;
+      line-height: 30px;
+    }
   }
 
   h1::after {

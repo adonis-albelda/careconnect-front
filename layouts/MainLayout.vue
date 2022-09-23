@@ -28,6 +28,42 @@
         </li>
       </ul>
     </nav>
+
+    <div class="mobile-header">
+      <nav>
+        <div>
+          <img src="/images/mobile-logo.png">
+        </div>
+        <div>
+          <img @click="openSidebar()" src="/images/burger-menu.png">
+        </div>
+      </nav>
+    </div>
+
+    <div v-if="isShow" class="sidebar-menu">
+      <img @click="closeSidebar()" class="close-sidebar" src="/images/close-icon.png">
+      <ul class="login-row">
+        <li>
+          <p><img src="/images/mobile-profile.png"> Login</p>
+        </li>
+        <li>
+          <p><img src="/images/mobile-cart.png"> Cart</p>
+        </li>
+      </ul>
+
+      <ul class="menus">
+        <li class="mobile-menu-active">
+          <p>home</p>
+        </li>
+        <li>
+          <p>services</p>
+        </li>
+        <li>
+          <p>contact us</p>
+        </li>
+      </ul>
+    </div>
+
     <Nuxt></Nuxt>
     <subscriptionSection />
     <footer>
@@ -97,5 +133,19 @@ export default {
   components: {
     subscriptionSection,
   },
+  data(){
+    return {
+    isShow: false
+    }
+  },
+
+  methods: {
+    openSidebar(){
+      this.isShow = !this.isShow;
+    },
+    closeSidebar() {
+      this.isShow = false
+    }
+  }
 }
 </script>

@@ -9,11 +9,9 @@
         <div class="booking-options container">
           <VSelect v-model="author" class="list-services" :dropdown-should-open="dropdownShouldOpen" :options="options" placeholder="dsdadad">
             <template v-slot:selected-option-container="{ author }">
-              <div style="display: flex; align-items: baseline">
-                <strong>Robertoalbeldac@gmail.com</strong>
-                <em style="margin-left: 0.5rem"
-                  >by test</em
-                >
+              <div class="filter-selected">
+                <p>Robertoalbeldac@gmail.com</p>
+                <span>Test test</span>
               </div>
             </template>
             <template v-slot:option="option">
@@ -269,7 +267,7 @@ export default {
   },
   methods: {
     dropdownShouldOpen(VueSelect) {
-      return true
+      return false
     },
   }
 }

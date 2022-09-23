@@ -40,8 +40,33 @@
 .banner-content {
 
   .list-services {
+
+    .filter-selected {
+      p {
+        font-size: $fontSize400;
+        line-height: $fontSize550;
+        color: $invertedColor;
+        font-weight: $fontWeightSemiBold;
+        text-align: left;
+      }
+
+      span {
+        font-size: $fontSize200;
+        line-height: $fontSize400;
+        color: $invertedColor;
+        font-weight: $fontWeightLight;
+        text-align: left;
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
     #vs1__combobox {
-      height: 60px;
+      height: 70px;
     }
     ul {
       background-color: #F5F5F5;
@@ -82,7 +107,7 @@
 
   .time-picker {
     #vs2__combobox {
-      height: 60px;
+      height: 70px;
     }
 
     #vs2__listbox {
@@ -213,6 +238,11 @@
         -webkit-line-clamp: 3;
         display: -webkit-box;
         -webkit-box-orient: vertical;
+
+        @media(max-width: 480px) {
+          -webkit-line-clamp: inherit;
+          margin-bottom: 1rem;
+        }
       }
     }
   }
