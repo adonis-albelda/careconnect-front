@@ -7,15 +7,15 @@
           <h3 data-aos="fade-up">Let us provide you with high-quality care!</h3>
         </div>
         <div class="booking-options container">
-          <VSelect v-model="author" class="list-services" :dropdown-should-open="dropdownShouldOpen" :options="options" placeholder="dsdadad">
-            <template v-slot:selected-option-container="{ author }">
+          <VSelect v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
+            <template v-slot:selected-option-container="{option: {label, description}}">
               <div class="filter-selected">
-                <p>Robertoalbeldac@gmail.com</p>
-                <span>Test test</span>
+                <p>{{label}}</p>
+                <span>{{description}}</span>
               </div>
             </template>
             <template v-slot:option="option">
-              <h4>{{option.title}}</h4>
+              <h4>{{option.label}}</h4>
               <p>{{option.description}}</p>
             </template>
             <template v-slot:no-options="{ search, searching }">
@@ -28,13 +28,21 @@
               >
             </template>
           </VSelect>
-          <VDatePicker class="home-datepicker" :open="false" valueType="format"></VDatePicker>
-          <VSelect class="time-picker" :options="time" :dropdown-should-open="dropdownShouldOpen"  placeholder="dsdadad"> 
+          <VDatePicker v-model="selectedTime" class="home-datepicker"  valueType="format">
+            <template v-slot:input="item">
+              <div>SELECT TExt</div>
+            </template>
+            <template v-slot:footer="item">
+              <button>CANCEL</button>
+              <button>OKAY</button>
+            </template>
+          </VDatePicker>
+          <VSelect class="time-picker" :options="time"   placeholder="dsdadad"> 
             <template v-slot:option="time">
                 <div class="time-picker-cont">
                     <div class="start-cont">
                       <p>Start Time</p>
-                      <button>{{time.hour}} {{time.period}}</button>
+                      <button>{{time.label}} {{time.period}}</button>
                     </div>
                 </div>
             </template>
@@ -173,21 +181,22 @@ export default {
   layout:'MainLayout',
   data() {
     return {
-      author: {
-        title: 'Personal Care Services',
-        lastName: 'Scalzi',
+      selectedService: {
+        label: 'Select Service',
+        description: 'pleae select service',
       },
+      selectedTime:null,
       options: [
         {
-          title: 'Personal Care Services',
+          label: 'Personal Care Services',
           description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing'
         },
         {
-          title:'Complex Care Services',
+          label:'Complex Care Services',
           description:'Complex care refer to services that must be performed by a regulated health professionals.'
         },
         {
-          title:'Home Support Service',
+          label:'Home Support Service',
           description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning'
         }
       ],
@@ -207,55 +216,55 @@ export default {
       ],
       time : [
         {
-          hour: '9:00',
+          label: '9:00',
           period: 'AM',
         },
         {
-          hour: '9:30',
+          label: '9:30',
           period: 'AM',
         },
         {
-          hour: '10:00',
+          label: '10:00',
           period: 'AM',
         },
         {
-          hour: '10:30',
+          label: '10:30',
           period: 'PM',
         },
         {
-          hour: '11:00',
+          label: '11:00',
           period: 'AM',
         },
         {
-          hour: '11:30',
+          label: '11:30',
           period: 'AM',
         },
         {
-          hour: '12:00',
+          label: '12:00',
           period: 'PM',
         },
         {
-          hour: '12:30',
+          label: '12:30',
           period: 'PM',
         },
         {
-          hour: '2:00',
+          label: '2:00',
           period: 'PM',
         },
         {
-          hour: '2:30',
+          label: '2:30',
           period: 'PM',
         },
         {
-          hour: '3:00',
+          label: '3:00',
           period: 'PM',
         },
         {
-          hour: '3:30',
+          label: '3:30',
           period: 'PM',
         },
         {
-          hour: '4:00',
+          label: '4:00',
           period: 'PM',
         },
         
@@ -266,9 +275,6 @@ export default {
     AOS.init()
   },
   methods: {
-    dropdownShouldOpen(VueSelect) {
-      return false
-    },
   }
 }
 </script>
