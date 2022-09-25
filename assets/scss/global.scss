@@ -310,7 +310,7 @@ section {
   }
 
   #vs1__listbox {
-    margin-top: 1rem !important;
+    margin-top: .2rem !important;
   }
 
   .mx-datepicker {
@@ -381,6 +381,7 @@ section {
 
     @media(max-width:480px) {
       display: block;
+      padding: 2rem 0 1rem 0;
     }
 
     div {
@@ -405,6 +406,7 @@ section {
         @media(max-width: 480px) {
           font-size: $fontSize200;
           line-height: 21px;
+          text-align: center;
         }
       }
     }
@@ -426,7 +428,7 @@ section {
   margin-top: 3%;
 
   @media(max-width: 480px) {
-    padding-top: 2rem;
+    padding-top: 4rem;
     margin-top: 0;
   }
 
@@ -434,6 +436,7 @@ section {
     @media(max-width: 480px) {
       font-size: $fontSize550;
       line-height: 30px;
+      margin-bottom: 20px;
     }
   }
   
@@ -444,10 +447,17 @@ section {
 
     @media(max-width: 480px) {
       display: block;
+      margin: 0;
     }
     
     .title {
       margin-bottom: 1rem;
+
+      @media(max-width: 480px) {
+
+        font-size: $fontSize300;
+        line-height: $fontSize500;
+      }
     }
   
     .price {
@@ -459,6 +469,11 @@ section {
     .desc {
       font-size: $fontSize300;
       margin-bottom: 3rem;
+
+      @media(max-width: 480px) {
+        font-size: $fontSize200;
+        line-height: 1.313rem;
+      }
     }
 
     .service {
@@ -468,6 +483,7 @@ section {
 
       @media(max-width: 480px) {
         min-width: 100%;
+        padding: 0;
       }
       
       > img {
@@ -505,6 +521,7 @@ section {
           }
         }
       }
+     
     }
   }
 }
@@ -516,6 +533,10 @@ section {
   background-repeat: no-repeat;
   background-image: url(/images/blue-bg.jpg);
   background-size: cover;
+
+  @media(max-width: 480px) {
+      padding: 0;
+  }
 
   > div {
     display: flex;
@@ -570,6 +591,10 @@ section {
   background-color: $normalColor;
   background-position: left 92%;
 
+  @media(max-width: 480px) {
+    padding: 4rem 0;
+  }
+
   .container {
     display: flex;
     gap: 8rem;
@@ -589,6 +614,7 @@ section {
     @media(max-width: 480px) {
       font-size: $fontSize550;
       line-height: 30px;
+      margin-bottom: 28px;
     }
   }
 
@@ -639,6 +665,10 @@ footer {
   .link-items {
     padding: 7rem 0rem 4rem 0rem;
     display: flex;
+
+    @media(max-width: 480px) {
+      display: block;
+    }
   }
 
   .footer-logo {
@@ -647,6 +677,11 @@ footer {
     .content {
       width: 50%;
       text-align: center;
+
+      @media(max-width: 480px) {
+        margin: auto;
+        width: 65%;
+      }
     }
 
     img {
@@ -671,20 +706,51 @@ footer {
     width: 100%;
     gap: 7rem;
 
+    @media(max-width: 480px) {
+      display: block;
+      margin-top: 40px;
+    }
+
     > div {
       flex: 1;
+
+      @media(max-width: 480px) {
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        @media(max-width: 480px) {
+          font-size: $fontSize500;
+          line-height: $fontSize600;
+        }
+      }
 
       p {
         margin-bottom: 1rem;
         display: flex;
         align-items: start;
         gap: 0.6rem;
+
+        @media(max-width: 480px) {
+          font-size: $fontSize250;
+          line-height: 1.875rem;
+          padding-left: 12px;
+          margin-bottom: 5px;
+        }
       }
     }
   }
 
   .all-right-reserved {
     text-align: center;
+
+    p {
+      @media(max-width: 480px) {
+        font-size: $fontSize100;
+        line-height: $fontSize350;
+        font-weight: $fontWeightRegular;
+      }
+    }
   }
 }
 
