@@ -20,6 +20,13 @@
   &.accent {
     background-color: $accentColor100;
     color: $neutralColor;
+    position: relative;
+
+    @media(max-width: 480px) {
+      width: 100%;
+      margin-top: 4%;
+      height: 60px !important;
+    }
   }
 
   &.tile {

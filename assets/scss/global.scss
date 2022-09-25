@@ -269,47 +269,66 @@ section {
         }
       }
     }
+  }
+}
 
-    .booking-options {
-      display: flex;
-      align-items: stretch;
-      width: 75%;
-      gap: 1rem;
-      position: absolute;
-      bottom: 5%;
+.booking-options {
+  display: flex;
+  align-items: stretch;
+  width: 75%;
+  gap: 1rem;
+  margin-top: -7%;
 
-      color: $invertedColor !important;
+  color: $invertedColor !important;
 
-      @media(max-width: 480px) {
-        display: none;
+  @media(max-width: 480px) {
+    margin-top: 0;
+    display: block;
+    background-color: $normalColor;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+  }
+
+  .v-select {
+    width: 30%;
+
+    @media(max-width: 480px) {
+      width: 100%;
+    }
+
+    .vs__dropdown-toggle {
+      padding: 0.2rem 1rem;
+      border-radius: 6px !important;
+
+      svg {
+        color: $invertedColor !important;
       }
+    }
+  }
 
-      .v-select {
-        width: 30%;
+  #vs1__listbox {
+    margin-top: 1rem !important;
+  }
 
-        .vs__dropdown-toggle {
-          padding: 0.2rem 1rem;
-          border-radius: 6px !important;
+  .mx-datepicker {
+    width: 20%;
 
-          svg {
-            color: $invertedColor !important;
-          }
-        }
-      }
+    @media(max-width: 480px) {
+      width: 100%;
+      background: #F5F5F5;
+      border: 1px solid #E9E9E9;
+      border-radius: 6px;
+      margin-top: 4%;
+      margin-bottom: 4%;
+    }
 
-      #vs1__listbox {
-        margin-top: 1rem !important;
-      }
-
-      .mx-datepicker {
-        width: 20%;
-
-        .mx-input-wrapper {
-          height: 100%;
-          input {
-            height: 100%;
-          }
-        }
+    .mx-input-wrapper {
+      height: 100%;
+      input {
+        height: 100%;
       }
     }
   }
@@ -404,9 +423,11 @@ section {
 
 .services-sec {
   background-color: $normalColor;
+  margin-top: 3%;
 
   @media(max-width: 480px) {
     padding-top: 2rem;
+    margin-top: 0;
   }
 
   h1 {

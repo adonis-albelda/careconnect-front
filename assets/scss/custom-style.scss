@@ -37,7 +37,7 @@
   
 }
 
-.banner-content {
+.booking-options {
 
   .list-services {
 
@@ -67,6 +67,9 @@
 
     #vs1__combobox {
       height: 70px;
+      background: #F5F5F5;
+      border: 1px solid #E9E9E9;
+      border-radius: 6px;
     }
     ul {
       background-color: #F5F5F5;
@@ -75,6 +78,10 @@
       min-width: 500px;
       overflow: hidden;
       border-radius: 6px;
+
+      @media(max-width: 480px) {
+        min-width: 100%;
+      }
   
       li {
         padding: 0;
@@ -144,6 +151,34 @@
 
   .time-picker {
 
+    #vs4__listbox {
+      top: 50px;
+    }
+
+    .time-selected {
+      display: flex;
+      width: 100%;
+
+      div {
+        width: 50%;
+        text-align: left;
+
+        span {
+          font-size: $fontSize300;
+          line-height: $fontSize500;
+          color: $invertedColor;
+          font-weight: $fontWeightSemiBold;
+        }
+
+        p {
+          font-size: $fontSize400;
+          line-height: 1.875rem;
+          color: $invertedColor;
+          font-weight: $fontWeightRegular;
+        }
+      }
+    }
+
     .time-title {
       display: flex;
       width: 100%;
@@ -163,10 +198,10 @@
       display: flex;
       gap: 20px;
       padding: 12px 20px;
-      margin-top: 20px;
+      margin-top: 10px;
 
       p {
-        width: 50%;
+        width: 44%;
         font-size: $fontSize200;
         line-height: $fontSize400;
         color: $invertedColor;
@@ -206,12 +241,76 @@
     }
 
     #vs2__combobox {
+      padding-left: 14%;
       height: 70px;
+      background: #F5F5F5;
+      border: 1px solid #E9E9E9;
+      border-radius: 6px;
     }
 
     #vs2__listbox {
       top: 75px;
       width: 540px;
+      border-radius: 6px;
+
+      .vs__no-options {
+
+        text-align: left;
+        height: auto;
+        max-height: inherit;
+
+        .time-options-container {
+  
+          display: flex;
+          height: auto;
+          max-height: inherit;
+          padding: 10px 20px;
+  
+          div {
+            width: 50%;
+  
+            h4 {
+              text-align: left;
+              margin-bottom: 10px;
+              font-size: $fontSize400;
+              line-height: 1.875rem;
+              font-weight: $fontWeightSemiBold;
+            }
+  
+            ul {
+              text-align: left;
+              padding: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              flex-wrap: wrap;
+              height: 100%;
+  
+              li {
+                list-style: none;
+                margin-bottom: 10px;
+  
+                button {
+                  font-size: $fontSize400;
+                  line-height: 1.875rem;
+                  color: $invertedColor;
+                  font-weight: $fontWeightRegular;
+                  background-color: transparent;
+                  border: 1px solid $primaryColor;
+                  border-radius: 6px;
+                  cursor: pointer;
+
+                  &:hover {
+                    background-color: $accentColor100;
+                    color: $normalColor;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -241,8 +340,8 @@
 }
 
 .mx-datepicker-popup {
-  top: 750.438px !important;
   border-radius: 6px;
+
 
   .mx-datepicker-content {
     .mx-datepicker-body {
@@ -339,6 +438,7 @@
       button {
 
         width: 50%;
+        cursor: pointer;
 
         &:first-child {
           font-size: $fontSize250;

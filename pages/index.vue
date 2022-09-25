@@ -6,87 +6,95 @@
           <h1 data-aos="fade-in">Care That Comes to You</h1>
           <h3 data-aos="fade-up">Let us provide you with high-quality care!</h3>
         </div>
-        <div class="booking-options container">
-          <VSelect v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
-            <template v-slot:selected-option-container="{option: {label, description}}">
-              <div class="filter-selected">
-                <p>{{label}}</p>
-                <span>{{description}}</span>
-              </div>
-            </template>
-            <template v-slot:option="option">
-              <h4>{{option.label}}</h4>
-              <p>{{option.description}}</p>
-            </template>
-            <template v-slot:no-options="{ search, searching }">
-              <template v-if="searching">
-                No results found for <em>{{ search }}</em
-                >.
-              </template>
-              <em v-else style="opacity: 0.5"
-                >Start typing to search for a country.</em
-              >
-            </template>
-          </VSelect>
-          <VDatePicker v-model="selectedTime" class="home-datepicker"  valueType="format">
-            <template v-slot:input="item">
-              <label class="date-lbl">Date</label>
-              <div class="selected-date">{{selectedTime ? selectedTime : 'Select Date'}}</div>
-            </template>
-            <template class="datepicker-btns" v-slot:footer="item">
-              <button>CANCEL</button>
-              <button>OKAY</button>
-            </template>
-          </VDatePicker>
-          <VSelect class="time-picker" :options="times" placeholder="Select Time"> 
-            <template #no-options="{ search, searching, loading }">
-                <div class="time-options-container">
-                  <div>
-                    <h4>Start Time</h4>
-                    <ul class="time-options">
-                      <li>9:00 am</li>
-                      <li>9:30 AM</li>
-                      <li>10:00 am</li>
-                      <li>10:30 AM</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4>End Time</h4>
-                    <ul class="time-options">
-                      <li>9:00 pm</li>
-                      <li>9:30 PM</li>
-                      <li>10:00 pm</li>
-                      <li>10:30 PM</li>
-                    </ul>
-                  </div>
-                </div>
-            </template>
-            <template v-slot:option="time">
-                <div class="time-picker-cont">
-                    <div class="start-cont">
-                      <button>{{time.label}} {{time.period}}</button>
-                    </div>
-                    <div class="start-cont">
-                      <button>{{time.label}} {{time.period}}</button>
-                    </div>
-                </div>
-            </template>
-             <template v-slot:list-footer="footer">
-                <div class="time-footer">
-                  <p>(GMT-05:00) Central Time (US & Canada)</p>
-                  <div>
-                    <button>Reset</button>
-                    <button>Done</button>
-                  </div>
-                </div>
-            </template>
-          </VSelect>
-          <div>
-            <button class="btn accent full">Get A Quote</button>
-          </div>
-        </div>
       </div>
     </section>
+    <div class="booking-options container">
+      <VSelect v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
+        <template v-slot:selected-option-container="{option: {label, description}}">
+          <div class="filter-selected">
+            <p>{{label}}</p>
+            <span>{{description}}</span>
+          </div>
+        </template>
+        <template v-slot:option="option">
+          <h4>{{option.label}}</h4>
+          <p>{{option.description}}</p>
+        </template>
+        <template v-slot:no-options="{ search, searching }">
+          <template v-if="searching">
+            No results found for <em>{{ search }}</em
+            >.
+          </template>
+          <em v-else style="opacity: 0.5"
+            >Start typing to search for a country.</em
+          >
+        </template>
+      </VSelect>
+      <VDatePicker v-model="selectedTime" class="home-datepicker"  valueType="format">
+        <template v-slot:input="item">
+          <label class="date-lbl">Date</label>
+          <div class="selected-date">{{selectedTime ? selectedTime : 'Select Date'}}</div>
+        </template>
+        <template class="datepicker-btns" v-slot:footer="item">
+          <button>CANCEL</button>
+          <button>OKAY</button>
+        </template>
+      </VDatePicker>
+      <VSelect class="time-picker" :options="times" placeholder="Select Time"> 
+        <template v-slot:no-options="{ search, searching, loading }">
+            <div class="time-options-container">
+              <div>
+                <h4>Start Time</h4>
+                <ul class="time-options">
+                  <li><button>9:00 am</button></li>
+                  <li><button>9:30 AM</button></li>
+                  <li><button>10:00 am</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                </ul>
+              </div>
+              <div>
+                <h4>End Time</h4>
+                <ul class="time-options">
+                  <li><button>9:00 am</button></li>
+                  <li><button>9:30 AM</button></li>
+                  <li><button>10:00 am</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                  <li><button>10:30 AM</button></li>
+                </ul>
+              </div>
+            </div>
+        </template>
+          <template v-slot:list-footer="footer">
+            <div class="time-footer">
+              <p>(GMT-05:00) Central Time (US & Canada)</p>
+              <div>
+                <button>Reset</button>
+                <button>Done</button>
+              </div>
+            </div>
+        </template>
+      </VSelect>
+      <div>
+        <button class="btn accent full">Get A Quote</button>
+      </div>
+    </div>
     <section class="services-sec">
       <div class="container">
         <h1 data-aos="fade-up" data-aos-once="true">Our Services</h1>
@@ -310,7 +318,6 @@ export default {
     AOS.init()
   },
   methods: {
-     
   }
 }
 </script>
