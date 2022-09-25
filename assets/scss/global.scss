@@ -405,6 +405,10 @@ section {
 .services-sec {
   background-color: $normalColor;
 
+  @media(max-width: 480px) {
+    padding-top: 2rem;
+  }
+
   h1 {
     @media(max-width: 480px) {
       font-size: $fontSize550;
@@ -548,6 +552,10 @@ section {
   .container {
     display: flex;
     gap: 8rem;
+
+    @media(max-width: 480px) {
+      display: block;
+    }
 
     div:first-child {
       flex: 0 0 25em;

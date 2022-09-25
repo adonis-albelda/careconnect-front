@@ -30,25 +30,47 @@
           </VSelect>
           <VDatePicker v-model="selectedTime" class="home-datepicker"  valueType="format">
             <template v-slot:input="item">
-              <div>SELECT TExt</div>
+              <label class="date-lbl">Date</label>
+              <div class="selected-date">SELECT TExt</div>
             </template>
-            <template v-slot:footer="item">
+            <template class="datepicker-btns" v-slot:footer="item">
               <button>CANCEL</button>
               <button>OKAY</button>
             </template>
           </VDatePicker>
-          <VSelect class="time-picker" :options="time"   placeholder="dsdadad"> 
+          <VSelect class="time-picker" :options="time" placeholder="dsdadad"> 
+          
+            <template v-slot:list-header="header">
+              <div class="time-title">
+                <li>Start Time</li>
+                <li>End Time</li>
+              </div>
+            </template>
             <template v-slot:option="time">
                 <div class="time-picker-cont">
                     <div class="start-cont">
-                      <p>Start Time</p>
+                      <button>{{time.label}} {{time.period}}</button>
+                    </div>
+                    <div class="start-cont">
                       <button>{{time.label}} {{time.period}}</button>
                     </div>
                 </div>
+                
+                
             </template>
+             <template v-slot:list-footer="footer">
+                <div class="time-footer">
+                  <p>(GMT-05:00) Central Time (US & Canada)</p>
+                  <div>
+                    <button>Reset</button>
+                    <button>Done</button>
+                  </div>
+                </div>
+            </template>
+
           </VSelect>
           <div>
-            <button class="btn accent full">BOOK NOW</button>
+            <button class="btn accent full">Get A Quote</button>
           </div>
         </div>
       </div>
@@ -275,6 +297,7 @@ export default {
     AOS.init()
   },
   methods: {
+     
   }
 }
 </script>
