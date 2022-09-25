@@ -675,3 +675,8 @@ footer {
   bottom: 2%;
   border-radius: 50%;
 }
+
+// form custom css
+form > div:first-child {
+  width: 100% !important;
+}

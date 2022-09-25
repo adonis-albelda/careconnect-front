@@ -31,20 +31,35 @@
           <VDatePicker v-model="selectedTime" class="home-datepicker"  valueType="format">
             <template v-slot:input="item">
               <label class="date-lbl">Date</label>
-              <div class="selected-date">SELECT TExt</div>
+              <div class="selected-date">{{selectedTime ? selectedTime : 'Select Date'}}</div>
             </template>
             <template class="datepicker-btns" v-slot:footer="item">
               <button>CANCEL</button>
               <button>OKAY</button>
             </template>
           </VDatePicker>
-          <VSelect class="time-picker" :options="time" placeholder="dsdadad"> 
-          
-            <template v-slot:list-header="header">
-              <div class="time-title">
-                <li>Start Time</li>
-                <li>End Time</li>
-              </div>
+          <VSelect class="time-picker" :options="times" placeholder="Select Time"> 
+            <template #no-options="{ search, searching, loading }">
+                <div class="time-options-container">
+                  <div>
+                    <h4>Start Time</h4>
+                    <ul class="time-options">
+                      <li>9:00 am</li>
+                      <li>9:30 AM</li>
+                      <li>10:00 am</li>
+                      <li>10:30 AM</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>End Time</h4>
+                    <ul class="time-options">
+                      <li>9:00 pm</li>
+                      <li>9:30 PM</li>
+                      <li>10:00 pm</li>
+                      <li>10:30 PM</li>
+                    </ul>
+                  </div>
+                </div>
             </template>
             <template v-slot:option="time">
                 <div class="time-picker-cont">
@@ -55,8 +70,6 @@
                       <button>{{time.label}} {{time.period}}</button>
                     </div>
                 </div>
-                
-                
             </template>
              <template v-slot:list-footer="footer">
                 <div class="time-footer">
@@ -67,7 +80,6 @@
                   </div>
                 </div>
             </template>
-
           </VSelect>
           <div>
             <button class="btn accent full">Get A Quote</button>
@@ -236,6 +248,7 @@ export default {
           description: 'Our experienced and highly trained caregivers provide the highest quality of care to both patients and their families. Our goal is to help individuals and their loved ones live happy and fulfilling lives.'
         }
       ],
+      times:[],
       time : [
         {
           label: '9:00',

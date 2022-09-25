@@ -29,13 +29,15 @@ export default {
   plugins: [
     "~global/components/VueSelect.js",
     "~global/components/VueDatepicker.js",
-    "~global/utils/index.js"
+    "~global/utils/index.js",
+    {src:"~global/plugins/VeeValidate.js", ssr:false}
+    
   ],
   components: false,
   // buildModules: ['@nuxtjs/eslint-module'],
   modules: ['@nuxtjs/auth-next', '@nuxtjs/axios'],
   axios: {
-    baseURL: '/',
+    baseURL: process.env.BASE_URL
   },
   router: {
     // middleware: ['auth'],
