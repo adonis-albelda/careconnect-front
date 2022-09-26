@@ -78,7 +78,9 @@
                   </div>
                 </div>
               </ValidationProvider>
-                <div class="input-cont">
+              <!-- rules="required|digits|max:12|min:12" -->
+              <ValidationProvider name="Phone number"  v-slot="{errors}">
+                <div :class="['input-cont', errors[0] ? 'error-msg': '']">
                   <label>Phone number <span>*</span></label>
                   <div>
                     <input
@@ -87,14 +89,16 @@
                       type="number"
                       placeholder="0000 0000 000000"
                     />
+                    <span>{{ errors[0] }}</span>
                   </div>
                 </div>
+              </ValidationProvider>
               <ValidationProvider
                 v-slot="{ errors }"
                 name="Message"
                 rules="required"
               > <div>
-                  <div class="input-cont">
+                  <div :class="['input-cont', errors[0] ? 'error-msg': '']">
                     <label>Message <span>*</span></label>
                     <div>
                       <textarea
@@ -103,6 +107,7 @@
                         placeholder="Type your inquiry here..."
                       ></textarea>
                     </div>
+                    <span>{{ errors[0] }}</span>
                   </div>
                   <button class="send-btn btn block">Send</button>
                 </div>
@@ -135,12 +140,14 @@ export default {
     },
   },
   created() {
-    this.$axios.$get('/test').then((res) => {
-      console.log(res, 'test')
-    })
+  
   },
   methods: {
-    handleIquiry() {},
+    handleIquiry() {
+      this.$axios.post('/inquiry', this.inquiry).then((res) => {
+        console.log(res, 'test')
+      })
+    },
   },
 }
 </script>
