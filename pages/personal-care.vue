@@ -3,6 +3,10 @@
         <div class="container">
             <a class="back" href="#"><img src="/images/arrow-left.png"> Back</a>
 
+            <div class="personalcare-banner">
+                <img src="/images/personal-care-banner.png">
+            </div>
+
             <div class="personal-inner-cont">
                 <div class="p-col-1">
                     <div class="pc-price">
@@ -35,6 +39,8 @@
                             <li>Supervise prescribed physiotherapy exercises</li>
                             <li>Supervise transfers and ensure the client is using their walker properly.</li>
                         </ul>
+
+                        <p class="sub-title">Trained and certified Personeal Support Workers provide all personal support services</p>
 
                         <a href="#" class="personal-care-btn">Book now</a>
                     </div>

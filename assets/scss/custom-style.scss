@@ -6,7 +6,8 @@
 }
 
 #service-page,
-#personal-care-page {
+#personal-care-page,
+#get-quote-page {
   .main-nav {
     position: relative;
     background-color: $normalColor;
@@ -339,7 +340,8 @@
 
 }
 
-.mx-datepicker-popup {
+.mx-datepicker-popup,
+.mx-datepicker-inline {
   border-radius: 6px;
 
 
@@ -500,82 +502,115 @@
     display: flex;
     margin-bottom: 35px;
     justify-content: space-between;
+    background-color: $normalColor;
+    padding: 22px;
+    border-radius: 12px;
 
     .service-inner-cont {
       display: flex;
       gap: 30px;
-      width: 70%;
+      width: 100%;
 
-      h3 {
-        font-size: 1.5rem;
-        line-height: 2.25rem;
-        color: #000;
-        font-weight: $fontWeightSemiBold;
-      }
+        .service-img {
+          width: 25%;
 
-      p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        color: #000;
-        font-weight: $fontWeightRegular;
-      }
+          img {
+            width: 100%;
+          }
+        }
 
-      a {
-        font-size: 0.75rem;
-        line-height: 1.125rem;
-        display: inline-flex;
-        color: #183891;
-        text-decoration: none;
-        flex-direction: row;
-        align-items: center;
-        padding: 6px 16px;
-        gap: 6px;
-        border-radius: 6px;
-        border: 1px solid #183891;
-        font-weight: $fontWeightSemiBold;
-        background: rgba(24, 56, 145, 0.1);
-      }
+        .services-avail {
+          width: 75%;
 
-      .care-services-cont {
-        margin-top: 20px;
-      }
-    }
+          .service-option {
 
-    .book-btn {
-      text-align: center;
+            p {
+              font-size: $fontSize300;
+              line-height: $fontSize500;
+              color: $invertedColor;
+              font-weight: $fontWeightSemiBold;
+              margin-bottom: 0;
+              margin-top: 10px;
+            }
+          }
 
-      a {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        text-decoration: none;
+          .caregiver-cont {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
 
-        &:first-child {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          padding: 10px;
-          width: 200px;
-          height: 60px;
-          gap: 10px;
-          color: #fff;
-          background: #183891;
-          border-radius: 6px;
+            .caregivers {
+              display: flex;
+              align-items: center;
+
+              img {
+                margin-left: -5%;
+
+                &:first-child {
+                  margin-left: 0;
+                }
+              }
+
+              p {
+                font-size: $fontSize300;
+                line-height: $fontSize450;
+                color: $accentColor100;
+                font-weight: $fontWeightSemiBold;
+                margin-left: 20px;
+              }
+            }
+
+            .book-btn {
+              display: flex;
+              flex-flow: row-reverse;
+              gap: 10px;
+            }
+          }
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          line-height: 2.25rem;
+          color: #000;
           font-weight: $fontWeightSemiBold;
         }
+  
+        p {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          color: #000;
+          font-weight: $fontWeightRegular;
+          padding-right: 34%;
+        }
 
-        &:last-child {
+        .care-services-cont {
+          margin-top: 20px;
           display: flex;
-          width: 200px;
-          height: 60px;
-          justify-content: center;
-          text-align: center;
-          color: #000000;
           align-items: center;
           gap: 10px;
-          font-weight: $fontWeightRegular;
+          a {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+            display: inline-flex;
+            color: #183891;
+            text-decoration: none;
+            flex-direction: row;
+            align-items: center;
+            padding: 6px 16px;
+            gap: 6px;
+            border-radius: 6px;
+            border: 1px solid #183891;
+            font-weight: $fontWeightSemiBold;
+            background: rgba(24, 56, 145, 0.1);
+  
+            &:last-child {
+              background-color: transparent;
+              border: none;
+            }
+          }
+
         }
-      }
+
     }
 }
 
@@ -668,6 +703,12 @@
             width: 540px;
             margin: auto;
             margin-top: 3%;
+
+            .login-socmed {
+              margin-top: 5%;
+              margin-bottom: 5%;
+            }
+
             h2 {
                 font-size: $fontSize550;
                 line-height: $fontSize650;
@@ -780,6 +821,16 @@
 
   .container {
 
+    .personalcare-banner {
+
+      margin-top: 2%;
+      margin-bottom: 3%;
+
+      img {
+        border-radius: 6px;
+      }
+    }
+
     .personal-inner-cont {
       display: flex;
       margin-top: 2%;
@@ -837,7 +888,7 @@
           ul {
 
             padding-left: 18px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
 
             li {
               font-size: $fontSize350;
@@ -967,5 +1018,80 @@
         }
       }
     }
+  }
+}
+
+// GET QUOTE PAGE
+
+.get-quote-wrapper {
+
+  padding-top: 2%;
+  padding-bottom: 5%;
+
+  .mx-datepicker-inline {
+    width: 100%;
+
+    .mx-datepicker-main {
+      background-color: transparent;
+      
+      .mx-calendar-panel-date {
+        width: 100%;
+        background-color: transparent;
+      }
+
+    }
+  }
+
+  h1 {
+    font-size: $fontSize550;
+    line-height: $fontSize700;
+    margin-top: 1%;
+    margin-bottom: 2%;
+  }
+
+  h2 {
+    font-size: $fontSize400;
+    line-height: 1.875rem;
+    font-weight: $fontWeightSemiBold;
+    color: $invertedColor;
+    margin-bottom: 3%;
+  }
+
+  .quote-inner-cont {
+    display: flex;
+    gap: 40px;
+
+    .quote-service {
+      width: 30%;
+
+      div {
+        position: relative;
+        padding-left: 3%;
+        margin-bottom: 6%;
+        
+        p {
+          font-size: $fontSize100;
+          line-height: $fontSize350;
+          font-weight: $fontWeightLight;
+          color: $invertedColor;
+        }
+      }
+    }
+
+
+    .quote-date {
+      width: 40%;
+    }
+
+    .quote-time {
+      width: 30%;
+    }
+  }
+
+  .book-btn {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    flex-direction: row-reverse;
   }
 }
