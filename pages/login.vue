@@ -24,7 +24,10 @@
                 <h2>Welcome to Care Connect</h2>
                 <p>Care That Comes to You</p>
                 
-                <a class="google-btn" href="#">Login with Google <img src="/images/icons/google-icon.svg"></a>
+                <div class="login-socmed">
+                    <a class="google-btn" href="#">Login with Google <img src="/images/icons/google-icon.svg"></a>
+                    <a class="facebook-btn" href="#">Login with Facebook <img src="/images/icons/facebook-icon.svg"></a>
+                </div>
 
                 <div class="divider">
                     <p>or</p>

@@ -5,11 +5,11 @@
         <h2>Book a Service</h2>
         <div class="service-outer-cont">
           <div class="service-inner-cont">
-            <div>
+            <div class="service-img">
               <img src="/images/services-img2.png" />
             </div>
 
-            <div>
+            <div class="services-avail">
               <h3>Personal Care Services</h3>
               <p>
                 Personal care service includes assistance with the private
@@ -22,59 +22,93 @@
                 <a href="#"
                   ><img src="/images/icons/bathtub-icon.svg" />Bathing</a
                 >
+                <a href="#"
+                  ><img src="/images/icons/bathtub-icon.svg" />Grooming</a
+                >
+                <a href="#"
+                  ><img src="/images/icons/bathtub-icon.svg" />Mobitlity</a
+                >
+                <a href="#"
+                  >View more</a
+                >
+              </div>
+
+              <div class="caregiver-cont">
+                <div class="caregivers">
+                  <img src="/images/caregiver-img1.png">
+                  <img src="/images/caregiver-img2.png">
+                  <img src="/images/caregiver-img3.png">
+                  <img src="/images/caregiver-img4.png">
+                  <img src="/images/caregiver-img5.png">
+                  <p>20+ Care givers</p>
+                </div>
+                <div class="book-btn">
+                  <a href="#">Get A Quote</a>
+                  <a href="#">Know more</a>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="book-btn">
-            <a href="#">Book now</a>
-            <a href="#"><img src="/images/icons/info.svg" />Learn more</a>
           </div>
         </div>
 
         <div class="service-outer-cont">
           <div class="service-inner-cont">
-            <div>
-              <img src="/images/services-img1.png" />
+            <div class="service-img">
+              <img src="/images/services-img2.png" />
             </div>
 
-            <div>
-              <h3>Personal Care Services</h3>
+            <div class="services-avail">
+              <h3>Complex Care Services</h3>
               <p>
-                Personal care service includes assistance with the private
-                activities of daily living such as:
+                Complex care refers to services that must be performed by a regulated health professional such as Registered Practical Nurse.
+These services incude :
               </p>
               <div class="care-services-cont">
                 <a href="#"
-                  ><img src="/images/icons/dress-icon.svg" />Dressing</a
+                  ><img src="/images/icons/dress-icon.svg" />Medication administration</a
                 >
                 <a href="#"
-                  ><img src="/images/icons/bathtub-icon.svg" />Bathing</a
+                  ><img src="/images/icons/bathtub-icon.svg" />Vital signs monitoring</a
+                >
+                <a href="#"
+                  ><img src="/images/icons/bathtub-icon.svg" />Wound care</a
+                >
+                <a href="#"
+                  >View more</a
                 >
               </div>
-            </div>
-          </div>
 
-          <div class="book-btn">
-            <a href="#">Book now</a>
-            <a href="#"><img src="/images/icons/info.svg" />Learn more</a>
+              <div class="caregiver-cont">
+                <div class="caregivers">
+                  <img src="/images/caregiver-img1.png">
+                  <img src="/images/caregiver-img2.png">
+                  <img src="/images/caregiver-img3.png">
+                  <img src="/images/caregiver-img4.png">
+                  <img src="/images/caregiver-img5.png">
+                  <p>20+ Practical Nurses</p>
+                </div>
+                <div class="book-btn">
+                  <a href="#">Get A Quote</a>
+                  <a href="#">Know more</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="service-wrapper">
-        <h2>Book a Service</h2>
+        <h2>Training</h2>
         <div class="service-outer-cont">
           <div class="service-inner-cont">
-            <div>
-              <img src="/images/services-img3.png" />
+            <div class="service-img">
+              <img src="/images/services-img2.png" />
             </div>
 
-            <div>
-              <h3>Personal Care Services</h3>
+            <div class="services-avail">
+              <h3>Home Support Services</h3>
               <p>
-                Personal care service includes assistance with the private
-                activities of daily living such as:
+                Home Support Services include assistance with day-to-day activities sush as :
               </p>
               <div class="care-services-cont">
                 <a href="#"
@@ -83,13 +117,36 @@
                 <a href="#"
                   ><img src="/images/icons/bathtub-icon.svg" />Bathing</a
                 >
+                <a href="#"
+                  ><img src="/images/icons/bathtub-icon.svg" />Grooming</a
+                >
+                <a href="#"
+                  ><img src="/images/icons/bathtub-icon.svg" />Mobitlity</a
+                >
+                <a href="#"
+                  >View more</a
+                >
+              </div>
+
+              <div class="service-option">
+                <p>We offer the option of Live-In caregivers for short or long term placements.</p>
+              </div>
+
+              <div class="caregiver-cont">
+                <div class="caregivers">
+                  <img src="/images/caregiver-img1.png">
+                  <img src="/images/caregiver-img2.png">
+                  <img src="/images/caregiver-img3.png">
+                  <img src="/images/caregiver-img4.png">
+                  <img src="/images/caregiver-img5.png">
+                  <p>20+ Practical Nurses</p>
+                </div>
+                <div class="book-btn">
+                  <a href="#">Get A Quote</a>
+                  <a href="#">Know more</a>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="book-btn">
-            <a href="#">Book now</a>
-            <a href="#"><img src="/images/icons/info.svg" />Learn more</a>
           </div>
         </div>
       </div>

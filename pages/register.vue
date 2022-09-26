@@ -24,8 +24,10 @@
                 <h2>Sign Up to Care Connect</h2>
                 <p>Create a new account</p>
                 
-                <a class="google-btn" href="#">Sign up with Google <img src="/images/icons/google-icon.svg"></a>
-
+                <div class="login-socmed">
+                    <a class="google-btn" href="#">Sign up with Google <img src="/images/icons/google-icon.svg"></a>
+                    <a class="google-btn" href="#">Sign up with Facebook <img src="/images/icons/facebook-icon.svg"></a>
+                </div>
                 <div class="divider">
                     <p>or</p>
                 </div>
