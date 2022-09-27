@@ -217,6 +217,10 @@
   </div>
 </template>
 <script>
+import Vue from 'vue';
+import CustomView from '../components/ui/QuoteDialog.vue';
+const VIEW_NAME = 'my-unique-view-name';
+
 import AOS from 'aos'
 export default {
   name: 'LandingPage',
@@ -316,6 +320,17 @@ export default {
   },
   mounted() {
     AOS.init()
+    Vue.dialog.registerComponent(VIEW_NAME, CustomView);
+
+    this.$dialog.alert('dsdsa', {
+      view: VIEW_NAME, // can be set globally too
+      html: true,
+      animation: 'fade',
+      backdropClose: true
+    });
+    
+  },
+  created() {
   },
   methods: {
   }

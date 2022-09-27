@@ -29,6 +29,7 @@ export default {
   plugins: [
     "~global/components/VueSelect.js",
     "~global/components/VueDatepicker.js",
+    {src:"~global/components/VueDialog.js", ssr:false},
     "~global/utils/index.js",
     {src:"~global/plugins/VeeValidate.js", ssr:false}
     
