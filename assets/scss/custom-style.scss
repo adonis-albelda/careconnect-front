@@ -28,11 +28,19 @@
 
   .content-area {
     padding-top: 2rem;
+
+    @media(max-width: 480px) {
+      padding-top: 6rem;
+    }
     
     h2 {
       font-size: 2rem;
       line-height: 3rem;
       margin-bottom: 30px;
+
+      @media(max-width: 480px) {
+        font-size: 1.5rem;
+      }
     }
   }
   
@@ -71,6 +79,12 @@
       background: #F5F5F5;
       border: 1px solid #E9E9E9;
       border-radius: 6px;
+
+      .vs__actions {
+        svg {
+          fill: $invertedColor;
+        }
+      }
     }
     ul {
       background-color: #F5F5F5;
@@ -987,5 +1001,141 @@
     gap: 15px;
     flex-direction: row-reverse;
     margin-top: 15%;
+  }
+}
+
+
+// QUOTE DIALOG
+
+.dg-backdrop {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.dg-container {
+  .dg-content-cont {
+    top: 40%;
+    .dg-main-content {
+      max-width: 650px;
+      padding: 0;
+      background-color: transparent;
+      .quote-dialog {
+        .dialog-header {
+          background-image: url('/images/dialog-bg.png');
+          background-color: $accentColor100;
+          padding: 20px;
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          h1 {
+            font-size: $fontSize550;
+            line-height: $fontSize700;
+            color: $normalColor;
+            font-weight: $fontWeightSemiBold;
+          }
+
+          p {
+            font-size: $fontSize200;
+            line-height: $fontSize450;
+            color: $normalColor;
+            font-weight: $fontWeightLight;
+          }
+        }
+
+        .dialog-body {
+          padding: 20px;
+          background-color: $normalColor;
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
+
+          .send-quote {
+            p {
+              font-size: $fontSize300;
+              line-height: $fontSize500;
+              color: $invertedColor;
+              font-weight: $fontWeightRegular;
+  
+              a {
+                color: $accentColor100;
+                text-decoration: none;
+  
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+            }
+  
+            .email-cont {
+              margin-top: 15px;
+              margin-bottom: 20px;
+  
+              label {
+                font-size: $fontSize250;
+                line-height: $fontSize450;
+                color: $invertedColor;
+                font-weight: $fontWeightSemiBold;
+                margin-bottom: 10px;
+                display: block;
+              }
+  
+              .text-box {
+                border-color: rgba(0, 0, 0, 0.1);
+              }
+            }
+  
+            .book-btn {
+              display: flex;
+              flex-direction: row-reverse;
+              gap: 20px;
+  
+              a {
+  
+                &:first-child {
+                  width: 160px;
+                }
+                
+                &:last-child {
+                  width: 200px;
+                }
+              }
+            }
+
+          }
+
+          .quote-sent {
+            p {
+              font-size: $fontSize500;
+              line-height: $fontSize600;
+              color: $invertedColor;
+              font-weight: $fontWeightRegular;
+              text-align: center;
+              margin-top: 5%;
+            }
+
+            button {
+              font-size: $fontSize300;
+              line-height: $fontSize500;
+              color: $normalColor;
+              font-weight: $fontWeightSemiBold;
+              width: 162px;
+              background-color: $accentColor100;
+              border: none;
+              padding: 10px;
+              border-radius: 6px;
+              display: flex;
+              justify-content: center;
+              margin-left: auto;
+              margin-top: 10%;
+              cursor: pointer;
+            }
+          }
+
+        }
+      }
+    }
   }
 }

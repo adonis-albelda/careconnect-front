@@ -312,6 +312,11 @@ section {
   .home-datepicker,
   .time-picker {
     width: 20%;
+
+    @media(max-width: 480px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 
 

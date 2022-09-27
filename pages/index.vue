@@ -360,14 +360,14 @@ export default {
   },
   mounted() {
     AOS.init()
-    // Vue.dialog.registerComponent(VIEW_NAME, CustomView);
+    Vue.dialog.registerComponent(VIEW_NAME, CustomView);
 
-    // this.$dialog.alert('dsdsa', {
-    //   view: VIEW_NAME, // can be set globally too
-    //   html: true,
-    //   animation: 'fade',
-    //   backdropClose: true
-    // });
+    this.$dialog.alert('dsdsa', {
+      view: VIEW_NAME, // can be set globally too
+      html: true,
+      animation: 'fade',
+      backdropClose: true
+    });
     
   },
 }
