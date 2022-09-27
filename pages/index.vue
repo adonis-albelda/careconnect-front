@@ -9,7 +9,7 @@
       </div>
     </section>
     <div class="booking-options container">
-      <VSelect v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
+      <VSelect :clearable="false" v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>{{label}}</p>
@@ -26,44 +26,40 @@
             >.
           </template>
           <em v-else style="opacity: 0.5"
-            >Start typing to search for a country.</em
+            >Start typing to search for a service.</em
           >
         </template>
       </VSelect>
-      <VDatePicker v-model="selectedTime" class="home-datepicker"  valueType="format">
+      <VDatePicker v-model="selectedDate" class="home-datepicker"  valueType="format">
         <template v-slot:input="item">
           <label class="date-lbl">Date</label>
-          <div class="selected-date">{{selectedTime ? selectedTime : 'Select Date'}}</div>
+          <div class="selected-date">{{selectedDate ? selectedDate : 'Select Date'}}</div>
         </template>
         <template class="datepicker-btns" v-slot:footer="item">
           <button>CANCEL</button>
           <button>OKAY</button>
         </template>
       </VDatePicker>
-      <VSelect class="time-picker" :options="times" placeholder="Select Time"> 
+      <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select Start Time" v-model="selectedTime.start"> 
+        <template v-slot:selected-option-container="{option: {label, description}}">
+          <div class="filter-selected">
+            <p>Start Time</p>
+            <p>{{selectedTime.start}}</p>
+          </div>
+        </template> 
         <template v-slot:no-options="{ search, searching, loading }">
             <div class="time-options-container">
               <div>
                 <h4>Start Time</h4>
                 <ul class="time-options">
-                  <li><button>9:00 am</button></li>
-                  <li><button>9:30 AM</button></li>
-                  <li><button>10:00 am</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
+                  <li v-for="(time,index) of startTimes" :key="`end-${index}`">
+                    <button :class="{active: selectedTime.start == time}" @click="selectedTime.start = time">{{time}}</button>
+                  </li>
                 </ul>
               </div>
             </div>
         </template>
-          <template v-slot:list-footer="footer">
+        <template v-slot:list-footer="footer">
             <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
             <div class="time-footer">
                 <button>Reset</button>
@@ -71,25 +67,21 @@
             </div>
         </template>
       </VSelect>
-      <VSelect class="time-picker" :options="times" placeholder="Select Time"> 
+      <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select End Time" v-model="selectedTime.end">
+        <template v-slot:selected-option-container="{option: {label, description}}">
+          <div class="filter-selected">
+              <p>End Time</p>
+              <p>{{selectedTime.end}}</p>
+          </div>
+        </template> 
         <template v-slot:no-options="{ search, searching, loading }">
             <div class="time-options-container">
               <div>
                 <h4>End Time</h4>
                 <ul class="time-options">
-                  <li><button>9:00 am</button></li>
-                  <li><button>9:30 AM</button></li>
-                  <li><button>10:00 am</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
-                  <li><button>10:30 AM</button></li>
+                  <li v-for="(time,index) of endTimes" :key="`end-${index}`">
+                    <button :class="{active: selectedTime.end == time}" @click="selectedTime.end = time">{{time}}</button>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -242,7 +234,11 @@ export default {
         label: 'Select Service',
         description: 'pleae select service',
       },
-      selectedTime:null,
+      selectedDate:null,
+      selectedTime: {
+        start:null,
+        end:null
+      },
       options: [
         {
           label: 'Personal Care Services',
@@ -275,6 +271,36 @@ export default {
         }
       ],
       times:[],
+      startTimes: [
+       "9:00 am",
+        "9:30 AM",
+        "0:00 am",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM"
+      ],
+      endTimes: [
+       "9:00 am",
+        "9:30 AM",
+        "0:00 am",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM",
+        "0:30 AM"
+      ],
       time : [
         {
           label: '9:00',
@@ -334,23 +360,16 @@ export default {
   },
   mounted() {
     AOS.init()
-    Vue.dialog.registerComponent(VIEW_NAME, CustomView);
+    // Vue.dialog.registerComponent(VIEW_NAME, CustomView);
 
-    this.$dialog.alert('dsdsa', {
-      view: VIEW_NAME, // can be set globally too
-      html: true,
-      animation: 'fade',
-      backdropClose: true
-    });
+    // this.$dialog.alert('dsdsa', {
+    //   view: VIEW_NAME, // can be set globally too
+    //   html: true,
+    //   animation: 'fade',
+    //   backdropClose: true
+    // });
     
   },
-  created() {
-  },
-  methods: {
-     dropdownShouldOpen(VueSelect) {
-      return false
-    },
-  }
 }
 </script>
 <style>
