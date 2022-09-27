@@ -23,17 +23,17 @@
                 </div>
                 <div class="quote-date">
                     <h2>Date</h2>
-                     <VDatePicker v-model="selectedTime" :inline="true" class="home-datepicker"  valueType="format">
+                     <VDatePicker :inline="true" class="home-datepicker"  valueType="format">
                         <template v-slot:input="item">
                         <label class="date-lbl">Date</label>
-                        <div class="selected-date">{{selectedTime ? selectedTime : 'Select Date'}}</div>
+                        <div class="selected-date"></div>
                         </template>
                     </VDatePicker>
                 </div>
                 <div class="quote-time">
                     <h2>Time</h2>
                     <VSelect class="time-picker" placeholder="Select Time"> 
-                        <template>
+                        <template v-slot:no-options="{ search, searching, loading }">
                             <div class="time-options-container">
                             <div>
                                 <h4>Start Time</h4>
@@ -53,8 +53,21 @@
                                 <li><button>10:30 AM</button></li>
                                 </ul>
                             </div>
+                            </div>
+                        </template>
+                        <template v-slot:list-footer="footer">
+                            <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+                            <div class="time-footer">
+                                <button>Reset</button>
+                                <button>Done</button>
+                            </div>
+                        </template>
+                    </VSelect>
+                    <VSelect class="time-picker" placeholder="Select Time"> 
+                        <template v-slot:no-options="{ search, searching, loading }">
+                            <div class="time-options-container">
                             <div>
-                                <h4>End Time</h4>
+                                <h4>Start Time</h4>
                                 <ul class="time-options">
                                 <li><button>9:00 am</button></li>
                                 <li><button>9:30 AM</button></li>
@@ -73,7 +86,15 @@
                             </div>
                             </div>
                         </template>
+                        <template v-slot:list-footer="footer">
+                            <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+                            <div class="time-footer">
+                                <button>Reset</button>
+                                <button>Done</button>
+                            </div>
+                        </template>
                     </VSelect>
+                    <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
                 </div>  
             </div>
 
@@ -94,6 +115,12 @@ export default {
       id: 'get-quote-page',
     },
   },
+
+//   methods: {
+//      dropdownShouldOpen(VueSelect) {
+//       return false
+//     },
+//   }
 }
 </script>
 
