@@ -150,193 +150,30 @@
     }
   }
 
-  .time-picker {
 
-    #vs4__listbox {
-      top: 50px;
-    }
 
-    .time-selected {
-      display: flex;
-      width: 100%;
+  // .time-picker {
+  //   .time-picker-cont {
+  //     display: flex;
 
-      div {
-        width: 50%;
-        text-align: left;
+  //     .start-cont {
+  //       width: 50%;
 
-        span {
-          font-size: $fontSize300;
-          line-height: $fontSize500;
-          color: $invertedColor;
-          font-weight: $fontWeightSemiBold;
-        }
+  //       button {
+  //         font-size: $fontSize400;
+  //         line-height: 1.875rem;
+  //         color: $invertedColor;
+  //         font-weight: $fontWeightRegular;
+  //         background-color: transparent;
+  //         border: 1px solid $primaryColor;
+  //       }
+  //     }
 
-        p {
-          font-size: $fontSize400;
-          line-height: 1.875rem;
-          color: $invertedColor;
-          font-weight: $fontWeightRegular;
-        }
-      }
-    }
-
-    .time-title {
-      display: flex;
-      width: 100%;
-      padding: 12px 20px;
-
-      li {
-        display: block;
-        width: 50%;
-        font-size: $fontSize400;
-        line-height: 1.875rem;
-        color: $invertedColor;
-        font-weight: $fontWeightSemiBold;
-      }
-    }
-
-    .time-footer {
-      display: flex;
-      gap: 20px;
-      padding: 12px 20px;
-      margin-top: 10px;
-
-      p {
-        width: 44%;
-        font-size: $fontSize200;
-        line-height: $fontSize400;
-        color: $invertedColor;
-        font-weight: $fontWeightRegular;
-      }
-
-      div {
-        width: 50%;
-        display: flex;
-        gap: 10px;
-
-        button {
-
-          &:first-child {
-            font-size: $fontSize250;
-            color: $invertedColor;
-            font-weight: $fontWeightSemiBold;
-            background: #ECECEC;
-            border: none;
-            padding: 8px 0;
-            border-radius: 6px;
-            width: 50%;
-          }
-        
-          &:last-child {
-            font-size: $fontSize250;
-            color: $normalColor;
-            font-weight: $fontWeightSemiBold;
-            background: $accentColor100;
-            border: none;
-            padding: 8px 0;
-            border-radius: 6px;
-            width: 50%;
-          }
-        }
-      }
-    }
-
-    #vs2__combobox {
-      padding-left: 14%;
-      height: 70px;
-      background: #F5F5F5;
-      border: 1px solid #E9E9E9;
-      border-radius: 6px;
-    }
-
-    #vs2__listbox {
-      top: 72px;
-      width: 540px;
-      border-radius: 6px;
-
-      .vs__no-options {
-
-        text-align: left;
-        height: auto;
-        max-height: inherit;
-
-        .time-options-container {
-  
-          display: flex;
-          height: auto;
-          max-height: inherit;
-          padding: 10px 20px;
-  
-          div {
-            width: 50%;
-  
-            h4 {
-              text-align: left;
-              margin-bottom: 10px;
-              font-size: $fontSize400;
-              line-height: 1.875rem;
-              font-weight: $fontWeightSemiBold;
-            }
-  
-            ul {
-              text-align: left;
-              padding: 0;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              flex-wrap: wrap;
-              height: 100%;
-  
-              li {
-                list-style: none;
-                margin-bottom: 10px;
-  
-                button {
-                  font-size: $fontSize400;
-                  line-height: 1.875rem;
-                  color: $invertedColor;
-                  font-weight: $fontWeightRegular;
-                  background-color: transparent;
-                  border: 1px solid $primaryColor;
-                  border-radius: 6px;
-                  cursor: pointer;
-
-                  &:hover {
-                    background-color: $accentColor100;
-                    color: $normalColor;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-    }
-  }
-
-  .time-picker {
-    .time-picker-cont {
-      display: flex;
-
-      .start-cont {
-        width: 50%;
-
-        button {
-          font-size: $fontSize400;
-          line-height: 1.875rem;
-          color: $invertedColor;
-          font-weight: $fontWeightRegular;
-          background-color: transparent;
-          border: 1px solid $primaryColor;
-        }
-      }
-
-      .end-cont {
-        width: 50%;
-      }
-    }
-  }
+  //     .end-cont {
+  //       width: 50%;
+  //     }
+  //   }
+  // }
 
 }
 
@@ -1033,11 +870,56 @@
 
     .mx-datepicker-main {
       background-color: transparent;
-      
-      .mx-calendar-panel-date {
-        width: 100%;
-        background-color: transparent;
+
+      .mx-datepicker-content {
+        .mx-datepicker-body {
+          .mx-calendar-panel-date {
+            width: 100%;
+            background-color: transparent;
+
+            .mx-calendar-header {
+              padding-right: 5%;
+              .mx-calendar-header-label {
+                button {
+                  font-size: $fontSize500;
+                  line-height: $fontSize550;
+
+                }
+              }
+            }
+
+            .mx-calendar-content {
+              .mx-table-date {
+                thead {
+                  tr {
+                    th {
+                      font-size: $fontSize200;
+                      line-height: $fontSize400;
+                      color: $accentColor100;
+                      font-weight: $fontWeightSemiBold;
+                    }
+                  }
+                }
+
+                tbody {
+                  .mx-date-row {
+                    td {
+                      height: 40px;
+                      div {
+                        font-size: $fontSize500;
+                        line-height: $fontSize550;
+                        font-weight: $fontWeightRegular;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+        }
       }
+      
 
     }
   }
@@ -1045,8 +927,8 @@
   h1 {
     font-size: $fontSize550;
     line-height: $fontSize700;
-    margin-top: 1%;
-    margin-bottom: 2%;
+    margin-top: 3%;
+    margin-bottom: 5%;
   }
 
   h2 {
@@ -1085,6 +967,17 @@
 
     .quote-time {
       width: 30%;
+
+      .time-picker {
+        margin-bottom: 20px;
+      }
+
+      .central-time {
+        font-size: $fontSize200;
+        line-height: $fontSize400;
+        color: $invertedColor;
+        font-weight: $fontWeightRegular;
+      }
     }
   }
 
@@ -1093,5 +986,6 @@
     justify-content: end;
     gap: 15px;
     flex-direction: row-reverse;
+    margin-top: 15%;
   }
 }

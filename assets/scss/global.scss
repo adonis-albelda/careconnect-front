@@ -292,7 +292,7 @@ section {
     padding-top: 5%;
   }
 
-  .v-select {
+  .list-services {
     width: 30%;
 
     @media(max-width: 480px) {
@@ -308,6 +308,13 @@ section {
       }
     }
   }
+
+  .home-datepicker,
+  .time-picker {
+    width: 20%;
+  }
+
+
 
   #vs1__listbox {
     margin-top: .2rem !important;
@@ -489,6 +496,7 @@ section {
       > img {
         width: 100%;
         margin-bottom: 1rem;
+        border-radius: 6px;
 
         @media(max-width: 480px) {
           display: none;
@@ -576,7 +584,11 @@ section {
     }
 
     button {
-      width: 100%;
+
+      @media(max-width: 480px) {
+        width: 100%;
+      }
+  
     }
 
 
