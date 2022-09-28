@@ -8,7 +8,7 @@
         </div>
       </div>
     </section>
-    <div class="booking-options container">
+    <div class="booking-options">
       <VSelect :clearable="false" v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
