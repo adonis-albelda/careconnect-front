@@ -1,5 +1,8 @@
 <template>
   <div class="contact-wrapper">
+    <div class="contact-img">
+      <img src="/images/paper-plane.png" />
+    </div>
     <div class="contact-banner"></div>
     <div class="container">
       <div class="contact-inner-cont">
@@ -21,9 +24,6 @@
               ><img src="/images/icons/location-white.svg" /> 120 Shelborne
               North York On. Canada M6B 1M7</a
             >
-          </div>
-          <div class="contact-img">
-            <img src="/images/paper-plane.png" />
           </div>
         </div>
         <ValidationObserver v-slot="{ handleSubmit, reset }">
@@ -209,6 +209,10 @@ export default {
   }
 }
 
+.contact-wrapper {
+  position: relative;
+}
+
 .contact-wrapper .container {
   @media (max-width: 1350px) {
     max-width: 991px;
@@ -262,8 +266,17 @@ export default {
 }
 
 .contact-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   @media (max-width: 1440px) {
     width: 500px;
+  }
+  @media (max-width: 1200px) {
+    width: 400px;
+  }
+  @media (max-width: 1024px) {
+    width: 300px;
   }
   @media (max-width: 800px) {
     display: none;
