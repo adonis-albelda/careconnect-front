@@ -137,13 +137,11 @@ button {
 .book-btn {
   text-align: center;
 
-  a {
+  button {
     font-size: $fontSize300;
     line-height: $fontSize500;
     text-decoration: none;
-
-    &:first-child {
-      display: flex;
+    display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
@@ -154,8 +152,14 @@ button {
       color: #fff;
       background: #183891;
       border-radius: 6px;
+      border: none;
       font-weight: $fontWeightSemiBold;
-    }
+  }
+
+  a {
+    font-size: $fontSize300;
+    line-height: $fontSize500;
+    text-decoration: none;
 
     &:last-child {
       display: flex;

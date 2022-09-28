@@ -99,7 +99,7 @@
             </div>
 
             <div class="book-btn">
-                <a href="#">Get A Quote</a>
+                <button>Get A Quote</button>
                 <a href="#">cancel</a>
             </div>
         </div>
