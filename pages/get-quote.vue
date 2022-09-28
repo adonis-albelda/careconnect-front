@@ -1,7 +1,7 @@
 <template>
     <div class="get-quote-wrapper">
         <div class="container">
-            <a class="back" href="#"><img src="/images/arrow-left.png"> View all services</a>
+            <a class="back" @click.prevent="goTo('services')"><img src="/images/arrow-left.png"> View all services</a>
         
             <h1>Get a Quote</h1>
 
@@ -23,7 +23,7 @@
                 </div>
                 <div class="quote-date">
                     <h2>Date</h2>
-                     <VDatePicker :inline="true" class="home-datepicker"  valueType="format">
+                     <VDatePicker range :inline="true" class="home-datepicker"  valueType="format">
                         <template v-slot:input="item">
                         <label class="date-lbl">Date</label>
                         <div class="selected-date"></div>
