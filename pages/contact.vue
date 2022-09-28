@@ -151,3 +151,128 @@ export default {
   },
 }
 </script>
+
+<style scooped lang="scss">
+// .main-nav {
+//   display: none;
+// }
+.contact-col-1 {
+  // position: relative;
+  @media (max-width: 1100px) {
+    padding-right: 30px !important;
+  }
+  @media (max-width: 800px) {
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  h2 {
+    @media (max-width: 800px) {
+      text-align: center;
+    }
+    @media (max-width: 500px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  p {
+    @media (max-width: 500px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .contacts {
+    flex-direction: column;
+
+    a {
+      @media (max-width: 800px) {
+        justify-content: center;
+      }
+      @media (max-width: 500px) {
+        font-size: 1.1px;
+      }
+    }
+  }
+}
+
+.input-inner-cont {
+  justify-content: space-between;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+}
+
+.input-inner-cont > div {
+  @media (max-width: 500px) {
+    width: 100% !important;
+  }
+}
+
+.contact-wrapper .container {
+  @media (max-width: 1350px) {
+    max-width: 991px;
+  }
+  @media (max-width: 1100px) {
+    max-width: 767px;
+  }
+  @media (max-width: 800px) {
+    max-width: 550px;
+  }
+  @media (max-width: 600px) {
+    max-width: 90%;
+  }
+}
+
+.newsletter-sec .container {
+  @media (max-width: 1350px) {
+    max-width: 991px;
+  }
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  @media (max-width: 1100px) {
+    max-width: 767px;
+  }
+  @media (max-width: 800px) {
+    max-width: 550px;
+  }
+  @media (max-width: 600px) {
+    max-width: 90%;
+  }
+
+  h2 {
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.contact-inner-cont > span {
+  @media (max-width: 1350px) {
+    width: 50%;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+
+.contact-img {
+  @media (max-width: 1440px) {
+    width: 500px;
+  }
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.contact-wrapper .contact-inner-cont {
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+</style>
