@@ -41,7 +41,11 @@
                   <p>20+ Care givers</p>
                 </div>
                 <div class="book-btn">
+<<<<<<< HEAD
                   <a @click.prevent="goTo('get-quote', {}, {service: 'personal-service'})">Get A Quote</a>
+=======
+                  <button>Get A Quote</button>
+>>>>>>> origin/michael-front
                   <a href="#">Know more</a>
                 </div>
               </div>
@@ -87,7 +91,11 @@
                   <p>20+ Practical Nurses</p>
                 </div>
                 <div class="book-btn">
+<<<<<<< HEAD
                   <a @click.prevent="goTo('get-quote', {}, {service: 'complex-service'})">Get A Quote</a>
+=======
+                  <button>Get A Quote</button>
+>>>>>>> origin/michael-front
                   <a href="#">Know more</a>
                 </div>
               </div>
@@ -143,7 +151,11 @@
                   <p>20+ Practical Nurses</p>
                 </div>
                 <div class="book-btn">
+<<<<<<< HEAD
                   <a @click.prevent="goTo('get-quote', {}, {service: 'home-service'})">Get A Quote</a>
+=======
+                  <button>Get A Quote</button>
+>>>>>>> origin/michael-front
                   <a href="#">Know more</a>
                 </div>
               </div>

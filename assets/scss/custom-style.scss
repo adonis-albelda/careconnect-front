@@ -97,7 +97,7 @@
       }
     }
 
-    #vs1__combobox {
+    .vs__dropdown-toggle{
       height: 70px;
       background: #F5F5F5;
       border: 1px solid #E9E9E9;
@@ -1036,6 +1036,10 @@
   padding-top: 2%;
   padding-bottom: 5%;
 
+  @media(max-width: 480px) {
+    padding-top: 20%;
+  }
+
   .mx-datepicker-inline {
     width: 100%;
 
@@ -1114,8 +1118,17 @@
     display: flex;
     gap: 40px;
 
+    @media(max-width: 480px) {
+      display: block;
+    }
+
     .quote-service {
       width: 30%;
+
+      @media(max-width: 480px) {
+        width: 100%;
+        margin-bottom: 15%;
+      }
 
       div {
         position: relative;
@@ -1134,10 +1147,19 @@
 
     .quote-date {
       width: 40%;
+
+      @media(max-width: 480px) {
+        width: 100%;
+        margin-bottom: 15%;
+      }
     }
 
     .quote-time {
       width: 30%;
+
+      @media(max-width: 480px) {
+        width: 100%;
+      }
 
       .time-picker {
         margin-bottom: 20px;
@@ -1171,6 +1193,11 @@
 .dg-container {
   .dg-content-cont {
     top: 40%;
+
+    @media(max-width: 480px) {
+      top: 50%;
+    }
+
     .dg-main-content {
       max-width: 650px;
       padding: 0;
