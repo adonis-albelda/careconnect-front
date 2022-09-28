@@ -1,5 +1,14 @@
 @use '../abstracts' as *;
 
+button {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: all ease 0.3s;
+  }
+}
+
 .btn {
   font-weight: $fontWeightSemiBold;
   height: 60px;

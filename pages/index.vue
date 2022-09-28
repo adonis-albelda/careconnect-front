@@ -30,10 +30,12 @@
           >
         </template>
       </VSelect>
-      <VDatePicker v-model="selectedDate" class="home-datepicker"  valueType="format">
+      <VDatePicker range v-model="selectedDates" :editable="false" class="home-datepicker"  valueType="format">
         <template v-slot:input="item">
           <label class="date-lbl">Date</label>
-          <div class="selected-date">{{selectedDate ? selectedDate : 'Select Date'}}</div>
+          <div class="selected-date">
+            {{selectedDates.length ? `${selectedDates[0]}-${selectedDates[1]}` : 'Select Dates'}}
+          </div>
         </template>
         <template class="datepicker-btns" v-slot:footer="item">
           <button>CANCEL</button>
@@ -95,7 +97,7 @@
         </template>
       </VSelect>
       <div>
-        <button class="btn accent full">Get A Quote</button>
+        <button class="btn accent full" @click="createBookingQuote">Get A Quote</button>
       </div>
     </div>
     <section class="services-sec">
@@ -222,7 +224,7 @@
 <script>
 import Vue from 'vue';
 import CustomView from '../components/ui/QuoteDialog.vue';
-const VIEW_NAME = 'my-unique-view-name';
+const QUOTE_EMAIL = 'quote-dialog-name';
 
 import AOS from 'aos'
 export default {
@@ -233,8 +235,9 @@ export default {
       selectedService: {
         label: 'Select Service',
         description: 'pleae select service',
+        default:true
       },
-      selectedDate:null,
+      selectedDates:[],
       selectedTime: {
         start:null,
         end:null
@@ -272,34 +275,32 @@ export default {
       ],
       times:[],
       startTimes: [
-       "9:00 am",
+       "9:00 AM",
         "9:30 AM",
-        "0:00 am",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM"
+        "10:00 AM",
+        "10:30 AM",
+        "11:00 AM",
+        "11:30 AM",
+        "12:00 PM",
+        "12:30 PM",
+        "2:00 PM",
+        "2:30 PM",
+        "3:00 PM",
+        "3:30 PM",
       ],
       endTimes: [
-       "9:00 am",
+        "9:00 AM",
         "9:30 AM",
-        "0:00 am",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM"
+        "10:00 AM",
+        "10:30 AM",
+        "11:00 AM",
+        "11:30 AM",
+        "12:00 PM",
+        "12:30 PM",
+        "2:00 PM",
+        "2:30 PM",
+        "3:00 PM",
+        "3:30 PM",
       ],
       time : [
         {
@@ -360,16 +361,38 @@ export default {
   },
   mounted() {
     AOS.init()
-    Vue.dialog.registerComponent(VIEW_NAME, CustomView);
+    Vue.dialog.registerComponent(QUOTE_EMAIL, CustomView);
 
-    this.$dialog.alert('dsdsa', {
-      view: VIEW_NAME, // can be set globally too
-      html: true,
-      animation: 'fade',
-      backdropClose: true
-    });
+      
+    // this.$dialog.alert('dsdsa', {
+    //   view: QUOTE_EMAIL, // can be set globally too
+    //   html: true,
+    //   animation: 'fade',
+    //   backdropClose: true
+    // });
     
   },
+  methods :  {
+    createBookingQuote() {
+      if (this.selectedService.default || !this.selectedTime.end || !this.selectedTime.start ||
+        this.selectedDates.length < 2)  {
+          alert('Please select all fields')
+          return
+        }
+
+        
+      this.$dialog.alert('', {
+        view: QUOTE_EMAIL, // can be set globally too
+        html: true,
+        animation: 'fade',
+        backdropClose: true,
+        context: this
+      }) .catch(function (e) {
+        console.log(e)
+        // This will be triggered when user clicks on cancel
+      });
+    }
+  }
 }
 </script>
 <style>

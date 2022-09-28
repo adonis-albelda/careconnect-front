@@ -19,9 +19,9 @@ extend('max', {
   params: ['length']
 });
 
+extend('required', required);
 extend('email', email);
 extend('digits', digits);
-extend('required', required);
 extend('confirmed', confirmed);
 extend('min_value', min_value);
 extend('max_value', max_value);

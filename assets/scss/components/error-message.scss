@@ -1,26 +1,24 @@
 @use '../abstracts' as *;
 
 .error-msg {
+  input {
+    border: 1px solid red !important;
+  }
 
-    input {
-        border: 1px solid red;
-    }
-
-    span {
-        font-size: $fontSize100;
-        color: red;
-    }
+  span {
+    font-size: $fontSize100;
+    color: red;
+  }
 }
 
 .selected-quote {
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 3px;
-        background-color: $accentColor100;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background-color: $accentColor100;
+  }
 }

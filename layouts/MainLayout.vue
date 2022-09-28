@@ -28,7 +28,6 @@
         </li>
       </ul>
     </nav>
-
     <div class="mobile-header">
       <nav>
         <div>
@@ -42,7 +41,7 @@
 
     <div v-if="isShow" class="sidebar-menu">
       <img @click="closeSidebar()" class="close-sidebar" src="/images/close-icon.png">
-      <ul class="login-row">
+      <ul class="login-row" @click="goTo('login')">
         <li>
           <p><img src="/images/mobile-profile.png"> Login</p>
         </li>
@@ -52,13 +51,13 @@
       </ul>
 
       <ul class="menus">
-        <li class="mobile-menu-active">
+        <li class="mobile-menu-active" @click="goTo('index')">
           <p>home</p>
         </li>
-        <li>
+        <li @click="goTo('services')">
           <p>services</p>
         </li>
-        <li>
+        <li @click="goTo('contact')">
           <p>contact us</p>
         </li>
       </ul>
