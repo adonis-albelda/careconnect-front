@@ -35,7 +35,7 @@
 
     .container {
 
-      @media(max-width: 1200px) {
+      @media(max-width: 1400px) {
         padding-left: 25px;
         padding-right: 25px;
       }
@@ -71,6 +71,15 @@
         color: $invertedColor;
         font-weight: $fontWeightSemiBold;
         text-align: left;
+
+        @media(max-width: 1400px) {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 1.125rem;
+        }
       }
 
       span {
@@ -154,6 +163,10 @@
       line-height: $fontSize500;
       color: $invertedColor;
       font-weight: $fontWeightSemiBold;
+
+      @media(max-width: 1400px) {
+        font-size: 0.875rem;
+      }
     }
 
     .selected-date {
@@ -164,6 +177,15 @@
       line-height: 1.875rem;
       color: $invertedColor;
       font-weight: $fontWeightRegular;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media(max-width: 1400px) {
+        font-size: 1.125rem;
+      }
     }
 
     .mx-icon-calendar {
@@ -171,6 +193,10 @@
       left: 16px;
       right: auto;
       top: 18px;
+
+      @media(max-width: 1400px) {
+        left: 7px;
+      }
 
       svg {
         fill: $invertedColor;
@@ -736,12 +762,29 @@
   padding-top: 1%;
   padding-bottom: 4%;
 
+  @media(max-width: 991px) {
+    padding-top: 3%;
+    padding-bottom: 6%;
+  }
+
+  @media(max-width: 767px) {
+    padding-top: 13%;
+  }
+
+  @media(max-width: 600px) {
+    padding-top: 16%;
+  }
+
   .container {
 
     .personalcare-banner {
 
       margin-top: 2%;
       margin-bottom: 3%;
+
+      @media(max-width: 480px) {
+        margin-top: 4%;
+      }
 
       img {
         border-radius: 6px;
@@ -751,9 +794,23 @@
     .personal-inner-cont {
       display: flex;
       margin-top: 2%;
+
+      @media(max-width: 991px) {
+        display: block;
+      }
+
       .p-col-1 {
 
         width: 30%;
+
+        @media(max-width: 991px) {
+          width: 60%;
+        }
+
+        @media(max-width: 600px) {
+          width: 100%;
+        }
+
         .pc-price {
           display: flex;
           gap: 10px;
@@ -765,6 +822,10 @@
             color: $accentColor100;
             font-weight: $fontWeightSemiBold;
             text-decoration: none;
+
+            @media(max-width: 480px) {
+              font-size: $fontSize300;
+            }
           }
 
           span {
@@ -777,12 +838,25 @@
         h1 {
           font-size: $fontSize600;
           line-height: $fontSize700;
+
+          @media(max-width: 480px) {
+            font-size: 1.875rem;
+          }
         }
       }
 
       .p-col-2 {
 
         width: 70%;
+
+        @media(max-width: 991px) {
+          width: 100%;
+          margin-top: 30px;
+        }
+
+        @media(max-width: 480px) {
+          margin-top: 15px;
+        }
 
         .service-desc {
           margin-bottom: 3%;
@@ -791,6 +865,11 @@
             line-height: $fontSize550;
             color: $invertedColor;
             font-weight: $fontWeightLight;
+
+            @media(max-width: 480px) {
+              font-size: $fontSize300;
+              line-height: 1.563rem;
+            }
           }
         }
 
@@ -800,6 +879,13 @@
             line-height: $fontSize550;
             color: $invertedColor;
             font-weight: $fontWeightRegular;
+
+            @media(max-width: 480px) {
+              font-size: $fontSize350;
+              line-height: 1.563rem;
+              margin-top: 30px;
+              margin-bottom: 20px;
+            }
           }
 
           ul {
@@ -814,6 +900,11 @@
               font-weight: $fontWeightLight;
               list-style-type: decimal;
               padding-left: 10px;
+
+              @media(max-width: 480px) {
+                font-size: $fontSize300;
+                line-height: $fontSize400;
+              }
 
               &::marker {
                 font-size: $fontSize350;

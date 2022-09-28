@@ -8,7 +8,7 @@
         </div>
       </div>
     </section>
-    <div class="booking-options container">
+    <div class="booking-options">
       <VSelect :clearable="false" v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
@@ -274,32 +274,32 @@ export default {
       startTimes: [
        "9:00 am",
         "9:30 AM",
-        "0:00 am",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM"
+        "10:00 am",
+        "10:30 AM",
+        "11:00 AM",
+        "11:30 AM",
+        "12:00 PM",
+        "12:30 PM",
+        "02:00 PM",
+        "02:30 PM",
+        "03:00 PM",
+        "03:30 PM",
+        "04:00 PM"
       ],
       endTimes: [
        "9:00 am",
         "9:30 AM",
-        "0:00 am",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM",
-        "0:30 AM"
+        "10:00 am",
+        "10:30 AM",
+        "11:00 AM",
+        "11:30 AM",
+        "12:00 PM",
+        "12:30 PM",
+        "02:00 PM",
+        "02:30 PM",
+        "03:00 PM",
+        "03:30 PM",
+        "04:00 PM"
       ],
       time : [
         {
