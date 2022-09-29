@@ -147,7 +147,7 @@ export default {
       width: 250px;
     }
     @media (max-width: 450px) {
-      width: 200px;
+      width: 180px;
     }
     @media (max-width: 350px) {
       width: 150px;
@@ -156,13 +156,26 @@ export default {
 }
 .login-wrapper {
   height: 100vh;
-  @media (max-height: 900px) {
+  // @media (max-height: 900px) {
+  //   height: auto;
+  // }
+  @media (max-width: 991px) and (max-height: 820px) {
     height: auto;
+  }
+   @media (max-width: 991px) and (min-height: 821px) {
+    height: 100vh;
   }
 }
 .login-form {
   @media (max-height: 900px) {
     padding-bottom: 65px;
+  }
+
+  .login-btn {
+    @media (max-width: 767px) {
+      height: 45px;
+      font-size: 18px;
+    }
   }
 }
 .login-wrapper .login-col-1 {
@@ -205,16 +218,16 @@ export default {
 
     h2 {
       @media (max-width: 1300px) {
-        line-height: 1.1;
+        line-height: 1.3;
       }
       @media (max-width: 500px) {
-        font-size: 1.5rem;
+        font-size: 24px;
         margin-bottom: 10px;
       }
     }
     p {
       @media (max-width: 450px) {
-        font-size: 1.2rem;
+        font-size: 17px;
         line-height: 1.2;
       }
     }
@@ -277,5 +290,25 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.login-form input {
+  border: 1px solid #aaa;
+}
+
+.login-wrapper .login-col-2 .login-menu {
+  margin-top: 0 !important;
+  padding: 30px 0;
+}
+
+.login-form input {
+  @media (max-width: 991px) {
+    height: 50px;
+    font-size: 17px;
+  }
+}
+
+.login-form-checkinput{
+  height: auto !important;
 }
 </style>

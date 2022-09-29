@@ -14,16 +14,22 @@
           </p>
 
           <div class="contacts">
-            <a href="#"
-              ><img src="/images/icons/mail-white.svg" /> admin@ucarecon.ca</a
-            >
-            <a href="#"
-              ><img src="/images/icons/smartphone-white.svg" /> 416-262-4071</a
-            >
-            <a href="#"
-              ><img src="/images/icons/location-white.svg" /> 120 Shelborne
-              North York On. Canada M6B 1M7</a
-            >
+            <a href="#">
+              <img class="big-screen" src="/images/icons/mail-white.svg" />
+              <img class="small-screen" src="images/icons/mail.svg" alt="for health" />
+              admin@ucarecon.ca
+            </a>
+            <a href="#">
+              <img class="big-screen" src="/images/icons/smartphone-white.svg" />
+              <img class="small-screen" src="images/icons/smartphone.svg" alt="for health" />
+              416-262-4071
+            </a>
+            <a href="#">
+              <img class="big-screen" src="/images/icons/location-white.svg" />
+              <img class="small-screen" src="images/icons/location_pin.svg" alt="for health" />
+              120 Shelborne
+              North York On. Canada M6B 1M7
+            </a>
           </div>
         </div>
         <ValidationObserver v-slot="{ handleSubmit, reset }">
@@ -168,29 +174,61 @@ export default {
 
   h2 {
     @media (max-width: 800px) {
-      text-align: center;
+      color: #000 !important;
     }
     @media (max-width: 500px) {
-      font-size: 1.8rem;
+      font-size: 24px !important;
+      margin-bottom: 0 !important;
     }
   }
 
   p {
+    @media (max-width: 800px) {
+      margin-bottom: 15px !important;
+      color: #000 !important;
+    }
     @media (max-width: 500px) {
-      font-size: 1.2rem;
+      font-size: 17px;
     }
   }
 
   .contacts {
     flex-direction: column;
+    @media (max-width: 800px) {
+      align-items: flex-start;
+    }
+    @media (max-width: 767px) {
+      gap: 7px !important;
+    }
 
     a {
       @media (max-width: 800px) {
         justify-content: center;
+        color: #000 !important;
       }
       @media (max-width: 500px) {
-        font-size: 1.1px;
+        font-size: 17px !important;
       }
+
+      img.big-screen {
+        @media (max-width: 800px) {
+          display: none;
+        }
+      }
+      img.small-screen {
+        display: none;
+        @media (max-width: 800px) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+form .contact-col-1 .input-cont {
+  input {
+    @media (max-width: 800px) {
+      height: 45px;
     }
   }
 }
@@ -211,6 +249,9 @@ export default {
 
 .contact-wrapper {
   position: relative;
+  @media (max-width: 800px) {
+    background: #fff;
+  }
 }
 
 .contact-wrapper .container {
@@ -249,9 +290,22 @@ export default {
 
   h2 {
     @media (max-width: 600px) {
-      font-size: 1.5rem;
+      font-size: 20px;
       margin-bottom: 5px;
     }
+  }
+}
+
+.newsletter-sec .btn {
+  @media (max-width: 800px) {
+   height: 50px; 
+  }
+}
+
+.newsletter-sec .email-box input {
+  @media (max-width: 800px) {
+    height: 50px;
+    font-size: 17px;
   }
 }
 
@@ -288,4 +342,54 @@ export default {
     flex-direction: column;
   }
 }
+
+.contact-col-2 .text-box {
+  @media (max-width: 800px) {
+   height: 50px !important;
+   border: 1px solid #aaa;
+   font-size: 18px;;
+  }
+  &::placeholder {
+    @media (max-width: 800px) {
+      color: #b9b4b4 !important;
+    }
+  }
+  &:-ms-input-placeholder {
+    @media (max-width: 800px) {
+      color: #b9b4b4 !important;
+    }
+  }
+  &::-ms-input-placeholder {
+    @media (max-width: 800px) {
+      color: #b9b4b4 !important;
+    }
+  }
+}
+
+.contact-col-2 {
+  label {
+    @media (max-width: 800px) {
+      color: #000 !important;
+    }
+  }
+  .send-btn {
+    @media (max-width: 800px) {
+      background: #183891;
+      color: #fff;
+      font-size: 18px;
+      height: 45px;
+    }
+  }
+
+  textarea {
+    @media (max-width: 800px) {
+      padding-top: 10px;
+    }
+  }
+}
+
+.newsletter-sec > div p {
+    font-size: 14px;
+}
+
 </style>

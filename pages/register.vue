@@ -24,6 +24,10 @@
         <a href="#">Terms & conditions</a>
       </div>
 
+      <div class="login-header-logo">
+        <img src="/images/login-logo.png" alt="" />
+      </div>
+
       <div class="login-cont">
         <h2>Sign Up to Care Connect</h2>
         <!-- <p>Create a new account</p> -->
@@ -124,3 +128,190 @@ export default {
   },
 }
 </script>
+
+<style scoped lang="scss">
+.login-header-logo {
+  display: none;
+  @media (max-width: 991px) {
+    display: block;
+    padding: 70px 50px;
+    background-image: url(/images/login-img.png);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(24, 56, 145, 0.9);
+  }
+  @media (max-width: 450px) {
+    padding: 50px;
+  }
+
+  img {
+    @media (max-width: 600px) {
+      width: 250px;
+    }
+    @media (max-width: 450px) {
+      width: 180px;
+    }
+    @media (max-width: 350px) {
+      width: 150px;
+    }
+  }
+}
+.login-wrapper {
+  height: 100vh;
+  // @media (max-height: 900px) {
+  //   height: auto;
+  // }
+  @media (max-width: 991px) and (max-height: 680px) {
+    height: auto;
+  }
+   @media (max-width: 991px) and (min-height: 681px) {
+    height: 100vh;
+  }
+}
+.login-form {
+  @media (max-height: 900px) {
+    padding-bottom: 65px;
+  }
+
+  .login-btn {
+    @media (max-width: 767px) {
+      height: 45px;
+      font-size: 18px;
+    }
+  }
+}
+.login-wrapper .login-col-1 {
+  height: auto;
+  @media (max-width: 1500px) {
+    width: 50%;
+  }
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+.login-wrapper .login-col-2 {
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1500px) {
+    width: 50%;
+  }
+  @media (max-height: 900px) {
+    height: auto;
+  }
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+
+  .login-cont {
+    margin-top: auto !important;
+    @media (max-width: 1200px) {
+      width: 80%;
+    }
+    @media (max-width: 991px) {
+      width: 90%;
+      max-width: 650px;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+    @media (max-width: 450px) {
+      padding: 30px 0;
+    }
+
+    h2 {
+      @media (max-width: 1300px) {
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+      @media (max-width: 500px) {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+    }
+    p {
+      @media (max-width: 450px) {
+        font-size: 17px;
+        line-height: 1.2;
+      }
+    }
+
+    .login-socmed {
+      @media (max-width: 991px) {
+        display: flex;
+        justify-content: space-between;
+      }
+      @media (max-width: 570px) {
+        flex-direction: column;
+      }
+
+      a {
+        @media (max-width: 991px) {
+          width: 48%;
+        }
+        @media (max-width: 570px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.login-wrapper .login-col-1 .login-title {
+  @media (max-width: 1300px) {
+    width: 450px;
+  }
+}
+
+.login-wrapper .login-col-2 .login-menu {
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+.login-wrapper .login-col-2 .login-cont .login-copyright {
+  @media (max-width: 991px) {
+    display: flex;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: 20px;
+    justify-content: center;
+    width: 90%;
+    text-align: center;
+  }
+  p {
+    @media (max-width: 520px) {
+      text-align: center;
+    }
+    @media (max-width: 450px) {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.login-mobile-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.login-form input {
+  border: 1px solid #aaa;
+}
+
+.login-wrapper .login-col-2 .login-menu {
+  margin-top: 0 !important;
+  padding: 30px 0;
+}
+
+.login-form input {
+  @media (max-width: 991px) {
+    height: 50px;
+    font-size: 17px;
+  }
+}
+
+.login-form-checkinput{
+  height: auto !important;
+}
+</style>
