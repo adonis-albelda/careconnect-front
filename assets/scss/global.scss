@@ -125,6 +125,10 @@ section {
           align-items: center;
           justify-content: center;
           gap: 15px;
+
+          @media(max-width: 480px) {
+            font-size: 0.938rem;
+          }
         }
       }
     }
@@ -145,6 +149,10 @@ section {
           gap: 15px;
           text-transform: uppercase;
           padding: 20px 0;
+
+          @media(max-width: 480px) {
+            font-size: 0.938rem;
+          }
       }
 
       .mobile-menu-active {
@@ -284,7 +292,7 @@ section {
 
       h1 {
         @media(max-width: 480px) {
-          font-size: 2.5rem;
+          font-size: 1.75rem;
           line-height: 43px;
         }
       }
@@ -294,8 +302,9 @@ section {
         margin-top: 1rem;
 
         @media(max-width: 480px) {
-          font-size: $fontSize300;
-          line-height: $fontSize500;
+          font-size: 0.75rem;
+          line-height: 1rem;
+          margin-top: 5px;
         }
       }
     }
@@ -352,6 +361,10 @@ section {
       padding: 0.2rem 1rem;
       border-radius: 6px !important;
 
+      @media(max-width: 480px) {
+        padding: 0.4rem 1rem;
+      }
+
       svg {
         color: $invertedColor !important;
       }
@@ -397,6 +410,10 @@ section {
       margin-bottom: 4%;
     }
 
+    @media(max-width: 480px) {
+      height: 60px;
+    }
+
     .mx-input-wrapper {
       height: 100%;
       input {
@@ -429,6 +446,11 @@ section {
       h1 {
         font-size: $fontSize550;
         line-height: $fontSize700;
+
+        @media(max-width: 480px) {
+          font-size: $fontSize500;
+          line-height: $fontSize550;
+        }
       }
 
       p {
@@ -489,6 +511,12 @@ section {
           line-height: $fontSize500;
           justify-content: center;
           margin-bottom: 1rem;
+        }
+
+        img {
+          @media(max-width: 480px) {
+            width: 16%;
+          }
         }
       }
 
@@ -551,7 +579,7 @@ section {
     }
 
     @media(max-width: 480px) {
-      font-size: $fontSize550;
+      font-size: $fontSize500;
       line-height: 30px;
       margin-bottom: 20px;
     }
@@ -618,6 +646,7 @@ section {
       @media(max-width: 480px) {
         min-width: 100%;
         padding: 0;
+        margin-bottom: 40px;
       }
       
       > img {
@@ -731,6 +760,7 @@ section {
 
       @media(max-width: 480px) {
         width: 100%;
+        height: 50px;
       }
   
     }
@@ -784,7 +814,7 @@ section {
     }
 
     @media(max-width: 480px) {
-      font-size: $fontSize550;
+      font-size: $fontSize500;
       line-height: 30px;
       margin-bottom: 28px;
     }
@@ -932,12 +962,13 @@ footer {
 
       @media(max-width: 480px) {
         margin-bottom: 20px;
+        width: 100%;
       }
 
       h3 {
         @media(max-width: 480px) {
-          font-size: $fontSize500;
-          line-height: $fontSize600;
+          font-size: $fontSize400;
+          line-height: $fontSize450;
         }
       }
 
@@ -952,7 +983,7 @@ footer {
         }
 
         @media(max-width: 480px) {
-          font-size: $fontSize250;
+          font-size: $fontSize200;
           line-height: 1.875rem;
           padding-left: 12px;
           margin-bottom: 5px;
@@ -973,7 +1004,7 @@ footer {
 
 
       @media(max-width: 480px) {
-        font-size: $fontSize100;
+        font-size: 0.625rem;
         line-height: $fontSize350;
         font-weight: $fontWeightRegular;
       }
