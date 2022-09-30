@@ -188,7 +188,7 @@ export default {
       color: #000 !important;
     }
     @media (max-width: 500px) {
-      font-size: 17px;
+      font-size: 17px !important;
     }
   }
 
@@ -207,7 +207,7 @@ export default {
         color: #000 !important;
       }
       @media (max-width: 500px) {
-        font-size: 17px !important;
+        font-size: 15px !important;
       }
 
       img.big-screen {
@@ -266,46 +266,6 @@ form .contact-col-1 .input-cont {
   }
   @media (max-width: 600px) {
     max-width: 90%;
-  }
-}
-
-.newsletter-sec .container {
-  @media (max-width: 1350px) {
-    max-width: 991px;
-  }
-  @media (max-width: 1200px) {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-  @media (max-width: 1100px) {
-    max-width: 767px;
-  }
-  @media (max-width: 800px) {
-    max-width: 550px;
-  }
-  @media (max-width: 600px) {
-    max-width: 90%;
-  }
-
-  h2 {
-    @media (max-width: 600px) {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-  }
-}
-
-.newsletter-sec .btn {
-  @media (max-width: 800px) {
-   height: 50px; 
-  }
-}
-
-.newsletter-sec .email-box input {
-  @media (max-width: 800px) {
-    height: 50px;
-    font-size: 17px;
   }
 }
 
@@ -390,6 +350,46 @@ form .contact-col-1 .input-cont {
 
 .newsletter-sec > div p {
     font-size: 14px;
+}
+
+.newsletter-sec .container {
+  @media (max-width: 1350px) {
+    max-width: 991px;
+  }
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  @media (max-width: 1100px) {
+    max-width: 767px;
+  }
+  @media (max-width: 800px) {
+    max-width: 550px;
+  }
+  @media (max-width: 600px) {
+    max-width: 90%;
+  }
+
+  h2 {
+    @media (max-width: 600px) {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.newsletter-sec .btn {
+  @media (max-width: 800px) {
+   height: 50px; 
+  }
+}
+
+.newsletter-sec .email-box input {
+  @media (max-width: 800px) {
+    height: 50px;
+    font-size: 17px;
+  }
 }
 
 </style>
