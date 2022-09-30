@@ -98,6 +98,10 @@
       padding-left: 10%;
     }
 
+    @media(max-width: 480px) {
+      height: 60px;
+    }
+
 
     .vs__selected-options {
 
@@ -126,6 +130,12 @@
             line-height: $fontSize550;
             color: $invertedColor;
             font-weight: $fontWeightRegular;
+
+
+            @media(max-width: 480px) {
+              font-size: $fontSize300;
+              line-height: $fontSize500;
+            }
           }
         }
       }
