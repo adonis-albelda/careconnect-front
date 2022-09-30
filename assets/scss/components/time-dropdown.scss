@@ -100,6 +100,7 @@
 
     @media(max-width: 480px) {
       height: 60px;
+      padding-left: 8%;
     }
 
 
@@ -112,6 +113,10 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        @media(max-width: 480px) {
+          font-size: 0.75rem;
+        }
         }
       }
 
@@ -123,6 +128,10 @@
             line-height: $fontSize500;
             color: $invertedColor;
             font-weight: $fontWeightSemiBold;
+
+            @media(max-width: 480px) {
+              font-size: $fontSize200;
+            }
           }
 
           &:last-child {
@@ -133,8 +142,8 @@
 
 
             @media(max-width: 480px) {
-              font-size: $fontSize300;
-              line-height: $fontSize500;
+              font-size: $fontSize100;
+              line-height: $fontSize300;
             }
           }
         }

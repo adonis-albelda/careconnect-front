@@ -8,6 +8,37 @@
 @import './components/index.scss';
 @import './contact_us.scss';
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('~/static/fonts/fonts/icomoon.eot?1ezf5a');
+  src:  url('~/static/fonts/fonts/icomoon.eot?1ezf5a#iefix') format('embedded-opentype'),
+    url('~/static/fonts/fonts/icomoon.ttf?1ezf5a') format('truetype'),
+    url('~/static/fonts/fonts/icomoon.woff?1ezf5a') format('woff'),
+    url('~/static/fonts/fonts/icomoon.svg?1ezf5a#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:after {
+    content: "\e91a";
+  }
+}
+
 body,
 html {
   font-family: $fontBody;
@@ -509,7 +540,7 @@ section {
         @media(max-width: 480px){
           font-size: $fontSize300;
           line-height: $fontSize500;
-          justify-content: center;
+          justify-content: left;
           margin-bottom: 1rem;
         }
 
@@ -534,7 +565,7 @@ section {
         @media(max-width: 480px) {
           font-size: $fontSize200;
           line-height: 21px;
-          text-align: center;
+          text-align: left;
         }
       }
     }
@@ -729,6 +760,11 @@ section {
       @media(max-width: 900px) {
         font-size: 1.563rem;
       }
+
+      @media(max-width: 480px) {
+        font-size: 1.25rem;
+        margin-bottom: 0;
+      }
     }
 
     p {
@@ -753,6 +789,13 @@ section {
     input {
       @media(max-width: 480px) {
         margin-bottom: 10px;
+        height: 50px;
+        color: $normalColor;
+        font-size: 0.75rem;
+      }
+
+      &::placeholder {
+        font-size: 0.75rem;
       }
     }
 
@@ -884,6 +927,7 @@ footer {
 
     @media(max-width: 480px) {
       display: block;
+      padding: 3rem 0rem 4rem 0rem;
     }
   }
 
