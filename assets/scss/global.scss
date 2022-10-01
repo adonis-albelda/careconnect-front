@@ -1156,6 +1156,16 @@ form > div:first-child {
 }
 
 // notif
+.vue-notification-group {
+  width: 100% !important;
+  max-width: 500px !important; 
+  @media (max-width: 550px) {
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto;
+  }
+}
+
 .vue-notification-group .notification-title {
   font-size: 1.1rem;
 } 
