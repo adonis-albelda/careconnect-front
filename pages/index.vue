@@ -9,7 +9,7 @@
       </div>
     </section>
     <div class="booking-options">
-      <VSelect :clearable="false" v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
+      <VSelect :clearable="false" v-model="selectedService" class="list-services"  :options="options">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>{{label}}</p>
@@ -238,6 +238,7 @@ export default {
         default:true
       },
       selectedDates:[],
+      serviceId:null,
       selectedTime: {
         start:null,
         end:null
@@ -245,15 +246,18 @@ export default {
       options: [
         {
           label: 'Personal Care Services',
-          description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing'
+          description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing',
+          id:1
         },
         {
           label:'Complex Care Services',
-          description:'Complex care refer to services that must be performed by a regulated health professionals.'
+          description:'Complex care refer to services that must be performed by a regulated health professionals.',
+          id:2
         },
         {
           label:'Home Support Service',
-          description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning'
+          description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning',
+          id:3
         }
       ],
       services: [
@@ -374,7 +378,8 @@ export default {
   },
   methods :  {
     createBookingQuote() {
-      if (this.selectedService.default || !this.selectedTime.end || !this.selectedTime.start ||
+      console.log(this.selectedService, 'sele')
+      if (!this.serviceId || !this.selectedTime.end || !this.selectedTime.start ||
         this.selectedDates.length < 2)  {
           alert('Please select all fields')
           return
@@ -391,6 +396,14 @@ export default {
         console.log(e)
         // This will be triggered when user clicks on cancel
       });
+    }
+  },
+  watch: {
+    selectedService: {
+      handler(val) {
+        this.serviceId = val.id
+      },
+      deep:true
     }
   }
 }

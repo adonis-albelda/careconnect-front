@@ -120,6 +120,15 @@ section {
   }
 }
 
+.csr {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: all ease 0.3s;
+  }
+}
+
 .sidebar-menu {
   position: fixed;
     right: 0;
