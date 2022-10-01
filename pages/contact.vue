@@ -122,11 +122,10 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
-  layout: 'MainLayout',
   auth:false,
+  layout: 'MainLayout',
   data() {
     return {
       inquiry: {
@@ -144,6 +143,9 @@ export default {
     bodyAttrs: {
       id: 'contact-page',
     },
+  },
+  mounted() {
+    this.showError('Something went wrong processing your request!')
   },
   created() {
     this.defaultPayload = this.clone(this.inquiry)

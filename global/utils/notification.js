@@ -8,14 +8,14 @@ Vue.mixin({
         text: message,
         type:'success'
       })
+    },
+    showError(message) {
+      this.$notify({
+        group: 'notify',
+        title: 'Error!',
+        text: 'Something went wrong processing your request!',
+        type:'success'
+      })
     }
   },
-  showError(message) {
-    this.$notify({
-      group: 'notify',
-      title: 'Error!',
-      text: 'Something went wrong processing your request!',
-      type:'success'
-    })
-  }
 })
