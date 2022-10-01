@@ -111,7 +111,7 @@
               {{service.description}}
             </p>
             <div class="actions">
-              <button class="btn block accent">BOOK NOW</button>
+              <button class="btn block accent" @click="goTo('get-quote', {}, {service:service.key})">BOOK NOW</button>
               <button class="btn block plain">
                 <img src="images/icons/info.svg" alt="">
                 Learn More
@@ -263,16 +263,19 @@ export default {
       services: [
         {
           title: 'Home Support Services',
+          key:'home-service',
           image: '/images/Home Support Services.png',
           description: 'Recovering from home after surgery can limit you with your daily activities. Whether you are recovering from major surgery, childbirth, or plastic surgery, our compassionate caregivers can assist you to a healthy and complete recovery.'
         },
         {
           title: 'Personal Care Services',
+          key:'personal-service',
           image: '/images/Personal Care Services.png',
           description: 'Arthritis, physical disabilities, and age-related conditions are some of the few circumstances that prevent patients from caring for themselves. Our caregivers can assist you with daily tasks such as mobility, eating, exercising, and grooming.'
         },
         {
           title: 'Complex Care Services',
+          key:'complex-service',
           image: '/images/Complex Care Services.png',
           description: 'Our experienced and highly trained caregivers provide the highest quality of care to both patients and their families. Our goal is to help individuals and their loved ones live happy and fulfilling lives.'
         }

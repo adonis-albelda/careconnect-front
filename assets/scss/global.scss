@@ -735,6 +735,10 @@ section {
   background-image: url(/images/blue-bg.jpg);
   background-size: cover;
 
+  .text-box {
+    color: $normalColor !important;
+  }
+
   @media(max-width: 480px) {
     padding: 50px 0;
   }
