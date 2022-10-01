@@ -1,5 +1,6 @@
 <template>
   <div>
+    <notifications group="notify" position="bottom center" width="500" />
     <nav class="main-nav">
       <div class="logo-box" @click="goTo('index')">
         <img src="images/logo.png" alt="careconnect logo" />
@@ -22,7 +23,7 @@
           <span>
             <p>
               <img src="images/icons/profile.png" alt="" />
-              Guest
+              {{$auth.user ? $auth.user.email : 'Guest'}}
             </p>
           </span>
         </li>

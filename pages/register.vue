@@ -85,7 +85,7 @@
                 <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Confirm Password</label>
                   <div class="for-input">
-                    <input class="text-box" v-model="user.confirmation_password" type="password" />
+                    <input class="text-box" v-model="user.password_confirmation" type="password" />
                     <span>{{ errors[0] }}</span>
                   </div>
                 </div>
@@ -109,6 +109,7 @@
 
 <script>
 export default {
+  auth:'guest',
   head: {
     bodyAttrs: {
       id: 'register-page',
@@ -119,17 +120,16 @@ export default {
       user: {
         email: null,
         password: '',
-        confirmation_password: '',
+        password_confirmation: '',
       },
     }
   },
   methods: {
     async handleRegistration() {
-      let {data, status } = this.$axios.post('register', this.user)
-
+      let {data, status } = await this.$axios.post('register', this.user)
       if (status !== 200) return
 
-      console.log(data, 'data')
+      
     },
   },
 }

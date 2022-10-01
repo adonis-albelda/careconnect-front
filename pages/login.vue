@@ -58,7 +58,7 @@
                 <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Email Address</label>
                   <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
-                    <input class="text-box" type="email" placeholder="@mail.com" />
+                    <input class="text-box" v-model="user.email" type="email" placeholder="@mail.com" />
                     <span>{{ errors[0] }}</span>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                 <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Password</label>
                   <div class="for-input error-msg">
-                    <input class="text-box" type="password" />
+                    <input class="text-box" v-model="user.password" type="password" />
                     <span>{{ errors[0] }}</span>
                   </div>
                 </div>
@@ -115,14 +115,30 @@
 
 <script>
 export default {
+  auth:'guest',
   head: {
     bodyAttrs: {
       id: 'login-page',
     },
   },
+  data() {
+    return {
+      user: {
+        email:'',
+        password:''
+      }
+    }
+  },
   methods: {
-    handleLogin() {
+    async handleLogin() {
+      const res = await this.$auth.loginWith('local', {data:{
+        email:this.user.email,
+        password: this.user.password
+      }})
 
+      console.log(res, 'res')
+      // if (res.status !== 200) return
+      // this.goTo('index')
     }
   }
 }

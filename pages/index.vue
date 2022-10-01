@@ -97,7 +97,7 @@
         </template>
       </VSelect>
       <div>
-        <button class="btn accent full" @click="createBookingQuote">Get A Quote</button>
+        <button class="btn accent full uc-spinner" @click="createBookingQuote">Get A Quote</button>
       </div>
     </div>
     <section class="services-sec">
@@ -370,7 +370,6 @@ export default {
     AOS.init()
     Vue.dialog.registerComponent(QUOTE_EMAIL, CustomView);
 
-      
     // this.$dialog.alert('dsdsa', {
     //   view: QUOTE_EMAIL, // can be set globally too
     //   html: true,
@@ -388,17 +387,20 @@ export default {
           return
         }
 
-        
-      this.$dialog.alert('', {
-        view: QUOTE_EMAIL, // can be set globally too
-        html: true,
-        animation: 'fade',
-        backdropClose: true,
-        context: this
-      }) .catch(function (e) {
-        console.log(e)
-        // This will be triggered when user clicks on cancel
-      });
+      if (this.$auth.user) {
+
+      } else {
+        this.$dialog.alert('', {
+          view: QUOTE_EMAIL, // can be set globally too
+          html: true,
+          animation: 'fade',
+          backdropClose: true,
+          context: this
+        }) .catch(function (e) {
+          console.log(e)
+          // This will be triggered when user clicks on cancel
+        });
+      }  
     }
   },
   watch: {

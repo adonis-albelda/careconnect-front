@@ -20,6 +20,26 @@ export default {
     port: 9797,
     host: "0.0.0.0", // default: 3000,
   },
+  auth: {
+    strategies: {
+      local: {  
+        token: {
+            property: 'access_token',
+            global: true,
+        },
+        user: {
+            property: '',
+        },
+        tokenType: '',
+        endpoints: {
+            login: { url: 'login', method: 'post' },
+            logout: { url: 'logout', method: 'get' },
+            user: { url: 'user/details', method: 'get' }
+        }
+    }
+    },
+    
+  },
   css: [
     "~assets/scss/global.scss",
   ],
@@ -30,6 +50,7 @@ export default {
     "~global/components/VueSelect.js",
     "~global/components/VueDatepicker.js",
     {src:"~global/components/VueDialog.js", ssr:false, mode: 'client'},
+    {src:"~global/components/VueNotification.js", ssr:false, mode: 'client'},
     "~global/utils/index.js",
     {src:"~global/plugins/VeeValidate.js", ssr:false}
     
@@ -41,7 +62,7 @@ export default {
     baseURL: process.env.BASE_URL
   },
   router: {
-    // middleware: ['auth'],
+    middleware: ['auth'],
   },
   build: {},
 }
