@@ -393,10 +393,7 @@ export default {
         console.log(e)
         // This will be triggered when user clicks on cancel
       });
-    },
-     dropdownShouldOpen(VueSelect) {
-      return true
-    },
+    }
     
   }
 }
