@@ -51,13 +51,13 @@
       </ul>
 
       <ul class="menus">
-        <li class="mobile-menu-active" @click="goTo('index')">
+        <li :class="[$route.name == 'index' ? 'mobile-menu-active' : '']" @click="goTo('index')">
           <p>home</p>
         </li>
-        <li @click="goTo('services')">
+        <li :class="[$route.name == 'services' ? 'mobile-menu-active' : '']" @click="goTo('services')">
           <p>services</p>
         </li>
-        <li @click="goTo('contact')">
+        <li :class="[$route.name == 'contact' ? 'mobile-menu-active' : '']" @click="goTo('contact')">
           <p>contact us</p>
         </li>
       </ul>
@@ -134,7 +134,7 @@ export default {
   },
   data(){
     return {
-    isShow: false
+      isShow: false
     }
   },
 
@@ -144,6 +144,11 @@ export default {
     },
     closeSidebar() {
       this.isShow = false
+    }
+  },
+  watch: {
+    $route() {
+      if (this.isShow) this.isShow = false
     }
   }
 }

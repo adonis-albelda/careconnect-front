@@ -124,7 +124,13 @@ export default {
     }
   },
   methods: {
-    handleRegistration() {},
+    async handleRegistration() {
+      let {data, status } = this.$axios.post('register', this.user)
+
+      if (status !== 200) return
+
+      console.log(data, 'data')
+    },
   },
 }
 </script>
