@@ -49,6 +49,7 @@
             class="time-picker"
             placeholder="Select Start Time"
             v-model="selectedTime.start"
+            :clearable="false"
           >
             <template
               v-slot:selected-option-container="{
@@ -91,6 +92,7 @@
             </template>
           </VSelect>
           <VSelect
+            :clearable="false"
             class="time-picker"
             placeholder="Select EndTime"
             v-model="selectedTime.end"
@@ -145,6 +147,7 @@
 
 <script>
 export default {
+  auth:false,
   layout: 'MainLayout',
   head: {
     bodyAttrs: {
@@ -161,8 +164,8 @@ export default {
       serviceId:null,
       selectedDates: [],
       selectedTime: {
-        start: null,
-        end: null,
+        start:"9:00 AM",
+        end:"9:00 AM"
       },
       services: [
         {

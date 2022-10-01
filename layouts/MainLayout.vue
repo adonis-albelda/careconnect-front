@@ -1,5 +1,6 @@
 <template>
   <div>
+    <notifications group="notify" position="bottom left" width="500" duration="5000"/>
     <nav class="main-nav">
       <div class="logo-box" @click="goTo('index')">
         <img src="images/logo.png" alt="careconnect logo" />
@@ -21,8 +22,8 @@
         <li class="guest-nav" :class="{ active: isActive('login') }" @click="goTo('login')">
           <span>
             <p>
-              <i class="icon-profile"></i>
-              Guest
+              <img src="images/icons/profile.png" alt="" />
+              {{$auth.user ? $auth.user.email : 'Guest'}}
             </p>
           </span>
         </li>
@@ -130,6 +131,7 @@
 import subscriptionSection from '@/pages/components/subscription-section.vue'
 
 export default {
+  auth:false,
   components: {
     subscriptionSection,
   },

@@ -230,6 +230,7 @@ const QUOTE_EMAIL = 'quote-dialog-name';
 
 import AOS from 'aos'
 export default {
+  auth:false,
   name: 'LandingPage',
   layout:'MainLayout',
   data() {
@@ -241,8 +242,8 @@ export default {
       },
       selectedDates:[],
       selectedTime: {
-        start:null,
-        end:null
+        start:"9:00 AM",
+        end:"9:00 AM"
       },
       options: [
         {
@@ -365,7 +366,6 @@ export default {
     AOS.init()
     Vue.dialog.registerComponent(QUOTE_EMAIL, CustomView);
 
-      
     // this.$dialog.alert('dsdsa', {
     //   view: QUOTE_EMAIL, // can be set globally too
     //   html: true,
@@ -382,19 +382,29 @@ export default {
           return
         }
 
-        
-      this.$dialog.alert('', {
-        view: QUOTE_EMAIL, // can be set globally too
-        html: true,
-        animation: 'fade',
-        backdropClose: true,
-        context: this
-      }) .catch(function (e) {
-        console.log(e)
-        // This will be triggered when user clicks on cancel
-      });
+      if (this.$auth.user) {
+
+      } else {
+        this.$dialog.alert('', {
+          view: QUOTE_EMAIL, // can be set globally too
+          html: true,
+          animation: 'fade',
+          backdropClose: true,
+          context: this
+        }) .catch(function (e) {
+          console.log(e)
+          // This will be triggered when user clicks on cancel
+        });
+      }  
     }
-    
+  },
+  watch: {
+    selectedService: {
+      handler(val) {
+        this.serviceId = val.id
+      },
+      deep:true
+    }
   }
 }
 </script>

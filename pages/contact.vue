@@ -112,7 +112,7 @@
                     </div>
                     <span>{{ errors[0] }}</span>
                   </div>
-                  <button class="send-btn btn block">Send</button>
+                  <button :class="['send-btn btn block', isRequesting ? 'uc-spinner black' : '']">Send</button>
                 </div>
               </ValidationProvider>
             </div>
@@ -122,9 +122,9 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
+  auth:false,
   layout: 'MainLayout',
   data() {
     return {
@@ -135,6 +135,8 @@ export default {
         phone_number: '',
         message: '',
       },
+      isRequesting:false,
+      defaultPayload:{}
     }
   },
   head: {
@@ -143,13 +145,20 @@ export default {
     },
   },
   created() {
-  
+    this.defaultPayload = this.clone(this.inquiry)
   },
   methods: {
-    handleIquiry() {
-      this.$axios.post('/inquiry', this.inquiry).then((res) => {
-        console.log(res, 'test')
-      })
+    async handleIquiry() {
+      this.isRequesting = true
+      const {data, status} = await this.$axios.post('/inquiry', this.inquiry)
+
+      if (status !== 200 && status !== 201) {
+        this.showError('Something went wrong processing your request!')
+      } else {
+        this.showSuccess('Successfully submitted your inquiry, will contact you soon!')
+        this.inquiry = this.clone(this.defaultPayload)
+      }
+      this.isRequesting = false
     },
   },
 }

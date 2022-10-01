@@ -58,7 +58,7 @@
                 <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Email Address</label>
                   <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
-                    <input class="text-box" type="email" placeholder="@mail.com" />
+                    <input class="text-box" v-model="user.email" type="email" placeholder="@mail.com" />
                     <span>{{ errors[0] }}</span>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                 <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Password</label>
                   <div class="for-input error-msg">
-                    <input class="text-box" type="password" />
+                    <input class="text-box" v-model="user.password" type="password" />
                     <span>{{ errors[0] }}</span>
                   </div>
                 </div>
@@ -93,9 +93,9 @@
                 </div>
               </div>
 
-              <button class="login-btn">login</button>
+              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">login</button>
 
-              <p class="no-account">
+              <p class="no-account pb-50">
                 Don’t have an account?
                 <a href="#" @click.prevent="goTo('register')">Signup</a>
               </p>
@@ -115,13 +115,36 @@
 
 <script>
 export default {
+  layout:'LandingLayout',
+  auth:'guest',
   head: {
     bodyAttrs: {
       id: 'login-page',
     },
   },
+  data() {
+    return {
+      user: {
+        email:'',
+        password:''
+      },
+      isRequesting:false
+    }
+  },
   methods: {
-    handleLogin() {
+    async handleLogin() {
+      try {
+        this.isRequesting = true
+        const res = await this.$auth.loginWith('local', {data:{
+          email:this.user.email,
+          password: this.user.password
+        }})
+        this.showSuccess('Successfully submitted your inquiry, will contact you soon!')
+        this.isRequesting = false
+        this.goTo('index')
+      } catch(e) {
+        this.showError('Something went wrong processing your request!')
+      }
 
     }
   }
@@ -156,23 +179,12 @@ export default {
 }
 .login-wrapper {
   height: 100vh;
-  // @media (max-height: 900px) {
-  //   height: auto;
-  // }
-  @media (max-width: 991px) {
-    height: auto;
-  }
-  @media (max-width: 991px) and (max-height: 900px) {
-    height: auto;
-  }
-  @media (max-width: 991px) and (min-height: 901px) {
-    height: 100vh;
-  }
+  max-height: auto;
 }
 .login-form {
-  @media (max-height: 900px) {
-    padding-bottom: 65px;
-  }
+  // @media (max-height: 900px) {
+  //   padding-bottom: 65px;
+  // }
 
   .login-btn {
     @media (max-width: 767px) {
@@ -183,6 +195,7 @@ export default {
 }
 .login-wrapper .login-col-1 {
   height: auto;
+  z-index: 6;
   @media (max-width: 1500px) {
     width: 50%;
   }
@@ -193,6 +206,8 @@ export default {
 .login-wrapper .login-col-2 {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
   @media (max-width: 1500px) {
     width: 50%;
   }
@@ -269,15 +284,17 @@ export default {
 }
 
 .login-wrapper .login-col-2 .login-cont .login-copyright {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: right;
+  background: rgba(255, 255, 255, .7);
   @media (max-width: 991px) {
-    display: flex;
+    text-align: center;
     right: 0;
     left: 0;
-    margin: 0 auto;
-    bottom: 20px;
-    justify-content: center;
-    width: 90%;
-    text-align: center;
   }
   p {
     @media (max-width: 520px) {
@@ -313,5 +330,9 @@ export default {
 
 .login-form-checkinput{
   height: auto !important;
+}
+
+.pb-50 {
+  padding-bottom: 50px;
 }
 </style>
