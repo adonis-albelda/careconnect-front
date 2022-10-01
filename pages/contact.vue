@@ -126,6 +126,7 @@
 <script>
 export default {
   layout: 'MainLayout',
+  auth:false,
   data() {
     return {
       inquiry: {
@@ -152,19 +153,9 @@ export default {
       const {data, status} = await this.$axios.post('/inquiry', this.inquiry)
 
       if (status !== 200 && status !== 201) {
-        this.$notify({
-          group: 'notify',
-          title: 'Error!',
-          text: 'Something went wrong processing your request!',
-          type:'success'
-        })
+        this.showError('Something went wrong processing your request!')
       } else {
-        this.$notify({
-          group: 'notify',
-          title: 'Success!',
-          text: 'Successfullu submitted your inquiry, will contact you soon!',
-          type:'success'
-        })
+        this.showMessage('Successfully submitted your inquiry, will contact you soon!')
         this.inquiry = this.clone(this.defaultPayload)
       }
     },

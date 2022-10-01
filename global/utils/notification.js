@@ -8,6 +8,7 @@ Vue.mixin({
         text: message,
         type:'success'
       })
+    }
   },
   showError(message) {
     this.$notify({

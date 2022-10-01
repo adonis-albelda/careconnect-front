@@ -230,6 +230,7 @@ const QUOTE_EMAIL = 'quote-dialog-name';
 
 import AOS from 'aos'
 export default {
+  auth:false,
   name: 'LandingPage',
   layout:'MainLayout',
   data() {

@@ -130,6 +130,7 @@
 import subscriptionSection from '@/pages/components/subscription-section.vue'
 
 export default {
+  auth:false,
   components: {
     subscriptionSection,
   },

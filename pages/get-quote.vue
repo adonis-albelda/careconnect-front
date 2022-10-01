@@ -143,6 +143,7 @@
 
 <script>
 export default {
+  auth:false,
   layout: 'MainLayout',
   head: {
     bodyAttrs: {
