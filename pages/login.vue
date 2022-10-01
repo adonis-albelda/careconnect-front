@@ -93,7 +93,7 @@
                 </div>
               </div>
 
-              <button class="login-btn">login</button>
+              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">login</button>
 
               <p class="no-account pb-50">
                 Don’t have an account?
@@ -115,6 +115,7 @@
 
 <script>
 export default {
+  layout:'LandingLayout',
   auth:'guest',
   head: {
     bodyAttrs: {
@@ -126,19 +127,25 @@ export default {
       user: {
         email:'',
         password:''
-      }
+      },
+      isRequesting:false
     }
   },
   methods: {
     async handleLogin() {
-      const res = await this.$auth.loginWith('local', {data:{
-        email:this.user.email,
-        password: this.user.password
-      }})
+      try {
+        this.isRequesting = true
+        const res = await this.$auth.loginWith('local', {data:{
+          email:this.user.email,
+          password: this.user.password
+        }})
+        this.showSuccess('Successfully submitted your inquiry, will contact you soon!')
+        this.isRequesting = false
+        this.goTo('index')
+      } catch(e) {
+        this.showError('Something went wrong processing your request!')
+      }
 
-      console.log(res, 'res')
-      // if (res.status !== 200) return
-      // this.goTo('index')
     }
   }
 }

@@ -14,8 +14,7 @@ Vue.mixin({
         group: 'notify',
         title: 'Error!',
         text: message,
-        type:'success',
-        duration: -1
+        type:'error',
       })
     }
   },

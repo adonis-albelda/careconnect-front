@@ -90,7 +90,7 @@
                   </div>
                 </div>
               </ValidationProvider>
-              <button class="login-btn">Sign up</button>
+              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">Sign up</button>
               <p class="no-account pb-50">
                 Already a member?
                 <a href="#" @click.prevent="goTo('login')">Login</a>
@@ -110,6 +110,7 @@
 <script>
 export default {
   auth:'guest',
+  layout:'LandingLayout',
   head: {
     bodyAttrs: {
       id: 'register-page',
@@ -126,10 +127,19 @@ export default {
   },
   methods: {
     async handleRegistration() {
-      let {data, status } = await this.$axios.post('register', this.user)
-      if (status !== 200) return
-
-      
+      try {
+        this.isRequesting = true
+        await this.$axios.post('register', this.user)
+        const res = await this.$auth.loginWith('local', {data:{
+          email:this.user.email,
+          password: this.user.password
+        }})
+        this.showSuccess('Successfully submitted your inquiry, will contact you soon!')
+        this.isRequesting = false
+        this.goTo('index')
+      } catch(e) {
+        this.showError('Something went wrong processing your request!')
+      }
     },
   },
 }
