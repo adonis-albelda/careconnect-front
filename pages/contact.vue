@@ -112,7 +112,7 @@
                     </div>
                     <span>{{ errors[0] }}</span>
                   </div>
-                  <button class="send-btn btn block uc-spinner black">Send</button>
+                  <button :class="['send-btn btn block', isRequesting ? 'uc-spinner black' : '']">Send</button>
                 </div>
               </ValidationProvider>
             </div>
@@ -144,22 +144,21 @@ export default {
       id: 'contact-page',
     },
   },
-  mounted() {
-    this.showError('Something went wrong processing your request!')
-  },
   created() {
     this.defaultPayload = this.clone(this.inquiry)
   },
   methods: {
     async handleIquiry() {
+      this.isRequesting = true
       const {data, status} = await this.$axios.post('/inquiry', this.inquiry)
 
       if (status !== 200 && status !== 201) {
         this.showError('Something went wrong processing your request!')
       } else {
-        this.showMessage('Successfully submitted your inquiry, will contact you soon!')
+        this.showSuccess('Successfully submitted your inquiry, will contact you soon!')
         this.inquiry = this.clone(this.defaultPayload)
       }
+      this.isRequesting = false
     },
   },
 }

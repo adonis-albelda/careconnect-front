@@ -1,6 +1,6 @@
 <template>
   <div>
-    <notifications group="notify" position="bottom center" width="500" />
+    <notifications group="notify" position="bottom left" width="500" duration="5000"/>
     <nav class="main-nav">
       <div class="logo-box" @click="goTo('index')">
         <img src="images/logo.png" alt="careconnect logo" />

@@ -99,7 +99,7 @@
         </template>
       </VSelect>
       <div>
-        <button class="btn accent full uc-spinner" @click="createBookingQuote">Get A Quote</button>
+        <button class="btn accent full" @click="createBookingQuote">Get A Quote</button>
       </div>
     </div>
     <section class="services-sec">
@@ -242,8 +242,8 @@ export default {
       },
       selectedDates:[],
       selectedTime: {
-        start:null,
-        end:null
+        start:"9:00 AM",
+        end:"9:00 AM"
       },
       options: [
         {
