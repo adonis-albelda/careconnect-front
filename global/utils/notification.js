@@ -6,7 +6,7 @@ Vue.mixin({
         group: 'notify',
         title: 'Success!',
         text: message,
-        type:'success'
+        type:'success',
       })
     },
     showError(message) {
@@ -14,7 +14,8 @@ Vue.mixin({
         group: 'notify',
         title: 'Error!',
         text: 'Something went wrong processing your request!',
-        type:'success'
+        type:'success',
+        duration: -1
       })
     }
   },
