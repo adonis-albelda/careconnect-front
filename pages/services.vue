@@ -94,62 +94,59 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="service-wrapper">
-        <h2>Training</h2>
         <div class="service-outer-cont">
-          <div class="service-inner-cont">
-            <div class="service-img">
-              <img src="/images/Complex Care Services.png" />
+        <div class="service-inner-cont">
+          <div class="service-img">
+            <img src="/images/Complex Care Services.png" />
+          </div>
+
+          <div class="services-avail">
+            <h3>Home Support Services</h3>
+            <p>
+              Home Support Services include assistance with day-to-day
+              activities sush as :
+            </p>
+            <div class="care-services-cont">
+              <a href="#"
+                ><img src="/images/icons/dress-icon.svg" />Dressing</a
+              >
+              <a href="#"
+                ><img src="/images/icons/bathtub-icon.svg" />Bathing</a
+              >
+              <a href="#"
+                ><img src="/images/icons/bathtub-icon.svg" />Grooming</a
+              >
+              <a href="#"
+                ><img src="/images/icons/bathtub-icon.svg" />Mobitlity</a
+              >
+              <a href="#">View more</a>
             </div>
 
-            <div class="services-avail">
-              <h3>Home Support Services</h3>
+            <div class="service-option">
               <p>
-                Home Support Services include assistance with day-to-day
-                activities sush as :
+                We offer the option of Live-In caregivers for short or long
+                term placements.
               </p>
-              <div class="care-services-cont">
-                <a href="#"
-                  ><img src="/images/icons/dress-icon.svg" />Dressing</a
-                >
-                <a href="#"
-                  ><img src="/images/icons/bathtub-icon.svg" />Bathing</a
-                >
-                <a href="#"
-                  ><img src="/images/icons/bathtub-icon.svg" />Grooming</a
-                >
-                <a href="#"
-                  ><img src="/images/icons/bathtub-icon.svg" />Mobitlity</a
-                >
-                <a href="#">View more</a>
-              </div>
+            </div>
 
-              <div class="service-option">
-                <p>
-                  We offer the option of Live-In caregivers for short or long
-                  term placements.
-                </p>
+            <div class="caregiver-cont">
+              <div class="caregivers">
+                <img src="/images/caregiver-img1.png" />
+                <img src="/images/caregiver-img2.png" />
+                <img src="/images/caregiver-img3.png" />
+                <img src="/images/caregiver-img4.png" />
+                <img src="/images/caregiver-img5.png" />
+                <p>20+ Practical Nurses</p>
               </div>
-
-              <div class="caregiver-cont">
-                <div class="caregivers">
-                  <img src="/images/caregiver-img1.png" />
-                  <img src="/images/caregiver-img2.png" />
-                  <img src="/images/caregiver-img3.png" />
-                  <img src="/images/caregiver-img4.png" />
-                  <img src="/images/caregiver-img5.png" />
-                  <p>20+ Practical Nurses</p>
-                </div>
-                <div class="book-btn">
-                  <a @click.prevent="goTo('get-quote', {}, {service: 'home-service'})">Get A Quote</a>
-                  <a href="#">Know more</a>
-                </div>
+              <div class="book-btn">
+                <a @click.prevent="goTo('get-quote', {}, {service: 'home-service'})">Get A Quote</a>
+                <a href="#">Know more</a>
               </div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>

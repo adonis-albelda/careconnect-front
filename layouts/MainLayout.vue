@@ -15,13 +15,13 @@
         <li :class="{ active: isActive('contact') }" @click="goTo('contact')"><span>Contact us</span></li>
         <li class="nav-menu-icons">
           <span>
-            <img src="images/icons/shopping.png" alt="" />
+            <i class="icon-shopping"></i>
           </span>
         </li>
         <li class="guest-nav" :class="{ active: isActive('login') }" @click="goTo('login')">
           <span>
             <p>
-              <img src="images/icons/profile.png" alt="" />
+              <i class="icon-profile"></i>
               Guest
             </p>
           </span>
@@ -43,10 +43,10 @@
       <img @click="closeSidebar()" class="close-sidebar" src="/images/close-icon.png">
       <ul class="login-row" @click="goTo('login')">
         <li>
-          <p><img src="/images/mobile-profile.png"> Login</p>
+          <p><i class="icon-profile"></i> Login</p>
         </li>
         <li>
-          <p><img src="/images/mobile-cart.png"> Cart</p>
+          <p> <i class="icon-shopping"></i> Cart</p>
         </li>
       </ul>
 
