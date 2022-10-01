@@ -117,6 +117,19 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    div {
+      &:last-child {
+        display: flex;
+        gap: 20px;
+
+        p {
+          font-size: 0.875rem;
+          color: $normalColor;
+          font-weight: $fontWeightRegular;
+        }
+      }
+    }
   }
 }
 
@@ -134,7 +147,7 @@ section {
     right: 0;
     top: 0;
     bottom: 0;
-    left: 25%;
+    left: 40%;
     z-index: 9999;
     background-color: #fff;
 
@@ -152,6 +165,7 @@ section {
       li {
         padding: 12px 0;
         list-style: none;
+        padding-left: 20%;
 
         p {
           font-size: $fontSize400;
@@ -160,7 +174,7 @@ section {
           font-weight: $fontWeightSemiBold;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: left;
           gap: 15px;
 
           @media(max-width: 480px) {
@@ -182,10 +196,11 @@ section {
           font-weight: $fontWeightSemiBold;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: left;
           gap: 15px;
           text-transform: uppercase;
           padding: 20px 0;
+          padding-left: 20%;
 
           @media(max-width: 480px) {
             font-size: 0.938rem;
@@ -1084,6 +1099,10 @@ footer {
   right: 1%;
   bottom: 2%;
   border-radius: 50%;
+
+  @media(max-width: 480px) {
+    padding: 1rem;
+  }
 }
 
 // form custom css

@@ -34,6 +34,7 @@
           <img src="/images/mobile-logo.png">
         </div>
         <div>
+          <p>UserEmail</p>
           <img @click="openSidebar()" src="/images/burger-menu.png">
         </div>
       </nav>
