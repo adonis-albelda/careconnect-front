@@ -57,6 +57,7 @@
             >
               <div class="filter-selected">
                 <p>Start Time</p>
+                <i class="icon-stopwatch"></i>
                 <p>{{ selectedTime.start }}</p>
               </div>
             </template>
@@ -101,6 +102,7 @@
             >
               <div class="filter-selected">
                 <p>End Time</p>
+                <i class="icon-stopwatch"></i>
                 <p>{{ selectedTime.end }}</p>
               </div>
             </template>
