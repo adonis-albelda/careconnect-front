@@ -159,10 +159,13 @@ export default {
   // @media (max-height: 900px) {
   //   height: auto;
   // }
-  @media (max-width: 991px) and (max-height: 820px) {
+  @media (max-width: 991px) {
     height: auto;
   }
-   @media (max-width: 991px) and (min-height: 821px) {
+  @media (max-width: 991px) and (max-height: 900px) {
+    height: auto;
+  }
+  @media (max-width: 991px) and (min-height: 901px) {
     height: 100vh;
   }
 }

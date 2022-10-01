@@ -15,18 +15,15 @@
 
           <div class="contacts">
             <a href="#">
-              <img class="big-screen" src="/images/icons/mail-white.svg" />
-              <img class="small-screen" src="images/icons/mail.svg" alt="for health" />
+              <i class="icon-mail"></i>
               admin@ucarecon.ca
             </a>
             <a href="#">
-              <img class="big-screen" src="/images/icons/smartphone-white.svg" />
-              <img class="small-screen" src="images/icons/smartphone.svg" alt="for health" />
+              <i class="icon-smartphone"></i>
               416-262-4071
             </a>
             <a href="#">
-              <img class="big-screen" src="/images/icons/location-white.svg" />
-              <img class="small-screen" src="images/icons/location_pin.svg" alt="for health" />
+              <i class="icon-location_pin"></i>
               120 Shelborne
               North York On. Canada M6B 1M7
             </a>
@@ -177,7 +174,7 @@ export default {
       color: #000 !important;
     }
     @media (max-width: 500px) {
-      font-size: 24px !important;
+      font-size: 1.5rem !important;
       margin-bottom: 0 !important;
     }
   }
@@ -188,7 +185,8 @@ export default {
       color: #000 !important;
     }
     @media (max-width: 500px) {
-      font-size: 17px !important;
+      font-size: 0.875rem !important;
+      line-height: 1.313rem !important;
     }
   }
 
@@ -207,19 +205,13 @@ export default {
         color: #000 !important;
       }
       @media (max-width: 500px) {
-        font-size: 15px !important;
+        font-size: 0.875rem !important;
+        line-height: 1.313rem !important;
       }
 
-      img.big-screen {
-        @media (max-width: 800px) {
-          display: none;
-        }
-      }
-      img.small-screen {
-        display: none;
-        @media (max-width: 800px) {
-          display: block;
-        }
+      i {
+        font-size: 24px;
+        vertical-align: middle;
       }
     }
   }

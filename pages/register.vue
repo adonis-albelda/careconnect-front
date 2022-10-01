@@ -161,10 +161,10 @@ export default {
   // @media (max-height: 900px) {
   //   height: auto;
   // }
-  @media (max-width: 991px) and (max-height: 680px) {
+  @media (max-width: 991px) and (max-height: 715px) {
     height: auto;
   }
-   @media (max-width: 991px) and (min-height: 681px) {
+  @media (max-width: 991px) and (min-height: 716px) {
     height: 100vh;
   }
 }

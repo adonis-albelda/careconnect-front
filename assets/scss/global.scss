@@ -7,14 +7,15 @@
 @import './transition.scss';
 @import './components/index.scss';
 @import './contact_us.scss';
+@import "~static/font/style.css";
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('~/static/fonts/fonts/icomoon.eot?1ezf5a');
-  src:  url('~/static/fonts/fonts/icomoon.eot?1ezf5a#iefix') format('embedded-opentype'),
-    url('~/static/fonts/fonts/icomoon.ttf?1ezf5a') format('truetype'),
-    url('~/static/fonts/fonts/icomoon.woff?1ezf5a') format('woff'),
-    url('~/static/fonts/fonts/icomoon.svg?1ezf5a#icomoon') format('svg');
+  src:  url('~/static/font/fonts/icomoon.eot?1ezf5a');
+  src:  url('~/static/font/fonts/icomoon.eot?1ezf5a#iefix') format('embedded-opentype'),
+    url('~/static/font/fonts/icomoon.ttf?1ezf5a') format('truetype'),
+    url('~/static/font/fonts/icomoon.woff?1ezf5a') format('woff'),
+    url('~/static/font/fonts/icomoon.svg?1ezf5a#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -33,10 +34,6 @@ i {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  &:after {
-    content: "\e91a";
-  }
 }
 
 body,
