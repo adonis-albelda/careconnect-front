@@ -276,6 +276,16 @@ section {
       font-size: 0.75rem;
     }
 
+    span {
+      p {
+    
+        i.icon-profile {
+          font-size: 22px;
+        }
+      }
+    }
+
+
     &.active {
       background-color: $accentColor100;
     }
@@ -284,8 +294,8 @@ section {
       background-color: $neutralColor;
       color: $accentColor100;
 
-      img {
-        color: $invertedColor;
+      i {
+        color: $accentColor100;
       }
     }
 
@@ -300,7 +310,8 @@ section {
     display: flex;
     gap: 1rem;
 
-    img {
+    i {
+      font-size: 18px;
       color: $neutralColor;
     }
   }
@@ -308,7 +319,7 @@ section {
   .guest-nav p {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 }
 

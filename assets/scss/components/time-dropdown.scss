@@ -106,6 +106,8 @@
 
     .vs__selected-options {
 
+
+
       input {
         &::placeholder {
           display: -webkit-box;
@@ -122,6 +124,14 @@
 
       .filter-selected {
         padding-top: 6px;
+
+        i {
+          position: absolute;
+          left: -13%;
+          top: 14%;
+          font-size: 18px;
+        }
+
         p {
           &:first-child {
             font-size: $fontSize300;
@@ -159,9 +169,7 @@
     }
   }
 
-  #vs2__listbox,
-  #vs3__listbox,
-  #vs1__listbox {
+  .vs__dropdown-menu{
     top: 72px;
     width: 290px;
     border-radius: 6px;

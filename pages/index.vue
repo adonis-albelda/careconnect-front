@@ -9,7 +9,7 @@
       </div>
     </section>
     <div class="booking-options">
-      <VSelect :clearable="false" v-model="selectedService" class="list-services"  :options="options">
+      <VSelect :clearable="false" v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>{{label}}</p>
@@ -45,6 +45,7 @@
       <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select Start Time" v-model="selectedTime.start"> 
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
+            <i class="icon-stopwatch"></i>
             <p>Start Time</p>
             <p>{{selectedTime.start}}</p>
           </div>
@@ -72,8 +73,9 @@
       <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select End Time" v-model="selectedTime.end">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
-              <p>End Time</p>
-              <p>{{selectedTime.end}}</p>
+            <i class="icon-stopwatch"></i>
+            <p>End Time</p>
+            <p>{{selectedTime.end}}</p>
           </div>
         </template> 
         <template v-slot:no-options="{ search, searching, loading }">
@@ -111,7 +113,7 @@
               {{service.description}}
             </p>
             <div class="actions">
-              <button class="btn block accent" @click="goTo('get-quote', {}, {service:service.key})">BOOK NOW</button>
+              <button class="btn block accent">BOOK NOW</button>
               <button class="btn block plain">
                 <img src="images/icons/info.svg" alt="">
                 Learn More
@@ -238,7 +240,6 @@ export default {
         default:true
       },
       selectedDates:[],
-      serviceId:null,
       selectedTime: {
         start:null,
         end:null
@@ -246,36 +247,30 @@ export default {
       options: [
         {
           label: 'Personal Care Services',
-          description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing',
-          id:1
+          description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing'
         },
         {
           label:'Complex Care Services',
-          description:'Complex care refer to services that must be performed by a regulated health professionals.',
-          id:2
+          description:'Complex care refer to services that must be performed by a regulated health professionals.'
         },
         {
           label:'Home Support Service',
-          description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning',
-          id:3
+          description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning'
         }
       ],
       services: [
         {
           title: 'Home Support Services',
-          key:'home-service',
           image: '/images/Home Support Services.png',
           description: 'Recovering from home after surgery can limit you with your daily activities. Whether you are recovering from major surgery, childbirth, or plastic surgery, our compassionate caregivers can assist you to a healthy and complete recovery.'
         },
         {
           title: 'Personal Care Services',
-          key:'personal-service',
           image: '/images/Personal Care Services.png',
           description: 'Arthritis, physical disabilities, and age-related conditions are some of the few circumstances that prevent patients from caring for themselves. Our caregivers can assist you with daily tasks such as mobility, eating, exercising, and grooming.'
         },
         {
           title: 'Complex Care Services',
-          key:'complex-service',
           image: '/images/Complex Care Services.png',
           description: 'Our experienced and highly trained caregivers provide the highest quality of care to both patients and their families. Our goal is to help individuals and their loved ones live happy and fulfilling lives.'
         }
@@ -380,8 +375,7 @@ export default {
   },
   methods :  {
     createBookingQuote() {
-      console.log(this.selectedService, 'sele')
-      if (!this.serviceId || !this.selectedTime.end || !this.selectedTime.start ||
+      if (this.selectedService.default || !this.selectedTime.end || !this.selectedTime.start ||
         this.selectedDates.length < 2)  {
           alert('Please select all fields')
           return
