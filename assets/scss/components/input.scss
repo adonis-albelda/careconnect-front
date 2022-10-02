@@ -18,13 +18,14 @@
   }
 
   @media(max-width: 480px) {
-    font-size: 0.75rem;
-    height: 45px;
+    font-size: 0.75rem !important;
+    height: 45px !important;
     color: $invertedColor !important;
   }
 
   &::placeholder {
     color: $normalColor;
+    font-size: 0.75rem !important;
   }
 
   &.sm {

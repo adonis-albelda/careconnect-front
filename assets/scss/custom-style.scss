@@ -923,6 +923,12 @@
     padding-top: 16%;
   }
 
+  @media(max-width: 480px) {
+    padding-top: 6rem;
+  }
+
+
+
   .container {
 
     .personalcare-banner {
@@ -1583,7 +1589,8 @@
               margin-top: 5%;
 
               @media(max-width: 480px) {
-                font-size: 16px;
+                font-size: 1rem;
+                line-height: 1.563rem;
               }
             }
 
