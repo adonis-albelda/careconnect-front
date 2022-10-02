@@ -539,6 +539,12 @@ section {
     }
   }
 
+  .items.container {
+    @media(max-width: 400px) {
+      padding: 0 !important;
+    }
+  }
+
   .items {
     display: flex;
     padding: 5rem 0 10rem 0;
@@ -581,6 +587,10 @@ section {
           line-height: $fontSize500;
           justify-content: left;
           margin-bottom: 1rem;
+        }
+
+        @media(max-width: 400px) {
+          gap: 0.5rem;
         }
 
         img {
