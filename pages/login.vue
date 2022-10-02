@@ -216,6 +216,10 @@ export default {
       height: 45px;
       font-size: 18px;
     }
+
+    @media(max-width: 480px) {
+      font-size: 0.875rem
+    }
   }
 }
 .login-wrapper .login-col-1 {
@@ -251,13 +255,12 @@ export default {
     @media (max-width: 991px) {
       width: 90%;
       max-width: 650px;
-      padding: 30px;
+      padding: 40px;
       border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.6);
     }
     @media (max-width: 450px) {
-      padding: 30px 0;
-      padding-top: 0;
+      padding: 40px 0;
     }
 
     h2 {
@@ -265,14 +268,16 @@ export default {
         line-height: 1.3;
       }
       @media (max-width: 500px) {
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 20px;
+        margin-bottom: 2px;
+        text-align: center;
       }
     }
     p {
       @media (max-width: 450px) {
-        font-size: 17px;
+        font-size: 14px;
         line-height: 1.2;
+        text-align: center;
       }
     }
 
@@ -323,12 +328,10 @@ export default {
     left: 0;
   }
   p {
-    @media (max-width: 520px) {
-      text-align: center;
-    }
-    @media (max-width: 450px) {
-      font-size: 0.75rem;
-    }
+      @media(max-width: 480px) {
+        font-size: 0.563rem;
+        text-align: center;
+      }
   }
 }
 

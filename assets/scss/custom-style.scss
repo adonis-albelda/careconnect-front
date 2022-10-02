@@ -830,6 +830,10 @@
                         font-weight: $fontWeightSemiBold;
                         margin-bottom: 5px;
                         display: block;
+
+                        @media(max-width: 480px) {
+                          font-size: $fontSize100;
+                        }
                     }
 
 
@@ -844,6 +848,10 @@
                             line-height: $fontSize450;
                             color: $invertedColor;
                             font-weight: $fontWeightRegular;
+
+                            @media(max-width: 480px) {
+                              font-size: $fontSize100;
+                            }
                         }
 
                         p {
@@ -851,6 +859,10 @@
                             line-height: $fontSize450;
                             color: $accentColor100;
                             font-weight: $fontWeightRegular;
+
+                            @media(max-width: 480px) {
+                              font-size: $fontSize100;
+                            }
                         }
                     }
                 }
@@ -859,6 +871,10 @@
                     font-size: $fontSize250;
                     line-height: $fontSize450;
                     font-weight: $fontWeightLight;
+
+                    @media(max-width: 480px) {
+                      font-size: 0.75rem;
+                    }
 
                     a {
                         font-size: $fontSize250;
