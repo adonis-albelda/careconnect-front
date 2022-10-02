@@ -43,9 +43,9 @@
 
     <div v-if="isShow" class="sidebar-menu">
       <img @click="closeSidebar()" class="close-sidebar" src="/images/close-icon.png">
-      <ul class="login-row" @click="goTo('login')">
+      <ul class="login-row">
         <template v-if="!$auth.user">
-          <li>
+          <li @click="goTo('login')">
             <p><i class="icon-profile"></i> Login</p>
           </li>
         </template>

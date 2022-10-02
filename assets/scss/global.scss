@@ -998,10 +998,18 @@ footer {
       @media (max-width: 991px) {
         font-size: 1.75rem;
       }
+
+      @media(max-width: 480px) {
+        font-size: $fontSize500;
+      }
     }
 
     p:last-child {
       font-size: $fontSize300;
+
+      @media(max-width: 480px) {
+        font-size: 0.813rem;
+      }
     }
   }
 
