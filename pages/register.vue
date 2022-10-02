@@ -231,8 +231,9 @@ export default {
         margin-bottom: 20px;
       }
       @media (max-width: 500px) {
-        font-size: 24px;
+        font-size: 20px;
         margin-bottom: 10px;
+        text-align: center;
       }
     }
     p {
@@ -289,12 +290,10 @@ export default {
     left: 0;
   }
   p {
-    @media (max-width: 520px) {
-      text-align: center;
-    }
-    @media (max-width: 450px) {
-      font-size: 0.75rem;
-    }
+    @media(max-width: 480px) {
+        font-size: 0.563rem;
+        text-align: center;
+      }
   }
 }
 

@@ -81,6 +81,11 @@ button {
   gap: 15px;
   text-decoration: none;
   margin-bottom: 10px;
+
+  @media(max-width: 480px) {
+    font-size: $fontSize200;
+    height: 50px;
+  }
 }
 
 .login-btn {
@@ -99,6 +104,10 @@ button {
   text-decoration: none;
   margin-top: 20px;
   margin-bottom: 20px;
+
+  @media(max-width: 480px) {
+    font-size: 0.875rem;
+  }
 }
 
 .personal-care-btn {
