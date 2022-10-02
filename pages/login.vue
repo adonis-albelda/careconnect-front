@@ -357,7 +357,8 @@ export default {
   }
 
   @media(max-width: 480px) {
-    font-size: 0.75rem
+    font-size: 0.75rem;
+    height: 45px;
   }
 }
 
