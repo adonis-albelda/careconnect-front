@@ -45,65 +45,74 @@
             <p>or</p>
           </div>
           <ValidationObserver v-slot="{ handleSubmit, reset }">
-          <form
-            @submit.prevent="handleSubmit(handleLogin)"
-            @reset.prevent="reset"
-          >
-            <div class="login-form">
-              <ValidationProvider
-                v-slot="{ errors }"
-                name="Email"
-                rules="required|email"
-              >
-                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
-                  <label>Email Address</label>
-                  <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
-                    <input class="text-box" v-model="user.email" type="email" placeholder="@mail.com" />
-                    <span>{{ errors[0] }}</span>
+            <form
+              @submit.prevent="handleSubmit(handleLogin)"
+              @reset.prevent="reset"
+            >
+              <div class="login-form">
+                <ValidationProvider
+                  v-slot="{ errors }"
+                  name="Email"
+                  rules="required|email"
+                >
+                  <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
+                    <label>Email Address</label>
+                    <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
+                      <input
+                        class="text-box"
+                        v-model="user.email"
+                        type="email"
+                        placeholder="@mail.com"
+                      />
+                      <span>{{ errors[0] }}</span>
+                    </div>
+                  </div>
+                </ValidationProvider>
+                <ValidationProvider
+                  v-slot="{ errors }"
+                  name="Password"
+                  rules="required"
+                >
+                  <div class="input-cont">
+                    <label>Password</label>
+                    <div :class="['for-cont', errors[0] ? 'error-msgg' : '']">
+                      <input
+                        class="text-box"
+                        v-model="user.password"
+                        type="password"
+                      />
+                      <span>{{ errors[0] }}</span>
+                    </div>
+                  </div>
+                </ValidationProvider>
+                <div class="forgot-pass">
+                  <div>
+                    <input
+                      class="login-form-checkinput"
+                      type="checkbox"
+                      value=""
+                      id="remember"
+                    />
+                    <label class="login-form-checklabel" for="remember">
+                      Remember me
+                    </label>
+                  </div>
+                  <div>
+                    <p>Forgot Password</p>
                   </div>
                 </div>
-              </ValidationProvider>
-              <ValidationProvider
-                v-slot="{ errors }"
-                name="Password"
-                rules="required"
-              >
-                <div class="input-cont">
-                  <label>Password</label>
-                  <div :class="['for-cont', errors[0] ? 'error-msgg' : '']">
-                    <input class="text-box" v-model="user.password" type="password" />
-                    <span>{{ errors[0] }}</span>
-                  </div>
-                </div>
-              </ValidationProvider>
-              <div class="forgot-pass">
-                <div>
-                  <input
-                    class="login-form-checkinput"
-                    type="checkbox"
-                    value=""
-                    id="remember"
-                  />
-                  <label class="login-form-checklabel" for="remember">
-                    Remember me
-                  </label>
-                </div>
-                <div>
-                  <p>Forgot Password</p>
-                </div>
+                <button
+                  :class="['login-btn', isRequesting ? 'uc-spinner' : '']"
+                >
+                  login
+                </button>
+                <p class="no-account pb-50">
+                  Don’t have an account?
+                  <a href="#" @click.prevent="goTo('register')">Signup</a>
+                </p>
               </div>
-
-              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">login</button>
-
-              <p class="no-account pb-50">
-                Don’t have an account?
-                <a href="#" @click.prevent="goTo('register')">Signup</a>
-              </p>
-            </div>
-          </form>
+            </form>
           </ValidationObserver>
-          
-
           <div class="login-copyright">
             <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
           </div>
@@ -115,8 +124,8 @@
 
 <script>
 export default {
-  layout:'LandingLayout',
-  auth:'guest',
+  layout: 'LandingLayout',
+  auth: 'guest',
   head: {
     bodyAttrs: {
       id: 'login-page',
@@ -125,10 +134,10 @@ export default {
   data() {
     return {
       user: {
-        email:'',
-        password:''
+        email: '',
+        password: '',
       },
-      isRequesting:false
+      isRequesting: false,
     }
   },
   methods: {
@@ -137,10 +146,12 @@ export default {
         if (this.isRequesting) return
         this.isRequesting = true
 
-        const res = await this.$auth.loginWith('local', {data:{
-          email:this.user.email,
-          password: this.user.password
-        }})
+        const res = await this.$auth.loginWith('local', {
+          data: {
+            email: this.user.email,
+            password: this.user.password,
+          },
+        })
 
         console.log(res, 'res')
 
@@ -152,7 +163,7 @@ export default {
           this.isRequesting = false
           this.goTo('index')
         }, 5000)
-      } catch(e) {
+      } catch (e) {
         if (e.response.status === 404) {
           this.showError('Invalid credentials, please try again!')
         } else {
@@ -160,9 +171,8 @@ export default {
         }
         this.isRequesting = false
       }
-
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped lang="scss">
@@ -306,7 +316,7 @@ export default {
   padding: 10px 0;
   width: 100%;
   text-align: right;
-  background: rgba(255, 255, 255, .7);
+  background: rgba(255, 255, 255, 0.7);
   @media (max-width: 991px) {
     text-align: center;
     right: 0;
@@ -344,7 +354,7 @@ export default {
   }
 }
 
-.login-form-checkinput{
+.login-form-checkinput {
   height: auto !important;
 }
 
