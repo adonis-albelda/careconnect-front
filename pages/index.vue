@@ -45,8 +45,8 @@
       <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select Start Time" v-model="selectedTime.start"> 
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
-            <i class="icon-stopwatch"></i>
             <p>Start Time</p>
+            <i class="icon-stopwatch"></i>
             <p>{{selectedTime.start}}</p>
           </div>
         </template> 
@@ -73,8 +73,8 @@
       <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select End Time" v-model="selectedTime.end">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
-            <i class="icon-stopwatch"></i>
             <p>End Time</p>
+            <i class="icon-stopwatch"></i>
             <p>{{selectedTime.end}}</p>
           </div>
         </template> 

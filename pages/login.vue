@@ -355,6 +355,10 @@ export default {
     height: 50px;
     font-size: 17px;
   }
+
+  @media(max-width: 480px) {
+    font-size: 0.75rem
+  }
 }
 
 .login-form-checkinput {

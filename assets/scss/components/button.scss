@@ -125,6 +125,12 @@ button {
   background: #183891;
   border-radius: 6px;
   margin-top: 20px;
+
+  @media(max-width: 480px) {
+    font-size: $fontSize100;
+    line-height: $fontSize400;
+    height: 50px;
+  }
 }
 
 .back {
@@ -136,6 +142,10 @@ button {
   display: flex;
   gap: 10px;
   align-items: center;
+
+  @media(max-width: 767px) {
+    font-size: 16px;
+  }
 
   @media(max-width: 480px) {
     font-size: 0.75rem;
@@ -192,7 +202,7 @@ button {
   }
 
   a {
-    font-size: $fontSize300;
+    font-size: $fontSize200;
     line-height: $fontSize500;
     text-decoration: none;
 

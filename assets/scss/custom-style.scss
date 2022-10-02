@@ -213,7 +213,7 @@
       text-overflow: ellipsis;
 
       @media(max-width: 1400px) {
-        font-size: 1.125rem;
+        font-size: 1rem;
       }
 
       @media(max-width: 480px) {
@@ -552,6 +552,7 @@
                 color: $accentColor100;
                 font-weight: $fontWeightSemiBold;
                 margin-left: 20px;
+                padding-right: 0;
 
                 @media(max-width: 480px) {
                   font-size: 0.75rem;
@@ -571,7 +572,7 @@
 
               a {
                 &:first-child {
-                  font-size: $fontSize300;
+                  font-size: $fontSize200;
                   line-height: $fontSize500;
                   text-decoration: none;
                   display: flex;
@@ -915,7 +916,7 @@
   }
 
   @media(max-width: 767px) {
-    padding-top: 13%;
+    padding-top: 15%;
   }
 
   @media(max-width: 600px) {
@@ -970,8 +971,12 @@
             font-weight: $fontWeightSemiBold;
             text-decoration: none;
 
-            @media(max-width: 480px) {
+            @media(max-width: 767px) {
               font-size: $fontSize300;
+            }
+
+            @media(max-width: 480px) {
+              font-size: $fontSize200;
             }
           }
 
@@ -986,8 +991,12 @@
           font-size: $fontSize600;
           line-height: $fontSize700;
 
+          @media(max-width: 767px) {
+            font-size: 1.563rem;
+          }
+
           @media(max-width: 480px) {
-            font-size: 1.875rem;
+            font-size: 1rem;
           }
         }
       }
@@ -1002,7 +1011,7 @@
         }
 
         @media(max-width: 480px) {
-          margin-top: 15px;
+          margin-top: 0px;
         }
 
         .service-desc {
@@ -1013,9 +1022,14 @@
             color: $invertedColor;
             font-weight: $fontWeightLight;
 
+            @media(max-width: 767px) {
+              font-size: 14px;
+              line-height: 20px;
+            }
+
             @media(max-width: 480px) {
-              font-size: $fontSize300;
-              line-height: 1.563rem;
+              font-size: $fontSize100;
+              line-height: $fontSize400;
             }
           }
         }
@@ -1027,10 +1041,15 @@
             color: $invertedColor;
             font-weight: $fontWeightRegular;
 
+            @media(max-width: 767px) {
+              font-size: 14px;
+              line-height: 20px;
+            }
+
             @media(max-width: 480px) {
-              font-size: $fontSize350;
-              line-height: 1.563rem;
-              margin-top: 30px;
+              font-size: $fontSize100;
+              line-height: $fontSize400;
+              margin-top: 20px;
               margin-bottom: 20px;
             }
           }
@@ -1049,7 +1068,7 @@
               padding-left: 10px;
 
               @media(max-width: 480px) {
-                font-size: $fontSize300;
+                font-size: $fontSize100;
                 line-height: $fontSize400;
               }
 
@@ -1058,6 +1077,11 @@
                 line-height: 27px;
                 color: $accentColor100;
                 font-weight: $fontWeightSemiBold;
+
+                @media(max-width: 480px) {
+                  font-size: $fontSize100;
+                  line-height: $fontSize400;
+                }
               }
             }
           }

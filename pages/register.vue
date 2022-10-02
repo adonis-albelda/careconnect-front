@@ -31,8 +31,6 @@
       <div class="login-cont">
         <h2>Sign Up to Care Connect</h2>
         <p>Create a new account</p>
-
-        to do next update
         <div class="login-socmed">
           <a class="google-btn" href="#"
             >Sign up with Google <img src="/images/icons/google-icon.svg"
@@ -253,14 +251,14 @@ export default {
       }
       @media (max-width: 500px) {
         font-size: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         text-align: center;
       }
     }
     p {
-      @media (max-width: 450px) {
-        font-size: 17px;
-        line-height: 1.2;
+      @media (max-width: 480px) {
+        font-size: 14px;
+        text-align: center;
       }
     }
 
@@ -337,6 +335,10 @@ export default {
   @media (max-width: 991px) {
     height: 50px;
     font-size: 17px;
+  }
+
+  @media(max-width: 480px) {
+    font-size: 0.75rem
   }
 }
 

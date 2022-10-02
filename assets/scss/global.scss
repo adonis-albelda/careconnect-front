@@ -121,6 +121,10 @@ section {
     div {
       &:first-child {
         flex: 1;
+
+        img {
+          width: 10%;
+        }
       }
       
       &:last-child {
