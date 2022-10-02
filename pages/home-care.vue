@@ -50,7 +50,7 @@
 
                         <p class="sub-title">We offer the option of Live-in caregivers for short or long term placements.</p>
 
-                        <a href="#" class="personal-care-btn">Book now</a>
+                        <a href="#" class="personal-care-btn" @click.prevent="goTo('get-quote', {}, {service:'home-service'})">Book now</a>
                     </div>
 
                 </div>

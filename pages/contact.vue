@@ -156,32 +156,36 @@ export default {
   },
   methods: {
     async handleIquiry() {
-      if (this.isRequesting) return
-      this.isRequesting = true
-      const { data, status } = await this.$axios.post('/inquiry', this.inquiry)
-
-      setTimeout(() => {
-        if (status !== 200 && status !== 201) {
-          this.showError('Something went wrong processing your request!')
-        } else {
-          this.showSuccess(
-            'Successfully submitted your inquiry, will contact you soon!'
-          )
-          this.inquiry = this.clone(this.defaultPayload)
-        }
-
-        this.$nextTick(() => {
-          this.$refs.form.reset()
-        })
-
-        this.isRequesting = false
-      }, 3000)
+      try {
+        if (this.isRequesting) return
+        this.isRequesting = true
+        const { data, status } = await this.$axios.post('/inquiry', this.inquiry)
+  
+        setTimeout(() => {
+          if (status !== 200 && status !== 201) {
+            this.showError('Something went wrong processing your request!')
+          } else {
+            this.showSuccess(
+              'Successfully submitted your inquiry, will contact you soon!'
+            )
+            this.inquiry = this.clone(this.defaultPayload)
+          }
+  
+          this.$nextTick(() => {
+            this.$refs.form.reset()
+          })
+  
+          this.isRequesting = false
+        }, 3000)
+      } catch (e) {
+        this.showError('Something went wrong processing your request!')
+      }
     },
   },
 }
 </script>
 
-<style scooped lang="scss">
+<style lang="scss">
 // .main-nav {
 //   display: none;
 // }
@@ -377,7 +381,6 @@ form .contact-col-1 .input-cont {
   @media (max-width: 1200px) {
     flex-direction: column;
     gap: 20px;
-    text-align: center;
   }
   @media (max-width: 1100px) {
     max-width: 767px;

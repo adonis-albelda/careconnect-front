@@ -31,8 +31,8 @@
     </nav>
     <div class="mobile-header">
       <nav>
-        <div>
-          <img src="images/logo.png" alt="careconnect logo" width="20%"/>
+        <div @click="goTo('index')">
+          <img src="images/logo.png" alt="careconnect logo"/>
         </div>
         <div>
           <p>{{$auth.user ? `Hi! ${$auth.user.email}` : 'Guest'}}</p>
@@ -46,7 +46,10 @@
       <ul class="login-row">
         <template v-if="!$auth.user">
           <li @click="goTo('login')">
-            <p><i class="icon-profile"></i> Login</p>
+            <p>Login</p>
+          </li>
+          <li @click="goTo('register')">
+            <p>Register</p>
           </li>
         </template>
         <li v-else>

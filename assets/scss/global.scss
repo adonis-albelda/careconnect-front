@@ -123,7 +123,7 @@ section {
         flex: 1;
 
         img {
-          width: 10%;
+          width: 40px;
         }
       }
       
@@ -249,7 +249,7 @@ section {
     cursor: pointer;
 
     img {
-      width: 18%;
+      width: 14%;
 
       @media (max-width: 991px) {
         width: 15%;
@@ -719,10 +719,6 @@ section {
         width: 100%;
         margin-bottom: 1rem;
         border-radius: 6px;
-
-        @media (max-width: 480px) {
-          display: none;
-        }
       }
 
       &:hover {

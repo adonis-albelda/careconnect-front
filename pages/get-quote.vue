@@ -138,14 +138,19 @@
       </div>
 
       <div class="book-btn">
-        <button>Get A Quote</button>
-        <a href="#">cancel</a>
+        <button @click="createBookingQuote">Get A Quote</button>
+        <a href="#" @click.prevent="goTo('index')">cancel</a>
       </div>
     </div>
   </div>
 </template>
-
 <script>
+import Vue from 'vue';
+import CustomView from '../components/ui/QuoteDialog.vue';
+import SuccessView from '../components/ui/SuccessDialog.vue';
+const QUOTE_EMAIL = 'quote-dialog-name';
+const SUCCESS_EMAIL = 'success-dialog-name';
+
 export default {
   auth:false,
   layout: 'MainLayout',
@@ -217,6 +222,10 @@ export default {
       ],
     }
   },
+  mounted() {
+    Vue.dialog.registerComponent(QUOTE_EMAIL, CustomView);
+    Vue.dialog.registerComponent(SUCCESS_EMAIL, SuccessView);
+  },
   created() {
     let selectedService = this.$route.query.service
 
@@ -236,18 +245,26 @@ export default {
         return
       }
 
-      this.$dialog
-        .alert('', {
+      if (this.$auth.user) {
+        this.$dialog.alert('', {
+          view: SUCCESS_EMAIL, // can be set globally too
+          html: true,
+          animation: 'fade',
+          backdropClose: true
+        });
+
+      } else {
+        this.$dialog.alert('', {
           view: QUOTE_EMAIL, // can be set globally too
           html: true,
           animation: 'fade',
           backdropClose: true,
-          context: this,
-        })
-        .catch(function (e) {
+          context: this
+        }) .catch(function (e) {
           console.log(e)
           // This will be triggered when user clicks on cancel
-        })
+        });
+      }  
     },
   },
 }

@@ -24,7 +24,7 @@
         <a href="#">Terms & conditions</a>
       </div>
 
-      <div class="login-header-logo">
+      <div class="login-header-logo" @click="goTo('index')">
         <img src="/images/login-logo.png" alt="" />
       </div>
 

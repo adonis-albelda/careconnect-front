@@ -1,7 +1,7 @@
 <template>
     <div class="personal-care-wrapper">
         <div class="container">
-            <a class="back" href="#"><img src="/images/arrow-left.png"> Back</a>
+            <a class="back" href="#" @click.prevent="goTo('index')"><img src="/images/arrow-left.png"> Back</a>
 
             <div class="personalcare-banner">
                 <img src="/images/personal-care-banner.png">
@@ -56,7 +56,7 @@
 
                         <p class="sub-title">Trained and certified Personeal Support Workers provide all personal support services</p>
 
-                        <a href="#" class="personal-care-btn">Book now</a>
+                        <a href="#" class="personal-care-btn" @click.prevent="goTo('get-quote', {}, {service:'personal-service'})">Book now</a>
                     </div>
 
                 </div>

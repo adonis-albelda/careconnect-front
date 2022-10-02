@@ -41,8 +41,7 @@
                             <li>Ostomy care</li>
                             <li>Palliative care</li>
                         </ul>
-
-                        <a href="#" class="personal-care-btn">Book now</a>
+                        <a href="#" class="personal-care-btn" @click.prevent="goTo('get-quote', {}, {service:'complex-service'})">Book now</a>
                     </div>
 
                 </div>

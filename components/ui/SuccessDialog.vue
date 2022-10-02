@@ -6,7 +6,7 @@
     </div>
     <div class="dialog-body">
       <div class="quote-sent">
-          <p>We sent the quote to you email!</p>
+          <p>We will send the quote to your email shortly.</p>
           <button @click="$parent.close()">Okay</button>
       </div>
     </div>
