@@ -1,6 +1,6 @@
 <template>
   <div>
-    <notifications group="notify" position="bottom left" width="500" duration="5000"/>
+    <notifications group="notify" position="bottom left" width="500" :duration="4000"/>
     <nav class="main-nav">
       <div class="logo-box" @click="goTo('index')">
         <img src="images/logo.png" alt="careconnect logo" />
@@ -14,7 +14,7 @@
           <span>Services</span>
         </li>
         <li :class="{ active: isActive('contact') }" @click="goTo('contact')"><span>Contact us</span></li>
-        <li class="nav-menu-icons">
+        <li class="nav-menu-icons" v-if="!$auth.user">
           <span>
             <i class="icon-shopping"></i>
           </span>
@@ -22,8 +22,8 @@
         <li class="guest-nav" :class="{ active: isActive('login') }" @click="goTo('login')">
           <span>
             <p>
-              <img src="images/icons/profile.png" alt="" />
-              {{$auth.user ? $auth.user.email : 'Guest'}}
+              <i class="icon-profile"></i>
+              {{$auth.user ? `Hi! ${$auth.user.email}` : 'Guest'}}
             </p>
           </span>
         </li>
@@ -32,10 +32,10 @@
     <div class="mobile-header">
       <nav>
         <div>
-          <img src="/images/mobile-logo.png">
+          <img src="images/logo.png" alt="careconnect logo" width="20%"/>
         </div>
         <div>
-          <p>UserEmail</p>
+          <p>{{$auth.user ? `Hi! ${$auth.user.email}` : 'Guest'}}</p>
           <img @click="openSidebar()" src="/images/burger-menu.png">
         </div>
       </nav>
@@ -44,15 +44,14 @@
     <div v-if="isShow" class="sidebar-menu">
       <img @click="closeSidebar()" class="close-sidebar" src="/images/close-icon.png">
       <ul class="login-row" @click="goTo('login')">
-        <li>
-          <p><i class="icon-profile"></i> Login</p>
-        </li>
-        <li>
+        <template v-if="!$auth.user">
+          <li>
+            <p><i class="icon-profile"></i> Login</p>
+          </li>
+        </template>
+        <li v-else>
           <p> <i class="icon-shopping"></i> Cart</p>
         </li>
-      </ul>
-
-      <ul class="menus">
         <li :class="[$route.name == 'index' ? 'mobile-menu-active' : '']" @click="goTo('index')">
           <p>home</p>
         </li>
@@ -61,6 +60,9 @@
         </li>
         <li :class="[$route.name == 'contact' ? 'mobile-menu-active' : '']" @click="goTo('contact')">
           <p>contact us</p>
+        </li>
+        <li @click="signOutUser" v-if="$auth.user">
+          <p>Sign out</p>
         </li>
       </ul>
     </div>
@@ -146,6 +148,10 @@ export default {
       this.isShow = !this.isShow;
     },
     closeSidebar() {
+      this.isShow = false
+    },
+    signOutUser() {
+      this.$auth.logout()
       this.isShow = false
     }
   },

@@ -55,6 +55,7 @@
 <script>
 export default {
   layout: 'MainLayout',
+  auth:false,
   head: {
     bodyAttrs: {
       id: 'personal-care-page',

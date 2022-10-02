@@ -2,7 +2,9 @@
 
 button {
   cursor: pointer;
-
+  outline: none;
+  border: none;
+  
   &:hover {
     opacity: 0.8;
     transition: all ease 0.3s;

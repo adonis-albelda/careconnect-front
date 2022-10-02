@@ -30,16 +30,20 @@
 
       <div class="login-cont">
         <h2>Sign Up to Care Connect</h2>
-        <!-- <p>Create a new account</p> -->
+        <p>Create a new account</p>
 
-        <!-- to do next update -->
-        <!-- <div class="login-socmed">
-                    <a class="google-btn" href="#">Sign up with Google <img src="/images/icons/google-icon.svg"></a>
-                    <a class="google-btn" href="#">Sign up with Facebook <img src="/images/icons/facebook-icon.svg"></a>
-                </div> -->
-        <!-- <div class="divider">
-                    <p>or</p>
-                </div> -->
+        to do next update
+        <div class="login-socmed">
+          <a class="google-btn" href="#"
+            >Sign up with Google <img src="/images/icons/google-icon.svg"
+          /></a>
+          <a class="google-btn" href="#"
+            >Sign up with Facebook <img src="/images/icons/facebook-icon.svg"
+          /></a>
+        </div>
+        <div class="divider">
+          <p>or</p>
+        </div>
         <ValidationObserver v-slot="{ handleSubmit, reset }">
           <form
             @submit.prevent="handleSubmit(handleRegistration)"
@@ -72,7 +76,11 @@
                 <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Password</label>
                   <div class="for-input">
-                    <input class="text-box" v-model="user.password" type="password" />
+                    <input
+                      class="text-box"
+                      v-model="user.password"
+                      type="password"
+                    />
                     <span>{{ errors[0] }}</span>
                   </div>
                 </div>
@@ -85,12 +93,18 @@
                 <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Confirm Password</label>
                   <div class="for-input">
-                    <input class="text-box" v-model="user.password_confirmation" type="password" />
+                    <input
+                      class="text-box"
+                      v-model="user.password_confirmation"
+                      type="password"
+                    />
                     <span>{{ errors[0] }}</span>
                   </div>
                 </div>
               </ValidationProvider>
-              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">Sign up</button>
+              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">
+                Sign up
+              </button>
               <p class="no-account pb-50">
                 Already a member?
                 <a href="#" @click.prevent="goTo('login')">Login</a>
@@ -109,8 +123,8 @@
 
 <script>
 export default {
-  auth:'guest',
-  layout:'LandingLayout',
+  auth: 'guest',
+  layout: 'LandingLayout',
   head: {
     bodyAttrs: {
       id: 'register-page',
@@ -128,16 +142,23 @@ export default {
   methods: {
     async handleRegistration() {
       try {
+        if (this.isRequesting) return
         this.isRequesting = true
         await this.$axios.post('register', this.user)
-        const res = await this.$auth.loginWith('local', {data:{
-          email:this.user.email,
-          password: this.user.password
-        }})
-        this.showSuccess('Successfully submitted your inquiry, will contact you soon!')
+
+        const res = await this.$auth.loginWith('local', {
+          data: {
+            email: this.user.email,
+            password: this.user.password,
+          },
+        })
+
+        this.showSuccess(
+          'Successfully submitted your inquiry, will contact you soon!'
+        )
         this.isRequesting = false
         this.goTo('index')
-      } catch(e) {
+      } catch (e) {
         this.showError('Something went wrong processing your request!')
       }
     },
@@ -282,7 +303,7 @@ export default {
   padding: 10px 0;
   width: 100%;
   text-align: right;
-  background: rgba(255, 255, 255, .7);
+  background: rgba(255, 255, 255, 0.7);
   @media (max-width: 991px) {
     text-align: center;
     right: 0;
@@ -320,7 +341,7 @@ export default {
   }
 }
 
-.login-form-checkinput{
+.login-form-checkinput {
   height: auto !important;
 }
 
