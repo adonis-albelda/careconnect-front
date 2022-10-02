@@ -99,7 +99,7 @@
         </template>
       </VSelect>
       <div>
-        <button class="btn accent full uc-spinner" @click="createBookingQuote">Get A Quote</button>
+        <button class="btn accent full" @click="createBookingQuote">Get A Quote</button>
       </div>
     </div>
     <section class="services-sec">
@@ -226,13 +226,20 @@
 <script>
 import Vue from 'vue';
 import CustomView from '../components/ui/QuoteDialog.vue';
+import SuccessView from '../components/ui/SuccessDialog.vue';
 const QUOTE_EMAIL = 'quote-dialog-name';
+const SUCCESS_EMAIL = 'success-dialog-name';
 
 import AOS from 'aos'
 export default {
   auth:false,
   name: 'LandingPage',
   layout:'MainLayout',
+  head: {
+    bodyAttrs: {
+      id: 'home-page',
+    },
+  },
   data() {
     return {
       selectedService: {
@@ -242,8 +249,8 @@ export default {
       },
       selectedDates:[],
       selectedTime: {
-        start:null,
-        end:null
+        start:"9:00 AM",
+        end:"9:00 AM"
       },
       options: [
         {
@@ -305,74 +312,12 @@ export default {
         "3:00 PM",
         "3:30 PM",
       ],
-      time : [
-        {
-          label: '9:00',
-          period: 'AM',
-        },
-        {
-          label: '9:30',
-          period: 'AM',
-        },
-        {
-          label: '10:00',
-          period: 'AM',
-        },
-        {
-          label: '10:30',
-          period: 'PM',
-        },
-        {
-          label: '11:00',
-          period: 'AM',
-        },
-        {
-          label: '11:30',
-          period: 'AM',
-        },
-        {
-          label: '12:00',
-          period: 'PM',
-        },
-        {
-          label: '12:30',
-          period: 'PM',
-        },
-        {
-          label: '2:00',
-          period: 'PM',
-        },
-        {
-          label: '2:30',
-          period: 'PM',
-        },
-        {
-          label: '3:00',
-          period: 'PM',
-        },
-        {
-          label: '3:30',
-          period: 'PM',
-        },
-        {
-          label: '4:00',
-          period: 'PM',
-        },
-        
-      ]
     }
   },
   mounted() {
     AOS.init()
     Vue.dialog.registerComponent(QUOTE_EMAIL, CustomView);
-
-    // this.$dialog.alert('dsdsa', {
-    //   view: QUOTE_EMAIL, // can be set globally too
-    //   html: true,
-    //   animation: 'fade',
-    //   backdropClose: true
-    // });
-    
+    Vue.dialog.registerComponent(SUCCESS_EMAIL, SuccessView);
   },
   methods :  {
     createBookingQuote() {
@@ -383,6 +328,12 @@ export default {
         }
 
       if (this.$auth.user) {
+        this.$dialog.alert('', {
+          view: SUCCESS_EMAIL, // can be set globally too
+          html: true,
+          animation: 'fade',
+          backdropClose: true
+        });
 
       } else {
         this.$dialog.alert('', {

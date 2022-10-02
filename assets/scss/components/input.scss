@@ -11,6 +11,10 @@
   width: 100%;
   border-radius: 5px;
   color: $invertedColor;
+
+  @media(max-width: 480px) {
+    color: $invertedColor !important;
+  }
   
   &::placeholder {
     color: $normalColor;

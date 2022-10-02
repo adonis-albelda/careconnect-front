@@ -23,7 +23,7 @@
         <a href="#">Privacy</a>
         <a href="#">Terms & conditions</a>
       </div>
-      <div class="login-header-logo">
+      <div class="login-header-logo" @click="goTo('index')">
         <img src="/images/login-logo.png" alt="" />
       </div>
 
@@ -68,9 +68,9 @@
                 name="Password"
                 rules="required"
               >
-                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
+                <div class="input-cont">
                   <label>Password</label>
-                  <div class="for-input error-msg">
+                  <div :class="['for-cont', errors[0] ? 'error-msgg' : '']">
                     <input class="text-box" v-model="user.password" type="password" />
                     <span>{{ errors[0] }}</span>
                   </div>
@@ -93,7 +93,7 @@
                 </div>
               </div>
 
-              <button class="login-btn">login</button>
+              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">login</button>
 
               <p class="no-account pb-50">
                 Don’t have an account?
@@ -115,6 +115,7 @@
 
 <script>
 export default {
+  layout:'LandingLayout',
   auth:'guest',
   head: {
     bodyAttrs: {
@@ -126,19 +127,40 @@ export default {
       user: {
         email:'',
         password:''
-      }
+      },
+      isRequesting:false
     }
   },
   methods: {
     async handleLogin() {
-      const res = await this.$auth.loginWith('local', {data:{
-        email:this.user.email,
-        password: this.user.password
-      }})
+      try {
+        if (this.isRequesting) return
+        this.isRequesting = true
 
-      console.log(res, 'res')
-      // if (res.status !== 200) return
-      // this.goTo('index')
+        const res = await this.$auth.loginWith('local', {data:{
+          email:this.user.email,
+          password: this.user.password
+        }})
+
+        console.log(res, 'res')
+
+        if (res.data) {
+          this.showSuccess('Succesfully logged in !')
+        }
+
+        setTimeout(() => {
+          this.isRequesting = false
+          this.goTo('index')
+        }, 5000)
+      } catch(e) {
+        if (e.response.status === 404) {
+          this.showError('Invalid credentials, please try again!')
+        } else {
+          this.showError('Something went wrong processing your request!')
+        }
+        this.isRequesting = false
+      }
+
     }
   }
 }
@@ -225,6 +247,7 @@ export default {
     }
     @media (max-width: 450px) {
       padding: 30px 0;
+      padding-top: 0;
     }
 
     h2 {

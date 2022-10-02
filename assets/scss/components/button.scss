@@ -2,7 +2,9 @@
 
 button {
   cursor: pointer;
-
+  outline: none;
+  border: none;
+  
   &:hover {
     opacity: 0.8;
     transition: all ease 0.3s;
@@ -127,7 +129,7 @@ button {
   align-items: center;
 
   @media(max-width: 480px) {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 
   img {

@@ -13,9 +13,8 @@ Vue.mixin({
       this.$notify({
         group: 'notify',
         title: 'Error!',
-        text: 'Something went wrong processing your request!',
-        type:'success',
-        duration: -1
+        text: message,
+        type:'error',
       })
     }
   },

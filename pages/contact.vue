@@ -24,12 +24,11 @@
             </a>
             <a href="#">
               <i class="icon-location_pin"></i>
-              120 Shelborne
-              North York On. Canada M6B 1M7
+              120 Shelborne North York On. Canada M6B 1M7
             </a>
           </div>
         </div>
-        <ValidationObserver v-slot="{ handleSubmit, reset }">
+        <ValidationObserver ref="form" v-slot="{ handleSubmit, reset }">
           <form
             @submit.prevent="handleSubmit(handleIquiry)"
             @reset.prevent="reset"
@@ -40,7 +39,7 @@
                 name="Name"
                 rules="required"
               >
-                <div :class="['input-cont', errors[0] ? 'error-msg': '']">
+                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Name <span>*</span></label>
                   <div class="input-inner-cont">
                     <div>
@@ -68,7 +67,7 @@
                 name="Email"
                 rules="required|email"
               >
-                <div :class="['input-cont', errors[0] ? 'error-msg': '']">
+                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Email Address <span>*</span></label>
                   <div>
                     <input
@@ -82,8 +81,8 @@
                 </div>
               </ValidationProvider>
               <!-- rules="required|digits|max:12|min:12" -->
-              <ValidationProvider name="Phone number"  v-slot="{errors}">
-                <div :class="['input-cont', errors[0] ? 'error-msg': '']">
+              <ValidationProvider name="Phone number" v-slot="{ errors }">
+                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                   <label>Phone number <span>*</span></label>
                   <div>
                     <input
@@ -100,8 +99,9 @@
                 v-slot="{ errors }"
                 name="Message"
                 rules="required"
-              > <div>
-                  <div :class="['input-cont', errors[0] ? 'error-msg': '']">
+              >
+                <div>
+                  <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                     <label>Message <span>*</span></label>
                     <div>
                       <textarea
@@ -112,7 +112,14 @@
                     </div>
                     <span>{{ errors[0] }}</span>
                   </div>
-                  <button class="send-btn btn block uc-spinner black">Send</button>
+                  <button
+                    :class="[
+                      'send-btn btn block',
+                      isRequesting ? 'uc-spinner black' : '',
+                    ]"
+                  >
+                    Send
+                  </button>
                 </div>
               </ValidationProvider>
             </div>
@@ -124,7 +131,7 @@
 </template>
 <script>
 export default {
-  auth:false,
+  auth: false,
   layout: 'MainLayout',
   data() {
     return {
@@ -135,8 +142,8 @@ export default {
         phone_number: '',
         message: '',
       },
-      isRequesting:false,
-      defaultPayload:{}
+      isRequesting: false,
+      defaultPayload: {},
     }
   },
   head: {
@@ -144,22 +151,31 @@ export default {
       id: 'contact-page',
     },
   },
-  mounted() {
-    this.showError('Something went wrong processing your request!')
-  },
   created() {
     this.defaultPayload = this.clone(this.inquiry)
   },
   methods: {
     async handleIquiry() {
-      const {data, status} = await this.$axios.post('/inquiry', this.inquiry)
+      if (this.isRequesting) return
+      this.isRequesting = true
+      const { data, status } = await this.$axios.post('/inquiry', this.inquiry)
 
-      if (status !== 200 && status !== 201) {
-        this.showError('Something went wrong processing your request!')
-      } else {
-        this.showMessage('Successfully submitted your inquiry, will contact you soon!')
-        this.inquiry = this.clone(this.defaultPayload)
-      }
+      setTimeout(() => {
+        if (status !== 200 && status !== 201) {
+          this.showError('Something went wrong processing your request!')
+        } else {
+          this.showSuccess(
+            'Successfully submitted your inquiry, will contact you soon!'
+          )
+          this.inquiry = this.clone(this.defaultPayload)
+        }
+
+        this.$nextTick(() => {
+          this.$refs.form.reset()
+        })
+
+        this.isRequesting = false
+      }, 3000)
     },
   },
 }
@@ -307,9 +323,9 @@ form .contact-col-1 .input-cont {
 
 .contact-col-2 .text-box {
   @media (max-width: 800px) {
-   height: 50px !important;
-   border: 1px solid #aaa;
-   font-size: 18px;;
+    height: 50px !important;
+    border: 1px solid #aaa;
+    font-size: 18px;
   }
   &::placeholder {
     @media (max-width: 800px) {
@@ -351,7 +367,7 @@ form .contact-col-1 .input-cont {
 }
 
 .newsletter-sec > div p {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .newsletter-sec .container {
@@ -383,7 +399,7 @@ form .contact-col-1 .input-cont {
 
 .newsletter-sec .btn {
   @media (max-width: 800px) {
-   height: 50px; 
+    height: 50px;
   }
 }
 
@@ -393,5 +409,4 @@ form .contact-col-1 .input-cont {
     font-size: 17px;
   }
 }
-
 </style>

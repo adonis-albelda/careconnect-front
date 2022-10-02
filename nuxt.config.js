@@ -49,7 +49,7 @@ export default {
   plugins: [
     "~global/components/VueSelect.js",
     "~global/components/VueDatepicker.js",
-    {src:"~global/components/VueDialog.js", ssr:true, mode: 'client'},
+    {src:"~global/components/VueDialog.js", ssr:false, mode: 'client'},
     {src:"~global/components/VueNotification.js", ssr:false, mode: 'client'},
     "~global/utils/index.js",
     {src:"~global/plugins/VeeValidate.js", ssr:false}

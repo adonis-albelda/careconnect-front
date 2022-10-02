@@ -7,12 +7,13 @@
 @import './transition.scss';
 @import './components/index.scss';
 @import './contact_us.scss';
-@import "~static/font/style.css";
+@import '~static/font/style.css';
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('~/static/font/fonts/icomoon.eot?1ezf5a');
-  src:  url('~/static/font/fonts/icomoon.eot?1ezf5a#iefix') format('embedded-opentype'),
+  src: url('~/static/font/fonts/icomoon.eot?1ezf5a');
+  src: url('~/static/font/fonts/icomoon.eot?1ezf5a#iefix')
+      format('embedded-opentype'),
     url('~/static/font/fonts/icomoon.ttf?1ezf5a') format('truetype'),
     url('~/static/font/fonts/icomoon.woff?1ezf5a') format('woff'),
     url('~/static/font/fonts/icomoon.svg?1ezf5a#icomoon') format('svg');
@@ -79,20 +80,19 @@ p {
   max-width: 1280px;
   margin-inline: auto;
 
-  @media(max-width: 1300px) {
+  @media (max-width: 1300px) {
     padding-left: 2% !important;
     padding-right: 2% !important;
   }
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding-left: 3% !important;
     padding-right: 3% !important;
   }
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     width: 90%;
   }
-
 }
 
 section {
@@ -106,10 +106,10 @@ section {
   left: 0;
   right: 0;
   z-index: 99;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 15px 30px;
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     display: block;
   }
 
@@ -117,6 +117,23 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    div {
+      &:first-child {
+        flex: 1;
+      }
+      
+      &:last-child {
+        display: flex;
+        gap: 20px;
+
+        p {
+          font-size: 0.875rem;
+          color: $normalColor;
+          font-weight: $fontWeightRegular;
+        }
+      }
+    }
   }
 }
 
@@ -131,72 +148,76 @@ section {
 
 .sidebar-menu {
   position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: 25%;
-    z-index: 9999;
-    background-color: #fff;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 40%;
+  z-index: 9999;
+  background-color: #fff;
+  box-shadow: -4px 1px 20px 3px #d8d9de;
 
-    .close-sidebar {
-      position: absolute;
-      right: 10%;
-      top: 4%;
-    }
+  .close-sidebar {
+    position: absolute;
+    right: 10%;
+    top: 4%;
+  }
 
-    .login-row {
+  .login-row {
+    padding: 0;
+    margin-top: 25%;
 
-      padding: 0;
-      margin-top: 25%;
+    li {
+      padding: 12px 0;
+      list-style: none;
+      padding-left: 20%;
+      border-bottom: 1px solid #f1f1f1;
 
-      li {
-        padding: 12px 0;
-        list-style: none;
+      p {
+        font-size: $fontSize400;
+        line-height: 30px;
+        color: $invertedColor;
+        text-transform: capitalize;
+        font-weight: $fontWeightSemiBold;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 15px;
 
-        p {
-          font-size: $fontSize400;
-          line-height: 30px;
-          color: $invertedColor;
-          font-weight: $fontWeightSemiBold;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 15px;
-
-          @media(max-width: 480px) {
-            font-size: 0.938rem;
-          }
+        @media (max-width: 480px) {
+          font-size: 0.938rem;
         }
       }
     }
+  }
 
-    .menus {
-      padding: 0;
-      margin-top: 20%;
-      li {
-        list-style: none;
+  .menus {
+    padding: 0;
+    margin-top: 0%;
+    li {
+      list-style: none;
 
-        font-size: $fontSize400;
-          line-height: 30px;
-          color: $invertedColor;
-          font-weight: $fontWeightSemiBold;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 15px;
-          text-transform: uppercase;
-          padding: 20px 0;
+      font-size: $fontSize400;
+      line-height: 30px;
+      color: $invertedColor;
+      font-weight: $fontWeightSemiBold;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 15px;
+      text-transform: uppercase;
+      padding: 20px 0;
+      padding-left: 20%;
 
-          @media(max-width: 480px) {
-            font-size: 0.938rem;
-          }
-      }
-
-      .mobile-menu-active {
-        background-color: $accentColor100;
-        color: $normalColor;
+      @media (max-width: 480px) {
+        font-size: 0.938rem;
       }
     }
+
+    .mobile-menu-active {
+      background-color: $accentColor100;
+      color: $normalColor;
+    }
+  }
 }
 
 .main-nav {
@@ -208,11 +229,11 @@ section {
   width: 100%;
   z-index: 2;
 
-  @media(max-width: 1200px) {
+  @media (max-width: 1200px) {
     padding: 0rem 2rem;
   }
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     display: none;
   }
 
@@ -226,7 +247,7 @@ section {
     img {
       width: 18%;
 
-      @media(max-width: 991px) {
+      @media (max-width: 991px) {
         width: 15%;
       }
     }
@@ -236,7 +257,7 @@ section {
       font-weight: $fontWeightSemiBold;
       color: $neutralColor;
 
-      @media(max-width: 1200px) {
+      @media (max-width: 1200px) {
         font-size: 1.563rem;
       }
 
@@ -268,23 +289,23 @@ section {
     letter-spacing: 1px;
     height: 100px;
 
-    @media(max-width: 1200px) {
+    @media (max-width: 1200px) {
       font-size: 0.875rem;
     }
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       font-size: 0.75rem;
     }
 
     span {
       p {
-    
         i.icon-profile {
           font-size: 22px;
+          position: relative;
+          top: -2px;
         }
       }
     }
-
 
     &.active {
       background-color: $accentColor100;
@@ -311,7 +332,7 @@ section {
     gap: 1rem;
 
     i {
-      font-size: 18px;
+      font-size: 22px;
       color: $neutralColor;
     }
   }
@@ -339,7 +360,7 @@ section {
       color: $neutralColor;
 
       h1 {
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: 1.75rem;
           line-height: 43px;
         }
@@ -349,7 +370,7 @@ section {
         font-weight: $fontWeightLight;
         margin-top: 1rem;
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: 0.75rem;
           line-height: 1rem;
           margin-top: 5px;
@@ -369,11 +390,11 @@ section {
   margin-right: auto;
   color: $invertedColor !important;
 
-  @media(max-width: 1200px) {
+  @media (max-width: 1200px) {
     width: 90%;
   }
 
-  @media(max-width: 991px) {
+  @media (max-width: 991px) {
     margin-top: 0;
     background-color: $normalColor;
     width: 100%;
@@ -383,7 +404,7 @@ section {
     flex-wrap: wrap;
   }
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     margin-top: 0;
     display: block;
     background-color: $normalColor;
@@ -397,11 +418,11 @@ section {
   .list-services {
     width: 30%;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       width: 40%;
     }
 
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       width: 100%;
     }
 
@@ -409,7 +430,7 @@ section {
       padding: 0.2rem 1rem;
       border-radius: 6px !important;
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         padding: 0.4rem 1rem;
       }
 
@@ -423,42 +444,40 @@ section {
   .time-picker {
     width: 20%;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       width: 25%;
     }
 
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       width: 100%;
       margin-bottom: 20px;
     }
   }
 
-
-
   #vs1__listbox {
-    margin-top: .2rem !important;
+    margin-top: 0.2rem !important;
   }
 
   .mx-datepicker {
     width: 20%;
     height: 70px;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       width: 25%;
       background: #f5f5f5;
       border: 1px solid #e9e9e9;
     }
 
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       width: 100%;
-      background: #F5F5F5;
-      border: 1px solid #E9E9E9;
+      background: #f5f5f5;
+      border: 1px solid #e9e9e9;
       border-radius: 6px;
       margin-top: 4%;
       margin-bottom: 4%;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       height: 60px;
     }
 
@@ -495,7 +514,7 @@ section {
         font-size: $fontSize550;
         line-height: $fontSize700;
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: $fontSize500;
           line-height: $fontSize550;
         }
@@ -510,7 +529,7 @@ section {
     .container {
       flex: 1;
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         flex: inherit;
       }
     }
@@ -521,22 +540,21 @@ section {
     padding: 5rem 0 10rem 0;
     gap: 6rem;
 
-    @media(max-width: 900px) {
+    @media (max-width: 900px) {
       padding: 5rem 0 4rem 0;
       flex-wrap: wrap;
       gap: 2rem;
     }
 
-    @media(max-width:480px) {
+    @media (max-width: 480px) {
       display: block;
       padding: 2rem 0 1rem 0;
     }
 
     div {
-
       margin-bottom: 30px;
 
-      @media(max-width: 900px) {
+      @media (max-width: 900px) {
         text-align: center;
       }
 
@@ -546,15 +564,15 @@ section {
         gap: 0.8rem;
         margin-bottom: 2rem;
 
-        @media(max-width: 900px) {
+        @media (max-width: 900px) {
           justify-content: center;
         }
 
-        @media(max-width: 1200px) {
+        @media (max-width: 1200px) {
           font-size: 1.25rem;
         }
-  
-        @media(max-width: 480px){
+
+        @media (max-width: 480px) {
           font-size: $fontSize300;
           line-height: $fontSize500;
           justify-content: left;
@@ -562,31 +580,29 @@ section {
         }
 
         img {
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             width: 16%;
           }
         }
       }
 
       p {
-
         font-size: $fontSize300;
         line-height: $fontSize500;
         color: $invertedColor;
         font-weight: $fontWeightLight;
 
-        @media(max-width: 1200px) {
+        @media (max-width: 1200px) {
           font-size: 0.875rem;
         }
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: $fontSize200;
           line-height: 21px;
           text-align: left;
         }
       }
     }
-
   }
 }
 
@@ -603,84 +619,82 @@ section {
   background-color: $normalColor;
   margin-top: 3%;
 
-  @media(max-width: 1700px) {
+  @media (max-width: 1700px) {
     margin-top: 2%;
   }
 
-  @media(max-width: 1440px) {
+  @media (max-width: 1440px) {
     margin-top: 0;
   }
 
-  @media(max-width: 1440px) {
+  @media (max-width: 1440px) {
     padding-bottom: 1px;
   }
 
-  @media(max-width: 480px) {
-    padding-top: 4rem;
+  @media (max-width: 480px) {
+    padding-top: 2rem;
     margin-top: 0;
   }
 
   h1 {
-
-    @media(max-width: 1200px) {
+    @media (max-width: 1200px) {
       font-size: 2.5rem;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       font-size: $fontSize500;
       line-height: 30px;
       margin-bottom: 20px;
     }
   }
-  
+
   .items {
     display: flex;
     margin: 3rem -2rem 6rem -2rem;
     cursor: pointer;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       display: block;
       margin: 0;
     }
 
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
       display: block;
     }
-    
+
     .title {
       margin-bottom: 1rem;
 
-      @media(max-width: 1200px) {
+      @media (max-width: 1200px) {
         font-size: 0.938rem;
       }
 
-      @media(max-width: 480px) {
-
+      @media (max-width: 480px) {
         font-size: $fontSize300;
         line-height: $fontSize500;
       }
     }
-  
+
     .price {
       font-size: $fontSize300;
       color: $accentColor100;
       font-weight: $fontWeightBold;
     }
-  
+
     .desc {
       font-size: $fontSize300;
       margin-bottom: 3rem;
 
-      @media(max-width: 1200px) {
+      @media (max-width: 1200px) {
         font-size: 0.938rem;
         margin-bottom: 0;
       }
 
-      @media(max-width: 767px) {
+      @media (max-width: 767px) {
         margin-bottom: 20px;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         font-size: $fontSize200;
         line-height: 1.313rem;
       }
@@ -689,20 +703,20 @@ section {
     .service {
       transition: all ease 0.3s;
       padding: 2rem;
-      min-width: calc(100%/3);
+      min-width: calc(100% / 3);
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         min-width: 100%;
         padding: 0;
         margin-bottom: 40px;
       }
-      
+
       > img {
         width: 100%;
         margin-bottom: 1rem;
         border-radius: 6px;
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           display: none;
         }
       }
@@ -718,22 +732,20 @@ section {
       .actions {
         display: none;
         transition: all ease 0.3s;
-        
-        @media(max-width: 767px) {
+
+        @media (max-width: 767px) {
           display: block;
         }
         .btn:first-child {
           margin-bottom: 0.8rem;
-
         }
 
         .plain {
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             display: none;
           }
         }
       }
-     
     }
   }
 }
@@ -750,7 +762,7 @@ section {
     color: $normalColor !important;
   }
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     padding: 50px 0;
   }
 
@@ -760,16 +772,16 @@ section {
     padding: 5rem 0;
     justify-content: space-between;
 
-    @media(max-width: 900px) {
+    @media (max-width: 900px) {
       padding: 0rem 0;
       align-items: center;
     }
 
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
       gap: 5rem;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       display: block;
     }
 
@@ -778,11 +790,11 @@ section {
       line-height: $fontSize550;
       margin-bottom: 15px;
 
-      @media(max-width: 900px) {
+      @media (max-width: 900px) {
         font-size: 1.563rem;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         font-size: 1.25rem;
         margin-bottom: 0;
       }
@@ -793,7 +805,7 @@ section {
       line-height: $fontSize400;
       margin-bottom: 20px;
 
-      @media(max-width: 900px) {
+      @media (max-width: 900px) {
         font-size: 0.75rem;
       }
     }
@@ -803,12 +815,12 @@ section {
     display: flex;
     gap: 0.5rem;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       display: block;
     }
 
     input {
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         margin-bottom: 10px;
         height: 50px;
         color: $normalColor;
@@ -821,16 +833,11 @@ section {
     }
 
     button {
-
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         width: 100%;
         height: 50px;
       }
-  
     }
-
-
-
   }
 }
 
@@ -841,11 +848,11 @@ section {
   background-color: $normalColor;
   background-position: left 92%;
 
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     padding: 4rem 0;
   }
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     padding: 4rem 0;
   }
 
@@ -853,11 +860,11 @@ section {
     display: flex;
     gap: 8rem;
 
-    @media(max-width: 900px) {
+    @media (max-width: 900px) {
       display: block;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       display: block;
     }
 
@@ -869,15 +876,15 @@ section {
   h1 {
     position: relative;
 
-    @media(max-width: 900px) {
+    @media (max-width: 900px) {
       margin-bottom: 20px;
     }
 
-    @media(max-width: 1200px) {
+    @media (max-width: 1200px) {
       font-size: 2.5rem;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       font-size: $fontSize500;
       line-height: 30px;
       margin-bottom: 28px;
@@ -901,7 +908,7 @@ section {
     margin-bottom: 2rem;
 
     h3 {
-      @media(max-width: 1200px) {
+      @media (max-width: 1200px) {
         font-size: 1.25rem;
       }
     }
@@ -918,7 +925,7 @@ section {
       font-size: $fontSize300;
       font-weight: $fontWeightLight;
 
-      @media(max-width: 1200px) {
+      @media (max-width: 1200px) {
         font-size: 0.875rem;
       }
     }
@@ -932,7 +939,7 @@ footer {
   h3 {
     margin-bottom: 1rem;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       font-size: 0.938rem;
     }
   }
@@ -946,7 +953,7 @@ footer {
     padding: 7rem 0rem 4rem 0rem;
     display: flex;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       display: block;
       padding: 3rem 0rem 4rem 0rem;
     }
@@ -955,11 +962,11 @@ footer {
   .footer-logo {
     flex: 0 0 30em;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       flex: 0 0 25em;
     }
 
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
       flex: 0 0 20em;
     }
 
@@ -967,11 +974,11 @@ footer {
       width: 50%;
       text-align: center;
 
-      @media(max-width: 767px) {
+      @media (max-width: 767px) {
         width: 70%;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         margin: auto;
         width: 65%;
       }
@@ -988,7 +995,7 @@ footer {
       font-size: $fontSize550;
       font-weight: $fontWeightSemiBold;
 
-      @media(max-width: 991px) {
+      @media (max-width: 991px) {
         font-size: 1.75rem;
       }
     }
@@ -1003,12 +1010,12 @@ footer {
     width: 100%;
     gap: 7rem;
 
-    @media(max-width: 1200px) {
+    @media (max-width: 1200px) {
       gap: 3rem;
       flex-wrap: wrap;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       display: block;
       margin-top: 40px;
     }
@@ -1016,22 +1023,22 @@ footer {
     > div {
       flex: 1;
 
-      @media(max-width: 1200px) {
+      @media (max-width: 1200px) {
         width: 36%;
         flex: auto;
       }
 
-      @media(max-width: 767px) {
+      @media (max-width: 767px) {
         width: 50%;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         margin-bottom: 20px;
         width: 100%;
       }
 
       h3 {
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: $fontSize400;
           line-height: $fontSize450;
         }
@@ -1043,11 +1050,11 @@ footer {
         align-items: start;
         gap: 0.6rem;
 
-        @media(max-width: 991px) {
+        @media (max-width: 991px) {
           font-size: 0.938rem;
         }
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: $fontSize200;
           line-height: 1.875rem;
           padding-left: 12px;
@@ -1061,14 +1068,12 @@ footer {
     text-align: center;
 
     p {
-
       font-size: $fontSize100;
       line-height: $fontSize350;
       color: $invertedColor;
       font-weight: $fontWeightRegular;
 
-
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         font-size: 0.625rem;
         line-height: $fontSize350;
         font-weight: $fontWeightRegular;
@@ -1084,6 +1089,10 @@ footer {
   right: 1%;
   bottom: 2%;
   border-radius: 50%;
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 }
 
 // form custom css
@@ -1094,19 +1103,19 @@ form > div:first-child {
 // spinner
 @keyframes spin {
   from {
-      transform:rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes spin {
   from {
-    transform:rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -1115,11 +1124,11 @@ form > div:first-child {
   width: inherit;
   color: transparent !important;
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     border: 4px solid #fff;
     border-bottom: 4px solid transparent;
-    animation: spin .5s linear infinite;
+    animation: spin 0.5s linear infinite;
     -webkit-animation: spin 1s linear infinite;
     z-index: 999;
     display: block;
@@ -1135,11 +1144,11 @@ form > div:first-child {
 
   &.black {
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       border: 4px solid #000;
       border-bottom: 4px solid transparent;
-      animation: spin .5s linear infinite;
+      animation: spin 0.5s linear infinite;
       -webkit-animation: spin 1s linear infinite;
       z-index: 999;
       display: block;
@@ -1168,7 +1177,7 @@ form > div:first-child {
 
 .vue-notification-group .notification-title {
   font-size: 1.1rem;
-} 
+}
 
 .vue-notification-group .notification-content {
   font-size: 0.85rem;
