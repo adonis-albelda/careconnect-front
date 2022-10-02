@@ -274,7 +274,7 @@ export default {
       }
     }
     p {
-      @media (max-width: 450px) {
+      @media (max-width: 480px) {
         font-size: 14px;
         line-height: 1.2;
         text-align: center;
