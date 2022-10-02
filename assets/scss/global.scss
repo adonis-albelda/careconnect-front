@@ -541,7 +541,8 @@ section {
 
   .items.container {
     @media(max-width: 400px) {
-      padding: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 
@@ -836,9 +837,7 @@ section {
     input {
       @media (max-width: 480px) {
         margin-bottom: 10px;
-        height: 50px;
         color: $normalColor;
-        font-size: 0.75rem;
       }
 
       &::placeholder {

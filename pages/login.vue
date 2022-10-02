@@ -350,18 +350,6 @@ export default {
   padding: 30px 0;
 }
 
-.login-form input {
-  @media (max-width: 991px) {
-    height: 50px;
-    font-size: 17px;
-  }
-
-  @media(max-width: 480px) {
-    font-size: 0.75rem;
-    height: 45px;
-  }
-}
-
 .login-form-checkinput {
   height: auto !important;
 }
