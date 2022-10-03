@@ -6,7 +6,7 @@
         @click="goTo('index')"
         src="/images/login-logo.png"
       />
-      <a class="back" href="#"><i class="icon-arrow-left"></i> back</a>
+      <a class="back" href="#" @click.prevent="goTo('index')"><i class="icon-arrow-left"></i> back</a>
       <div class="login-title">
         <h1>Care That Comes to You</h1>
         <p>Let us provide you with high-quality care!</p>
