@@ -196,7 +196,6 @@ section {
 
   .menus {
     padding: 0;
-    margin-top: 0%;
     li {
       list-style: none;
 
@@ -220,6 +219,10 @@ section {
     .mobile-menu-active {
       background-color: $accentColor100;
       color: $normalColor;
+
+      p {
+        color: $normalColor;
+      }
     }
   }
 }

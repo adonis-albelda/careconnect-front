@@ -80,6 +80,7 @@
                         class="text-box"
                         v-model="user.password"
                         type="password"
+                        placeholder="Password"
                       />
                       <span>{{ errors[0] }}</span>
                     </div>

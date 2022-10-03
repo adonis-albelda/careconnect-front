@@ -1,6 +1,11 @@
 <template>
   <div>
-    <notifications group="notify" position="bottom left" width="500" :duration="4000"/>
+    <notifications
+      group="notify"
+      position="bottom left"
+      width="500"
+      :duration="4000"
+    />
     <nav class="main-nav">
       <div class="logo-box" @click="goTo('index')">
         <img src="images/logo.png" alt="careconnect logo" />
@@ -13,17 +18,23 @@
         <li :class="{ active: isActive('services') }" @click="goTo('services')">
           <span>Services</span>
         </li>
-        <li :class="{ active: isActive('contact') }" @click="goTo('contact')"><span>Contact us</span></li>
+        <li :class="{ active: isActive('contact') }" @click="goTo('contact')">
+          <span>Contact us</span>
+        </li>
         <li class="nav-menu-icons" v-if="!$auth.user">
           <span>
             <i class="icon-shopping"></i>
           </span>
         </li>
-        <li class="guest-nav" :class="{ active: isActive('login') }" @click="goTo('login')">
+        <li
+          class="guest-nav"
+          :class="{ active: isActive('login') }"
+          @click="goTo('login')"
+        >
           <span>
             <p>
               <i class="icon-profile"></i>
-              {{$auth.user ? `Hi! ${$auth.user.email}` : 'Guest'}}
+              {{ $auth.user ? `Hi! ${$auth.user.email}` : 'Guest' }}
             </p>
           </span>
         </li>
@@ -32,18 +43,22 @@
     <div class="mobile-header">
       <nav>
         <div @click="goTo('index')">
-          <img src="images/logo.png" alt="careconnect logo"/>
+          <img src="images/logo.png" alt="careconnect logo" />
         </div>
         <div>
-          <p>{{$auth.user ? `Hi! ${$auth.user.email}` : 'Guest'}}</p>
-          <img @click="openSidebar()" src="/images/burger-menu.png">
+          <p>{{ $auth.user ? `Hi! ${$auth.user.email}` : 'Guest' }}</p>
+          <img @click="openSidebar()" src="/images/burger-menu.png" />
         </div>
       </nav>
     </div>
 
     <div v-if="isShow" class="sidebar-menu">
-      <img @click="closeSidebar()" class="close-sidebar" src="/images/close-icon.png">
-      <ul class="login-row">
+      <img
+        @click="closeSidebar()"
+        class="close-sidebar"
+        src="/images/close-icon.png"
+      />
+      <ul class="login-row menus">
         <template v-if="!$auth.user">
           <li @click="goTo('login')">
             <p>Login</p>
@@ -53,15 +68,24 @@
           </li>
         </template>
         <li v-else>
-          <p> <i class="icon-shopping"></i> Cart</p>
+          <p><i class="icon-shopping"></i> Cart</p>
         </li>
-        <li :class="[$route.name == 'index' ? 'mobile-menu-active' : '']" @click="goTo('index')">
+        <li
+          :class="[$route.name == 'index' ? 'mobile-menu-active' : '']"
+          @click="goTo('index')"
+        >
           <p>home</p>
         </li>
-        <li :class="[$route.name == 'services' ? 'mobile-menu-active' : '']" @click="goTo('services')">
+        <li
+          :class="[$route.name == 'services' ? 'mobile-menu-active' : '']"
+          @click="goTo('services')"
+        >
           <p>services</p>
         </li>
-        <li :class="[$route.name == 'contact' ? 'mobile-menu-active' : '']" @click="goTo('contact')">
+        <li
+          :class="[$route.name == 'contact' ? 'mobile-menu-active' : '']"
+          @click="goTo('contact')"
+        >
           <p>contact us</p>
         </li>
         <li @click="signOutUser" v-if="$auth.user">
@@ -136,19 +160,19 @@
 import subscriptionSection from '@/pages/components/subscription-section.vue'
 
 export default {
-  auth:false,
+  auth: false,
   components: {
     subscriptionSection,
   },
-  data(){
+  data() {
     return {
-      isShow: false
+      isShow: false,
     }
   },
 
   methods: {
-    openSidebar(){
-      this.isShow = !this.isShow;
+    openSidebar() {
+      this.isShow = !this.isShow
     },
     closeSidebar() {
       this.isShow = false
@@ -156,12 +180,12 @@ export default {
     signOutUser() {
       this.$auth.logout()
       this.isShow = false
-    }
+    },
   },
   watch: {
     $route() {
       if (this.isShow) this.isShow = false
-    }
-  }
+    },
+  },
 }
 </script>
