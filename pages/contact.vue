@@ -178,6 +178,7 @@ export default {
           this.isRequesting = false
         }, 3000)
       } catch (e) {
+        this.isRequesting = false
         this.showError('Something went wrong processing your request!')
       }
     },
