@@ -85,10 +85,19 @@ button {
   text-decoration: none;
   margin-bottom: 10px;
 
-  @media(max-width: 480px) {
+  @media(max-width: 991px) {
+    width: 48%;
+  }
+
+  @media(max-width: 600px) {
     font-size: $fontSize100;
+  }
+  
+  @media(max-width: 480px) {
+    font-size: 0.625rem;
     height: 40px;
     width: 48%;
+    gap: 8px;
   }
 }
 
