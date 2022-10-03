@@ -68,7 +68,7 @@
           </li>
         </template>
         <li v-else>
-          <p><i class="icon-shopping"></i> Cart</p>
+          <p>Cart</p>
         </li>
         <li
           :class="[$route.name == 'index' ? 'mobile-menu-active' : '']"
