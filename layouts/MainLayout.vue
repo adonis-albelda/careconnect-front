@@ -187,6 +187,7 @@ export default {
       this.$auth.logout()
       this.isShow = false
       this.showLogout=!this.showLogout
+      this.goTo('index')
     },
   },
   watch: {
