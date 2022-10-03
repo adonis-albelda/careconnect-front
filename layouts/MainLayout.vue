@@ -35,12 +35,12 @@
             <p>
               <i class="icon-profile"></i>
               {{ $auth.user ? `Hi! ${$auth.user.email}` : 'Guest' }}
-              <i class="ellipsis-icon">&#8285;</i>
+              <i class="ellipsis-icon" @click.stop="showLogout=!showLogout">&#8285;</i>
             </p>
           </span>
-          <span class="logout">
+          <span class="logout" v-if="showLogout">
             <small>Logout</small>
-            <i class="icon-close"></i>
+            <i class="icon-close" @click.stop="signOutUser"></i>
           </span>
         </li>
       </ul>
@@ -172,6 +172,7 @@ export default {
   data() {
     return {
       isShow: false,
+      showLogout:false
     }
   },
 
@@ -185,6 +186,7 @@ export default {
     signOutUser() {
       this.$auth.logout()
       this.isShow = false
+      this.showLogout=!this.showLogout
     },
   },
   watch: {
