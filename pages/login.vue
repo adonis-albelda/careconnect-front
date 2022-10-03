@@ -358,4 +358,16 @@ export default {
 .pb-50 {
   padding-bottom: 50px;
 }
+
+.login-form input::-webkit-input-placeholder {
+  color: #cacaca;
+}
+
+.login-form input:-ms-input-placeholder {
+  color: #cacaca;
+}
+
+.login-form input::placeholder {
+  color: #cacaca;
+}
 </style>

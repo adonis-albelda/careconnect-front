@@ -78,6 +78,7 @@
                       class="text-box"
                       v-model="user.password"
                       type="password"
+                      placeholder="Password"
                     />
                     <span>{{ errors[0] }}</span>
                   </div>
@@ -95,6 +96,7 @@
                       class="text-box"
                       v-model="user.password_confirmation"
                       type="password"
+                      placeholder="Confirm Password"
                     />
                     <span>{{ errors[0] }}</span>
                   </div>
@@ -337,5 +339,21 @@ export default {
 
 .pb-50 {
   padding-bottom: 50px;
+}
+
+.login-form input::-webkit-input-placeholder {
+  color: #cacaca;
+}
+
+.login-form input:-ms-input-placeholder {
+  color: #cacaca;
+}
+
+.login-form input::placeholder {
+  color: #cacaca;
+}
+
+.contact-col-2 textarea.text-box {
+  height: auto;
 }
 </style>
