@@ -353,7 +353,9 @@ export default {
   color: #cacaca;
 }
 
-.contact-col-2 textarea.text-box {
-  height: auto;
-}
+// .contact-col-2 textarea.text-box {
+//   @media (max-width: 800px) {
+//     height: auto;
+//   }
+// }
 </style>
