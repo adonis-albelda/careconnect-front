@@ -286,18 +286,6 @@ export default {
         display: flex;
         justify-content: space-between;
       }
-      @media (max-width: 570px) {
-        flex-direction: column;
-      }
-
-      a {
-        @media (max-width: 991px) {
-          width: 48%;
-        }
-        @media (max-width: 570px) {
-          width: 100%;
-        }
-      }
     }
   }
 }
