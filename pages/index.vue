@@ -101,7 +101,7 @@
         </template>
       </VSelect>
       <div>
-        <button class="btn accent full" @click="createBookingQuote">Get A Quote</button>
+        <button :class="['btn accent full', isRequesting ? 'uc-spinner' : '']" @click="createBookingQuote">Get A Quote</button>
       </div>
     </div>
     <section class="services-sec">
@@ -257,13 +257,16 @@ export default {
       options: [
         {
           label: 'Personal Care Services',
+          id:1,
           description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing'
         },
         {
           label:'Complex Care Services',
+          id:2,
           description:'Complex care refer to services that must be performed by a regulated health professionals.'
         },
         {
+          id:3,
           label:'Home Support Service',
           description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning'
         }
@@ -317,7 +320,8 @@ export default {
         "3:00 PM",
         "3:30 PM",
       ],
-      dateOptionstatus:false
+      dateOptionstatus:false,
+      isRequesting:false
     }
   },
   mounted() {
@@ -327,6 +331,8 @@ export default {
   },
   methods :  {
     createBookingQuote() {
+      if (this.isRequesting) return
+      this.isRequesting = true
       if (this.selectedService.default || !this.selectedTime.end || !this.selectedTime.start ||
         this.selectedDates.length < 2)  {
           alert('Please select all fields')
@@ -334,14 +340,31 @@ export default {
         }
 
       if (this.$auth.user) {
-        this.$dialog.alert('', {
-          view: SUCCESS_EMAIL, // can be set globally too
-          html: true,
-          animation: 'fade',
-          backdropClose: true
-        });
+        let payload = {
+          start_date: this.selectedDates[0],
+          end_date: this.selectedDates[1],
+          service_id: this.serviceId,
+          start_time: this.selectedTime.start,
+          end_time: this.selectedTime.end
+        }
+
+        this.showSuccess('Please wait while we are proccessing your request')
+        
+        this.$axios.post('reservations', payload).then(() => {
+          this.$dialog.alert('', {
+            view: SUCCESS_EMAIL, // can be set globally too
+            html: true,
+            animation: 'fade',
+            backdropClose: true
+          })
+        }).finally(()=> {
+            setTimeout(() => {
+              this.isRequesting = false
+            }, 2000)
+          });
 
       } else {
+        this.isRequesting = false
         this.$dialog.alert('', {
           view: QUOTE_EMAIL, // can be set globally too
           html: true,
