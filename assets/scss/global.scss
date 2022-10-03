@@ -295,6 +295,7 @@ section {
     transition: all ease 0.3s;
     letter-spacing: 1px;
     height: 100px;
+    position: relative;
 
     @media (max-width: 1200px) {
       font-size: 0.875rem;
@@ -348,6 +349,48 @@ section {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+}
+
+.guest-nav {
+  position: relative;
+}
+
+.guest-nav:hover small {
+  color: #fff !important;
+}
+.guest-nav:hover i {
+  color: #fff !important;
+}
+
+.ellipsis-icon {
+  padding-bottom: 4px;
+  padding: 0 10px 4px 10px;
+}
+
+.logout {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #183891;
+  padding: 20px;
+
+  small {
+    text-transform: capitalize;
+    font-size: 1rem;
+  }
+
+  i {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

@@ -35,7 +35,12 @@
             <p>
               <i class="icon-profile"></i>
               {{ $auth.user ? `Hi! ${$auth.user.email}` : 'Guest' }}
+              <i class="ellipsis-icon">&#8285;</i>
             </p>
+          </span>
+          <span class="logout">
+            <small>Logout</small>
+            <i class="icon-close" @click="showLogOutUser"></i>
           </span>
         </li>
       </ul>

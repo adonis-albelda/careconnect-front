@@ -4,7 +4,7 @@
             <a class="back" href="#"><img src="/images/arrow-left.png"> Back</a>
 
             <div class="personalcare-banner">
-                <img src="/images/personal-care-banner.png">
+                <img src="/images/hom_support_services_banner.jpg">
             </div>
 
             <div class="personal-inner-cont">
