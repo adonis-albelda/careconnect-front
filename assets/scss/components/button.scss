@@ -26,6 +26,7 @@ button {
 
   @media(max-width: 480px) {
     font-size: 0.875rem !important;
+    height: 40px !important;
   }
   
   &.block {
@@ -46,7 +47,7 @@ button {
     }
 
     @media(max-width: 480px) {
-      height: 50px !important;
+      height: 40px !important;
     }
   }
 
@@ -85,8 +86,9 @@ button {
   margin-bottom: 10px;
 
   @media(max-width: 480px) {
-    font-size: $fontSize200;
-    height: 50px;
+    font-size: $fontSize100;
+    height: 40px;
+    width: 48%;
   }
 }
 
