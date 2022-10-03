@@ -35,7 +35,9 @@
             <p>
               <i class="icon-profile"></i>
               {{ $auth.user ? `Hi! ${$auth.user.email}` : 'Guest' }}
-              <i class="ellipsis-icon" @click.stop="showLogout=!showLogout">&#8285;</i>
+              <template v-if="$auth.user">
+                <i class="ellipsis-icon" @click.stop="showLogout=!showLogout">&#8285;</i>
+              </template>
             </p>
           </span>
           <span class="logout" v-if="showLogout">
