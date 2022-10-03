@@ -40,7 +40,7 @@
           </span>
           <span class="logout">
             <small>Logout</small>
-            <i class="icon-close" @click="showLogOutUser"></i>
+            <i class="icon-close"></i>
           </span>
         </li>
       </ul>

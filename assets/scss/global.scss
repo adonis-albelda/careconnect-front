@@ -380,6 +380,9 @@ section {
   background-color: #183891;
   padding: 20px;
   color: #fff !important;
+  @media (max-width: 767px) {
+    // display: none !important;
+  }
 
   small {
     text-transform: capitalize;
