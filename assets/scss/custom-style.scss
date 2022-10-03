@@ -708,6 +708,16 @@
             margin-left: 8%;
         }
 
+        .back {
+          position: absolute;
+          right: 8%;
+          top: 6%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: $normalColor;
+        }
+
         .login-title {
             position: absolute;
             left: 50%;
@@ -772,6 +782,25 @@
                 font-weight: $fontWeightSemiBold;
                 text-decoration: none;
             }
+        }
+
+        .login-header-logo {
+          position: relative;
+          
+          .back {
+            position: absolute;
+            right: 8%;
+            top: 6%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: $normalColor;
+  
+            @media(max-width: 991px) {
+              top: 0;
+              bottom: 0;
+            }
+          }
         }
 
         .login-cont {

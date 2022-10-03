@@ -6,6 +6,7 @@
         @click="goTo('index')"
         src="/images/login-logo.png"
       />
+      <a class="back" href="#"><i class="icon-arrow-left"></i> back</a>
       <div class="login-title">
         <h1>Care That Comes to You</h1>
         <p>Let us provide you with high-quality care!</p>
@@ -26,6 +27,7 @@
 
       <div class="login-header-logo" @click="goTo('index')">
         <img src="/images/login-logo.png" alt="" />
+        <a class="back" href="#"><i class="icon-arrow-left"></i> back</a>
       </div>
 
       <div class="login-cont">
@@ -175,14 +177,24 @@ export default {
     background-size: cover;
     background-color: rgba(24, 56, 145, 0.9);
   }
+  @media(max-width: 480px) {
+    padding-left: 20px;
+  }
   @media (max-width: 450px) {
     padding: 50px;
+    padding-left: 20px;
   }
 
   img {
     @media (max-width: 600px) {
       width: 250px;
     }
+
+    @media(max-width: 480px) {
+      width: 200px;
+    }
+
+
     @media (max-width: 450px) {
       width: 180px;
     }
@@ -237,6 +249,7 @@ export default {
       width: 90%;
       max-width: 650px;
       padding: 30px;
+      padding-bottom: 0;
       border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.6);
     }
@@ -284,7 +297,7 @@ export default {
 }
 
 .login-wrapper .login-col-2 .login-cont .login-copyright {
-  position: fixed;
+  position: relative;
   bottom: 0;
   right: 50px;
   padding: 10px 0;
