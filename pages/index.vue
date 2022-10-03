@@ -30,16 +30,18 @@
           >
         </template>
       </VSelect>
-      <VDatePicker range v-model="selectedDates" :editable="false" class="home-datepicker"  valueType="format">
+      <VDatePicker :open="dateOptionstatus" range v-model="selectedDates" :editable="false" class="home-datepicker"  valueType="format">
         <template v-slot:input="item">
-          <label class="date-lbl">Date</label>
-          <div class="selected-date">
-            {{selectedDates.length ? `${selectedDates[0]}-${selectedDates[1]}` : 'Select Dates'}}
+          <div @click="dateOptionstatus=true">
+            <label class="date-lbl">Date</label>
+            <div class="selected-date">
+              {{selectedDates.length ? `${selectedDates[0]}-${selectedDates[1]}` : 'Select Dates'}}
+            </div>
           </div>
         </template>
         <template class="datepicker-btns" v-slot:footer="item">
-          <button>CANCEL</button>
-          <button>OKAY</button>
+          <button @click="dateOptionstatus=!dateOptionstatus">CANCEL</button>
+          <button @click="dateOptionstatus=!dateOptionstatus">OKAY</button>
         </template>
       </VDatePicker>
       <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select Start Time" v-model="selectedTime.start"> 
@@ -315,6 +317,7 @@ export default {
         "3:00 PM",
         "3:30 PM",
       ],
+      dateOptionstatus:false
     }
   },
   mounted() {
