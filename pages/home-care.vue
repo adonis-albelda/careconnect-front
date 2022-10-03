@@ -67,6 +67,7 @@ export default {
   head: {
     bodyAttrs: {
       id: 'personal-care-page',
+      class: 'services-page'
     },
   },
 }

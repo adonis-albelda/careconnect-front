@@ -352,6 +352,10 @@ section {
   }
 }
 
+.main-nav li.guest-nav:hover i {
+  color: #183891 !important;
+}
+
 .guest-nav {
   position: relative;
 }
@@ -366,6 +370,15 @@ section {
 .ellipsis-icon {
   padding-bottom: 4px;
   padding: 0 10px 4px 10px;
+}
+
+.services-page .main-nav li:hover {
+  background-color: #183891 !important;
+  color: #fff !important;
+}
+
+.services-page .main-nav li:hover i {
+  color: #fff !important;
 }
 
 .logout {

@@ -177,7 +177,6 @@ export default {
       showLogout:false
     }
   },
-
   methods: {
     openSidebar() {
       this.isShow = !this.isShow
