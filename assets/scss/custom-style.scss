@@ -786,7 +786,7 @@
 
         .login-header-logo {
           position: relative;
-          
+
           .back {
             position: absolute;
             right: 8%;
@@ -904,6 +904,7 @@
 
                     @media(max-width: 480px) {
                       font-size: 0.75rem;
+                      padding-bottom: 0 !important;
                     }
 
                     a {

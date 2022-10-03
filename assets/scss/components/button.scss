@@ -92,10 +92,10 @@ button {
   @media(max-width: 600px) {
     font-size: $fontSize100;
   }
-  
+
   @media(max-width: 480px) {
     font-size: 0.625rem;
-    height: 40px;
+    height: 45px;
     width: 48%;
     gap: 8px;
   }
@@ -159,7 +159,7 @@ button {
   }
 
   @media(max-width: 480px) {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 
   img {
