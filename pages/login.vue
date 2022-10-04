@@ -35,10 +35,10 @@
           <p>Care That Comes to You</p>
 
           <div class="login-socmed">
-            <a class="google-btn" href="#"
+            <a class="google-btn" href="#" @click.prevent="loginWithGoogle"
               >Login with Google <img src="/images/icons/google-icon.svg"
             /></a>
-            <a class="facebook-btn" href="#"
+            <a class="facebook-btn" href="#" @click.prevent="loginWithFacebook"
               >Login with Facebook <img src="/images/icons/facebook-icon.svg"
             /></a>
           </div>
@@ -48,7 +48,7 @@
           </div>
           <ValidationObserver v-slot="{ handleSubmit, reset }">
             <form
-              @submit.prevent="handleSubmit(handleLogin)"
+              @submit.prevent="handleSubmit(loginWithFirebase)"
               @reset.prevent="reset"
             >
               <div class="login-form">
@@ -124,9 +124,10 @@
     </div>
   </div>
 </template>
-
 <script>
+import SocialAuth from '@/mixins/socialAuth.vue'
 export default {
+  mixins:[SocialAuth],
   layout: 'LandingLayout',
   auth: 'guest',
   head: {
@@ -148,6 +149,7 @@ export default {
       try {
         if (this.isRequesting) return
         this.isRequesting = true
+
 
         const res = await this.$auth.loginWith('local', {
           data: {

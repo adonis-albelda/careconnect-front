@@ -34,10 +34,10 @@
         <h2>Sign Up to Care Connect</h2>
         <p>Create a new account</p>
         <div class="login-socmed">
-          <a class="google-btn" href="#"
+          <a class="google-btn" href="#" @click.prevent="loginWithGoogle"
             >Sign up with Google <img src="/images/icons/google-icon.svg"
           /></a>
-          <a class="google-btn" href="#"
+          <a class="google-btn" href="#" @click.prevent="loginWithFacebook"
             >Sign up with Facebook <img src="/images/icons/facebook-icon.svg"
           /></a>
         </div>
@@ -122,9 +122,10 @@
     </div>
   </div>
 </template>
-
 <script>
+import SocialAuth from '@/mixins/socialAuth.vue'
 export default {
+  mixins:[SocialAuth],
   auth: 'guest',
   layout: 'LandingLayout',
   head: {

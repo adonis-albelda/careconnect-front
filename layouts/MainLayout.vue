@@ -34,7 +34,7 @@
           <span>
             <p>
               <i class="icon-profile"></i>
-              {{ $auth.user ? `Hi! ${$auth.user.email}` : 'Guest' }}
+              {{ $auth.user ? `${$auth.user.email}` : 'Guest' }}
               <template v-if="$auth.user">
                 <i class="ellipsis-icon" @click.stop="showLogout=!showLogout">&#8285;</i>
               </template>
@@ -53,7 +53,7 @@
           <img src="images/logo.png" alt="careconnect logo" />
         </div>
         <div>
-          <p>{{ $auth.user ? `Hi! ${$auth.user.email}` : 'Guest' }}</p>
+          <p>{{ $auth.user ? `${$auth.user.email}` : 'Guest' }}</p>
           <img @click="openSidebar()" src="/images/burger-menu.png" />
         </div>
       </nav>

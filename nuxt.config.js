@@ -75,7 +75,7 @@ export default {
       storageBucket: 'care-connect-e6828.appspot.com',
       messagingSenderId: '252064637090',
       appId: '1:252064637090:web:c9d2fad08d03b6ec2b77fb',
-      measurementId: 'G-YLKD04C876',
+      // measurementId: 'G-YLKD04C876',
     },
     services: {
       messaging: {
