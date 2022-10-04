@@ -50,11 +50,12 @@
     <div class="mobile-header">
       <nav>
         <div @click="goTo('index')">
-          <img src="images/logo.png" alt="careconnect logo" />
+          <img src="/images/logo.png" alt="careconnect logo" />
         </div>
         <div>
           <p>{{ $auth.user ? `Hi! ${$auth.user.email}` : 'Guest' }}</p>
-          <img @click="openSidebar()" src="/images/burger-menu.png" />
+          <!-- <img @click="openSidebar()" src="/images/burger-menu.png" /> -->
+          <i @click="openSidebar()" class="icon-menu icon-burg"></i>
         </div>
       </nav>
     </div>

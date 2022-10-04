@@ -56,8 +56,21 @@ export default {
     width: 100%;
 }
 
+.help-tab-per-pag .detials-wrapper .title {
+    line-height: 1.5;
+    @media (max-width: 500px) {
+        margin-top: 40px;
+    }
+}
+
 .help-content {
     margin-top: 30px;
+    @media (max-width: 991px) {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+        margin-top: 10px;
+    }
 
     .help-content-item {
         margin-bottom: 25px;

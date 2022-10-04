@@ -100,6 +100,32 @@ section {
 }
 
 .mobile-header {
+  .icon-menu {
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+.services-page .mobile-header {
+  @media (max-width: 767px) {
+    background-color: #fff;
+  }
+  p {
+    color: #000 !important;
+  }
+
+  .icon-menu {
+    color: #000;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mobile-header {
   display: none;
   position: absolute;
   top: 0;
@@ -1175,7 +1201,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  @media (max-width: 767px) {
+    width: 72px;
+    height: 72px;
+  }
   @media (max-width: 480px) {
     padding: 1rem;
   }
@@ -1183,6 +1212,9 @@ footer {
   i {
     font-size: 40px;
     color: #fff;
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
   }
 }
 
@@ -1281,9 +1313,12 @@ form > div:first-child {
 // font-size
 h1.title {
   font-size: 2.25rem;
-  line-height: 3rem;
+  line-height: 1.5;
   @media (max-width: 767px) {
     font-size: 1.563rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 20px;
   }
 }
 

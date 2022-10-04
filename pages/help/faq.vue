@@ -73,8 +73,24 @@ export default {
     width: 100%;
 }
 
+.help-tab-per-pag .p-col-2 {
+    @media (max-width: 991px) {
+        margin-top: 50px;
+    }
+}
+
+.help-tab-per-pag .title {
+    line-height: 1.5 !important;
+}
+
 .help-content {
     margin-top: 30px;
+    @media (max-width: 991px) {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+        margin-top: 10px;
+    }
 
     .help-content-item {
         margin-bottom: 25px;

@@ -2,7 +2,7 @@
     <div class="personal-care-wrapper help-mainwrapper">
         <div class="help-banner">
             <h3>
-                How can we help?
+                How can we help&#8239;?
             </h3>
             <div class="help-search">
                 <i>&#128269;</i>
@@ -67,10 +67,23 @@ export default {
         text-align: center;
         color: #fff;
         font-size: 35px;
+        width: 90%;
+        max-width: 600px; 
+        margin: 0 auto;
+        @media (max-width: 900px) {
+            font-size: 1.563rem;
+        }
+        @media (max-width: 500px) {
+            font-size: 1.25rem;
+            margin-bottom: 0;
+        }
     }
 }
 
 .help-sidenav {
+    @media (max-width: 500px) {
+        margin-bottom: 30px;
+    }
 
     li{
         list-style: none;
@@ -87,17 +100,24 @@ export default {
         @media (max-width: 991px) {
             text-align: center;
         }
+        @media (max-width: 500px) {
+            font-size: 14px;
+        }
     }
 }
 
 .help-search {
     max-width: 800px;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     position: relative;
+    @media (max-width: 500px) {
+        flex-direction: column;
+        gap: 10px;
+    }
 
     i {
         position: absolute;
@@ -108,6 +128,11 @@ export default {
         display: flex;
         align-items: center;
         padding: 0 20px;
+        @media (max-width: 500px) {
+            top: 12px;
+            bottom: auto;
+            padding: 0 10px;
+        }
     }
 
     input {
@@ -123,11 +148,41 @@ export default {
         border-radius: 5px;
         color: #fff;
         position: relative;
+        &::-webkit-input-placeholder { /* Edge */
+            color: #fff;
+        }
+
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #fff;
+        }
+
+        &::placeholder {
+            color: #fff;
+        }
+        @media (max-width: 767px) {
+            width: calc(100% - 160px) !important;
+            height: 40px !important;
+        }
+        @media (max-width: 500px) {
+            width: 100% !important;
+            font-size: 12px;
+            padding-left: 42px;
+        }
     }
 
     button {
         width: 160px;
         font-size: 16px;
+        color: #183891;
+        font-weight: 700;
+        border-radius: 6px;
+        @media (max-width: 767px) {
+            height: 40px !important;
+        }
+        @media (max-width: 500px) {
+            width: 100%;
+            font-size: 15px;
+        }
     }
 }
 

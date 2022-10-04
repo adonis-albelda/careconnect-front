@@ -6,7 +6,7 @@
         @click="goTo('index')"
         src="/images/login-logo.png"
       />
-      <a class="back" href="#" @click.prevent="goTo('index')"><i class="icon-arrow-left"></i> back</a>
+      <!-- <a class="back" href="#" @click.prevent="goTo('index')"><i class="icon-arrow-left"></i> back</a> -->
       <div class="login-title">
         <h1>Care That Comes to You</h1>
         <p>Let us provide you with high-quality care!</p>
@@ -27,96 +27,19 @@
 
       <div class="login-header-logo" @click="goTo('index')">
         <img src="/images/login-logo.png" alt="" />
-        <a class="back" href="#"><i class="icon-arrow-left"></i> back</a>
+        <a class="back" href="#"><i class="icon-arrow-left"></i> Back</a>
       </div>
 
-      <div class="login-cont">
-        <h2>Sign Up to Care Connect</h2>
-        <p>Create a new account</p>
-        <div class="login-socmed">
-          <a class="google-btn" href="#"
-            >Sign up with Google <img src="/images/icons/google-icon.svg"
-          /></a>
-          <a class="google-btn" href="#"
-            >Sign up with Facebook <img src="/images/icons/facebook-icon.svg"
-          /></a>
-        </div>
-        <div class="divider">
-          <p>or</p>
-        </div>
-        <ValidationObserver v-slot="{ handleSubmit, reset }">
-          <form
-            @submit.prevent="handleSubmit(handleRegistration)"
-            @reset.prevent="reset"
-          >
-            <div class="login-form">
-              <ValidationProvider
-                v-slot="{ errors }"
-                name="Email"
-                rules="required|email"
-              >
-                <div class="input-cont">
-                  <label>Email Address</label>
-                  <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
-                    <input
-                      class="text-box"
-                      type="email"
-                      v-model="user.email"
-                      placeholder="Type email here"
-                    />
-                    <span>{{ errors[0] }}</span>
-                  </div>
-                </div>
-              </ValidationProvider>
-              <ValidationProvider
-                v-slot="{ errors }"
-                name="Password"
-                rules="required"
-              >
-                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
-                  <label>Password</label>
-                  <div class="for-input">
-                    <input
-                      class="text-box"
-                      v-model="user.password"
-                      type="password"
-                      placeholder="Password"
-                    />
-                    <span>{{ errors[0] }}</span>
-                  </div>
-                </div>
-              </ValidationProvider>
-              <ValidationProvider
-                v-slot="{ errors }"
-                name="Password Confirmation"
-                rules="required|confirmed:Password"
-              >
-                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
-                  <label>Confirm Password</label>
-                  <div class="for-input">
-                    <input
-                      class="text-box"
-                      v-model="user.password_confirmation"
-                      type="password"
-                      placeholder="Confirm Password"
-                    />
-                    <span>{{ errors[0] }}</span>
-                  </div>
-                </div>
-              </ValidationProvider>
-              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">
-                Sign up
-              </button>
-              <p class="no-account pb-50">
-                Already a member?
-                <a href="#" @click.prevent="goTo('login')">Login</a>
-              </p>
+      <div class="login-mobile-wrapper">
+        <div class="login-cont">
+            <img src="/images/check_your_email.png" alt="">
+            <h2>Check your mail!</h2>
+            <p>
+            We have sent a password recover instructions to your email.
+            </p>
+            <div class="login-copyright">
+            <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
             </div>
-          </form>
-        </ValidationObserver>
-
-        <div class="login-copyright">
-          <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
         </div>
       </div>
     </div>
@@ -125,28 +48,27 @@
 
 <script>
 export default {
-  auth: 'guest',
   layout: 'LandingLayout',
+  auth: 'guest',
   head: {
     bodyAttrs: {
-      id: 'register-page',
+      id: 'login-page',
     },
   },
   data() {
     return {
       user: {
-        email: null,
+        email: '',
         password: '',
-        password_confirmation: '',
       },
+      isRequesting: false,
     }
   },
   methods: {
-    async handleRegistration() {
+    async handleLogin() {
       try {
         if (this.isRequesting) return
         this.isRequesting = true
-        await this.$axios.post('register', this.user)
 
         const res = await this.$auth.loginWith('local', {
           data: {
@@ -155,19 +77,28 @@ export default {
           },
         })
 
-        this.showSuccess(
-          'Successfully submitted your inquiry, will contact you soon!'
-        )
-        this.isRequesting = false
-        this.goTo('index')
+        console.log(res, 'res')
+
+        if (res.data) {
+          this.showSuccess('Succesfully logged in !')
+        }
+
+        setTimeout(() => {
+          this.isRequesting = false
+          this.goTo('index')
+        }, 5000)
       } catch (e) {
-        this.showError('Something went wrong processing your request!')
+        if (e.response.status === 404) {
+          this.showError('Invalid credentials, please try again!')
+        } else {
+          this.showError('Something went wrong processing your request!')
+        }
+        this.isRequesting = false
       }
     },
   },
 }
 </script>
-
 <style scoped lang="scss">
 .login-header-logo {
   display: none;
@@ -179,9 +110,11 @@ export default {
     background-size: cover;
     background-color: rgba(24, 56, 145, 0.9);
   }
+
   @media(max-width: 480px) {
     padding-left: 20px;
   }
+
   @media (max-width: 450px) {
     padding: 50px;
     padding-left: 20px;
@@ -196,7 +129,6 @@ export default {
       width: 200px;
     }
 
-
     @media (max-width: 450px) {
       width: 180px;
     }
@@ -210,10 +142,23 @@ export default {
   max-height: auto;
 }
 .login-form {
+  // @media (max-height: 900px) {
+  //   padding-bottom: 65px;
+  // }
+
   .login-btn {
     @media (max-width: 767px) {
       height: 45px;
       font-size: 18px;
+    }
+
+    @media(max-width: 480px) {
+      font-size: 0.875rem
+    }
+
+    &.cancel {
+        background: #F5F5F5;
+        color: #000;
     }
   }
 }
@@ -245,6 +190,7 @@ export default {
   .login-cont {
     margin-top: auto !important;
     padding: 50px 0;
+    text-align: center;
     @media (max-width: 1200px) {
       width: 80%;
     }
@@ -252,7 +198,7 @@ export default {
       width: 90%;
       max-width: 650px;
       padding: 30px;
-      // padding-bottom: 0;
+    //   padding-bottom: 0;
       border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.6);
     }
@@ -260,10 +206,19 @@ export default {
       padding: 30px 0;
     }
 
+    img {
+        width: 110px;
+        margin: 0 auto;
+        @media (max-width: 450px) {
+            width: 70px;
+        }
+    }
+
     h2 {
+        line-height: 2;
       @media (max-width: 1300px) {
-        line-height: 1.1;
-        margin-bottom: 20px;
+        line-height: 1.3;
+        margin-bottom: 10px;
       }
       @media (max-width: 500px) {
         font-size: 20px;
@@ -272,8 +227,12 @@ export default {
       }
     }
     p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.4;
       @media (max-width: 480px) {
         font-size: 14px;
+        line-height: 1.2;
         text-align: center;
       }
     }
@@ -300,7 +259,7 @@ export default {
 }
 
 .login-wrapper .login-col-2 .login-cont .login-copyright {
-  // position: relative;
+  position: relative;
   position: fixed;
   bottom: 0;
   right: 50px;
@@ -316,7 +275,7 @@ export default {
   p {
     font-size: 12px !important;
     margin-bottom: 0 !important;
-    @media(max-width: 480px) {
+      @media(max-width: 480px) {
         font-size: 12px !important;
         text-align: center;
         margin-bottom: 0 !important;
@@ -359,9 +318,10 @@ export default {
   color: #cacaca;
 }
 
-// .contact-col-2 textarea.text-box {
-//   @media (max-width: 800px) {
-//     height: auto;
-//   }
-// }
+.auth-back {
+    margin-bottom: 50px;
+    @media (max-width: 991px) {
+        display: none;
+    }
+}
 </style>
