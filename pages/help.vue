@@ -63,6 +63,9 @@ export default {
     text-align: center;
     padding: 70px 0;
     background: #183891;
+    @media (max-width: 500px) {
+        padding: 30px 0;
+    }
     h3 {
         text-align: center;
         color: #fff;
