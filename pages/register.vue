@@ -245,6 +245,7 @@ export default {
 
   .login-cont {
     margin-top: auto !important;
+    padding: 50px 0;
     @media (max-width: 1200px) {
       width: 80%;
     }
@@ -252,7 +253,7 @@ export default {
       width: 90%;
       max-width: 650px;
       padding: 30px;
-      padding-bottom: 0;
+      // padding-bottom: 0;
       border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.6);
     }
@@ -300,7 +301,8 @@ export default {
 }
 
 .login-wrapper .login-col-2 .login-cont .login-copyright {
-  position: relative;
+  // position: relative;
+  position: fixed;
   bottom: 0;
   right: 50px;
   padding: 10px 0;
@@ -313,9 +315,12 @@ export default {
     left: 0;
   }
   p {
+    font-size: 12px !important;
+    margin-bottom: 0 !important;
     @media(max-width: 480px) {
-        font-size: 0.563rem;
+        font-size: 12px !important;
         text-align: center;
+        margin-bottom: 0 !important;
       }
   }
 }

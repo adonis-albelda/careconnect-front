@@ -6,7 +6,7 @@
         @click="goTo('index')"
         src="/images/login-logo.png"
       />
-      <a class="back" href="#" @click.prevent="goTo('index')"><i class="icon-arrow-left"></i> back</a>
+      <!-- <a class="back" href="#" @click.prevent="goTo('index')"><i class="icon-arrow-left"></i> back</a> -->
       <div class="login-title">
         <h1>Care That Comes to You</h1>
         <p>Let us provide you with high-quality care!</p>
@@ -26,46 +26,42 @@
       </div>
       <div class="login-header-logo" @click="goTo('index')">
         <img src="/images/login-logo.png" alt="" />
-        <a class="back" href="#"><i class="icon-arrow-left"></i> back</a>
+        <a class="back" href="#"><i class="icon-arrow-left"></i> Back</a>
       </div>
 
       <div class="login-mobile-wrapper">
         <div class="login-cont">
-          <h2>Welcome to Care Connect</h2>
-          <p>Care That Comes to You</p>
-
-          <div class="login-socmed">
-            <a class="google-btn" href="#" @click.prevent="loginWithGoogle"
-              >Login with Google <img src="/images/icons/google-icon.svg"
-            /></a>
-            <a class="facebook-btn" href="#" @click.prevent="loginWithFacebook"
-              >Login with Facebook <img src="/images/icons/facebook-icon.svg"
-            /></a>
-          </div>
-
-          <div class="divider">
-            <p>or</p>
-          </div>
+        <div class="auth-back">
+            <span>
+                <i class="icon-arrow-left"></i>
+                Back
+            </span>
+        </div>
+          <h2>Create new password</h2>
+          <p>
+            Your new password must be different from your previous used passwords.
+          </p>
           <ValidationObserver v-slot="{ handleSubmit, reset }">
             <form
-              @submit.prevent="handleSubmit(loginWithFirebase)"
+              @submit.prevent="handleSubmit(handleLogin)"
               @reset.prevent="reset"
             >
               <div class="login-form">
                 <ValidationProvider
                   v-slot="{ errors }"
-                  name="Email"
-                  rules="required|email"
+                  name="Password"
+                  rules="required"
                 >
-                  <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
-                    <label>Email Address</label>
-                    <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
+                  <div class="input-cont">
+                    <label>Password</label>
+                    <div :class="['for-cont', errors[0] ? 'error-msgg' : '']">
                       <input
                         class="text-box"
-                        v-model="user.email"
-                        type="email"
-                        placeholder="@mail.com"
+                        v-model="user.password"
+                        type="password"
+                        placeholder="Password"
                       />
+                      <small>Must be at least 8 characters.</small>
                       <span>{{ errors[0] }}</span>
                     </div>
                   </div>
@@ -82,37 +78,19 @@
                         class="text-box"
                         v-model="user.password"
                         type="password"
-                        placeholder="Password"
+                        placeholder="Confirm Password"
                       />
+                      <small>Both passwords must match.</small>
                       <span>{{ errors[0] }}</span>
                     </div>
                   </div>
                 </ValidationProvider>
-                <div class="forgot-pass">
-                  <div>
-                    <input
-                      class="login-form-checkinput"
-                      type="checkbox"
-                      value=""
-                      id="remember"
-                    />
-                    <label class="login-form-checklabel" for="remember">
-                      Remember me
-                    </label>
-                  </div>
-                  <div>
-                    <p>Forgot Password</p>
-                  </div>
-                </div>
-                <button
-                  :class="['login-btn', isRequesting ? 'uc-spinner' : '']"
-                >
-                  login
+                <button class="login-btn">
+                  reset password
                 </button>
-                <p class="no-account pb-50">
-                  Don’t have an account?
-                  <a href="#" @click.prevent="goTo('register')">Signup</a>
-                </p>
+                <button class="login-btn cancel">
+                  Cancel
+                </button>
               </div>
             </form>
           </ValidationObserver>
@@ -124,10 +102,9 @@
     </div>
   </div>
 </template>
+
 <script>
-import SocialAuth from '@/mixins/socialAuth.vue'
 export default {
-  mixins:[SocialAuth],
   layout: 'LandingLayout',
   auth: 'guest',
   head: {
@@ -149,7 +126,6 @@ export default {
       try {
         if (this.isRequesting) return
         this.isRequesting = true
-
 
         const res = await this.$auth.loginWith('local', {
           data: {
@@ -236,6 +212,11 @@ export default {
     @media(max-width: 480px) {
       font-size: 0.875rem
     }
+
+    &.cancel {
+        background: #F5F5F5;
+        color: #000;
+    }
   }
 }
 .login-wrapper .login-col-1 {
@@ -273,7 +254,7 @@ export default {
       width: 90%;
       max-width: 650px;
       padding: 30px;
-      // padding-bottom: 0;
+    //   padding-bottom: 0;
       border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.6);
     }
@@ -287,11 +268,14 @@ export default {
       }
       @media (max-width: 500px) {
         font-size: 20px;
-        margin-bottom: 2px;
+        margin-bottom: 0px;
         text-align: center;
       }
     }
     p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.4;
       @media (max-width: 480px) {
         font-size: 14px;
         line-height: 1.2;
@@ -321,7 +305,7 @@ export default {
 }
 
 .login-wrapper .login-col-2 .login-cont .login-copyright {
-  // position: relative;
+  position: relative;
   position: fixed;
   bottom: 0;
   right: 50px;
@@ -337,11 +321,11 @@ export default {
   p {
     font-size: 12px !important;
     margin-bottom: 0 !important;
-    @media(max-width: 480px) {
-      font-size: 12px !important;
-      text-align: center;
-      margin-bottom: 0 !important;
-    }
+      @media(max-width: 480px) {
+        font-size: 12px !important;
+        text-align: center;
+        margin-bottom: 0 !important;
+      }
   }
 }
 
@@ -378,5 +362,12 @@ export default {
 
 .login-form input::placeholder {
   color: #cacaca;
+}
+
+.auth-back {
+    margin-bottom: 50px;
+    @media (max-width: 991px) {
+        display: none;
+    }
 }
 </style>

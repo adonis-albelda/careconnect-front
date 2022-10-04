@@ -8,7 +8,7 @@
     />
     <nav class="main-nav">
       <div class="logo-box" @click="goTo('index')">
-        <img src="images/logo.png" alt="careconnect logo" />
+        <img src="/images/logo.png" alt="careconnect logo" />
         <p>Care Connect</p>
       </div>
       <ul class="nav-item">
@@ -50,7 +50,7 @@
     <div class="mobile-header">
       <nav>
         <div @click="goTo('index')">
-          <img src="images/logo.png" alt="careconnect logo" />
+          <img src="/images/logo.png" alt="careconnect logo" />
         </div>
         <div>
           <p>{{ $auth.user ? `${$auth.user.email}` : 'Guest' }}</p>
@@ -158,7 +158,8 @@
       </div>
     </footer>
     <div class="float-messenger">
-      <img src="images/icons/vector.png" alt="live chat icon" />
+      <!-- <img src="images/icons/vector.png" alt="live chat icon" /> -->
+      <i class="icon-chat_bubble"></i>
     </div>
   </div>
 </template>

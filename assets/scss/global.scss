@@ -100,6 +100,32 @@ section {
 }
 
 .mobile-header {
+  .icon-menu {
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+.services-page .mobile-header {
+  @media (max-width: 767px) {
+    background-color: #fff;
+  }
+  p {
+    color: #000 !important;
+  }
+
+  .icon-menu {
+    color: #000;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mobile-header {
   display: none;
   position: absolute;
   top: 0;
@@ -1164,15 +1190,31 @@ footer {
 }
 
 .float-messenger {
-  padding: 2rem;
+  // padding: 2rem;
+  width: 100px;
+  height: 100px;
   position: fixed;
   background-color: $accentColor100;
   right: 1%;
   bottom: 2%;
   border-radius: 50%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 767px) {
+    width: 72px;
+    height: 72px;
+  }
   @media (max-width: 480px) {
     padding: 1rem;
+  }
+
+  i {
+    font-size: 40px;
+    color: #fff;
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
   }
 }
 
@@ -1266,4 +1308,38 @@ form > div:first-child {
 
 .vue-notification-group .vue-notification-template {
   padding: 25px 20px;
+}
+
+// font-size
+h1.title {
+  font-size: 2.25rem;
+  line-height: 1.5;
+  @media (max-width: 767px) {
+    font-size: 1.563rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
+}
+
+.psubtitle {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: #000000;
+  font-weight: 500;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.normal-text {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: #000000;
+  font-weight: 400;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
