@@ -45,6 +45,9 @@
             <i class="icon-close" @click.stop="signOutUser"></i>
           </span>
         </li>
+        <!-- <li class="logout-ds">
+          <img src="/images/exit.png" alt="">
+        </li> -->
       </ul>
     </nav>
     <div class="mobile-header">
