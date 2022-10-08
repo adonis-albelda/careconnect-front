@@ -45,7 +45,8 @@
             <i class="icon-close" @click.stop="signOutUser"></i>
           </span> -->
         </li>
-        <li class="logout-ds">
+        <li class="logout-ds"
+          @click="signOutUser" v-if="$auth.user">
           <i class="icon-close"></i>
         </li>
       </ul>
