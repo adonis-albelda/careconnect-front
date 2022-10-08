@@ -1,24 +1,20 @@
 <template>
   <div class="login-mobile-wrapper">
     <div class="login-cont">
-      <h2>Welcome to Care Connect</h2>
-      <p>Care That Comes to You</p>
-
-      <div class="login-socmed">
-        <a class="google-btn" href="#" @click.prevent="loginWithGoogle"
-          >Login with Google <img src="/images/icons/google-icon.svg"
-        /></a>
-        <a class="facebook-btn" href="#" @click.prevent="loginWithFacebook"
-          >Login with Facebook <img src="/images/icons/facebook-icon.svg"
-        /></a>
+      <div class="auth-back csr" @click.prevent="goTo('login')">
+        <span>
+          <i class="icon-arrow-left"></i>
+          Back
+        </span>
       </div>
-
-      <div class="divider">
-        <p>or</p>
-      </div>
+      <h2>Forgot password?</h2>
+      <p>
+        Enter the email associated with your account and we’ll send an email
+        with instructions to reset your password.
+      </p>
       <ValidationObserver v-slot="{ handleSubmit, reset }">
         <form
-          @submit.prevent="handleSubmit(loginWithFirebase)"
+          @submit.prevent="handleSubmit(handleLogin)"
           @reset.prevent="reset"
         >
           <div class="login-form">
@@ -40,47 +36,13 @@
                 </div>
               </div>
             </ValidationProvider>
-            <ValidationProvider
-              v-slot="{ errors }"
-              name="Password"
-              rules="required"
+            <button class="login-btn">send instructions</button>
+            <button
+              class="login-btn btn cancel"
+              @click.prevent="goTo('index')"
             >
-              <div class="input-cont">
-                <label>Password</label>
-                <div :class="['for-cont', errors[0] ? 'error-msgg' : '']">
-                  <input
-                    class="text-box"
-                    v-model="user.password"
-                    type="password"
-                    placeholder="Password"
-                  />
-                  <span>{{ errors[0] }}</span>
-                </div>
-              </div>
-            </ValidationProvider>
-            <div class="forgot-pass">
-              <div>
-                <input
-                  class="login-form-checkinput"
-                  type="checkbox"
-                  value=""
-                  id="remember"
-                />
-                <label class="login-form-checklabel" for="remember">
-                  Remember me
-                </label>
-              </div>
-              <div class="csr" @click="goTo('forgot-password')">
-                <p>Forgot Password</p>
-              </div>
-            </div>
-            <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">
-              login
+              Cancel
             </button>
-            <p class="no-account pb-50">
-              Don’t have an account?
-              <a href="#" @click.prevent="goTo('register')">Signup</a>
-            </p>
           </div>
         </form>
       </ValidationObserver>
@@ -90,10 +52,9 @@
     </div>
   </div>
 </template>
+
 <script>
-import SocialAuth from '@/mixins/socialAuth.vue'
 export default {
-  mixins: [SocialAuth],
   layout: 'TwoColumnLayout',
   auth: 'guest',
   head: {

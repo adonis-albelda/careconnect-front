@@ -1348,3 +1348,15 @@ h1.title {
     line-height: 20px;
   }
 }
+
+
+.register-form {
+  .name-form {
+    display: flex;
+    gap: 10px;
+
+    div {
+      flex: 1;
+    }
+  }
+}
