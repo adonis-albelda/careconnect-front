@@ -55,6 +55,11 @@ button {
     border-radius: 0px;
   }
 
+  &.plain {
+    background-color: transparent !important;
+    color: $invertedColor;
+  }
+
   &.lg {
     //css for large button
   }

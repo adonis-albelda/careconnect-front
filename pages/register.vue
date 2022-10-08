@@ -1,133 +1,159 @@
 <template>
-  <div class="login-wrapper">
-    <div class="login-col-1">
-      <img
-        class="login-logo"
-        @click="goTo('index')"
-        src="/images/login-logo.png"
-      />
-      <a class="back" href="#" @click.prevent="goTo('index')"><i class="icon-arrow-left"></i> back</a>
-      <div class="login-title">
-        <h1>Care That Comes to You</h1>
-        <p>Let us provide you with high-quality care!</p>
-      </div>
-      <div class="login-socmed">
-        <a href="#"><img src="/images/icons/facebook.svg" /> Care Connect</a>
-        <a href="#"><img src="/images/icons/twitter.svg" /> @careconnectca</a>
-        <a href="#"><img src="/images/icons/instagram.svg" /> Care Connect</a>
-      </div>
+  <div class="login-cont">
+    <h2>Sign Up to Care Connect</h2>
+    <p>Create a new account</p>
+    <div class="login-socmed">
+      <a class="google-btn" href="#" @click.prevent="loginWithGoogle"
+        >Sign up with Google <img src="/images/icons/google-icon.svg"
+      /></a>
+      <a class="google-btn" href="#" @click.prevent="loginWithFacebook"
+        >Sign up with Facebook <img src="/images/icons/facebook-icon.svg"
+      /></a>
     </div>
-
-    <div class="login-col-2">
-      <div class="login-menu">
-        <a class="decoration-0" href="#">Help</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms & conditions</a>
-      </div>
-
-      <div class="login-header-logo" @click="goTo('index')">
-        <img src="/images/login-logo.png" alt="" />
-        <a class="back" href="#"><i class="icon-arrow-left"></i> back</a>
-      </div>
-
-      <div class="login-cont">
-        <h2>Sign Up to Care Connect</h2>
-        <p>Create a new account</p>
-        <div class="login-socmed">
-          <a class="google-btn" href="#" @click.prevent="loginWithGoogle"
-            >Sign up with Google <img src="/images/icons/google-icon.svg"
-          /></a>
-          <a class="google-btn" href="#" @click.prevent="loginWithFacebook"
-            >Sign up with Facebook <img src="/images/icons/facebook-icon.svg"
-          /></a>
-        </div>
-        <div class="divider">
-          <p>or</p>
-        </div>
-        <ValidationObserver v-slot="{ handleSubmit, reset }">
-          <form
-            @submit.prevent="handleSubmit(handleRegistration)"
-            @reset.prevent="reset"
+    <div class="divider">
+      <p>or</p>
+    </div>
+    <ValidationObserver v-slot="{ handleSubmit, reset }">
+      <form
+        @submit.prevent="handleSubmit(handleRegistration)"
+        @reset.prevent="reset"
+      >
+        <div class="login-form register-form">
+          <div class="name-form">
+            <ValidationProvider
+              v-slot="{ errors }"
+              name="first name"
+              slim
+              rules="required|min:2"
+            >
+              <div class="input-cont">
+                <label><span>*</span> First name</label>
+                <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
+                  <input
+                    class="text-box"
+                    type="text"
+                    v-model="user.first_name"
+                    placeholder="Type first name"
+                  />
+                  <span>{{ errors[0] }}</span>
+                </div>
+              </div>
+            </ValidationProvider>
+            <ValidationProvider
+              v-slot="{ errors }"
+              name="last name"
+              slim
+              rules="min:2"
+            >
+              <div class="input-cont">
+                <label>Last name</label>
+                <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
+                  <input
+                    class="text-box"
+                    type="text"
+                    v-model="user.last_name"
+                    placeholder="Type last name"
+                  />
+                  <span>{{ errors[0] }}</span>
+                </div>
+              </div>
+            </ValidationProvider>
+          </div>
+          <ValidationProvider
+            v-slot="{ errors }"
+            name="phone number"
+            slim
+            rules="min:2"
           >
-            <div class="login-form">
-              <ValidationProvider
-                v-slot="{ errors }"
-                name="Email"
-                rules="required|email"
-              >
-                <div class="input-cont">
-                  <label>Email Address</label>
-                  <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
-                    <input
-                      class="text-box"
-                      type="email"
-                      v-model="user.email"
-                      placeholder="Type email here"
-                    />
-                    <span>{{ errors[0] }}</span>
-                  </div>
-                </div>
-              </ValidationProvider>
-              <ValidationProvider
-                v-slot="{ errors }"
-                name="Password"
-                rules="required"
-              >
-                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
-                  <label>Password</label>
-                  <div class="for-input">
-                    <input
-                      class="text-box"
-                      v-model="user.password"
-                      type="password"
-                      placeholder="Password"
-                    />
-                    <span>{{ errors[0] }}</span>
-                  </div>
-                </div>
-              </ValidationProvider>
-              <ValidationProvider
-                v-slot="{ errors }"
-                name="Password Confirmation"
-                rules="required|confirmed:Password"
-              >
-                <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
-                  <label>Confirm Password</label>
-                  <div class="for-input">
-                    <input
-                      class="text-box"
-                      v-model="user.password_confirmation"
-                      type="password"
-                      placeholder="Confirm Password"
-                    />
-                    <span>{{ errors[0] }}</span>
-                  </div>
-                </div>
-              </ValidationProvider>
-              <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">
-                Sign up
-              </button>
-              <p class="no-account pb-50">
-                Already a member?
-                <a href="#" @click.prevent="goTo('login')">Login</a>
-              </p>
+            <div class="input-cont">
+              <label>Phone number</label>
+              <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
+                <input
+                  class="text-box"
+                  type="text"
+                  v-model="user.phone_number"
+                  placeholder="Type phone number here"
+                />
+                <span>{{ errors[0] }}</span>
+              </div>
             </div>
-          </form>
-        </ValidationObserver>
-
-        <div class="login-copyright">
-          <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
+          </ValidationProvider>
+          <ValidationProvider
+            v-slot="{ errors }"
+            name="Email"
+            rules="required|email"
+          >
+            <div class="input-cont">
+              <label><span>*</span> Email Address</label>
+              <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
+                <input
+                  class="text-box"
+                  type="email"
+                  v-model="user.email"
+                  placeholder="Type email here"
+                />
+                <span>{{ errors[0] }}</span>
+              </div>
+            </div>
+          </ValidationProvider>
+          <ValidationProvider
+            v-slot="{ errors }"
+            name="Password"
+            rules="required"
+          >
+            <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
+              <label><span>*</span> Password</label>
+              <div class="for-input">
+                <input
+                  class="text-box"
+                  v-model="user.password"
+                  type="password"
+                  placeholder="Password"
+                />
+                <span>{{ errors[0] }}</span>
+              </div>
+            </div>
+          </ValidationProvider>
+          <ValidationProvider
+            v-slot="{ errors }"
+            name="Password Confirmation"
+            rules="required|confirmed:Password"
+          >
+            <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
+              <label><span>*</span> Confirm Password</label>
+              <div class="for-input">
+                <input
+                  class="text-box"
+                  v-model="user.password_confirmation"
+                  type="password"
+                  placeholder="Confirm Password"
+                />
+                <span>{{ errors[0] }}</span>
+              </div>
+            </div>
+          </ValidationProvider>
+          <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">
+            Sign up
+          </button>
+          <p class="no-account pb-50">
+            Already a member?
+            <a href="#" @click.prevent="goTo('login')">Login</a>
+          </p>
         </div>
-      </div>
+      </form>
+    </ValidationObserver>
+
+    <div class="login-copyright">
+      <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
     </div>
   </div>
 </template>
 <script>
 import SocialAuth from '@/mixins/socialAuth.vue'
 export default {
-  mixins:[SocialAuth],
+  mixins: [SocialAuth],
   auth: 'guest',
-  layout: 'LandingLayout',
+  layout: 'TwoColumnLayout',
   head: {
     bodyAttrs: {
       id: 'register-page',
@@ -139,7 +165,11 @@ export default {
         email: null,
         password: '',
         password_confirmation: '',
+        phone_number: '',
+        first_name: '',
+        last_name: '',
       },
+      isRequesting: false,
     }
   },
   methods: {
@@ -149,220 +179,15 @@ export default {
         this.isRequesting = true
         await this.$axios.post('register', this.user)
 
-        const res = await this.$auth.loginWith('local', {
-          data: {
-            email: this.user.email,
-            password: this.user.password,
-          },
-        })
+        localStorage.setItem('email', this.user.email)
 
-        this.showSuccess(
-          'Successfully submitted your inquiry, will contact you soon!'
-        )
         this.isRequesting = false
         this.goTo('index')
       } catch (e) {
+        this.isRequesting = false
         this.showError('Something went wrong processing your request!')
       }
     },
   },
 }
 </script>
-
-<style scoped lang="scss">
-.login-header-logo {
-  display: none;
-  @media (max-width: 991px) {
-    display: block;
-    padding: 70px 50px;
-    background-image: url(/images/login-img.png);
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(24, 56, 145, 0.9);
-  }
-  @media(max-width: 480px) {
-    padding-left: 20px;
-  }
-  @media (max-width: 450px) {
-    padding: 50px;
-    padding-left: 20px;
-  }
-
-  img {
-    @media (max-width: 600px) {
-      width: 250px;
-    }
-
-    @media(max-width: 480px) {
-      width: 200px;
-    }
-
-
-    @media (max-width: 450px) {
-      width: 180px;
-    }
-    @media (max-width: 350px) {
-      width: 150px;
-    }
-  }
-}
-.login-wrapper {
-  height: 100vh;
-  max-height: auto;
-}
-.login-form {
-  .login-btn {
-    @media (max-width: 767px) {
-      height: 45px;
-      font-size: 18px;
-    }
-  }
-}
-.login-wrapper .login-col-1 {
-  height: auto;
-  z-index: 6;
-  @media (max-width: 1500px) {
-    width: 50%;
-  }
-  @media (max-width: 991px) {
-    display: none;
-  }
-}
-.login-wrapper .login-col-2 {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow-y: scroll;
-  @media (max-width: 1500px) {
-    width: 50%;
-  }
-  @media (max-height: 900px) {
-    height: auto;
-  }
-  @media (max-width: 991px) {
-    width: 100%;
-  }
-
-  .login-cont {
-    margin-top: auto !important;
-    padding: 50px 0;
-    @media (max-width: 1200px) {
-      width: 80%;
-    }
-    @media (max-width: 991px) {
-      width: 90%;
-      max-width: 650px;
-      padding: 30px;
-      // padding-bottom: 0;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.6);
-    }
-    @media (max-width: 450px) {
-      padding: 30px 0;
-    }
-
-    h2 {
-      @media (max-width: 1300px) {
-        line-height: 1.1;
-        margin-bottom: 20px;
-      }
-      @media (max-width: 500px) {
-        font-size: 20px;
-        margin-bottom: 0px;
-        text-align: center;
-      }
-    }
-    p {
-      @media (max-width: 480px) {
-        font-size: 14px;
-        text-align: center;
-      }
-    }
-
-    .login-socmed {
-      @media (max-width: 991px) {
-        display: flex;
-        justify-content: space-between;
-      }
-    }
-  }
-}
-
-.login-wrapper .login-col-1 .login-title {
-  @media (max-width: 1300px) {
-    width: 450px;
-  }
-}
-
-.login-wrapper .login-col-2 .login-menu {
-  @media (max-width: 991px) {
-    display: none;
-  }
-}
-
-.login-wrapper .login-col-2 .login-cont .login-copyright {
-  // position: relative;
-  position: fixed;
-  bottom: 0;
-  right: 50px;
-  padding: 10px 0;
-  width: 100%;
-  text-align: right;
-  background: rgba(255, 255, 255, 0.7);
-  @media (max-width: 991px) {
-    text-align: center;
-    right: 0;
-    left: 0;
-  }
-  p {
-    font-size: 12px !important;
-    margin-bottom: 0 !important;
-    @media(max-width: 480px) {
-        font-size: 12px !important;
-        text-align: center;
-        margin-bottom: 0 !important;
-      }
-  }
-}
-
-.login-mobile-wrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.login-form input {
-  border: 1px solid #aaa;
-}
-
-.login-wrapper .login-col-2 .login-menu {
-  margin-top: 0 !important;
-  padding: 30px 0;
-}
-
-.login-form-checkinput {
-  height: auto !important;
-}
-
-.pb-50 {
-  padding-bottom: 50px;
-}
-
-.login-form input::-webkit-input-placeholder {
-  color: #cacaca;
-}
-
-.login-form input:-ms-input-placeholder {
-  color: #cacaca;
-}
-
-.login-form input::placeholder {
-  color: #cacaca;
-}
-
-// .contact-col-2 textarea.text-box {
-//   @media (max-width: 800px) {
-//     height: auto;
-//   }
-// }
-</style>

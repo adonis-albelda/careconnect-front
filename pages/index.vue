@@ -331,13 +331,14 @@ export default {
   },
   methods :  {
     createBookingQuote() {
+      if (this.selectedService.default || !this.selectedTime.end || !this.selectedTime.start ||
+      this.selectedDates.length < 2)  {
+        alert('Please select all fields')
+        return
+      }
+      
       if (this.isRequesting) return
       this.isRequesting = true
-      if (this.selectedService.default || !this.selectedTime.end || !this.selectedTime.start ||
-        this.selectedDates.length < 2)  {
-          alert('Please select all fields')
-          return
-        }
 
       if (this.$auth.user) {
         let payload = {
