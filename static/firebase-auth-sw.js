@@ -1,10 +1,10 @@
 const ignorePaths = ["\u002F__webpack_hmr","\u002F_loading","\u002F_nuxt\u002F"]
 
 importScripts(
-  'https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js'
+  'https://www.gstatic.com/firebasejs/9.11.0/firebase-app-compat.js'
 )
 importScripts(
-  'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js'
+  'https://www.gstatic.com/firebasejs/9.11.0/firebase-auth-compat.js'
 )
 firebase.initializeApp({"apiKey":"AIzaSyAVLCKeCrFQzGWxstZIIY3aVprd1E82Y6Y","authDomain":"care-connect-e6828.firebaseapp.com","projectId":"care-connect-e6828","storageBucket":"care-connect-e6828.appspot.com","messagingSenderId":"252064637090","appId":"1:252064637090:web:c9d2fad08d03b6ec2b77fb","measurementId":"G-YLKD04C876"})
 
