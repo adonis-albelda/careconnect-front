@@ -13,16 +13,16 @@
         <p>Let us provide you with high-quality care!</p>
       </div>
       <div class="login-socmed">
-        <a href="#"><img src="/images/icons/facebook.svg" /> Care Connect</a>
-        <a href="#"><img src="/images/icons/twitter.svg" /> @careconnectca</a>
-        <a href="#"><img src="/images/icons/instagram.svg" /> Care Connect</a>
+        <a href="#" class="op-onhover"><img src="/images/icons/facebook.svg" /> Care Connect</a>
+        <a href="#" class="op-onhover"><img src="/images/icons/twitter.svg" /> @careconnectca</a>
+        <a href="#" class="op-onhover"><img src="/images/icons/instagram.svg" /> Care Connect</a>
       </div>
     </div>
     <div class="login-col-2">
       <div class="login-menu">
-        <a class="decoration-0" href="#">Help</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms & conditions</a>
+        <a class="decoration-0 op-onhover" href="#">Help</a>
+        <a class="op-onhover" href="#">Privacy</a>
+        <a class="op-onhover" href="#">Terms & conditions</a>
       </div>
       <div class="login-header-logo" @click="goTo('index')">
         <img src="/images/login-logo.png" alt="" />
@@ -198,6 +198,9 @@ export default {
       right: 0;
       left: 0;
     }
+    @media (max-width: 350px) {
+      padding: 10px;
+    }
     p {
       font-size: 12px !important;
       margin-bottom: 0 !important;
@@ -242,5 +245,11 @@ export default {
   
   .login-form input::placeholder {
     color: #cacaca;
+  }
+
+  .auth-back {
+    @media (max-width: 991px) {
+      display: none;
+    }
   }
   </style>

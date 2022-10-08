@@ -860,6 +860,7 @@
                         font-weight: $fontWeightSemiBold;
                         margin-bottom: 5px;
                         display: block;
+                        line-height: 1.3;
 
                         span {
                           color: red;
@@ -916,6 +917,9 @@
                         line-height: $fontSize450;
                         font-weight: $fontWeightSemiBold;
                         text-decoration: none;
+                        @media(max-width: 480px) {
+                          font-size: 0.75rem;
+                        }
                     }
                 }
             }
