@@ -61,6 +61,10 @@
   
 }
 
+// .mobile-timepicker {
+//   display: none;
+// }
+
 .booking-options {
 
   .list-services {
@@ -868,6 +872,21 @@
                         @media(max-width: 480px) {
                           font-size: $fontSize100;
                         }
+                    }
+
+                    .for-cont,
+                    .input-cont,
+                    .for-input {
+                      position: relative;
+
+                      i {
+                        position: absolute;
+                        right: 4%;
+                        top: 0;
+                        bottom: 0;
+                        display: flex;
+                        align-items: center;
+                      }
                     }
 
 

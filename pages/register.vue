@@ -70,11 +70,12 @@
               <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
                 <input
                   class="text-box"
-                  type="text"
+                  type="email"
                   v-model="user.phone_number"
-                  placeholder="Type phone number here"
+                  placeholder="Type email here"
                 />
                 <span>{{ errors[0] }}</span>
+                
               </div>
             </div>
           </ValidationProvider>
@@ -170,6 +171,8 @@ export default {
         last_name: '',
       },
       isRequesting: false,
+      showPassword: true,
+      showPassword2: true,
     }
   },
   methods: {
@@ -188,6 +191,12 @@ export default {
         this.showError('Something went wrong processing your request!')
       }
     },
+    toggleShow() {
+      this.showPassword = !this.showPassword;
+    },
+    toggleShow2() {
+      this.showPassword2 = !this.showPassword2;
+    }
   },
 }
 </script>

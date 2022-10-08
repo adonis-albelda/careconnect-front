@@ -51,10 +51,17 @@
                   <input
                     class="text-box"
                     v-model="user.password"
-                    type="password"
+                    :type="showPassword ? 'password' : 'text'"
                     placeholder="Password"
                   />
                   <span>{{ errors[0] }}</span>
+                  <i
+                    @click="toggleShow"
+                    :class="{
+                      'icon-mail': showPassword,
+                      'icon-health': !showPassword,
+                    }"
+                  ></i>
                 </div>
               </div>
             </ValidationProvider>
@@ -108,6 +115,7 @@ export default {
         password: '',
       },
       isRequesting: false,
+      showPassword: true,
     }
   },
   methods: {
@@ -141,6 +149,9 @@ export default {
         }
         this.isRequesting = false
       }
+    },
+    toggleShow() {
+      this.showPassword = !this.showPassword
     },
   },
 }
