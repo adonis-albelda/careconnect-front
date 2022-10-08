@@ -40,14 +40,15 @@
               </template>
             </p>
           </span>
-          <span class="logout" v-if="showLogout">
+          <!-- <span class="logout" v-if="showLogout">
             <small>Logout</small>
             <i class="icon-close" @click.stop="signOutUser"></i>
-          </span>
+          </span> -->
         </li>
-        <!-- <li class="logout-ds">
-          <img src="/images/exit.png" alt="">
-        </li> -->
+        <li class="logout-ds"
+          @click="signOutUser" v-if="$auth.user">
+          <i class="icon-close"></i>
+        </li>
       </ul>
     </nav>
     <div class="mobile-header">
