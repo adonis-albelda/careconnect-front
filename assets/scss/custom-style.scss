@@ -186,7 +186,7 @@
     .date-lbl {
       text-align: left;
       display: block;
-      margin-left: 16%;
+      margin-left: 13%;
       padding-top: 6px;
       font-size: $fontSize300;
       line-height: $fontSize500;
@@ -204,7 +204,7 @@
 
     .selected-date {
       text-align: left;
-      padding-left: 16%;
+      padding-left: 13%;
       padding-top: 1px;
       font-size: $fontSize400;
       line-height: 1.875rem;
@@ -229,9 +229,10 @@
 
     .mx-icon-calendar {
       left: -53px;
-      left: 16px;
+      left: 10px;
       right: auto;
       top: 18px;
+      font-size: 14px;
 
       @media(max-width: 1400px) {
         left: 7px;
@@ -1460,6 +1461,10 @@
         width: 100%;
         padding-left: 10%;
         margin-bottom: 20px;
+
+        input {
+          height: 35px !important;
+        }
 
         i {
           left: 10px;
