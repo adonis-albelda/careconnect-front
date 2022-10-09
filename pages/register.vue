@@ -187,8 +187,14 @@ export default {
         this.isRequesting = false
         this.goTo('verify-code')
       } catch (e) {
+        if (e.response.data.errors) {
+          if (e.response.data.errors.email.length) {
+            this.showError(e.response.data.errors.email[0])
+          }
+        } else {
+          this.showError('Something went wrong processing your request!')
+        }
         this.isRequesting = false
-        this.showError('Something went wrong processing your request!')
       }
     },
     toggleShow() {
