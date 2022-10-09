@@ -148,7 +148,7 @@ export default {
       h2 {
         line-height: 1.7 !important;
         @media (max-width: 1300px) {
-          line-height: 1.3 !important;
+          line-height: 1.6 !important;
         }
         @media (max-width: 500px) {
           font-size: 20px;
