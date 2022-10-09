@@ -99,5 +99,10 @@ export default {
       },
     },
   },
-  build: {},
+  build: {
+    transpile: ["vee-validate", "vee-validate/dist/rules"],
+    splitChunks: {
+      layouts: true,
+    },
+  },
 }

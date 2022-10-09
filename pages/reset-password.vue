@@ -56,7 +56,7 @@
               </div>
             </ValidationProvider>
             <button class="login-btn">reset password</button>
-            <button class="login-btn cancel">Cancel</button>
+            <button class="login-btn cancel" @click.prevent="goTo('index')">Cancel</button>
           </div>
         </form>
       </ValidationObserver>
@@ -84,7 +84,22 @@ export default {
       isRequesting: false,
     }
   },
+  async created() {
+    const token = this.$route.query.code
+    if (!token) this.goTo('index')
+
+    let isCodeValid = await this.isCodeValid(token)
+    if (!isCodeValid) this.goTo('index')
+  },  
   methods: {
+    async isCodeValid(code) {
+      try {
+        const {data} = await this.$axios.post('code/status', {code: code}) 
+        return true
+      } catch(e) {
+        return false
+      }
+    },
     async handleLogin() {
       try {
         if (this.isRequesting) return

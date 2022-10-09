@@ -14,7 +14,7 @@
       </p>
       <ValidationObserver v-slot="{ handleSubmit, reset }">
         <form
-          @submit.prevent="handleSubmit(handleLogin)"
+          @submit.prevent="handleSubmit(handleForgotPassword)"
           @reset.prevent="reset"
         >
           <div class="login-form">
@@ -66,40 +66,20 @@ export default {
     return {
       user: {
         email: '',
-        password: '',
       },
       isRequesting: false,
     }
   },
   methods: {
-    async handleLogin() {
+    async handleForgotPassword() {
       try {
         if (this.isRequesting) return
         this.isRequesting = true
 
-        const res = await this.$auth.loginWith('local', {
-          data: {
-            email: this.user.email,
-            password: this.user.password,
-          },
-        })
-
-        console.log(res, 'res')
-
-        if (res.data) {
-          this.showSuccess('Succesfully logged in !')
-        }
-
-        setTimeout(() => {
-          this.isRequesting = false
-          this.goTo('index')
-        }, 5000)
+        const {data, status} = await this.$axios.post('password/reset', this.user)
+        this.showSuccess(data.message)
       } catch (e) {
-        if (e.response.status === 404) {
-          this.showError('Invalid credentials, please try again!')
-        } else {
-          this.showError('Something went wrong processing your request!')
-        }
+        this.showError(e.response.data.message)
         this.isRequesting = false
       }
     },

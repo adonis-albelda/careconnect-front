@@ -10,14 +10,14 @@
       <h2>Verification</h2>
       <ValidationObserver v-slot="{ handleSubmit, reset }">
         <form
-          @submit.prevent="handleSubmit(handleLogin)"
+          @submit.prevent="handleSubmit(handleVerification)"
           @reset.prevent="reset"
         >
           <div class="login-form">
             <ValidationProvider
               v-slot="{ errors }"
-              name="Email"
-              rules="required|email"
+              name="Verification code"
+              rules="required"
             >
               <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                 <label>Please enter the verification code we sent to this email <span>{{setEmail}}</span></label>
@@ -25,16 +25,17 @@
                   <input
                     class="text-box"
                     type="test"
+                    v-model="user.code"
                     placeholder="Verification code"
                   />
                   <span>{{ errors[0] }}</span>
                 </div>
               </div>
             </ValidationProvider>
-            <button class="login-btn">
+            <button :class="['login-btn', isRequesting ? 'uc-spinner' :'']">
                 verify
             </button>
-            <button class="login-btn cancel">
+            <button class="login-btn cancel" @click.prevent="goTo('register')">
               Cancel
             </button>
           </div>
@@ -60,45 +61,35 @@ export default {
     return {
       user: {
         email: '',
-        password: '',
+        code: '',
       },
       isRequesting: false,
     }
   },
   mounted() {
     if (!localStorage.getItem('email')) {
-      // this.goTo('index')
+      this.goTo('index')
+    } else {
+      this.user.email = localStorage.getItem('email')
     }
   },
   methods: {
-    async handleLogin() {
+    async handleVerification() {
       try {
         if (this.isRequesting) return
         this.isRequesting = true
-
-        const res = await this.$auth.loginWith('local', {
-          data: {
-            email: this.user.email,
-            password: this.user.password,
-          },
-        })
-
-        console.log(res, 'res')
-
-        if (res.data) {
-          this.showSuccess('Succesfully logged in !')
-        }
+        
+        let {data, status} = await this.$axios.post('verify', this.user);
+        if (status !== 200) return
 
         setTimeout(() => {
+          localStorage.removeItem('email')
+          this.$auth.setUserToken(data)
           this.isRequesting = false
           this.goTo('index')
         }, 5000)
       } catch (e) {
-        if (e.response.status === 404) {
-          this.showError('Invalid credentials, please try again!')
-        } else {
-          this.showError('Something went wrong processing your request!')
-        }
+        this.showError(e.response.data.message)
         this.isRequesting = false
       }
     },

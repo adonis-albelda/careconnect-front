@@ -12,13 +12,13 @@
         <p>Care Connect</p>
       </div>
       <ul class="nav-item">
-        <li :class="{ active: isActive('index') }" @click="goTo('index')">
+        <li :class="{ active: isRouteSelected('index') }" @click="goTo('index')">
           <span>Home</span>
         </li>
-        <li :class="{ active: isActive('services') }" @click="goTo('services')">
+        <li :class="{ active: isRouteSelected('services') }" @click="goTo('services')">
           <span>Services</span>
         </li>
-        <li :class="{ active: isActive('contact') }" @click="goTo('contact')">
+        <li :class="{ active: isRouteSelected('contact') }" @click="goTo('contact')">
           <span>Contact us</span>
         </li>
         <li class="nav-menu-icons" v-if="!$auth.user">
@@ -28,16 +28,13 @@
         </li>
         <li
           class="guest-nav"
-          :class="{ active: isActive('login') }"
+          :class="{ active: isRouteSelected('login') }"
           @click="goTo('login')"
         >
           <span>
             <p>
               <i class="icon-profile"></i>
               {{ $auth.user ? `${$auth.user.email}` : 'Guest' }}
-              <template v-if="$auth.user">
-                <i class="ellipsis-icon" @click.stop="showLogout=!showLogout">&#8285;</i>
-              </template>
             </p>
           </span>
           <!-- <span class="logout" v-if="showLogout">
@@ -47,7 +44,10 @@
         </li>
         <li class="logout-ds"
           @click="signOutUser" v-if="$auth.user">
-          <i class="icon-close"></i>
+          <span>
+            SIGN OUT
+            <i class="icon-close"></i>
+          </span>
         </li>
       </ul>
     </nav>

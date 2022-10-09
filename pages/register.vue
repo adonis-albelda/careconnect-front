@@ -72,7 +72,7 @@
                   class="text-box"
                   type="email"
                   v-model="user.phone_number"
-                  placeholder="Type email here"
+                  placeholder="Type phone number here"
                 />
                 <span>{{ errors[0] }}</span>
                 
@@ -185,7 +185,7 @@ export default {
         localStorage.setItem('email', this.user.email)
 
         this.isRequesting = false
-        this.goTo('index')
+        this.goTo('verify-code')
       } catch (e) {
         this.isRequesting = false
         this.showError('Something went wrong processing your request!')

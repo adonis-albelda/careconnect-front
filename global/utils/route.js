@@ -4,7 +4,7 @@ Vue.mixin({
     goTo(name, params, queries) {
       this.$router.push({name:name, params:params, query:queries})
     },
-    isActive(routeName) {
+    isRouteSelected(routeName) {
       return this.$route.name === routeName
     }
   },

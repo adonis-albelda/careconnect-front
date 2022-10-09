@@ -3,7 +3,7 @@
     <notifications group="notify" position="bottom left" width="500" :duration="4000"/>
     <div class="login-col-1">
       <img
-        class="login-logo"
+        class="login-logo csr"
         @click="goTo('index')"
         src="/images/login-logo.png"
       />
