@@ -2,12 +2,13 @@
   <div class="login-mobile-wrapper">
     <div class="login-cont">
         <img src="/images/check_your_email.png" alt="">
-        <h2>Check your mail!</h2>
-        <p>
-        We have sent a password recover instructions to your email.
+        <h2>
+          Check your mail!</h2>
+        <p class="normal-text-authen">
+          We have sent a password recover instructions to your email.
         </p>
         <div class="login-copyright">
-        <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
+          <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
         </div>
     </div>
   </div>
@@ -66,3 +67,27 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.login-cont {
+  img {
+    width: 110px;
+    margin: 0 auto;
+    @media (max-width: 450px) {
+        width: 70px;
+    }
+  }
+  h2 {
+    text-align: center;
+    @media (max-width: 1300px) {
+      margin: 10px 0;
+    }
+    @media (max-width: 500px) {
+      font-size: 20px;
+    }
+  }
+  p {
+    text-align: center;
+  }
+}
+</style>

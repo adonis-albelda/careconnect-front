@@ -5,10 +5,10 @@
       <p>Care That Comes to You</p>
 
       <div class="login-socmed">
-        <a class="google-btn" href="#" @click.prevent="loginWithGoogle"
+        <a class="google-btn op-onhover" href="#" @click.prevent="loginWithGoogle"
           >Login with Google <img src="/images/icons/google-icon.svg"
         /></a>
-        <a class="facebook-btn" href="#" @click.prevent="loginWithFacebook"
+        <a class="facebook-btn op-onhover" href="#" @click.prevent="loginWithFacebook"
           >Login with Facebook <img src="/images/icons/facebook-icon.svg"
         /></a>
       </div>
@@ -156,3 +156,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.login-cont {
+  padding: 30px 0 70px 0 !important;
+}
+</style>
