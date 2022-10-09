@@ -146,6 +146,7 @@ export default {
       }
   
       h2 {
+        line-height: 1.7;
         @media (max-width: 1300px) {
           line-height: 1.3;
         }
@@ -156,6 +157,8 @@ export default {
         }
       }
       p {
+        font-size: 17px;
+        line-height: 1.5;
         @media (max-width: 480px) {
           font-size: 14px;
           line-height: 1.2;
@@ -248,6 +251,8 @@ export default {
   }
 
   .auth-back {
+    margin-bottom: 50px;
+    width: fit-content;
     @media (max-width: 991px) {
       display: none;
     }

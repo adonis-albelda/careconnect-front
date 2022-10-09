@@ -101,3 +101,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.login-cont {
+  form {
+    padding-top: 10px;
+      @media (max-width: 400px) {
+        padding-top: 20px;
+      }
+  }
+}
+</style>

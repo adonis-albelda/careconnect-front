@@ -1,6 +1,12 @@
 <template>
   <div class="login-mobile-wrapper">
     <div class="login-cont">
+      <div class="auth-back" @click="goTo('index')">
+        <span>
+          <i class="icon-arrow-left"></i>
+          Back
+        </span>
+      </div>
         <img src="/images/check_your_email.png" alt="">
         <h2>
           Check your mail!</h2>
@@ -70,6 +76,9 @@ export default {
 
 <style lang="scss" scoped>
 .login-cont {
+  .auth-back {
+    margin-bottom: 100px;
+  }
   img {
     width: 110px;
     margin: 0 auto;

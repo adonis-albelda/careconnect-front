@@ -1,6 +1,12 @@
 <template>
   <div class="login-mobile-wrapper">
     <div class="login-cont">
+      <div class="auth-back" @click="goTo('index')">
+        <span>
+          <i class="icon-arrow-left"></i>
+          Back
+        </span>
+      </div>
       <h2>Welcome to Care Connect</h2>
       <p>Care That Comes to You</p>
 
@@ -67,7 +73,11 @@
             </ValidationProvider>
             <div class="forgot-pass">
               <div>
-                <input
+                <label class="checkbox-container">Remember
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <!-- <input
                   class="login-form-checkinput"
                   type="checkbox"
                   value=""
@@ -75,7 +85,7 @@
                 />
                 <label class="login-form-checklabel" for="remember">
                   Remember me
-                </label>
+                </label> -->
               </div>
               <div class="csr" @click="goTo('forgot-password')">
                 <p>Forgot Password</p>
