@@ -76,7 +76,7 @@ export default {
         if (this.isRequesting) return
         this.isRequesting = true
 
-        const {data, status} = await this.$axios.post('password/reset', this.user)
+        const {data, status} = await this.$axios.post('password/send-link', this.user)
         this.showSuccess(data.message)
       } catch (e) {
         this.showError(e.response.data.message)

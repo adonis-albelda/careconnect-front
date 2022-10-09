@@ -13,7 +13,7 @@
       </p>
       <ValidationObserver v-slot="{ handleSubmit, reset }">
         <form
-          @submit.prevent="handleSubmit(handleLogin)"
+          @submit.prevent="handleSubmit(handleResetPassword)"
           @reset.prevent="reset"
         >
           <div class="login-form">
@@ -31,7 +31,6 @@
                     type="password"
                     placeholder="Password"
                   />
-                  <small>Must be at least 8 characters.</small>
                   <span>{{ errors[0] }}</span>
                 </div>
               </div>
@@ -46,16 +45,15 @@
                 <div :class="['for-cont', errors[0] ? 'error-msgg' : '']">
                   <input
                     class="text-box"
-                    v-model="user.password"
+                    v-model="user.password_confirmation"
                     type="password"
                     placeholder="Confirm Password"
                   />
-                  <small>Both passwords must match.</small>
                   <span>{{ errors[0] }}</span>
                 </div>
               </div>
             </ValidationProvider>
-            <button class="login-btn">reset password</button>
+            <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">reset password</button>
             <button class="login-btn cancel" @click.prevent="goTo('index')">Cancel</button>
           </div>
         </form>
@@ -78,18 +76,24 @@ export default {
   data() {
     return {
       user: {
-        email: '',
+        password_confirmation: '',
         password: '',
+        token:'',
+        email:''
       },
       isRequesting: false,
     }
   },
   async created() {
     const token = this.$route.query.code
-    if (!token) this.goTo('index')
+    const email = this.$route.query.email
+    // if (!token || !email) this.goTo('index')
+    
+    this.user.email = email
+    this.user.token = token
 
-    let isCodeValid = await this.isCodeValid(token)
-    if (!isCodeValid) this.goTo('index')
+    // let isCodeValid = await this.isCodeValid(token)
+    // if (!isCodeValid) this.goTo('index')
   },  
   methods: {
     async isCodeValid(code) {
@@ -100,34 +104,21 @@ export default {
         return false
       }
     },
-    async handleLogin() {
+    async handleResetPassword() {
       try {
         if (this.isRequesting) return
         this.isRequesting = true
 
-        const res = await this.$auth.loginWith('local', {
-          data: {
-            email: this.user.email,
-            password: this.user.password,
-          },
-        })
+        const {data} = await this.$axios.post('password/reset', this.user)
 
-        console.log(res, 'res')
-
-        if (res.data) {
-          this.showSuccess('Succesfully logged in !')
-        }
+        this.showSuccess('Succesfully updated password!')
 
         setTimeout(() => {
           this.isRequesting = false
-          this.goTo('index')
+          this.goTo('login')
         }, 5000)
       } catch (e) {
-        if (e.response.status === 404) {
-          this.showError('Invalid credentials, please try again!')
-        } else {
-          this.showError('Something went wrong processing your request!')
-        }
+        this.showError(e.response.data.message)
         this.isRequesting = false
       }
     },

@@ -18,7 +18,7 @@
       </div>
       <ValidationObserver v-slot="{ handleSubmit, reset }">
         <form
-          @submit.prevent="handleSubmit(loginWithFirebase)"
+          @submit.prevent="handleSubmit(handleLogin)"
           @reset.prevent="reset"
         >
           <div class="login-form">
