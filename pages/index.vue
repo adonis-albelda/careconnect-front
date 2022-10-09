@@ -9,7 +9,7 @@
       </div>
     </section>
     <div class="booking-options">
-      <VSelect :clearable="false" v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
+      <VSelect :searchable="false" :clearable="false" v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>{{label}}</p>
@@ -44,7 +44,7 @@
           <button @click="dateOptionstatus=!dateOptionstatus">OKAY</button>
         </template>
       </VDatePicker>
-      <VSelect @click="openSidebar()" :clearable="false" class="time-picker" :options="times" placeholder="Select Start Time" v-model="selectedTime.start"> 
+      <VSelect :searchable="false" :clearable="false" class="time-picker" :options="times" placeholder="Select Start Time" v-model="selectedTime.start"> 
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>Start Time</p>
@@ -52,6 +52,8 @@
             <p>{{selectedTime.start}}</p>
           </div>
         </template> 
+        <template v-slot:search>
+        </template>
         <template v-slot:no-options="{ search, searching, loading }">
             <div class="time-options-container">
               <div>
@@ -63,9 +65,9 @@
                 </ul>
                 <div class="time-input">
                   <div>
-                    <input class="text-box" type="number">
+                    <input type="text"/>
                     <span>:</span>
-                    <input class="text-box" type="number">
+                    <input type="text"/>
                   </div>
                   <div>
                     <p @click='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
@@ -83,7 +85,7 @@
             </div>
         </template>
       </VSelect>
-      <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select End Time" v-model="selectedTime.end">
+      <VSelect :searchable="false" :clearable="false" class="time-picker" :options="times" placeholder="Select End Time" v-model="selectedTime.end">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>End Time</p>
@@ -95,16 +97,11 @@
             <div class="time-options-container">
               <div>
                 <h4>End Time</h4>
-                <ul class="time-options">
-                  <!--<li v-for="(time,index) of endTimes" :key="`end-${index}`">
-                    <button :class="{active: selectedTime.end == time}" @click="selectedTime.end = time">{{time}}</button>
-                  </li> -->
-                </ul>
                 <div class="time-input">
                   <div>
-                    <input class="text-box" type="number">
+                    <input  class="text-box" type="number"/>
                     <span>:</span>
-                    <input class="text-box" type="number">
+                    <input class="text-box" type="number"/>
                   </div>
                   <div>
                     <p @click='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
@@ -114,7 +111,6 @@
               </div>
             </div>
         </template>
-        
           <template v-slot:list-footer="footer">
               <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
               <div class="time-footer">
@@ -340,34 +336,6 @@ export default {
         }
       ],
       times:[],
-      startTimes: [
-       "9:00 AM",
-        "9:30 AM",
-        "10:00 AM",
-        "10:30 AM",
-        "11:00 AM",
-        "11:30 AM",
-        "12:00 PM",
-        "12:30 PM",
-        "2:00 PM",
-        "2:30 PM",
-        "3:00 PM",
-        "3:30 PM",
-      ],
-      endTimes: [
-        "9:00 AM",
-        "9:30 AM",
-        "10:00 AM",
-        "10:30 AM",
-        "11:00 AM",
-        "11:30 AM",
-        "12:00 PM",
-        "12:30 PM",
-        "2:00 PM",
-        "2:30 PM",
-        "3:00 PM",
-        "3:30 PM",
-      ],
       dateOptionstatus:false,
       isRequesting:false
     }
@@ -432,9 +400,9 @@ export default {
     addClassActive(val) {
       this.isClick = val
     },
-    // dropdownShouldOpen(VueSelect) {
-    //   return true
-    // },
+    dropdownShouldOpen(VueSelect) {
+      return true
+    },
   },
   watch: {
     selectedService: {
