@@ -78,22 +78,14 @@
                   <label>Password</label>
                   <div class="for-input">
                     <input
-                      v-if="showPassword"
                       class="text-box"
                       v-model="user.password"
-                      type="password"
+                      :type="showPassword ? 'password' : 'text'"
                       placeholder="Password"
                     />
-                    <input
-                      v-else
-                      class="text-box"
-                      v-model="user.password"
-                      type="text"
-                      placeholder="Password"
-                    />
-                    <span>{{ errors[0] }}</span>
                     <i @click="toggleShow" :class="{ 'icon-mail': showPassword, 'icon-health': !showPassword }"></i>
                   </div>
+                  <span>{{ errors[0] }}</span>
                 </div>
               </ValidationProvider>
               <ValidationProvider
@@ -105,22 +97,14 @@
                   <label>Confirm Password</label>
                   <div class="for-input">
                     <input
-                      v-if="showPassword2"
                       class="text-box"
                       v-model="user.password_confirmation"
-                      type="password"
+                      :type="showPassword2 ? 'password' : 'text'"
                       placeholder="Confirm Password"
                     />
-                    <input
-                      v-else
-                      class="text-box"
-                      v-model="user.password_confirmation"
-                      type="password"
-                      placeholder="Confirm Password"
-                    />
-                    <span>{{ errors[0] }}</span>
                     <i @click="toggleShow2" :class="{ 'icon-mail': showPassword2, 'icon-health': !showPassword2 }"></i>
                   </div>
+                  <span>{{ errors[0] }}</span>
                 </div>
               </ValidationProvider>
               <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">

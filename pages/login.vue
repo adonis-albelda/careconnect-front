@@ -79,22 +79,14 @@
                     <label>Password</label>
                     <div :class="['for-cont', errors[0] ? 'error-msgg' : '']">
                       <input
-                        v-if="showPassword"
                         class="text-box"
                         v-model="user.password"
-                        type="password"
+                        :type="showPassword ? 'password' : 'text'"
                         placeholder="Password"
                       />
-                      <input
-                       v-else
-                        class="text-box"
-                        v-model="user.password"
-                        type="text"
-                        placeholder="Password"
-                      />
-                      <span>{{ errors[0] }}</span>
                       <i @click="toggleShow" :class="{ 'icon-mail': showPassword, 'icon-health': !showPassword }"></i>
                     </div>
+                    <span>{{ errors[0] }}</span>
                   </div>
                 </ValidationProvider>
                 <div class="forgot-pass">

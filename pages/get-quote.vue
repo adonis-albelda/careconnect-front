@@ -45,94 +45,63 @@
         </div>
         <div class="quote-time">
           <h2>Time</h2>
-          <VSelect
-            class="time-picker"
-            placeholder="Select Start Time"
-            v-model="selectedTime.start"
-            :clearable="false"
-          >
-            <template
-              v-slot:selected-option-container="{
-                option: { label, description },
-              }"
-            >
-              <div class="filter-selected">
-                <p>Start Time</p>
-                <i class="icon-stopwatch"></i>
-                <p>{{ selectedTime.start }}</p>
-              </div>
-            </template>
-            <template v-slot:no-options="{ search, searching, loading }">
+          <div @click="openTimeSelection()" class="custom-timepicker">
+            <p>Start Time</p>
+            <span>9:00 am</span>
+            <i class="icon-stopwatch"></i>
+            <div v-if="isShowTime" class="timepicker-dropdown">
               <div class="time-options-container">
-                <div>
-                  <h4>Start Time</h4>
+                  <div>
+                    <h4>Start Time</h4>
+                    <div class="time-input">
+                      <div>
+                        <input class="text-box" type="number">
+                        <span>:</span>
+                        <input class="text-box" type="number">
+                      </div>
+                      <div>
+                        <p @click.stop='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
+                        <p @click.stop='addClassActive("pm")' :class="isClick == 'pm'? 'period-selected' :'' ">PM</p>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+                  <div class="time-footer">
+                      <button>Reset</button>
+                      <button>Done</button>
+                  </div>
+                </div>
+            </div>
+          </div>
 
-                  <ul class="time-options">
-                    <li
-                      v-for="(time, index) of startTimes"
-                      :key="`end-${index}`"
-                    >
-                      <button
-                        :class="{ active: selectedTime.start == time }"
-                        @click="selectedTime.start = time"
-                      >
-                        {{ time }}
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </template>
-            <template v-slot:list-footer="footer">
-              <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
-              <div class="time-footer">
-                <button>Reset</button>
-                <button>Done</button>
-              </div>
-            </template>
-          </VSelect>
-          <VSelect
-            :clearable="false"
-            class="time-picker"
-            placeholder="Select EndTime"
-            v-model="selectedTime.end"
-          >
-            <template
-              v-slot:selected-option-container="{
-                option: { label, description },
-              }"
-            >
-              <div class="filter-selected">
-                <p>End Time</p>
-                <i class="icon-stopwatch"></i>
-                <p>{{ selectedTime.end }}</p>
-              </div>
-            </template>
-            <template v-slot:no-options="{ search, searching, loading }">
+          <div @click="openTimeSelection2()" class="custom-timepicker">
+            <p>Start Time</p>
+            <span>9:00 am</span>
+            <i class="icon-stopwatch"></i>
+            <div v-if="isShowTime2" class="timepicker-dropdown">
               <div class="time-options-container">
-                <div>
-                  <h4>Start Time</h4>
-                  <ul class="time-options">
-                    <li v-for="(time, index) of endTimes" :key="`end-${index}`">
-                      <button
-                        :class="{ active: selectedTime.end == time }"
-                        @click="selectedTime.end = time"
-                      >
-                        {{ time }}
-                      </button>
-                    </li>
-                  </ul>
+                  <div>
+                    <h4>Start Time</h4>
+                    <div class="time-input">
+                      <div>
+                        <input class="text-box" type="number">
+                        <span>:</span>
+                        <input class="text-box" type="number">
+                      </div>
+                      <div>
+                        <p @click.stop='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
+                        <p @click.stop='addClassActive("pm")' :class="isClick == 'pm'? 'period-selected' :'' ">PM</p>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+                  <div class="time-footer">
+                      <button>Reset</button>
+                      <button>Done</button>
+                  </div>
                 </div>
-              </div>
-            </template>
-            <template v-slot:list-footer="footer">
-              <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
-              <div class="time-footer">
-                <button>Reset</button>
-                <button>Done</button>
-              </div>
-            </template>
-          </VSelect>
+            </div>
+          </div>
           <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
         </div>
       </div>
@@ -167,6 +136,9 @@ export default {
         default: true,
       },
       serviceId:null,
+      isShowTime: false,
+      isShowTime2: false,
+      isClick: '',
       selectedDates: [],
       selectedTime: {
         start:"9:00 AM",
@@ -265,6 +237,15 @@ export default {
           // This will be triggered when user clicks on cancel
         });
       }  
+    },
+    openTimeSelection() {
+      this.isShowTime = !this.isShowTime
+    },
+    openTimeSelection2() {
+      this.isShowTime2 = !this.isShowTime2
+    },
+    addClassActive(val) {
+      this.isClick = val
     },
   },
 }

@@ -44,7 +44,7 @@
           <button @click="dateOptionstatus=!dateOptionstatus">OKAY</button>
         </template>
       </VDatePicker>
-      <VSelect @click="openSidebar()" :clearable="false" class="time-picker" :options="times" placeholder="Select Start Time" v-model="selectedTime.start"> 
+      <!-- <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select Start Time" v-model="selectedTime.start"> 
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>Start Time</p>
@@ -57,9 +57,9 @@
               <div>
                 <h4>Start Time</h4>
                 <ul class="time-options">
-                  <!-- <li v-for="(time,index) of startTimes" :key="`end-${index}`">
+                   <li v-for="(time,index) of startTimes" :key="`end-${index}`">
                     <button :class="{active: selectedTime.start == time}" @click="selectedTime.start = time">{{time}}</button>
-                  </li> -->
+                  </li>
                 </ul>
                 <div class="time-input">
                   <div>
@@ -82,8 +82,64 @@
                 <button>Done</button>
             </div>
         </template>
-      </VSelect>
-      <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select End Time" v-model="selectedTime.end">
+      </VSelect> -->
+      <div @click="openTimeSelection()" class="custom-timepicker">
+        <p>Start Time</p>
+        <span>9:00 am</span>
+        <i class="icon-stopwatch"></i>
+        <div v-if="isShowTime" class="timepicker-dropdown">
+          <div class="time-options-container">
+              <div>
+                <h4>Start Time</h4>
+                <div class="time-input">
+                  <div>
+                    <input class="text-box" type="number">
+                    <span>:</span>
+                    <input class="text-box" type="number">
+                  </div>
+                  <div>
+                    <p @click.stop='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
+                    <p @click.stop='addClassActive("pm")' :class="isClick == 'pm'? 'period-selected' :'' ">PM</p>
+                  </div>
+                </div>
+              </div>
+              <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+              <div class="time-footer">
+                  <button>Reset</button>
+                  <button>Done</button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div @click="openTimeSelection2()" class="custom-timepicker">
+        <p>End Time</p>
+        <span>9:00 am</span>
+        <i class="icon-stopwatch"></i>
+        <div v-if="isShowTime2" class="timepicker-dropdown">
+          <div class="time-options-container">
+              <div>
+                <h4>End Time</h4>
+                <div class="time-input">
+                  <div>
+                    <input class="text-box" type="number">
+                    <span>:</span>
+                    <input class="text-box" type="number">
+                  </div>
+                  <div>
+                    <p @click.stop='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
+                    <p @click.stop='addClassActive("pm")' :class="isClick == 'pm'? 'period-selected' :'' ">PM</p>
+                  </div>
+                </div>
+              </div>
+              <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+              <div class="time-footer">
+                  <button>Reset</button>
+                  <button>Done</button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- <VSelect :clearable="false" class="time-picker" :options="times" placeholder="Select End Time" v-model="selectedTime.end">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>End Time</p>
@@ -96,9 +152,9 @@
               <div>
                 <h4>End Time</h4>
                 <ul class="time-options">
-                  <!--<li v-for="(time,index) of endTimes" :key="`end-${index}`">
+                  <li v-for="(time,index) of endTimes" :key="`end-${index}`">
                     <button :class="{active: selectedTime.end == time}" @click="selectedTime.end = time">{{time}}</button>
-                  </li> -->
+                  </li>
                 </ul>
                 <div class="time-input">
                   <div>
@@ -122,9 +178,59 @@
                   <button>Done</button>
               </div>
         </template>
-      </VSelect>
+      </VSelect> -->
       <div>
         <button :class="['btn accent full', isRequesting ? 'uc-spinner' : '']" @click="createBookingQuote">Get A Quote</button>
+      </div>
+
+      <div v-if="isShowMobile" class="mobile-timepicker">
+        <div class="time-options-container">
+          <div>
+            <h4>Start Time</h4>
+            <ul class="time-options">
+              <!--<li v-for="(time,index) of endTimes" :key="`end-${index}`">
+                <button :class="{active: selectedTime.end == time}" @click="selectedTime.end = time">{{time}}</button>
+              </li> -->
+            </ul>
+            <div class="time-input">
+              <div>
+                <input class="text-box" type="number">
+                <span>:</span>
+                <input class="text-box" type="number">
+              </div>
+              <div>
+                <p @click='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
+                <p @click='addClassActive("pm")' :class="isClick == 'pm'? 'period-selected' :'' ">PM</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4>End Time</h4>
+            <ul class="time-options">
+              <!--<li v-for="(time,index) of endTimes" :key="`end-${index}`">
+                <button :class="{active: selectedTime.end == time}" @click="selectedTime.end = time">{{time}}</button>
+              </li> -->
+            </ul>
+            <div class="time-input">
+              <div>
+                <input class="text-box" type="number">
+                <span>:</span>
+                <input class="text-box" type="number">
+              </div>
+              <div>
+                <p @click='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
+                <p @click='addClassActive("pm")' :class="isClick == 'pm'? 'period-selected' :'' ">PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="time-btns">
+            <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+            <div class="time-footer">
+                <button>Reset</button>
+                <button>Done</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -247,28 +353,7 @@
         </div>
       </div>
     </section>
-    <div v-if="isShow" class="mobile-timepicker">
-          <div class="time-options-container">
-              <div>
-                <h4>End Time</h4>
-                <ul class="time-options">
-                  <!--<li v-for="(time,index) of endTimes" :key="`end-${index}`">
-                    <button :class="{active: selectedTime.end == time}" @click="selectedTime.end = time">{{time}}</button>
-                  </li> -->
-                </ul>
-                <div class="time-input">
-                  <div>
-                    <input class="text-box" type="number">
-                    <span>:</span>
-                    <input class="text-box" type="number">
-                  </div>
-                  <div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
+
   </div>
 </template>
 <script>
@@ -296,7 +381,9 @@ export default {
         default:true
       },
       isClick: '',
-       isShow: false,
+       isShowMobile: false,
+       isShowTime: false,
+       isShowTime2: false,
       selectedDates:[],
       selectedTime: {
         start:"9:00 AM",
@@ -425,8 +512,14 @@ export default {
         });
       }  
     },
-    openSidebar() {
-      this.isShow = !this.isShow
+    openTimeSelection() {
+      this.isShowTime = !this.isShowTime
+    },
+    openTimeSelection2() {
+      this.isShowTime2 = !this.isShowTime2
+    },
+    openTimeSelectionMobile() {
+      this.isShowTimeMobile = !this.isShowTimeMobile
     },
     addClassActive(val) {
       this.isClick = val

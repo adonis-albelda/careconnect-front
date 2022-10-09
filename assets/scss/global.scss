@@ -485,6 +485,7 @@ section {
 
   .list-services {
     width: 30%;
+    cursor: pointer;
 
     @media (max-width: 991px) {
       width: 40%;
@@ -497,6 +498,7 @@ section {
     .vs__dropdown-toggle {
       padding: 0.2rem 1rem;
       border-radius: 6px !important;
+      cursor: pointer;
 
       @media (max-width: 480px) {
         padding: 0.4rem 1rem;
@@ -529,6 +531,7 @@ section {
   .mx-datepicker {
     width: 20%;
     height: 70px;
+    cursor: pointer;
 
     @media (max-width: 991px) {
       width: 25%;
@@ -554,6 +557,138 @@ section {
       input {
         height: 100%;
       }
+    }
+  }
+
+  .mobile-timepicker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    top: 50%;
+    z-index: 99;
+    padding: 20px;
+
+    h4 {
+      @media(max-width: 480px) {
+        font-size: 0.875rem;
+      }
+    }
+
+    .time-input {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+
+      div {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        &:first-child {
+          width: 70%;
+        }
+
+        &:last-child {
+          width: 30%;
+          gap: 0;
+
+          p {
+            font-size: $fontSize400;
+              line-height: 1.875rem;
+              color: $invertedColor;
+              font-weight: $fontWeightRegular;
+              background-color: transparent;
+              border: 1px solid $primaryColor;
+              padding: 1px 6px;
+              cursor: pointer;
+
+              @media(max-width: 480px) {
+                font-size: 1rem;
+              }
+
+              &:first-child {
+                border-bottom-left-radius: 6px;
+                border-top-left-radius: 6px;
+              }
+
+              &:last-child {
+                border-bottom-right-radius: 6px;
+                border-top-right-radius: 6px;
+              }
+          }
+        }
+
+        input {
+          height: 33px;
+          border-color: rgba(202, 202, 202, 0.5);
+
+          @media(max-width: 480px) {
+            height: 35px !important;
+          }
+        }
+
+        .period-selected {
+          color: $normalColor !important;
+          background-color: $accentColor100 !important;
+        }
+        
+      }
+    }
+
+    .time-btns {
+      .central-time {
+        font-size: $fontSize200;
+        line-height: $fontSize400;
+        color: $invertedColor;
+        font-weight: $fontWeightRegular;
+    
+        @media(max-width: 480px) {
+          font-size: 0.625rem;
+          line-height: 0.938rem;
+          margin-bottom: 15px;
+        }
+      }
+
+      .time-footer {
+        display: flex;
+        gap: 10px;
+
+        button {
+          &:first-child {
+            font-size: $fontSize250;
+            color: $invertedColor;
+            font-weight: $fontWeightSemiBold;
+            background: #ececec;
+            border: none;
+            padding: 8px 0;
+            border-radius: 6px;
+            width: 50%;
+    
+            @media(max-width: 480px) {
+              font-size: 0.75rem;
+            }
+          }
+    
+          &:last-child {
+            font-size: $fontSize250;
+            color: $normalColor;
+            font-weight: $fontWeightSemiBold;
+            background: $accentColor100;
+            border: none;
+            padding: 8px 0;
+            border-radius: 6px;
+            width: 50%;
+    
+            @media(max-width: 480px) {
+              font-size: 0.75rem;
+            }
+          }
+        }
+
+      }
+
     }
   }
 }
