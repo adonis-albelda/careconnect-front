@@ -146,23 +146,23 @@ export default {
       }
   
       h2 {
-        line-height: 1.7;
+        line-height: 1.7 !important;
         @media (max-width: 1300px) {
-          line-height: 1.3;
+          line-height: 1.3 !important;
         }
         @media (max-width: 500px) {
           font-size: 20px;
-          margin-bottom: 2px;
-          text-align: center;
+          margin-bottom: 10px;
+          // text-align: center;
         }
       }
       p {
-        font-size: 17px;
+        font-size: 17px !important;
         line-height: 1.5;
         @media (max-width: 480px) {
-          font-size: 14px;
+          font-size: 14px !important;
           line-height: 1.2;
-          text-align: center;
+          // text-align: center;
         }
       }
   
