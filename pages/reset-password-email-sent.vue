@@ -99,4 +99,8 @@ export default {
     text-align: center;
   }
 }
+
+.login-wrapper .login-col-2 .login-cont .login-copyright p {
+  text-align: right;
+}
 </style>

@@ -107,7 +107,7 @@
                       <textarea
                         v-model="inquiry.message"
                         class="text-box"
-                        placeholder="Type your inquiry here..."
+                        placeholder="Hello..."
                       ></textarea>
                     </div>
                     <span>{{ errors[0] }}</span>

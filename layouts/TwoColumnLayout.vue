@@ -13,9 +13,9 @@
         <p>Let us provide you with high-quality care!</p>
       </div>
       <div class="login-socmed">
-        <a href="#" class="op-onhover"><img src="/images/icons/facebook.svg" /> Care Connect</a>
-        <a href="#" class="op-onhover"><img src="/images/icons/twitter.svg" /> @careconnectca</a>
-        <a href="#" class="op-onhover"><img src="/images/icons/instagram.svg" /> Care Connect</a>
+        <a href="#" class="op-onhover"><i class="icon-facebook"></i> Care Connect</a>
+        <a href="#" class="op-onhover"><i class="icon-twitter"></i> @careconnectca</a>
+        <a href="#" class="op-onhover"><i class="icon-instagram"></i> Care Connect</a>
       </div>
     </div>
     <div class="login-col-2">
@@ -82,9 +82,9 @@ export default {
   }
   .login-form {
     
-    // @media (max-height: 900px) {
-    //   padding-bottom: 65px;
-    // }
+    @media (max-height: 900px) {
+      padding-bottom: 65px;
+    }
   
     .login-btn {
       @media (max-width: 767px) {
@@ -120,9 +120,9 @@ export default {
     @media (max-width: 1500px) {
       width: 50%;
     }
-    @media (max-height: 900px) {
-      height: auto;
-    }
+    // @media (max-height: 900px) {
+    //   height: auto;
+    // }
     @media (max-width: 991px) {
       width: 100%;
     }
@@ -190,9 +190,9 @@ export default {
   .login-wrapper .login-col-2 .login-cont .login-copyright {
     // position: relative;
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     right: 50px;
-    padding: 10px 0;
+    padding: 10px 0 20px 0;
     width: 100%;
     text-align: right;
     background: rgba(255, 255, 255, 0.7);
@@ -205,7 +205,7 @@ export default {
       padding: 10px;
     }
     p {
-      font-size: 12px !important;
+      font-size: 0.875rem !important;
       margin-bottom: 0 !important;
       @media (max-width: 480px) {
         font-size: 12px !important;
@@ -256,5 +256,9 @@ export default {
     @media (max-width: 991px) {
       display: none;
     }
+  }
+
+  .login-socmed a i {
+    font-size: 23px !important;
   }
   </style>
