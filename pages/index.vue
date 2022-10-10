@@ -390,17 +390,7 @@ export default {
           });
 
       } else {
-        this.isRequesting = false
-        this.$dialog.alert('', {
-          view: QUOTE_EMAIL, // can be set globally too
-          html: true,
-          animation: 'fade',
-          backdropClose: true,
-          context: this
-        }) .catch(function (e) {
-          console.log(e)
-          // This will be triggered when user clicks on cancel
-        });
+        this.goTo('login')
       }  
     },
     openTimeSelection() {
