@@ -73,22 +73,13 @@
             </ValidationProvider>
             <div class="forgot-pass">
               <div>
-                <label class="checkbox-container">Remember
+                <label class="checkbox-container">Remember me
                   <input type="checkbox">
                   <span class="checkmark"></span>
                 </label>
-                <!-- <input
-                  class="login-form-checkinput"
-                  type="checkbox"
-                  value=""
-                  id="remember"
-                />
-                <label class="login-form-checklabel" for="remember">
-                  Remember me
-                </label> -->
               </div>
               <div class="csr" @click="goTo('forgot-password')">
-                <p>Forgot Password</p>
+                <p>Forgot Password ?</p>
               </div>
             </div>
             <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">

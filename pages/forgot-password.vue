@@ -81,7 +81,7 @@ export default {
         setTimeout(() => {
           this.user.email = ''
           this.isRequesting = false
-          this.showSuccess(data.message)
+          this.goTo('reset-password-email-sent')
         }, 3000);
       } catch (e) {
         this.showError(e.response.data.message)
