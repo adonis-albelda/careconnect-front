@@ -37,10 +37,6 @@
               {{ $auth.user ? `${$auth.user.email}` : 'Guest' }}
             </p>
           </span>
-          <!-- <span class="logout" v-if="showLogout">
-            <small>Logout</small>
-            <i class="icon-close" @click.stop="signOutUser"></i>
-          </span> -->
         </li>
         <li class="logout-ds"
           @click="signOutUser" v-if="$auth.user">
@@ -193,7 +189,7 @@ export default {
       this.$auth.logout()
       this.isShow = false
       this.showLogout=!this.showLogout
-      this.goTo('index')
+      this.goTo('login')
     },
   },
   watch: {

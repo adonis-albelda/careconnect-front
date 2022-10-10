@@ -356,7 +356,7 @@ export default {
   },
   methods :  {
     createBookingQuote() {
-      if (this.selectedService.default || !this.selectedTime.end || !this.selectedTime.start ||
+      if (this.selectedService.default || !this.isStartTimeValid || !this.isEndTimeValid ||
       this.selectedDates.length < 2)  {
         alert('Please select all fields')
         return
@@ -370,8 +370,8 @@ export default {
           start_date: this.selectedDates[0],
           end_date: this.selectedDates[1],
           service_id: this.serviceId,
-          start_time: this.selectedTime.start,
-          end_time: this.selectedTime.end
+          start_time: `${this.selectedTime.start.hour}:${this.selectedTime.start.minutes} ${this.selectedTime.start.time}`,
+          end_time: `${this.selectedTime.end.hour}:${this.selectedTime.end.minutes} ${this.selectedTime.end.time}`
         }
 
         this.showSuccess('Please wait while we are proccessing your request')
@@ -423,6 +423,22 @@ export default {
       this.selectedTime.end.hour = '09'
       this.selectedTime.end.minutes = '00'
       this.selectedTime.end.time = 'PM'
+    }
+  },
+  computed: {
+    isStartTimeValid() {
+      if (!this.selectedTime.start.hour) return false
+      if (!this.selectedTime.start.minutes) return false
+      if (!this.selectedTime.start.time) return false
+
+      return true
+    },
+    isEndTimeValid() {
+      if (!this.selectedTime.end.hour) return false
+      if (!this.selectedTime.end.minutes) return false
+      if (!this.selectedTime.end.time) return false
+
+      return true
     }
   },
   watch: {

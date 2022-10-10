@@ -38,7 +38,7 @@
             <ValidationProvider
               v-slot="{ errors }"
               name="Password Confirmation"
-              rules="required"
+              rules="required|confirmed:Password"
             >
               <div class="input-cont">
                 <label>Confirm Password</label>
@@ -110,10 +110,9 @@ export default {
         this.isRequesting = true
 
         const {data} = await this.$axios.post('password/reset', this.user)
-
-        this.showSuccess('Succesfully updated password!')
-
+        
         setTimeout(() => {
+          this.showSuccess('Succesfully updated password!')
           this.isRequesting = false
           this.goTo('login')
         }, 5000)

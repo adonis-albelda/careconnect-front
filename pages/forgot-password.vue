@@ -36,7 +36,7 @@
                 </div>
               </div>
             </ValidationProvider>
-            <button class="login-btn">send instructions</button>
+            <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">send instructions</button>
             <button
               class="login-btn btn cancel"
               @click.prevent="goTo('index')"
@@ -77,7 +77,12 @@ export default {
         this.isRequesting = true
 
         const {data, status} = await this.$axios.post('password/send-link', this.user)
-        this.showSuccess(data.message)
+
+        setTimeout(() => {
+          this.user.email = ''
+          this.isRequesting = false
+          this.showSuccess(data.message)
+        }, 3000);
       } catch (e) {
         this.showError(e.response.data.message)
         this.isRequesting = false
