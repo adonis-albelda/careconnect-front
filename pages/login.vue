@@ -51,7 +51,7 @@
               name="Password"
               rules="required"
             >
-              <div class="input-cont">
+              <div :class="['input-cont', errors[0] ? 'error-msg' : '']">
                 <label>Password</label>
                 <div :class="['for-cont', errors[0] ? 'error-msgg' : '']">
                   <input
@@ -60,15 +60,12 @@
                     :type="showPassword ? 'password' : 'text'"
                     placeholder="Password"
                   />
-                  <span>{{ errors[0] }}</span>
-                  <i
-                    @click="toggleShow"
-                    :class="{
-                      'icon-mail': showPassword,
-                      'icon-health': !showPassword,
-                    }"
-                  ></i>
+                  <p
+                    @click="toggleShow">
+                    {{showPassword ? 'Show' : 'Hide'}}
+                  </p>
                 </div>
+                <span>{{ errors[0] }}</span>
               </div>
             </ValidationProvider>
             <div class="forgot-pass">

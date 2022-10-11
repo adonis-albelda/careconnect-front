@@ -76,7 +76,7 @@
               <div :class="['for-cont', errors[0] ? 'error-msg' : '']">
                 <input
                   class="text-box"
-                  type="email"
+                  type="number"
                   v-model="user.phone_number"
                   placeholder="Type phone number here"
                 />
@@ -114,11 +114,15 @@
                 <input
                   class="text-box"
                   v-model="user.password"
-                  type="password"
+                  :type="showPassword ? 'password' : 'text'"
                   placeholder="Password"
                 />
-                <span>{{ errors[0] }}</span>
+                <p
+                    @click="toggleShow">
+                    {{showPassword ? 'Show' : 'Hide'}}
+                  </p>
               </div>
+              <span>{{ errors[0] }}</span>
             </div>
           </ValidationProvider>
           <ValidationProvider
@@ -132,11 +136,15 @@
                 <input
                   class="text-box"
                   v-model="user.password_confirmation"
-                  type="password"
+                  :type="showPassword2 ? 'password' : 'text'"
                   placeholder="Confirm Password"
                 />
-                <span>{{ errors[0] }}</span>
+                <p
+                    @click="toggleShow2">
+                    {{showPassword2? 'Show' : 'Hide'}}
+                  </p>
               </div>
+              <span>{{ errors[0] }}</span>
             </div>
           </ValidationProvider>
           <button :class="['login-btn', isRequesting ? 'uc-spinner' : '']">
