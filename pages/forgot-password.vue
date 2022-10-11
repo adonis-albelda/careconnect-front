@@ -93,6 +93,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.login-wrapper {
+  @media (min-height: 650px) {
+    height: 100vh;
+  }
+}
+.login-form {
+  padding-bottom: 0;
+  @media (max-height: 535px) {
+    padding-bottom: 20px;
+  }
+}
 .login-cont {
   form {
     padding-top: 40px;
