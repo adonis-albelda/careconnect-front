@@ -256,6 +256,15 @@ export default {
     @media (max-width: 991px) {
       display: none;
     }
+
+    span {
+      font-size: 20px;
+      color: #000;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
   }
 
   .login-socmed a i {

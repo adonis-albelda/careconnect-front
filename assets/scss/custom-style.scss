@@ -1514,7 +1514,12 @@
 
 .dg-container {
   .dg-content-cont {
-    top: 40%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    transform: inherit;
+    align-items: center;
 
     @media(max-width: 480px) {
       top: 0;
