@@ -30,7 +30,7 @@
           >
         </template>
       </VSelect>
-      <VDatePicker :open="dateOptionstatus" range v-model="selectedDates" :editable="false" class="home-datepicker"  valueType="format">
+      <VDatePicker :open="dateOptionstatus" format="MMM DD YYYY" range v-model="selectedDates" :editable="false" class="home-datepicker"  valueType="format">
         <template v-slot:input="item">
           <div @click="dateOptionstatus=true">
             <label class="date-lbl">Date</label>
@@ -103,45 +103,47 @@
       <div>
         <button :class="['btn accent full', isRequesting ? 'uc-spinner' : '']" @click="createBookingQuote">Get A Quote</button>
       </div>
-      <div v-if="isShowMobile" class="mobile-timepicker">
-        <div class="time-options-container">
-          <div>
-            <h4>Start Time</h4>
-            <div class="time-input">
-              <div>
-                <input v-model="selectedTime.start.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
-                <span>:</span>
-                <input v-model="selectedTime.start.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
-              </div>
-              <div>
-                <p @click.stop="selectedTime.start.time = 'AM'" :class="selectedTime.start.time == 'AM' ? 'period-selected' :'' ">AM</p>
-                <p @click.stop="selectedTime.start.time = 'PM'" :class="selectedTime.start.time == 'PM' ? 'period-selected' :'' ">PM</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h4>End Time</h4>
-            <div class="time-input">
-              <div>
-                <input v-model="selectedTime.end.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
-                <span>:</span>
-                <input v-model="selectedTime.end.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
-              </div>
-              <div>
-                <p @click.stop="selectedTime.end.time = 'AM'" :class="selectedTime.end.time == 'AM' ? 'period-selected' :'' ">AM</p>
-                <p @click.stop="selectedTime.end.time = 'PM'" :class="selectedTime.end.time == 'PM' ? 'period-selected' :'' ">PM</p>
+      <template v-if="isShowMobile">
+        <div class="mobile-timepicker" v-show="showTimeMobileTimePicker">
+          <div class="time-options-container">
+            <div>
+              <h4>Start Time</h4>
+              <div class="time-input">
+                <div>
+                  <input v-model="selectedTime.start.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                  <span>:</span>
+                  <input v-model="selectedTime.start.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                </div>
+                <div>
+                  <p @click.stop="selectedTime.start.time = 'AM'" :class="selectedTime.start.time == 'AM' ? 'period-selected' :'' ">AM</p>
+                  <p @click.stop="selectedTime.start.time = 'PM'" :class="selectedTime.start.time == 'PM' ? 'period-selected' :'' ">PM</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="time-btns">
-            <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
-            <div class="time-footer">
-                <button @click.stop="resetStartTime();resetEndTime()">Reset</button>
-                <button>Done</button>
+            <div>
+              <h4>End Time</h4>
+              <div class="time-input">
+                <div>
+                  <input v-model="selectedTime.end.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                  <span>:</span>
+                  <input v-model="selectedTime.end.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                </div>
+                <div>
+                  <p @click.stop="selectedTime.end.time = 'AM'" :class="selectedTime.end.time == 'AM' ? 'period-selected' :'' ">AM</p>
+                  <p @click.stop="selectedTime.end.time = 'PM'" :class="selectedTime.end.time == 'PM' ? 'period-selected' :'' ">PM</p>
+                </div>
+              </div>
+            </div>
+            <div class="time-btns">
+              <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+              <div class="time-footer">
+                  <button @click.stop="resetStartTime();resetEndTime()">Reset</button>
+                  <button @click="showTimeMobileTimePicker = false">Done</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </template>
     </div>
     
     <section class="services-sec">
@@ -292,6 +294,7 @@ export default {
       },
       isClick: '',
       isShowMobile: false,
+      showTimeMobileTimePicker:false,
       isShowTime: false,
       isShowTime2: false,
       selectedDates:[],
@@ -349,12 +352,24 @@ export default {
       isRequesting:false
     }
   },
+  destroyed() {
+    window.removeEventListener("resize", this.checkWindowSize);
+  },
   mounted() {
     AOS.init()
+    window.addEventListener("resize", this.checkWindowSize);
+    this.checkWindowSize()
     Vue.dialog.registerComponent(QUOTE_EMAIL, CustomView);
     Vue.dialog.registerComponent(SUCCESS_EMAIL, SuccessView);
   },
   methods :  {
+    checkWindowSize(e) {
+      if (window.innerWidth <= 600) {
+        this.isShowMobile = true
+      } else {
+        this.isShowMobile = false
+      }
+    },
     createBookingQuote() {
       if (this.selectedService.default || !this.isStartTimeValid || !this.isEndTimeValid ||
       this.selectedDates.length < 2)  {
@@ -394,15 +409,21 @@ export default {
       }  
     },
     openTimeSelection() {
-      this.isShowTime2 = false
-      this.isShowTime = !this.isShowTime
+      console.log(this.isShowMobile, 'mobile')
+      if(this.isShowMobile) {
+        this.showTimeMobileTimePicker = !this.showTimeMobileTimePicker
+      } else {
+        this.isShowTime2 = false
+        this.isShowTime = !this.isShowTime
+      }
     },
     openTimeSelection2() {
-      this.isShowTime = false
-      this.isShowTime2 = !this.isShowTime2
-    },
-    openTimeSelectionMobile() {
-      this.isShowTimeMobile = !this.isShowTimeMobile
+      if (this.isShowMobile) {
+        this.showTimeMobileTimePicker = !this.showTimeMobileTimePicker
+      } else {
+        this.isShowTime = false
+        this.isShowTime2 = !this.isShowTime2
+      }
     },
     resetStartTime() {
       this.selectedTime.start.hour = '09'
