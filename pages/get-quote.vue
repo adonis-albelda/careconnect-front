@@ -45,7 +45,7 @@
         </div>
         <div class="quote-time">
           <h2>Time</h2>
-          <div @click="openTimeSelection()" class="custom-timepicker">
+          <div @click="openTimeSelection()" class="custom-timepicker first-timepicker">
             <p>Start Time</p>
             <span>9:00 am</span>
             <i class="icon-stopwatch"></i>

@@ -61,9 +61,6 @@
   
 }
 
-// .mobile-timepicker {
-//   display: none;
-// }
 
 .booking-options {
 
@@ -196,6 +193,10 @@
       @media(max-width: 1400px) {
         font-size: 0.875rem;
       }
+      
+      @media(max-width: 991px) {
+        margin-left: 9%;
+      }
 
       @media(max-width: 480px) {
         margin-left: 10%;
@@ -218,6 +219,10 @@
 
       @media(max-width: 1400px) {
         font-size: 1rem;
+      }
+
+      @media(max-width: 991px) {
+        padding-left: 9%;
       }
 
       @media(max-width: 480px) {
@@ -1461,6 +1466,10 @@
       @media(max-width: 480px) {
         width: 100%;
         margin-top: 30px;
+      }
+
+      .custom-timepicker.first-timepicker {
+        z-index: 10;
       }
 
       .custom-timepicker {

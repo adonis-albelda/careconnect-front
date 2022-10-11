@@ -507,7 +507,11 @@ section {
     flex-wrap: wrap;
   }
 
-  @media (max-width: 480px) {
+  @media(max-width: 600px) {
+    gap: 8px;
+  }
+
+  @media (max-width: 600px) {
     margin-top: 0;
     display: block;
     background-color: $normalColor;
@@ -523,7 +527,7 @@ section {
     cursor: pointer;
 
     @media (max-width: 991px) {
-      width: 40%;
+      width:48%;
     }
 
     @media (max-width: 600px) {
@@ -569,7 +573,7 @@ section {
     cursor: pointer;
 
     @media (max-width: 991px) {
-      width: 25%;
+      width: 48%;
       background: #f5f5f5;
       border: 1px solid #e9e9e9;
     }
@@ -601,9 +605,13 @@ section {
     left: 0;
     right: 0;
     background-color: #fff;
-    top: 50%;
+    top: 60%;
     z-index: 99;
     padding: 20px;
+    border-top: 1px solid #CACACA;
+    box-shadow: 0px -3px 5px 0px rgb(0 0 0 / 30%);
+    -webkit-box-shadow: 0px -3px 5px 0px rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.30);
 
     h4 {
       @media(max-width: 480px) {
@@ -657,6 +665,8 @@ section {
 
         input {
           height: 33px;
+          font-size: 18px;
+          font-weight: 600;
           border-color: rgba(202, 202, 202, 0.5);
 
           @media(max-width: 480px) {
