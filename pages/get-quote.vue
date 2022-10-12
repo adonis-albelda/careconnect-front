@@ -29,7 +29,7 @@
           </template>
         </div>
         <div class="quote-date">
-          <h2>Date</h2>
+          <h2>Date</h2> 
           <VDatePicker
             range
             :inline="true"
