@@ -650,6 +650,7 @@
         .care-services-cont {
           margin-top: 20px;
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           gap: 10px;
 
@@ -686,11 +687,15 @@
               font-size: 0.563rem;
               padding: 4px 12px;
             }
-  
+            
   
             &:last-child {
               background-color: transparent;
               border: none;
+            }
+
+            i {
+              font-size: $fontSize350;
             }
           }
 
