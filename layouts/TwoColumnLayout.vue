@@ -22,7 +22,7 @@
       <div class="login-menu">
         <a class="decoration-0 op-onhover" href="#" @click.prevent="goTo('help-faq')">Help</a>
         <a class="op-onhover" href="#">Privacy</a>
-        <a class="op-onhover" href="#">Terms & conditions</a>
+        <a class="op-onhover" href="#" @click.prevent="goTo('help-terms_and_condition')">Terms & conditions</a>
       </div>
       <div class="login-header-logo" @click="goTo('index')">
         <img src="/images/login-logo.png" alt="" />
