@@ -116,8 +116,9 @@
           // text-align: center;
         }
       }
+
       p {
-        font-size: 17px !important;
+        font-size: $fontSize300 !important;
         line-height: 1.5;
         @media (max-width: 480px) {
           font-size: 14px !important;
@@ -153,7 +154,7 @@
     bottom: 0px;
     right: 50px;
     padding: 10px 0 20px 0;
-    width: 100%;
+    width: 100%;  
     text-align: right;
     background: rgba(255, 255, 255, 0.7);
     @media (max-width: 991px) {

@@ -20,7 +20,7 @@
     </div>
     <div class="login-col-2">
       <div class="login-menu">
-        <a class="decoration-0 op-onhover" href="#">Help</a>
+        <a class="decoration-0 op-onhover" href="#" @click.prevent="goTo('help-faq')">Help</a>
         <a class="op-onhover" href="#">Privacy</a>
         <a class="op-onhover" href="#">Terms & conditions</a>
       </div>
