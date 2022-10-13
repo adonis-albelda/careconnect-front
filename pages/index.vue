@@ -9,7 +9,7 @@
       </div>
     </section>
     <div class="booking-options">
-      <VSelect :searchable="false" :clearable="false" v-model="selectedService" class="list-services"  :options="options" placeholder="dsdadad">
+      <VSelect :searchable="false" :clearable="false" v-model="selectedService" class="list-services"  :options="servicesTypes" placeholder="dsdadad">
         <template v-slot:selected-option-container="{option: {label, description}}">
           <div class="filter-selected">
             <p>{{label}}</p>
@@ -30,7 +30,10 @@
           >
         </template>
       </VSelect>
-      <VDatePicker :open="dateOptionstatus" format="MMM DD YYYY" range v-model="selectedDates" :editable="false" class="home-datepicker"  valueType="format">
+      <VDatePicker  :open="dateOptionstatus" format="MMM DD YYYY" range v-model="selectedDates" :editable="false" class="home-datepicker"  valueType="format">
+        <template v-slot:header>
+          <strong><h4>Please set your start date and end date. For one day only, just double tap the same day.</h4></strong>
+        </template>
         <template v-slot:input="item">
           <div @click="dateOptionstatus=true">
             <label class="date-lbl">Date</label>
@@ -40,8 +43,8 @@
           </div>
         </template>
         <template class="datepicker-btns" v-slot:footer="item">
-          <button @click="dateOptionstatus=!dateOptionstatus">CANCEL</button>
-          <button @click="dateOptionstatus=!dateOptionstatus">OKAY</button>
+          <button @click="dateOptionstatus=!dateOptionstatus">CLOSE</button>
+          <button @click="dateOptionstatus=!dateOptionstatus">DONE</button>
         </template>
       </VDatePicker>
       <div @click="openTimeSelection()" class="custom-timepicker">
@@ -269,12 +272,7 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import CustomView from '../components/ui/QuoteDialog.vue';
-import SuccessView from '../components/ui/SuccessDialog.vue';
-const QUOTE_EMAIL = 'quote-dialog-name';
-const SUCCESS_EMAIL = 'success-dialog-name';
-
+import BookingHelper from '../mixins/Booking.vue'
 import AOS from 'aos'
 export default {
   auth:false,
@@ -285,6 +283,7 @@ export default {
       id: 'home-page',
     },
   },
+  mixins:[BookingHelper],
   data() {
     return {
       selectedService: {
@@ -292,41 +291,6 @@ export default {
         description: 'pleae select service',
         default:true
       },
-      isClick: '',
-      isShowMobile: false,
-      showTimeMobileTimePicker:false,
-      isShowTime: false,
-      isShowTime2: false,
-      selectedDates:[],
-      selectedTime: {
-        start: {
-          hour:'09',
-          minutes:'00',
-          time: 'AM'
-        },
-        end: {
-          hour:'09',
-          minutes:'00',
-          time: 'AM'
-        }
-      },
-      options: [
-        {
-          label: 'Personal Care Services',
-          id:1,
-          description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing'
-        },
-        {
-          label:'Complex Care Services',
-          id:2,
-          description:'Complex care refer to services that must be performed by a regulated health professionals.'
-        },
-        {
-          id:3,
-          label:'Home Support Service',
-          description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning'
-        }
-      ],
       services: [
         {
           title: 'Home Support Services',
@@ -352,105 +316,8 @@ export default {
       isRequesting:false
     }
   },
-  destroyed() {
-    window.removeEventListener("resize", this.checkWindowSize);
-  },
   mounted() {
     AOS.init()
-    window.addEventListener("resize", this.checkWindowSize);
-    this.checkWindowSize()
-    Vue.dialog.registerComponent(QUOTE_EMAIL, CustomView);
-    Vue.dialog.registerComponent(SUCCESS_EMAIL, SuccessView);
-  },
-  methods :  {
-    checkWindowSize(e) {
-      if (window.innerWidth <= 600) {
-        this.isShowMobile = true
-      } else {
-        this.isShowMobile = false
-      }
-    },
-    createBookingQuote() {
-      if (this.selectedService.default || !this.isStartTimeValid || !this.isEndTimeValid ||
-      this.selectedDates.length < 2)  {
-        alert('Please select all fields')
-        return
-      }
-      
-      if (this.isRequesting) return
-      this.isRequesting = true
-
-      if (this.$auth.user) {
-        let payload = {
-          start_date: this.selectedDates[0],
-          end_date: this.selectedDates[1],
-          service_id: this.serviceId,
-          start_time: `${this.selectedTime.start.hour}:${this.selectedTime.start.minutes} ${this.selectedTime.start.time}`,
-          end_time: `${this.selectedTime.end.hour}:${this.selectedTime.end.minutes} ${this.selectedTime.end.time}`
-        }
-
-        this.showSuccess('Please wait while we are proccessing your request')
-        
-        this.$axios.post('reservations', payload).then(() => {
-          this.$dialog.alert('', {
-            view: SUCCESS_EMAIL, // can be set globally too
-            html: true,
-            animation: 'fade',
-            backdropClose: true
-          })
-        }).finally(()=> {
-            setTimeout(() => {
-              this.isRequesting = false
-            }, 2000)
-          });
-
-      } else {
-        this.goTo('login')
-      }  
-    },
-    openTimeSelection() {
-      console.log(this.isShowMobile, 'mobile')
-      if(this.isShowMobile) {
-        this.showTimeMobileTimePicker = !this.showTimeMobileTimePicker
-      } else {
-        this.isShowTime2 = false
-        this.isShowTime = !this.isShowTime
-      }
-    },
-    openTimeSelection2() {
-      if (this.isShowMobile) {
-        this.showTimeMobileTimePicker = !this.showTimeMobileTimePicker
-      } else {
-        this.isShowTime = false
-        this.isShowTime2 = !this.isShowTime2
-      }
-    },
-    resetStartTime() {
-      this.selectedTime.start.hour = '09'
-      this.selectedTime.start.minutes = '00'
-      this.selectedTime.start.time = 'AM'
-    },
-    resetEndTime() {
-      this.selectedTime.end.hour = '09'
-      this.selectedTime.end.minutes = '00'
-      this.selectedTime.end.time = 'PM'
-    }
-  },
-  computed: {
-    isStartTimeValid() {
-      if (!this.selectedTime.start.hour) return false
-      if (!this.selectedTime.start.minutes) return false
-      if (!this.selectedTime.start.time) return false
-
-      return true
-    },
-    isEndTimeValid() {
-      if (!this.selectedTime.end.hour) return false
-      if (!this.selectedTime.end.minutes) return false
-      if (!this.selectedTime.end.time) return false
-
-      return true
-    }
   },
   watch: {
     selectedService: {
