@@ -28,7 +28,7 @@
             </a>
           </div>
         </div>
-        <ValidationObserver ref="form" v-slot="{ handleSubmit, reset }">
+        <ValidationObserver class="contact-form" ref="form" v-slot="{ handleSubmit, reset }">
           <form
             @submit.prevent="handleSubmit(handleIquiry)"
             @reset.prevent="reset"
