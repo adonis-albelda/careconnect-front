@@ -1,5 +1,5 @@
 <template>
-    <div class="personal-care-wrapper help-mainwrapper">
+    <div class="help-mainwrapper">
         <div class="help-banner">
             <h3>
                 How can we help&#8239;?
@@ -63,8 +63,11 @@ export default {
     text-align: center;
     padding: 70px 0;
     background: #183891;
+    @media (max-width: 767px) {
+        padding: 140px 0 70px 0;
+    }
     @media (max-width: 500px) {
-        padding: 30px 0;
+        padding: 104px 0 30px 0;
     }
     h3 {
         text-align: center;
@@ -161,6 +164,9 @@ export default {
 
         &::placeholder {
             color: #fff;
+        }
+        @media (max-width: 1440px) {
+            height: 55px !important;
         }
         @media (max-width: 767px) {
             width: calc(100% - 160px) !important;

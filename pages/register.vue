@@ -1,6 +1,6 @@
 <template>
   <div class="login-cont">
-    <div class="auth-back" @click="goTo('index')">
+    <div class="auth-back csr" @click="goTo('index')">
       <span>
         <i class="icon-arrow-left"></i>
         Back

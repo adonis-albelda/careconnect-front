@@ -30,13 +30,20 @@
 
   &.sm {
     // css for small text box
+
   }
 
   &.md {
     // css for medium text box
+    height: 60px;
   }
 
   &.lg {
     // css for large text box
+    height: 70px;
+  }
+
+  &.full-width {
+    width: 100%;
   }
 }
