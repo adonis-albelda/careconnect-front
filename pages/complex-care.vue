@@ -17,10 +17,10 @@
         <div class="p-col-2">
           <div class="service-desc">
             <p class="normal-text">
-              Arthritis, physical disabilities, and age-related conditions are
-              some of the few circumstances that prevent patients from caring
-              for themselves. Our caregivers can assist you with daily tasks
-              such as mobility, eating, exercising, and grooming.
+              Our experienced and highly trained caregivers provide the
+              highest quality of care to both patients and their families.
+              Our goal is to help individuals and their loved ones live happy
+              and fulfilling lives.
             </p>
           </div>
 

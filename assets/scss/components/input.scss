@@ -36,6 +36,12 @@
   &.md {
     // css for medium text box
     height: 60px;
+    @media (max-width: 991px) {
+      height: 50px;
+    }
+    @media (max-width: 480px) {
+      height: 45px;
+    }
   }
 
   &.lg {

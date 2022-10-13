@@ -17,10 +17,9 @@
         <div class="p-col-2">
           <div class="service-desc">
             <p class="normal-text">
-              Arthritis, physical disabilities, and age-related conditions are
-              some of the few circumstances that prevent patients from caring
-              for themselves. Our caregivers can assist you with daily tasks
-              such as mobility, eating, exercising, and grooming.
+              Recovering from home after surgery can limit you with your daily activities.
+              Whether you are recovering from major surgery, childbirth, or plastic surgery,
+              our compassionate caregivers can assist you to a healthy and complete recovery.
             </p>
           </div>
 
