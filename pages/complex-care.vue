@@ -17,10 +17,7 @@
         <div class="p-col-2">
           <div class="service-desc">
             <p class="normal-text">
-              Our experienced and highly trained caregivers provide the
-              highest quality of care to both patients and their families.
-              Our goal is to help individuals and their loved ones live happy
-              and fulfilling lives.
+              Our experienced and highly trained caregivers provide the highest quality of care to both patients and their families. Our goal is to help individuals and their loved ones live happy and fulfilling lives.
             </p>
           </div>
 

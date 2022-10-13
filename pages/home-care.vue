@@ -17,9 +17,7 @@
         <div class="p-col-2">
           <div class="service-desc">
             <p class="normal-text">
-              Recovering from home after surgery can limit you with your daily activities.
-              Whether you are recovering from major surgery, childbirth, or plastic surgery,
-              our compassionate caregivers can assist you to a healthy and complete recovery.
+              Recovering from home after surgery can limit you with your daily activities. Whether you are recovering from major surgery, childbirth, or plastic surgery, our compassionate caregivers can assist you to a healthy and complete recovery.
             </p>
           </div>
 
