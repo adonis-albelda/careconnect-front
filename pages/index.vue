@@ -265,6 +265,7 @@
         </div>
       </div>
     </section>
+   
 
   </div>
 </template>
@@ -284,6 +285,7 @@ export default {
     bodyAttrs: {
       id: 'home-page',
     },
+
   },
   data() {
     return {
@@ -297,6 +299,7 @@ export default {
       showTimeMobileTimePicker:false,
       isShowTime: false,
       isShowTime2: false,
+      homeBanner: false,
       selectedDates:[],
       selectedTime: {
         start: {

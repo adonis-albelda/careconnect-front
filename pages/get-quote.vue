@@ -47,7 +47,7 @@
           <h2>Time</h2>
           <div @click="openTimeSelection()" class="custom-timepicker first-timepicker">
             <p>Start Time</p>
-            <span>9:00 am</span>
+            <span>{{`${selectedTime.start.hour}:${selectedTime.start.minutes} ${selectedTime.start.time}`}}</span>
             <i class="icon-stopwatch"></i>
             <div v-if="isShowTime" class="timepicker-dropdown">
               <div class="time-options-container">
@@ -55,48 +55,48 @@
                     <h4>Start Time</h4>
                     <div class="time-input">
                       <div>
-                        <input class="text-box" type="number">
+                        <input v-model="selectedTime.start.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
                         <span>:</span>
-                        <input class="text-box" type="number">
+                        <input v-model="selectedTime.start.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
                       </div>
                       <div>
-                        <p @click.stop='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
-                        <p @click.stop='addClassActive("pm")' :class="isClick == 'pm'? 'period-selected' :'' ">PM</p>
+                        <p @click.stop="selectedTime.start.time = 'AM'" :class="selectedTime.start.time == 'AM' ? 'period-selected' :'' ">AM</p>
+                        <p @click.stop="selectedTime.start.time = 'PM'" :class="selectedTime.start.time == 'PM' ? 'period-selected' :'' ">PM</p>
                       </div>
                     </div>
                   </div>
                   <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
                   <div class="time-footer">
-                      <button>Reset</button>
-                      <button>Done</button>
+                    <button @click.stop="resetStartTime">Reset</button>
+                    <button>Done</button>
                   </div>
                 </div>
             </div>
           </div>
 
           <div @click="openTimeSelection2()" class="custom-timepicker">
-            <p>Start Time</p>
-            <span>9:00 am</span>
+            <p>End Time</p>
+            <span>{{`${selectedTime.end.hour}:${selectedTime.end.minutes} ${selectedTime.end.time}`}}</span>
             <i class="icon-stopwatch"></i>
             <div v-if="isShowTime2" class="timepicker-dropdown">
               <div class="time-options-container">
                   <div>
-                    <h4>Start Time</h4>
+                    <h4>End Time</h4>
                     <div class="time-input">
                       <div>
-                        <input class="text-box" type="number">
+                        <input v-model="selectedTime.end.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
                         <span>:</span>
-                        <input class="text-box" type="number">
+                        <input v-model="selectedTime.end.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
                       </div>
                       <div>
-                        <p @click.stop='addClassActive("am")' :class="isClick == 'am'? 'period-selected' :'' ">AM</p>
-                        <p @click.stop='addClassActive("pm")' :class="isClick == 'pm'? 'period-selected' :'' ">PM</p>
+                        <p @click.stop="selectedTime.end.time = 'AM'" :class="selectedTime.end.time == 'AM' ? 'period-selected' :'' ">AM</p>
+                        <p @click.stop="selectedTime.end.time = 'PM'" :class="selectedTime.end.time == 'PM' ? 'period-selected' :'' ">PM</p>
                       </div>
                     </div>
                   </div>
                   <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
                   <div class="time-footer">
-                      <button>Reset</button>
+                      <button @click.stop="resetEndTime">Reset</button>
                       <button>Done</button>
                   </div>
                 </div>
@@ -138,11 +138,20 @@ export default {
       serviceId:null,
       isShowTime: false,
       isShowTime2: false,
+      isShowMobile: false,
       isClick: '',
       selectedDates: [],
       selectedTime: {
-        start:"9:00 AM",
-        end:"9:00 AM"
+        start: {
+          hour:'09',
+          minutes:'00',
+          time: 'AM'
+        },
+        end: {
+          hour:'09',
+          minutes:'00',
+          time: 'AM'
+        }
       },
       services: [
         {
@@ -194,9 +203,14 @@ export default {
       ],
     }
   },
+  destroyed() {
+    window.removeEventListener("resize", this.checkWindowSize);
+  },
   mounted() {
     Vue.dialog.registerComponent(QUOTE_EMAIL, CustomView);
     Vue.dialog.registerComponent(SUCCESS_EMAIL, SuccessView);
+    window.addEventListener("resize", this.checkWindowSize);
+    this.checkWindowSize()
   },
   created() {
     let selectedService = this.$route.query.service
@@ -206,6 +220,13 @@ export default {
     else this.serviceId = 3
   },
   methods: {
+    checkWindowSize(e) {
+      if (window.innerWidth <= 600) {
+        this.isShowMobile = true
+      } else {
+        this.isShowMobile = false
+      }
+    },
     createBookingQuote() {
       if (
         !this.serviceId ||
@@ -239,10 +260,21 @@ export default {
       }  
     },
     openTimeSelection() {
-      this.isShowTime = !this.isShowTime
+      console.log(this.isShowMobile, 'mobile')
+      if(this.isShowMobile) {
+        this.showTimeMobileTimePicker = !this.showTimeMobileTimePicker
+      } else {
+        this.isShowTime2 = false
+        this.isShowTime = !this.isShowTime
+      }
     },
     openTimeSelection2() {
-      this.isShowTime2 = !this.isShowTime2
+      if (this.isShowMobile) {
+        this.showTimeMobileTimePicker = !this.showTimeMobileTimePicker
+      } else {
+        this.isShowTime = false
+        this.isShowTime2 = !this.isShowTime2
+      }
     },
     addClassActive(val) {
       this.isClick = val
