@@ -605,7 +605,7 @@ section {
     left: 0;
     right: 0;
     background-color: #fff;
-    top: 60%;
+    top: 65%;
     z-index: 99;
     padding: 20px;
     border-top: 1px solid #CACACA;
@@ -873,6 +873,10 @@ section {
   background-size: cover;
   background-position: center center;
 }
+
+// .mobile-top-banner {
+//   background-image: url(/images/mobile-top-banner.png);
+// }
 
 .services-sec {
   background-color: $normalColor;
@@ -1288,6 +1292,7 @@ footer {
     display: flex;
     width: 100%;
     gap: 7rem;
+    flex-wrap: wrap;
 
     @media (max-width: 1200px) {
       gap: 3rem;
@@ -1300,7 +1305,7 @@ footer {
     }
 
     > div {
-      flex: 1;
+      flex: auto;
 
       @media (max-width: 1200px) {
         width: 36%;

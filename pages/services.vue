@@ -42,7 +42,7 @@
                   ><i class="icon-pet"></i>Pet care
                 </a>
                 <a href="#"
-                  ><img src="/images/icons/bathtub-icon.svg" />Incidental Transportation
+                  ><i class="icon-ambulance"></i>Incidental Transportation
                 </a>
                 <a href="#"
                   ><i class="icon-home"></i>Home Safety
@@ -54,13 +54,13 @@
                   ><i class="icon-ref"></i>Performing regular fridge cleaning to ensure food is fresh
                 </a>
                 <a href="#"
-                  ><img src="/images/icons/bathtub-icon.svg" />Coordination of home and yard repair or maintenance services
+                  >Coordination of home and yard repair or maintenance services
                 </a>
                 <a href="#"
-                  ><img src="/images/icons/bathtub-icon.svg" />Coordination for installation of in-home assistive devices
+                  >Coordination for installation of in-home assistive devices
                 </a>
                 <a href="#"
-                  ><img src="/images/icons/bathtub-icon.svg" />Coordination of services and referrals to other community agencies if required
+                  >Coordination of services and referrals to other community agencies if required
                 </a>
                 <a href="#">View more</a>
               </div>

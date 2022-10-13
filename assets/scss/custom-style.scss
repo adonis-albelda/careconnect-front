@@ -687,6 +687,7 @@
               display: inline-flex;
               font-size: 0.563rem;
               padding: 4px 12px;
+              gap: 4px;
             }
             
   
@@ -697,6 +698,10 @@
 
             i {
               font-size: $fontSize350;
+              
+              @media(max-width: 480px) {
+                font-size: 0.875rem;
+              }
             }
           }
 

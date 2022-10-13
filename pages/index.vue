@@ -268,6 +268,7 @@
         </div>
       </div>
     </section>
+   
 
   </div>
 </template>
@@ -282,6 +283,7 @@ export default {
     bodyAttrs: {
       id: 'home-page',
     },
+
   },
   mixins:[BookingHelper],
   data() {

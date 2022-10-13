@@ -5,7 +5,6 @@
         ><img src="/images/arrow-left.png" /> View all services</a
       >
       <h1>Get a Quote</h1>
-
       <div class="quote-inner-cont">
         <div class="quote-service">
           <h2>Service</h2>
@@ -82,7 +81,7 @@
             <div v-if="isShowTime2" class="timepicker-dropdown">
               <div class="time-options-container">
                   <div>
-                    <h4>Start Time</h4>
+                    <h4>End Time</h4>
                     <div class="time-input">
                       <div>
                         <input v-model="selectedTime.end.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
