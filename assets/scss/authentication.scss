@@ -3,7 +3,7 @@
     display: none;
     @media (max-width: 991px) {
       display: block;
-      padding: 70px 50px;
+      padding: 4.375rem 3.125;
       background-image: url(/images/login-img.png);
       background-position: center;
       background-size: cover;
@@ -11,12 +11,12 @@
     }
   
     @media (max-width: 480px) {
-      padding-left: 20px;
+      padding-left: 1.25rem;
     }
   
     @media (max-width: 450px) {
-      padding: 50px;
-      padding-left: 20px;
+      padding: 3.125rem;
+      padding-left: 1.25rem;
     }
   
     img {
@@ -43,13 +43,13 @@
   .login-form {
     
     @media (max-height: 900px) {
-      padding-bottom: 65px;
+      padding-bottom: 4.063rem;
     }
   
     .login-btn {
       @media (max-width: 767px) {
         height: 45px;
-        font-size: 18px;
+        font-size: 1.125rem;
       }
   
       @media (max-width: 480px) {
@@ -89,20 +89,20 @@
   
     .login-cont {
       margin-top: auto !important;
-      padding: 50px 0;
+      padding: 3.125rem 0;
       @media (max-width: 1200px) {
         width: 80%;
       }
       @media (max-width: 991px) {
         width: 90%;
         max-width: 650px;
-        padding: 30px;
+        padding: 1.875rem;
         // padding-bottom: 0;
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.6);
       }
       @media (max-width: 450px) {
-        padding: 30px 0;
+        padding: 1.875rem 0;
       }
   
       h2 {
@@ -111,8 +111,8 @@
           line-height: 1.6 !important;
         }
         @media (max-width: 500px) {
-          font-size: 20px;
-          margin-bottom: 10px;
+          font-size: 1.25rem;
+          margin-bottom: 0.625rem;
           // text-align: center;
         }
       }
@@ -121,7 +121,7 @@
         font-size: $fontSize300 !important;
         line-height: 1.5;
         @media (max-width: 480px) {
-          font-size: 14px !important;
+          font-size: 0.875rem !important;
           line-height: 1.2;
           // text-align: center;
         }
@@ -152,9 +152,9 @@
     // position: relative;
     position: fixed;
     bottom: 0px;
-    right: 50px;
-    padding: 10px 0 20px 0;
-    width: 100%;  
+    right: 3.125rem;
+    padding: 0.625rem 0 1.25rem 0;
+    width: 100%;
     text-align: right;
     background: rgba(255, 255, 255, 0.7);
     @media (max-width: 991px) {
@@ -163,13 +163,13 @@
       left: 0;
     }
     @media (max-width: 350px) {
-      padding: 10px;
+      padding: 0.625rem;
     }
     p {
       font-size: 0.875rem !important;
       margin-bottom: 0 !important;
       @media (max-width: 480px) {
-        font-size: 12px !important;
+        font-size: 0.75rem !important;
         text-align: center;
         margin-bottom: 0 !important;
       }
@@ -188,7 +188,7 @@
   
   .login-wrapper .login-col-2 .login-menu {
     margin-top: 0 !important;
-    padding: 30px 0;
+    padding: 1.875rem 0;
   }
   
   .login-form-checkinput {
@@ -196,7 +196,7 @@
   }
   
   .pb-50 {
-    padding-bottom: 50px;
+    padding-bottom: 3.125rem;
   }
   
   .login-form input::-webkit-input-placeholder {
@@ -212,22 +212,22 @@
   }
 
   .auth-back {
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
     width: fit-content;
     @media (max-width: 991px) {
       display: none;
     }
 
     span {
-      font-size: 20px;
+      font-size: 1.25rem;
       color: $invertedColor;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
     }
   }
 
   .login-socmed a i {
-    font-size: 23px !important;
+    font-size: 1.438rem !important;
   }

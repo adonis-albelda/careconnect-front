@@ -275,6 +275,7 @@
 import BookingHelper from '../mixins/Booking.vue'
 import AOS from 'aos'
 export default {
+  
   auth:false,
   name: 'LandingPage',
   layout:'MainLayout',

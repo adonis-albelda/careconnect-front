@@ -1340,6 +1340,15 @@
   }
 }
 
+.contact-form {
+  width: 50%;
+  padding-left: 3rem;
+  @media (max-width: 800px) {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
 form .contact-col-1 .input-cont {
   input {
     @media (max-width: 800px) {
