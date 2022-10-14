@@ -267,15 +267,33 @@
         </div>
       </div>
     </section>
-   
+
+    <!-- <section>
+      <carousel
+        :per-page="1"
+        :navigate-to="someLocalProperty"
+        :mouse-drag="false"
+      >
+        <slide>
+          Slide 1 Content
+        </slide>
+        <slide>
+          Slide 2 Content
+        </slide>
+      </carousel>
+    </section> -->
 
   </div>
 </template>
 <script>
 import BookingHelper from '../mixins/Booking.vue'
 import AOS from 'aos'
+// import { Carousel, Slide } from 'vue-carousel'
 export default {
-  
+  // components: {
+  //   Carousel,
+  //   Slide
+  // },
   auth:false,
   name: 'LandingPage',
   layout:'MainLayout',
