@@ -7,7 +7,7 @@
         <div class="service-outer-cont">
           <div class="service-inner-cont">
             <div class="service-img">
-              <img src="/images/Complex Care Services.png" />
+              <img src="/images/Home Support Services.png" />
             </div>
 
             <div class="services-avail">
@@ -16,53 +16,12 @@
                 Home Support Services include assistance with day-to-day
                 activities sush as :
               </p>
+
               <div class="care-services-cont">
-                <a href="#"
-                  ><i class="icon-housekeeping"></i>Light housekeeping & laundry
-                </a>
-                <a href="#"
-                  ><i class="icon-meal"></i>Meal preparation & planning
-                </a>
-                <a href="#"
-                  ><i class="icon-companionship"></i>Companionship and Community outings</a
-                >
-                <a href="#"
-                  ><i class="icon-yard"></i>Light yard work
-                </a>
-                <a href="#"
-                  ><i class="icon-grocery"></i>Grocery shopping
-                </a>
-                <a href="#"
-                  ><i class="icon-errand"></i>Errands
-                </a>
-                <a href="#"
-                  ><i class="icon-appointments"></i>Accompaniment to doctor or other health care appointments
-                </a>
-                <a href="#"
-                  ><i class="icon-pet"></i>Pet care
-                </a>
-                <a href="#"
-                  ><i class="icon-ambulance"></i>Incidental Transportation
-                </a>
-                <a href="#"
-                  ><i class="icon-home"></i>Home Safety
-                </a>
-                <a href="#"
-                  ><i class="icon-cupboard"></i>Cleaning out cupboards
-                </a>
-                <a href="#"
-                  ><i class="icon-ref"></i>Performing regular fridge cleaning to ensure food is fresh
-                </a>
-                <a href="#"
-                  >Coordination of home and yard repair or maintenance services
-                </a>
-                <a href="#"
-                  >Coordination for installation of in-home assistive devices
-                </a>
-                <a href="#"
-                  >Coordination of services and referrals to other community agencies if required
-                </a>
-                <a href="#">View more</a>
+                  <a href="#" v-if='serviceList < Homeservices.length' v-for='(serviceList) in HomeserviceToShow'><i :class="[Homeservices[serviceList].icon]"></i> {{Homeservices[serviceList].name}}</a>
+                <div v-if="HomeserviceToShow < Homeservices.length || Homeservices.length > HomeserviceToShow">
+                  <button @click="HomeserviceToShow += 4">View more</button>
+                </div>
               </div>
 
               <div class="service-option">
@@ -107,35 +66,14 @@
                 Personal care service includes assistance with the private
                 activities of daily living such as:
               </p>
+              
               <div class="care-services-cont">
-                <a href="#"
-                  ><i class="icon-Dressing"></i>Dressing</a
-                >
-                <a href="#"
-                  ><i class="icon-bathing"></i>Bathing</a
-                >
-                <a href="#"
-                  ><i class="icon-grooming"></i>Grooming</a
-                >
-                <a href="#"
-                  ><i class="icon-mobility"></i>Mobitlity</a
-                >
-                <a href="#"
-                  ><i class="icon-toileting"></i>Toileting</a
-                >
-                <a href="#"
-                  ><i class="icon-continence"></i>Continence assistance
-                </a>
-                <a href="#"
-                  ><i class="icon-Medication"></i>Medication Reminders
-                </a>
-                <a href="#"
-                  ><i class="icon-alzheimer"></i>Alzheimer & Dementia support
-                </a>
-                <a href="#"
-                  ><i class="icon-overnight"></i>Overnight Care
-                </a>
-                <a href="#">View more</a>
+                <div v-if='serviceList < Personalservices.length' v-for='(serviceList) in PersonalserviceToShow'>
+                  <a href="#"><i :class="[Personalservices[serviceList].icon]"></i> {{Personalservices[serviceList].name}}</a>
+                </div>
+                <div v-if="PersonalserviceToShow < Personalservices.length || Personalservices.length > PersonalserviceToShow">
+                  <button @click="PersonalserviceToShow += 4">View more</button>
+                </div>
               </div>
 
               <div class="caregiver-cont">
@@ -164,7 +102,7 @@
         <div class="service-outer-cont">
           <div class="service-inner-cont">
             <div class="service-img">
-              <img src="/images/Home Support Services.png" />
+              <img src="/images/Complex Care Services.png" />
             </div>
 
             <div class="services-avail">
@@ -174,31 +112,14 @@
                 regulated health professional such as Registered Practical
                 Nurse. These services incude :
               </p>
+              
               <div class="care-services-cont">
-                <a href="#"
-                  ><i class="icon-medical-admin"></i>Medication
-                  administration</a
-                >
-                <a href="#"
-                  ><i class="icon-vital-sign"></i>Vital signs
-                  monitoring</a
-                >
-                <a href="#"
-                  ><i class="icon-wound-care"></i>Wound care</a
-                >
-                <a href="#"
-                  ><i class="icon-catheter"></i>Catheter care
-                </a>
-                <a href="#"
-                  ><i class="icon-foot-care"></i>Foot care
-                </a>
-                <a href="#"
-                  ><i class="icon-ostomy"></i>Ostomy care
-                </a>
-                <a href="#"
-                  ><i class="icon-Palliative"></i>Palliative care
-                </a>
-                <a href="#">View more</a>
+                <div v-if='serviceList < Complexservices.length' v-for='(serviceList) in ComplexserviceToShow'>
+                  <a href="#"><i :class="[Complexservices[serviceList].icon]"></i> {{Complexservices[serviceList].name}}</a>
+                </div>
+                <div v-if="ComplexserviceToShow < Complexservices.length || Complexservices.length > ComplexserviceToShow">
+                  <button @click="ComplexserviceToShow += 4">View more</button>
+                </div>
               </div>
 
               <div class="caregiver-cont">
@@ -238,6 +159,143 @@ export default {
     bodyAttrs: {
       id: 'service-page',
     },
+  },
+  data() {
+    return {
+      Homeservices: [
+        {
+          name: 'Light housekeeping & laundry',
+          icon : 'icon-housekeeping'
+        },
+        {
+          name: 'Meal preparation & planning',
+          icon: 'icon-meal'
+        },
+        {
+          name: 'Companionship and Community outings',
+          icon: 'icon-companionship'
+        },
+        {
+          name: 'Light yard work',
+          icon: 'icon-yard'
+        },
+        {
+          name: 'Grocery shopping',
+          icon: 'icon-grocery'
+        },
+        {
+          name: 'Errands',
+          icon: 'icon-errand'
+        },
+        {
+          name: 'Accompaniment to doctor or other health care appointments',
+          icon: 'icon-appointments'
+        },
+        {
+          name: 'Pet care',
+          icon: 'icon-pet'
+        },
+        {
+          name: 'Incidental Transportation',
+          icon: 'icon-ambulance'
+        },
+        {
+          name: 'Home Safety',
+          icon: 'icon-home'
+        },
+        {
+          name: 'Cleaning out cupboards',
+          icon: 'icon-cupboard'
+        },
+        {
+          name: 'Performing regular fridge cleaning to ensure food is fresh',
+          icon: 'icon-ref'
+        },
+        {
+          name: 'Coordination of home and yard repair or maintenance services',
+          icon: ''
+        },
+        {
+          name: 'Coordination for installation of in-home assistive devices',
+          icon: ''
+        },
+        {
+          name: 'Coordination of services and referrals to other community agencies if required',
+          icon: ''
+        },
+      ],
+      Personalservices: [
+        {
+          name: 'Medication administration',
+          icon : 'icon-medical-admin'
+        },
+        {
+          name: 'Vital signs monitoring',
+          icon: 'icon-vital-sign'
+        },
+        {
+          name: 'Wound care',
+          icon: 'icon-wound-care'
+        },
+        {
+          name: 'Catheter care',
+          icon: 'icon-catheter'
+        },
+        {
+          name: 'Foot care',
+          icon: 'icon-foot-care'
+        },
+        {
+          name: 'Ostomy care',
+          icon: 'icon-ostomy'
+        },
+        {
+          name: 'Palliative care',
+          icon: 'icon-Palliative'
+        },
+      ],
+      Complexservices: [
+        {
+          name: 'Dressing',
+          icon : 'icon-Dressing'
+        },
+        {
+          name: 'Bathing',
+          icon: 'icon-bathing'
+        },
+        {
+          name: 'Grooming',
+          icon: 'icon-grooming'
+        },
+        {
+          name: 'Mobitlity',
+          icon: 'icon-mobility'
+        },
+        {
+          name: 'Toileting',
+          icon: 'icon-toileting'
+        },
+        {
+          name: 'Continence assistance',
+          icon: 'icon-continence'
+        },
+        {
+          name: 'Medication Reminders',
+          icon: 'icon-Medication'
+        },
+        {
+          name: 'Alzheimer & Dementia support',
+          icon: 'icon-alzheimer'
+        },
+        {
+          name: 'Overnight Care',
+          icon: 'icon-overnight'
+        },
+      ],
+      HomeserviceToShow: 4,
+      PersonalserviceToShow: 4,
+      ComplexserviceToShow: 4,
+    };
   },
 }
 </script>

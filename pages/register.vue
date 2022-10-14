@@ -9,10 +9,10 @@
     <h2>Sign Up to Care Connect</h2>
     <p>Create a new account</p>
     <div class="login-socmed">
-      <a class="google-btn" href="#" @click.prevent="loginWithGoogle"
+      <a class="btn google-btn block mb10" href="#" @click.prevent="loginWithGoogle"
         >Sign up with Google <img src="/images/icons/google-icon.svg"
       /></a>
-      <a class="google-btn" href="#" @click.prevent="loginWithFacebook"
+      <a class="btn google-btn block" href="#" @click.prevent="loginWithFacebook"
         >Sign up with Facebook <img src="/images/icons/facebook-icon.svg"
       /></a>
     </div>
