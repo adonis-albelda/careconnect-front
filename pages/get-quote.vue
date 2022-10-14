@@ -102,6 +102,47 @@
                 </div>
             </div>
           </div>
+          <template v-if="isShowMobile">
+        <div class="mobile-timepicker" v-show="showTimeMobileTimePicker">
+          <div class="time-options-container">
+            <div>
+              <h4>Start Time</h4>
+              <div class="time-input">
+                <div>
+                  <input v-model="selectedTime.start.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                  <span>:</span>
+                  <input v-model="selectedTime.start.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                </div>
+                <div>
+                  <p @click.stop="selectedTime.start.time = 'AM'" :class="selectedTime.start.time == 'AM' ? 'period-selected' :'' ">AM</p>
+                  <p @click.stop="selectedTime.start.time = 'PM'" :class="selectedTime.start.time == 'PM' ? 'period-selected' :'' ">PM</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4>End Time</h4>
+              <div class="time-input">
+                <div>
+                  <input v-model="selectedTime.end.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                  <span>:</span>
+                  <input v-model="selectedTime.end.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                </div>
+                <div>
+                  <p @click.stop="selectedTime.end.time = 'AM'" :class="selectedTime.end.time == 'AM' ? 'period-selected' :'' ">AM</p>
+                  <p @click.stop="selectedTime.end.time = 'PM'" :class="selectedTime.end.time == 'PM' ? 'period-selected' :'' ">PM</p>
+                </div>
+              </div>
+            </div>
+            <div class="time-btns">
+              <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+              <div class="time-footer">
+                  <button @click.stop="resetStartTime();resetEndTime()">Reset</button>
+                  <button @click="showTimeMobileTimePicker = false">Done</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
           <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
         </div>
       </div>
