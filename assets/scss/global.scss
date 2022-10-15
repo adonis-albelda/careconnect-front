@@ -1459,12 +1459,18 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 99;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
   @media (max-width: 767px) {
     width: 72px;
     height: 72px;
   }
   @media (max-width: 480px) {
     padding: 1rem;
+    background-color: $normalColor;
   }
 
   i {
@@ -1472,6 +1478,10 @@ footer {
     color: #fff;
     @media (max-width: 767px) {
       font-size: 30px;
+    }
+
+    @media(max-width: 480px) {
+      color: $accentColor100;
     }
   }
 }
