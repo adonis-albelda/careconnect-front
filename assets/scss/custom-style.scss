@@ -656,9 +656,24 @@
           gap: 10px;
 
           @media(max-width: 600px){
-            display: block;
+            gap: 4px;
+            column-gap: 10px;
           }
-
+          
+          
+          button {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+            background-color: transparent;
+            border: none;
+            color: #183891;
+            background-color: transparent;
+            border: none;
+            padding: 6px 16px;
+            font-weight: $fontWeightSemiBold;
+            display: flex;
+            align-items: center;
+          }
           
           a {
             font-size: 0.75rem;
@@ -671,16 +686,16 @@
             padding: 6px 16px;
             gap: 6px;
             border-radius: 6px;
-            border: 1px solid #183891;
+            border: 1px solid #183891 !important;
             font-weight: $fontWeightSemiBold;
-            background: rgba(24, 56, 145, 0.1);
+            background: rgba(24, 56, 145, 0.1) !important;
 
             @media(max-width: 600px){
               display: inline-block;
             }
 
             @media(max-width: 500px){
-             margin-top: 10px;
+             margin-top: 5px;
             }
 
             @media(max-width: 480px){
@@ -689,12 +704,7 @@
               padding: 4px 12px;
               gap: 4px;
             }
-            
-  
-            &:last-child {
-              background-color: transparent;
-              border: none;
-            }
+          
 
             i {
               font-size: $fontSize350;

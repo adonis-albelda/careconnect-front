@@ -1,6 +1,6 @@
 <template>
   <div id="landing-page">
-    <section class="top-banner">
+    <section :class="[isShowMobile ? 'mobile-top-banner' : 'top-banner']">
       <div class="banner-content">
         <div class="slogan">
           <h1 data-aos="fade-in">Care That Comes to You</h1>
@@ -170,7 +170,7 @@
       </div>
     </section>
     <section class="introducing-sec">
-      <div class="banner">
+      <div :class="[isShowMobile ? 'mobile-banner' : 'banner' ]">
         <div class="content">
           <div class="container">
             <h1 data-aos="fade" data-aos-once="true">Who we are</h1>

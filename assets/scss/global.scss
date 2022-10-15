@@ -483,6 +483,146 @@ section {
   }
 }
 
+.mobile-timepicker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  top: 63%;
+  z-index: 99;
+  padding: 20px;
+  border-top: 1px solid #CACACA;
+  box-shadow: 0px -3px 5px 0px rgb(0 0 0 / 30%);
+  -webkit-box-shadow: 0px -3px 5px 0px rgb(0 0 0 / 30%);
+  -moz-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.30);
+
+  h4 {
+    @media(max-width: 480px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  .time-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    div {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      &:first-child {
+        width: 70%;
+      }
+
+      &:last-child {
+        width: 30%;
+        gap: 0;
+
+        p {
+          font-size: $fontSize400;
+            line-height: 1.875rem;
+            color: $invertedColor;
+            font-weight: $fontWeightRegular;
+            background-color: transparent;
+            border: 1px solid $primaryColor;
+            padding: 1px 6px;
+            cursor: pointer;
+
+            @media(max-width: 480px) {
+              font-size: 1rem;
+            }
+
+            &:first-child {
+              border-bottom-left-radius: 6px;
+              border-top-left-radius: 6px;
+            }
+
+            &:last-child {
+              border-bottom-right-radius: 6px;
+              border-top-right-radius: 6px;
+            }
+        }
+      }
+
+      input {
+        height: 33px;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        padding-left: 0;
+        border-color: rgba(202, 202, 202, 0.5);
+
+        @media(max-width: 480px) {
+          height: 35px !important;
+        }
+      }
+
+      .period-selected {
+        color: $normalColor !important;
+        background-color: $accentColor100 !important;
+      }
+      
+    }
+  }
+
+  .time-btns {
+    .central-time {
+      font-size: $fontSize200;
+      line-height: $fontSize400;
+      color: $invertedColor;
+      font-weight: $fontWeightRegular;
+  
+      @media(max-width: 480px) {
+        font-size: 0.625rem;
+        line-height: 0.938rem;
+        margin-bottom: 15px;
+      }
+    }
+
+    .time-footer {
+      display: flex;
+      gap: 10px;
+
+      button {
+        &:first-child {
+          font-size: $fontSize250;
+          color: $invertedColor;
+          font-weight: $fontWeightSemiBold;
+          background: #ececec;
+          border: none;
+          padding: 8px 0;
+          border-radius: 6px;
+          width: 50%;
+  
+          @media(max-width: 480px) {
+            font-size: 0.75rem;
+          }
+        }
+  
+        &:last-child {
+          font-size: $fontSize250;
+          color: $normalColor;
+          font-weight: $fontWeightSemiBold;
+          background: $accentColor100;
+          border: none;
+          padding: 8px 0;
+          border-radius: 6px;
+          width: 50%;
+  
+          @media(max-width: 480px) {
+            font-size: 0.75rem;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
 .booking-options {
   display: flex;
   align-items: stretch;
@@ -599,149 +739,45 @@ section {
     }
   }
 
-}
-
-.mobile-timepicker {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  top: 65%;
-  z-index: 99;
-  padding: 20px;
-  border-top: 1px solid #CACACA;
-  box-shadow: 0px -3px 5px 0px rgb(0 0 0 / 30%);
-  -webkit-box-shadow: 0px -3px 5px 0px rgb(0 0 0 / 30%);
-  -moz-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.30);
-
-  h4 {
-    @media(max-width: 480px) {
-      font-size: 0.875rem;
-    }
-  }
-
-  .time-input {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-
-    div {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-
-      &:first-child {
-        width: 70%;
-      }
-
-      &:last-child {
-        width: 30%;
-        gap: 0;
-
-        p {
-          font-size: $fontSize400;
-            line-height: 1.875rem;
-            color: $invertedColor;
-            font-weight: $fontWeightRegular;
-            background-color: transparent;
-            border: 1px solid $primaryColor;
-            padding: 1px 6px;
-            cursor: pointer;
-
-            @media(max-width: 480px) {
-              font-size: 1rem;
-            }
-
-            &:first-child {
-              border-bottom-left-radius: 6px;
-              border-top-left-radius: 6px;
-            }
-
-            &:last-child {
-              border-bottom-right-radius: 6px;
-              border-top-right-radius: 6px;
-            }
-        }
-      }
-
-      input {
-        height: 33px;
-        font-size: 18px;
-        font-weight: 600;
-        border-color: rgba(202, 202, 202, 0.5);
-
-        @media(max-width: 480px) {
-          height: 35px !important;
-        }
-      }
-
-      .period-selected {
-        color: $normalColor !important;
-        background-color: $accentColor100 !important;
-      }
-      
-    }
-  }
-
-  .time-btns {
-    .central-time {
-      font-size: $fontSize200;
-      line-height: $fontSize400;
-      color: $invertedColor;
-      font-weight: $fontWeightRegular;
   
-      @media(max-width: 480px) {
-        font-size: 0.625rem;
-        line-height: 0.938rem;
-        margin-bottom: 15px;
-      }
-    }
-
-    .time-footer {
-      display: flex;
-      gap: 10px;
-
-      button {
-        &:first-child {
-          font-size: $fontSize250;
-          color: $invertedColor;
-          font-weight: $fontWeightSemiBold;
-          background: #ececec;
-          border: none;
-          padding: 8px 0;
-          border-radius: 6px;
-          width: 50%;
-  
-          @media(max-width: 480px) {
-            font-size: 0.75rem;
-          }
-        }
-  
-        &:last-child {
-          font-size: $fontSize250;
-          color: $normalColor;
-          font-weight: $fontWeightSemiBold;
-          background: $accentColor100;
-          border: none;
-          padding: 8px 0;
-          border-radius: 6px;
-          width: 50%;
-  
-          @media(max-width: 480px) {
-            font-size: 0.75rem;
-          }
-        }
-      }
-
-    }
-
-  }
 }
 
 .introducing-sec {
   background-color: $neutralColor;
   padding: 0;
+
+  .mobile-banner { 
+    width: 100%;
+    background-repeat: no-repeat;
+    height: 50vh;
+    background-image: url(/images/mobile-banner.png);
+    background-size: cover;
+    background-position: center center;
+
+    .content {
+      background: rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: end;
+      height: 100%;
+      padding: 4rem 0;
+
+      h1 {
+        @media (max-width: 480px) {
+          font-size: $fontSize500;
+          line-height: $fontSize550;
+          color: $normalColor;
+        }
+      }
+
+      p {
+        @media(max-width: 480px) {
+          font-size: $fontSize200;
+          line-height: $fontSize300;
+          color: $normalColor;
+        }
+      }
+    }
+  }
 
   .banner {
     width: 100%;
@@ -752,6 +788,7 @@ section {
     background-position: center center;
     color: $neutralColor;
 
+  
     .content {
       background: rgba(0, 0, 0, 0.1);
       display: flex;
@@ -875,9 +912,44 @@ section {
   background-position: center center;
 }
 
-// .mobile-top-banner {
-//   background-image: url(/images/mobile-top-banner.png);
-// }
+.mobile-top-banner {
+  background-image: url(/images/mobile-top-banner.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    @media (max-width: 480px) {
+      font-size: 1.75rem;
+      line-height: 43px;
+      color: $normalColor;
+    }
+  }
+
+  h3 {
+    font-weight: $fontWeightLight;
+    margin-top: 1rem;
+
+    @media (max-width: 480px) {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      margin-top: 5px;
+      color: $normalColor;
+    }
+  }
+}
 
 .services-sec {
   background-color: $normalColor;
@@ -1245,13 +1317,17 @@ footer {
       flex: 0 0 25em;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 850px) {
       flex: 0 0 20em;
     }
 
     .content {
       width: 50%;
       text-align: center;
+
+      @media(max-width: 850px) {
+        width: 65%;
+      }
 
       @media (max-width: 767px) {
         width: 70%;
@@ -1301,6 +1377,10 @@ footer {
     @media (max-width: 1200px) {
       gap: 3rem;
       flex-wrap: wrap;
+    }
+
+    @media(max-width: 850px) {
+      gap: 2rem;
     }
 
     @media (max-width: 480px) {
