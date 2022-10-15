@@ -1,8 +1,8 @@
 <template>
-    <div style="width: 595px; height: 842px;background-color: #fff;margin: auto;margin-top:3%;padding-left: 3%;">
+    <div style="width: 100%; height: 100%;background-color: #fff;margin: auto;margin-top:3%;padding-left: 3%;">
         <table style="width: 100%;">
             <tbody>
-                <tr style="display: flex;align-items: center;gap: 20px;padding-top: 70px;padding-bottom: 35px;">
+                <tr style="gap: 20px;padding-top: 70px;padding-bottom: 35px;">
                     <div style="width: 20%;">
                         <img style="width: 100%;" src="images/logo.png" alt="careconnect logo" />
                     </div>
