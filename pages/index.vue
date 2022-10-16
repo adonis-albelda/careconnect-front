@@ -227,7 +227,7 @@
             Our Clients Say
           </h1>
         </div>
-        <div>
+        <div class="big-scrn-testimonial">
           <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="10">
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
@@ -265,23 +265,23 @@
             </p>
           </div>
         </div>
+
+        <div class="small-scrn-testimonial">
+          <carousel
+            :per-page="1"
+            :navigate-to="someLocalProperty"
+            :mouse-drag="false"
+          >
+            <slide>
+              Slide 1 Content
+            </slide>
+            <slide>
+              Slide 2 Content
+            </slide>
+          </carousel>
+        </div>
       </div>
     </section>
-
-    <!-- <section>
-      <carousel
-        :per-page="1"
-        :navigate-to="someLocalProperty"
-        :mouse-drag="false"
-      >
-        <slide>
-          Slide 1 Content
-        </slide>
-        <slide>
-          Slide 2 Content
-        </slide>
-      </carousel>
-    </section> -->
 
   </div>
 </template>

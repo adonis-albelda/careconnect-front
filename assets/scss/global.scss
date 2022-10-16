@@ -1742,3 +1742,17 @@ h1.title {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+
+.big-scrn-testimonial {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.small-scrn-testimonial {
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+  }
+}

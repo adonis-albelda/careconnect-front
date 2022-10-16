@@ -57,6 +57,7 @@ export default {
     },
     '~global/utils/index.js',
     { src: '~global/plugins/VeeValidate.js', ssr: false },
+    { src: "~global/plugins/VueCarousel.js", ssr: false },
   ],
   components: false,
   // buildModules: ['@nuxtjs/eslint-module'],
