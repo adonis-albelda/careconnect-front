@@ -152,8 +152,15 @@
             </div>
           </div>
         </div>
-        <div class="all-right-reserved">
-          <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <div class="all-right-reserved">
+            <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>
+          </div>
+          <div class="hft-links">
+            <li class="csr" @click="goTo('help')">Help</li>
+            <li class="csr" @click="goTo('help-faq')">F.A.Q.</li>
+            <li class="csr" @click="goTo('help-terms_and_condition')">Terms & Conditions</li>
+          </div>
         </div>
       </div>
     </footer>
