@@ -124,9 +124,8 @@
 
 <style>
     .pdf-wrapper {
-        width: 794px;
-        height: 1123px;
-        padding-top: 4%;
+        width: 100%;
+        height: 100%;
         margin: 0 auto;
         font-family: 'Poppins', sans-serif;
         position: relative;

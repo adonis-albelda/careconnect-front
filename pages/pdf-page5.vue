@@ -1,144 +1,233 @@
 <template>
-    <div style="width: 595px; height: 842px;background-color: #fff;margin: auto;margin-top:3%;padding-left: 3%;">
-        <table style="width: 100%;">
+    <div class="pdf-wrapper">
+        <table>
             <tbody>
                 <tr>
-                    <td colspan="2" style="padding-top: 30px;padding-bottom: 35px;">
-                        <img style="width: 30%;" src="images/pdf-logo.png" alt="careconnect logo" />
+                    <td colspan="2" class="logo">
+                        <img src="images/pdf-logo.png" alt="careconnect logo" />
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <h1 style="font-size: 20px;line-height: 30px;font-weight: 600;color: #000;padding-left: 15px;">Services</h1>
+                    <td colspan="2" class="title">
+                        <h1>Services</h1>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="padding: 15px 60px 10px 15px;">
-                        <h2 style="font-size: 16px;line-height: 24px;font-weight: 600;color: #183891;">Personal Care Services</h2>
+                    <td colspan="2" class="sub-title">
+                        <h2>Personal Care Services</h2>
                     </td>
                 </tr>
                <tr>
                     <td>
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 600;color: #000;margin-bottom: 8px;padding-left: 15px;">Personal care includes assistance with the private activities of daily living such as :</p>
+                        <p class="description">Personal care includes assistance with the private activities of daily living such as :</p>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Dressing</li>
+                        <li>Dressing</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Bathing</li>
+                        <li>Bathing</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Grooming</li>
+                        <li>Grooming</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Mobility</li>
+                        <li>Mobility</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Toileting</li>
+                        <li>Toileting</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Continence assistance</li>
+                        <li>Continence assistance</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Medication Reminders</li>
+                        <li>Medication Reminders</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Alzheimer & Dementia support</li>
+                        <li>Alzheimer & Dementia support</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Respite Care</li>
+                        <li>Respite Care</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Overnight Care</li>
+                        <li>Overnight Care</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 600;color: #000;margin-bottom: 8px;margin-top: 8px;padding-left: 15px;">Trained and certified Personel Support Workers provide all personal support services.</p>
+                        <p class="description">Trained and certified Personel Support Workers provide all personal support services.</p>
                     </td>
                </tr>
 
 
                <tr>
-                    <td colspan="2" style="padding: 15px 60px 10px 15px;">
-                        <h2 style="font-size: 16px;line-height: 24px;font-weight: 600;color: #183891;">Complex Care Services</h2>
+                    <td colspan="2" class="sub-title">
+                        <h2>Complex Care Services</h2>
                     </td>
                 </tr>
                <tr>
                     <td>
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 600;color: #000;margin-bottom: 8px;padding-left: 15px;">Complex care refers to services that must be performed by a regulated health professional such as a Registered Practical Nurse.</p>
+                        <p class="description">Complex care refers to services that must be performed by a regulated health professional such as a Registered Practical Nurse.</p>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Medication administration</li>
+                        <li>Medication administration</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Vital signs monitoring</li>
+                        <li>Vital signs monitoring</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Wound care</li>
+                        <li>Wound care</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Catheter care</li>
+                        <li>Catheter care</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Foot care</li>
+                        <li>Foot care</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Ostomy care</li>
+                        <li>Ostomy care</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Palliative care</li>
+                        <li>Palliative care</li>
                     </td>
                </tr>
                
             
                 
-                <tr style="margin-top: 145px;display: flex;">
-                    <td style="width: 50%">
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;">www.ucarecon.ca</p>
+                <tr class="pdf-footer">
+                    <td>
+                        <p>www.ucarecon.ca</p>
                     </td>
-                    <td style="width: 50%;text-align: end; padding-right: 30px;">
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 500;color: #CACACA;">Page 5</p>
+                    <td>
+                        <p>Page 5</p>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </template>
+
+<style>
+    .pdf-wrapper {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table td.logo {
+        padding-top: 30px;
+        padding-bottom: 35px;
+    }
+
+    table td.logo img {
+        width: 30%;
+    }
+
+    table td.title h1 {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #000;
+        padding-left: 15px;
+    }
+
+    table td.sub-title {
+        padding: 15px 60px 10px 15px;
+    }
+
+    table td.sub-title h2 {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        color: #183891;
+    }
+
+    table .description {
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 8px;
+        padding-left: 15px;
+    }
+
+    table td li {
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 500;
+        color: #000;
+        padding-left: 25px;
+    }
+
+    table tr.pdf-footer {
+        margin-top: 145px;
+        display: flex;
+    }
+
+    table tr.pdf-footer td {
+        width: 50%;
+    }
+
+    table tr.pdf-footer td:first-child p{
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 500;
+        color: #000;
+    }
+
+    table tr.pdf-footer td:last-child {
+        text-align: end; 
+        padding-right: 30px;
+    }
+
+    table tr.pdf-footer td:last-child p {
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 500;
+        color: #CACACA;
+    }
+
+
+</style>
 
 <script>
 export default {

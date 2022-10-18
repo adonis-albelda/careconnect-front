@@ -68,8 +68,8 @@
 
 <style>
     .pdf-wrapper {
-        width: 794px;
-        height: 1123px;
+        width: 100%;
+        height: 100%;
         padding-top: 4%;
         margin: 0 auto;
         font-family: 'Poppins', sans-serif;
