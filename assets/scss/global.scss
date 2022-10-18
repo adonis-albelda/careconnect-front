@@ -1218,6 +1218,9 @@ section {
 
     div:first-child {
       flex: 0 0 25em;
+      @media (max-width: 767px) {
+        flex: 0 !important;
+      }
     }
   }
 
@@ -1751,4 +1754,65 @@ h1.title {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+
+.big-scrn-testimonial {
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.small-scrn-testimonial {
+  display: none;
+  @media (max-width: 900px) {
+    display: block;
+  }
+}
+
+.small-scrn-testimonial .VueCarousel-pagination .VueCarousel-dot--active {
+  background-color: $accentColor100 !important;
+}
+
+.testimonial-sect2 {
+  background-image: url('/images/qoute_mobile.png');
+  background-repeat: no-repeat;
+  padding: 7rem 0;
+  background-color: $normalColor;
+  background-position: 90% 20px;
+}
+
+.testimonial-sect2 {
+  @media (max-width: 900px) {
+    padding: 4rem 0;
+  }
+  h1 {
+    &:after {
+      content: "";
+      width: 70px;
+      height: -8px;
+      padding: 6px;
+      background-color: $accentColor100;
+      position: absolute;
+      top: -15px;
+      left: 0;
+      border: 50%;
+      border-radius: 5px;
+      @media (max-width: 991px) {
+        width: 50px;
+        padding: 4px;
+      }
+    }
+    @media (max-width: 1200px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 900px) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      font-size: 1.5rem;
+      line-height: 30px;
+      margin-bottom: 28px;
+    }
+  }
 }
