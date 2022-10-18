@@ -1,126 +1,211 @@
 <template>
-    <div style="width: 595px; height: 842px;background-color: #fff;margin: auto;margin-top:3%;padding-left: 3%;">
-        <table style="width: 100%;">
+    <div class="pdf-wrapper">
+        <table>
             <tbody>
                 <tr>
-                    <td colspan="2" style="padding-top: 30px;padding-bottom: 35px;">
-                        <img style="width: 30%;" src="images/pdf-logo.png" alt="careconnect logo" />
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="2">
-                        <h1 style="font-size: 20px;line-height: 30px;font-weight: 600;color: #000;padding-left: 15px;">Services</h1>
+                        <img src="images/pdf-logo.png" alt="careconnect logo" />
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="padding: 15px 60px 10px 15px;">
-                        <h2 style="font-size: 16px;line-height: 24px;font-weight: 600;color: #183891;">Home Support Services</h2>
+                    <td colspan="2" class="title">
+                        <h1>Services</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="sub-title">
+                        <h2>Home Support Services</h2>
                     </td>
                 </tr>
                <tr>
                     <td>
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 600;color: #000;margin-bottom: 8px;padding-left: 15px;">Home support services include assistance with day-to-day activities such as :</p>
+                        <p class="description">Home support services include assistance with day-to-day activities such as :</p>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Light housekeeping & Laundry</li>
+                        <li>Light housekeeping & Laundry</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Meal Preperation & Planning</li>
+                        <li>Meal Preperation & Planning</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Companionship and Community outings</li>
+                        <li>Companionship and Community outings</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Light yard work</li>
+                        <li>Light yard work</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Grocery shopping</li>
+                        <li>Grocery shopping</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Errands</li>
+                        <li>Errands</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Accompaniment to doctor or other health care appointments</li>
+                        <li>Accompaniment to doctor or other health care appointments</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Pet care</li>
+                        <li>Pet care</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Incidental Transportation</li>
+                        <li>Incidental Transportation</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Home Safety</li>
+                        <li>Home Safety</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Sorting mail</li>
+                        <li>Sorting mail</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Cleaning cupboards</li>
+                        <li>Cleaning cupboards</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Performing regular fridge cleaning to ensure food is fresh</li>
+                        <li>Performing regular fridge cleaning to ensure food is fresh</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Coordination of home and yard repair or maintenance services</li>
+                        <li>Coordination of home and yard repair or maintenance services</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Coordination for installation of in-home assistance devices</li>
+                        <li>Coordination for installation of in-home assistance devices</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <li style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;padding-left: 25px;">Coordination of services and referrals to other community agencies if required</li>
+                        <li>Coordination of services and referrals to other community agencies if required</li>
                     </td>
                </tr>
                <tr>
                     <td>
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 600;color: #000;margin-bottom: 8px;margin-top: 8px;padding-left: 15px;">We offer the option of Live-in caregivers for short or long term placements.</p>
+                        <p class="description">We offer the option of Live-in caregivers for short or long term placements.</p>
                     </td>
                </tr>
             
                 
-                <tr style="margin-top: 255px;display: flex;">
-                    <td style="width: 50%">
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 500;color: #000;">www.ucarecon.ca</p>
+                <tr class="pdf-footer">
+                    <td>
+                        <p>www.ucarecon.ca</p>
                     </td>
-                    <td style="width: 50%;text-align: end; padding-right: 30px;">
-                        <p style="font-size: 10px;line-height: 15px;font-weight: 500;color: #CACACA;">Page 4</p>
+                    <td>
+                        <p>Page 4</p>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </template>
+
+<style>
+    .pdf-wrapper {
+        width: 794px;
+        height: 1123px;
+        padding-top: 4%;
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table td img {
+        width: 30%;
+        margin-bottom: 30px;
+    }
+
+    table td.title h1 {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #000;
+        padding-left: 15px;
+    }
+
+    table td.sub-title {
+        padding: 15px 60px 10px 15px;
+    }
+
+    table td.sub-title h2 {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        color: #183891;
+    }
+
+    table .description {
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 8px;
+        padding-left: 15px;
+    }
+    
+    table tr td li {
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 8px;
+        padding-left: 15px;
+    }
+
+    .pdf-footer {
+        margin-top: 160px;
+        display: flex;
+    }
+
+    .pdf-footer td {
+        width:50%
+    }
+
+    .pdf-footer td:first-child {
+        color: #000;
+    }
+
+    .pdf-footer td:last-child {
+        text-align: end; 
+        padding-right: 30px;
+        color: #CACACA;
+    }
+
+    
+
+    .pdf-footer td p {
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 500;
+    }
+
+</style>
 
 <script>
 export default {
