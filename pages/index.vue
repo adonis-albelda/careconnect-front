@@ -277,54 +277,56 @@
           </h1>
         </div>
         <div>
-          <!-- <carousel
-            :perPage="1"
-          >
-            <slide>
-              <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="10">
-                <h3>John Doe</h3>
-                <small>60 y/o Veteran</small>
-                <p>
-                  “ If you are looking for some awesome, knowledgeable people, these
-                  are the people I highly recommend. Their friendliness and
-                  result-driven approach is what I love about them. “
-                </p>
-              </div>
-            </slide>
-            <slide>
-              <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="30">
-                <h3>John Doe</h3>
-                <small>60 y/o Veteran</small>
-                <p>
-                  “ If you are looking for some awesome, knowledgeable people, these
-                  are the people I highly recommend. Their friendliness and
-                  result-driven approach is what I love about them. “
-                </p>
-              </div>
-            </slide>
-            <slide>
-              <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="50">
-                <h3>John Doe</h3>
-                <small>60 y/o Veteran</small>
-                <p>
-                  “ If you are looking for some awesome, knowledgeable people, these
-                  are the people I highly recommend. Their friendliness and
-                  result-driven approach is what I love about them. “
-                </p>
-              </div>
-            </slide>
-            <slide>
-              <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="70">
-                <h3>John Doe</h3>
-                <small>60 y/o Veteran</small>
-                <p>
-                  “ If you are looking for some awesome, knowledgeable people, these
-                  are the people I highly recommend. Their friendliness and
-                  result-driven approach is what I love about them. “
-                </p>
-              </div>
-            </slide>
-          </carousel> -->
+          <client-only>
+            <carousel
+              :perPage="1"
+            >
+              <slide>
+                <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="10">
+                  <h3>John Doe</h3>
+                  <small>60 y/o Veteran</small>
+                  <p>
+                    “ If you are looking for some awesome, knowledgeable people, these
+                    are the people I highly recommend. Their friendliness and
+                    result-driven approach is what I love about them. “
+                  </p>
+                </div>
+              </slide>
+              <slide>
+                <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="30">
+                  <h3>John Doe</h3>
+                  <small>60 y/o Veteran</small>
+                  <p>
+                    “ If you are looking for some awesome, knowledgeable people, these
+                    are the people I highly recommend. Their friendliness and
+                    result-driven approach is what I love about them. “
+                  </p>
+                </div>
+              </slide>
+              <slide>
+                <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="50">
+                  <h3>John Doe</h3>
+                  <small>60 y/o Veteran</small>
+                  <p>
+                    “ If you are looking for some awesome, knowledgeable people, these
+                    are the people I highly recommend. Their friendliness and
+                    result-driven approach is what I love about them. “
+                  </p>
+                </div>
+              </slide>
+              <slide>
+                <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="70">
+                  <h3>John Doe</h3>
+                  <small>60 y/o Veteran</small>
+                  <p>
+                    “ If you are looking for some awesome, knowledgeable people, these
+                    are the people I highly recommend. Their friendliness and
+                    result-driven approach is what I love about them. “
+                  </p>
+                </div>
+              </slide>
+            </carousel>
+          </client-only>
         </div>
       </div>
     </section>
