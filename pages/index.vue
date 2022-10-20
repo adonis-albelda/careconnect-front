@@ -277,7 +277,7 @@
           </h1>
         </div>
         <div>
-          <carousel
+          <!-- <carousel
             :perPage="1"
           >
             <slide>
@@ -324,7 +324,7 @@
                 </p>
               </div>
             </slide>
-          </carousel>
+          </carousel> -->
         </div>
       </div>
     </section>
@@ -334,12 +334,7 @@
 <script>
 import BookingHelper from '../mixins/Booking.vue'
 import AOS from 'aos'
-// import { Carousel, Slide } from 'vue-carousel'
 export default {
-  // components: {
-  //   Carousel,
-  //   Slide
-  // },
   auth:false,
   name: 'LandingPage',
   layout:'MainLayout',
