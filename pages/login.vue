@@ -129,8 +129,6 @@ export default {
           },
         })
 
-        console.log(res, 'res')
-
         if (res.data) {
           this.showSuccess('Succesfully logged in !')
         }

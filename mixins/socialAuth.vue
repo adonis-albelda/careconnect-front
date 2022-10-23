@@ -49,8 +49,6 @@ export default {
         }
 
         this.login(data.user._delegate.accessToken)
-      }).catch((error) => {
-         alert('Error while proccessing your request')
       })
     },
     async login(token) {
@@ -74,6 +72,7 @@ export default {
           this.goTo('index')
         }, 5000)
       } catch (e) {
+        console.log(e.response, 'res')
         if (e.response.status === 404) {
           this.showError('Invalid credentials, please try again!')
         } else {
