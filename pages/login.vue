@@ -140,8 +140,10 @@ export default {
       } catch (e) {
         if (e.response.status === 404) {
           this.showError('Invalid credentials, please try again!')
+        } if (e.response.status === 401) {
+          this.showError('This user is not yet verified, verify it now!')
         } else {
-          this.showError('Something went wrong processing your request!')
+          this.showError('Something went wrong while processing your request!')
         }
         this.isRequesting = false
       }
