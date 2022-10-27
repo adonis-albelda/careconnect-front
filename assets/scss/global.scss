@@ -553,6 +553,8 @@ section {
         font-weight: 600;
         text-align: center;
         padding-left: 0;
+        border-style: none;
+        border: 1px solid #aaa;
         border-color: rgba(202, 202, 202, 0.5);
 
         @media(max-width: 480px) {

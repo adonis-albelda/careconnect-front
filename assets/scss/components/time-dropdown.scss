@@ -467,6 +467,8 @@
             padding-left: 0;
             font-weight: $fontWeightSemiBold;
             border-color: rgba(202, 202, 202, 0.5);
+            border-style: none;
+            border: 1px solid #aaa;
 
             @media(max-width: 480px) {
               height: 30px !important;
