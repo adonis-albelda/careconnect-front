@@ -1,11 +1,5 @@
 <template>
   <div class="login-cont">
-    <div class="auth-back csr" @click="goTo('index')">
-      <span>
-        <i class="icon-arrow-left"></i>
-        Back
-      </span>
-    </div>
     <h2>Sign Up to Care Connect</h2>
     <p>Create a new account</p>
     <div class="login-socmed">

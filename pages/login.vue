@@ -1,12 +1,12 @@
 <template>
   <div class="login-mobile-wrapper">
     <div class="login-cont">
-      <div class="auth-back csr" @click="goTo('index')">
+      <!-- <div class="auth-back csr" @click="goTo('index')">
         <span>
           <i class="icon-arrow-left"></i>
           Back
         </span>
-      </div>
+      </div> -->
       <h2>Welcome to Care Connect</h2>
       <p>Care That Comes to You</p>
 
@@ -154,9 +154,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.login-cont {
-  padding: 30px 0 70px 0 !important;
-}
-</style>

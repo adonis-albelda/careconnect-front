@@ -13,6 +13,7 @@ export default {
       isShowTime2: false,
       serviceId:null,
       selectedDates:[],
+      isRequesting:false,
       selectedTime: {
         start: {
           hour:'09',
@@ -25,26 +26,6 @@ export default {
           time: 'AM'
         }
       },
-      servicesTypes: [
-        {
-          label: 'Personal Care Services',
-          id:1,
-          key:'personal-service',
-          description:'Personal care service includes assistance with the private activities of daily living such as: 1. Dressing 2. Bathing'
-        },
-        {
-          label:'Complex Care Services',
-          id:2,
-          key:'complex-service',
-          description:'Complex care refer to services that must be performed by a regulated health professionals.'
-        },
-        {
-          id:3,
-          label:'Home Support Service',
-          key:'home-service',
-          description:'Home support services include assistance in day-to-day activities such as: 1. Light housekeeping and laundry 2. Meal preparation and planning'
-        }
-      ],
     }
   },
   mounted() {
@@ -93,7 +74,7 @@ export default {
     createBookingQuote() {
       if (this.selectedService.default || !this.isStartTimeValid || !this.isEndTimeValid ||
       this.selectedDates.length < 2)  {
-        alert('Make sure you have selected already the type of service, dates and time!')
+        alert('Make sure you have already selected the type of service, dates, and time!')
         return
       }
       
@@ -121,6 +102,7 @@ export default {
         }).finally(()=> {
             setTimeout(() => {
               this.isRequesting = false
+              this.open = false
             }, 2000)
           });
 
@@ -145,5 +127,10 @@ export default {
       return true
     }
   },
+  watch: {
+    selectedService(service) {
+      this.serviceId = service.id
+    }
+  }
 }
 </script>

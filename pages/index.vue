@@ -9,16 +9,16 @@
       </div>
     </section>
     <div class="booking-options">
-      <VSelect :searchable="false" :clearable="false" v-model="selectedService" class="list-services"  :options="servicesTypes" placeholder="dsdadad">
-        <template v-slot:selected-option-container="{option: {label, description}}">
+      <VSelect :searchable="false" :clearable="false" v-model="selectedService" class="list-services"  :options="services" placeholder="dsdadad">
+        <template v-slot:selected-option-container="{option: {title, short_description}}">
           <div class="filter-selected">
-            <p>{{label}}</p>
-            <span>{{description}}</span>
+            <p>{{title}}</p>
+            <span>{{short_description}}</span>
           </div>
         </template>
         <template v-slot:option="option">
-          <h4>{{option.label}}</h4>
-          <p>{{option.description}}</p>
+          <h4>{{option.title}}</h4>
+          <p>{{option.short_description}}</p>
         </template>
         <template v-slot:no-options="{ search, searching }">
           <template v-if="searching">
@@ -152,20 +152,22 @@
       <div class="container">
         <h1 data-aos="fade-up" data-aos-once="true">Our Services</h1>
         <div class="items" >
-          <div class="service" v-for="(service, index) of services" :key="index">
-            <img :src="service.image">
-            <h3 class="title">{{service.title}}</h3>
-            <p class="desc">
-              {{service.description}}
-            </p>
-            <div class="actions">
-              <button class="btn block accent" @click="goTo(service.url)">BOOK NOW</button>
-              <button class="btn block plain">
-                <img src="images/icons/info.svg" alt="">
-                Learn More
-              </button>
-            </div>
-          </div>
+          <client-only>
+            <carousel :perPage="3" v-if="services.length" :autoplay="true" :loop="true" :autoplayTimeout="5000">
+              <slide v-for="(service, index) of services" :key="index">
+                <div class="service">
+                  <img style="width: 100%; height: 200px;" v-if="service.banner" :src="service.banner">
+                  <img v-else style="width: 50%; height: 50%" src="images/icons/service-placeholder.svg" alt="service placeholder" />
+                  <h3 class="title">{{service.title}}</h3>
+                  <div class="desc" v-html="service.short_description">
+                  </div>
+                  <div>
+                    <button class="btn block accent" @click="goTo(`service-details`, {}, {'type': service.slug})">LEARN MORE</button>
+                  </div>
+                </div>
+              </slide>
+            </carousel>
+          </client-only>
         </div>
       </div>
     </section>
@@ -280,6 +282,7 @@
           <client-only>
             <carousel
               :perPage="1"
+              :autoplay="true" :loop="true" :autoplayTimeout="4000"
             >
               <slide>
                 <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="10">
@@ -350,30 +353,11 @@ export default {
   data() {
     return {
       selectedService: {
-        label: 'Select Service',
-        description: 'pleae select service',
+        title: 'Select Service',
+        short_description: 'pleae select service',
         default:true
       },
-      services: [
-        {
-          title: 'Home Support Services',
-          image: '/images/Home Support Services.png',
-          url:'home-care',
-          description: 'Recovering from home after surgery can limit you with your daily activities. Whether you are recovering from major surgery, childbirth, or plastic surgery, our compassionate caregivers can assist you to a healthy and complete recovery.'
-        },
-        {
-          title: 'Personal Care Services',
-          url:'personal-care',
-          image: '/images/Personal Care Services.png',
-          description: 'Arthritis, physical disabilities, and age-related conditions are some of the few circumstances that prevent patients from caring for themselves. Our caregivers can assist you with daily tasks such as mobility, eating, exercising, and grooming.'
-        },
-        {
-          title: 'Complex Care Services',
-          url:'complex-care',
-          image: '/images/Complex Care Services.png',
-          description: 'Our experienced and highly trained caregivers provide the highest quality of care to both patients and their families. Our goal is to help individuals and their loved ones live happy and fulfilling lives.'
-        }
-      ],
+      services: [],
       times:[],
       dateOptionstatus:false,
       isRequesting:false
@@ -381,6 +365,16 @@ export default {
   },
   mounted() {
     AOS.init()
+  },
+  created() {
+    this.getServices()
+  },
+  methods: {
+    async getServices() {
+      const { data, status } = await this.$axios.get('active/services')
+
+      this.services = data
+    }
   },
   watch: {
     selectedService: {

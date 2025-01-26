@@ -1,17 +1,12 @@
 <template>
   <div class="login-mobile-wrapper">
     <div class="login-cont">
-      <div class="auth-back csr" @click="goTo('forgot-password')">
-        <span>
-          <i class="icon-arrow-left"></i>
-          Back
-        </span>
-      </div>
         <img src="/images/check_your_email.png" alt="">
         <h2>
           Check your mail!</h2>
         <p class="normal-text-authen">
-          We have sent a password recover instructions to your email.
+          A link to reset your password has been sent to the email address you provided. 
+          Please check your inbox and follow the instructions!
         </p>
         <div class="login-copyright">
           <p>Copyright © 2022 Care Connect - All Rights Reserved.</p>

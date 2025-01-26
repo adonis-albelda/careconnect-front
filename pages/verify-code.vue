@@ -1,12 +1,6 @@
 <template>
   <div class="login-mobile-wrapper">
     <div class="login-cont">
-    <div class="auth-back csr" @click="goTo('index')">
-        <span>
-            <i class="icon-arrow-left"></i>
-            Back
-        </span>
-    </div>
       <h2>Verification</h2>
       <ValidationObserver v-slot="{ handleSubmit, reset }">
         <form

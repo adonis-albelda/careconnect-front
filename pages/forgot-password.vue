@@ -1,12 +1,6 @@
 <template>
   <div class="login-mobile-wrapper">
     <div class="login-cont">
-      <div class="auth-back csr" @click.prevent="goTo('login')">
-        <span>
-          <i class="icon-arrow-left"></i>
-          Back
-        </span>
-      </div>
       <h2>Forgot password?</h2>
       <p>
         Enter the email associated with your account and we’ll send an email

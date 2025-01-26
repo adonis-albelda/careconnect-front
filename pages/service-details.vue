@@ -1,6 +1,6 @@
 <template>
-  <div class="content-area service-wrapper">
-    <VDrawer @close="open = !open" align="right" :maskClosable="open" :closeable="true">
+  <div class="personal-care-wrapper service-details-wrapper">
+    <VDrawer @close="open = !open" align="right" :closeable="true">
       <div v-if="open">
           <div style="padding-bottom: 20px;">
             <h3>{{ selectedService.title }}</h3>
@@ -66,9 +66,7 @@
                 <div v-if="isShowTime2" class="timepicker-dropdown">
                   <div class="time-options-container">
                       <div>
-                        <h4>
-                          End Time
-                        </h4>
+                        <h4>End Time</h4>
                         <div class="time-input">
                           <div>
                             <input v-model="selectedTime.end.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
@@ -140,52 +138,42 @@
       </div>
     </VDrawer>
     <div class="container">
-      <div class="service-wrapper">
-        <h2 class="text-red-500">Book a Service</h2>
+      <div class="personalcare-banner">
+        <img :src="selectedService.banner" />
+      </div>
 
-        <div v-for="(item, index) in services" class="service-outer-cont">
-          <div class="service-inner-cont">
-            <div class="service-img">
-              <img :src="item.banner" />
-            </div>
+      <div class="personal-inner-cont">
+        <div class="p-col-1">
+          <div>
+            <h1>{{ selectedService.title }}</h1>
+          </div>
+        </div>
 
-            <div class="services-avail">
-              <h3>{{ item.title }}</h3>
-              <p>
-                {{ item.short_description }}
-              </p>
-              <p>
-                include assistance with day-to-day
-                activities sush as :
-              </p>
-              <div class="care-services-cont">
-                  <a href="#" v-for='(item) in item.assistance'>{{item}}</a>
-              </div>
+        <div class="p-col-2">
+          <div class="service-desc">
+            <p class="normal-text">
+                {{ selectedService.short_description }}
+            </p>
+          </div>
 
-              <div class="service-option">
-                <p>
-                  We offer the option of Live-In caregivers for short or long
-                  term placements.
-                </p>
-              </div>
+          <div class="service-list">
+            <p class="sub-title psubtitle" v-html="selectedService.description">
+            </p>
+            <p class="sub-title psubtitle">
+              These services include:
+            </p>
 
-              <div class="caregiver-cont">
-                <!-- <div class="caregivers">
-                  <img src="/images/caregiver-img1.png" />
-                  <img src="/images/caregiver-img2.png" />
-                  <img src="/images/caregiver-img3.png" />
-                  <img src="/images/caregiver-img4.png" />
-                  <img src="/images/caregiver-img5.png" />
-                  <p>20+ Practical Nurses</p>
-                </div> -->
-                <div class="book-btn">
-                  <a
-                    @click.prevent="handleServiceQuoteRequest(item)"
-                    >Get A Quote</a
-                  >
-                </div>
-              </div>
-            </div>
+            <ul>
+              <li v-for="(item, index) in selectedService.assistance" :key="index">
+                {{ item }}
+              </li>
+            </ul>
+            <a
+              href="#"
+              class="personal-care-btn"
+              @click.prevent="open = true"
+              >Request a Quote</a
+            >
           </div>
         </div>
       </div>
@@ -195,41 +183,41 @@
 
 <script>
 import BookingHelper from '../mixins/Booking.vue'
+
 export default {
-  auth: false,
   layout: 'MainLayout',
+  auth: false,
   head: {
     bodyAttrs: {
-      id: 'service-page',
+      id: 'personal-care-page',
+      class: 'services-page',
     },
   },
-  mixins:[BookingHelper],
+  mixins: [BookingHelper],
   data() {
     return {
       open: false,
-      services:[],
       selectedService: {},
       dateOptionstatus:false,
-    };
-  },
-  created() {
-    this.getServices()
-  },
-  methods: {
-    async getServices() {
-      const { data, status } = await this.$axios.get('active/services')
-
-      this.services = data
-    },
-    handleServiceQuoteRequest(service) {
-      this.selectedService = service
-      this.open = true
     }
   },
+  created() {
+    this.getServiceDetails()
+  },
+  methods: {
+    async getServiceDetails() {
+      const { data, status } = await this.$axios.get(`/services/${this.$route.query.type}`)
+      this.selectedService = data
+    }
+  }
 }
 </script>
 
 <style lang="scss">
+  .personalcare-banner img {
+    width: 100%;
+  }
+
   .mx-datepicker {
     width: 100%;
   }
@@ -259,31 +247,31 @@ export default {
     padding-left: 20px;
   }
 
-  .service-wrapper .book-btn {
+  .service-details-wrapper .book-btn {
     display: flex;
     width: 100%;
     gap: 20px;
     padding-top: 20px;
   }
 
-  .service-wrapper .book-btn button,
-  .service-wrapper .book-btn a {
+  .service-details-wrapper .book-btn button,
+  .service-details-wrapper .book-btn a {
     width: 50%;
   }
 
-  .service-wrapper .custom-timepicker {
+  .service-details-wrapper .custom-timepicker {
     position: initial;
   }
 
-  .service-wrapper .quote-time-dropdown {
+  .service-details-wrapper .quote-time-dropdown {
     position: relative;
   }
 
-  .service-wrapper .quote-time-dropdown .timepicker-dropdown {
+  .service-details-wrapper .quote-time-dropdown .timepicker-dropdown {
     left: 60px;
   }
 
-  .service-wrapper .custom-timepicker i {
+  .service-details-wrapper   .custom-timepicker i {
     position: initial;
   }
 </style>

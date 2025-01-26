@@ -320,7 +320,7 @@ section {
     color: $neutralColor;
     text-transform: uppercase;
     display: flex;
-    align-items: center;
+    align-items: start;
     cursor: pointer;
     padding: 2rem 1.3rem;
     transition: all ease 0.3s;
@@ -987,7 +987,6 @@ section {
   .items {
     display: flex;
     margin: 3rem -2rem 0 -2rem;
-    height: 500px;
     cursor: pointer;
     overflow: visible;
     @media (max-width: 1400px) {
@@ -1054,6 +1053,10 @@ section {
       min-width: calc(100% / 3);
       height: fit-content;
       border-radius: 3px;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
 
       @media (max-width: 480px) {
         min-width: 100%;

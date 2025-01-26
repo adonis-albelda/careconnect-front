@@ -439,7 +439,7 @@
           -webkit-line-clamp: inherit;
         }
       }
-
+      
       .desc {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -837,7 +837,6 @@
         .login-cont {
             width: 540px;
             margin: auto;
-            margin-top: 3%;
 
             .login-socmed {
               margin-top: 5%;
@@ -1022,7 +1021,6 @@
   .container {
 
     .personalcare-banner {
-
       margin-top: 2%;
       margin-bottom: 3%;
 
@@ -1032,6 +1030,7 @@
 
       img {
         border-radius: 6px;
+        width: 100%;
       }
     }
 
@@ -1527,7 +1526,8 @@ form .contact-col-1 .input-cont {
 
 // GET QUOTE PAGE
 
-.get-quote-wrapper {
+.get-quote-wrapper,
+.services-wrapper {
 
   padding-top: 2%;
   padding-bottom: 5%;
