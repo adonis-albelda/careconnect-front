@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     checkWindowSize(e) {
-      if (window.innerWidth <= 600) {
+      if (window.innerWidth <= 640) {
         this.isShowMobile = true
       } else {
         this.isShowMobile = false
@@ -134,3 +134,30 @@ export default {
   }
 }
 </script>
+<style ang="scss">
+  .vue-simple-drawer {
+    width: 40%;
+    background-color: white;
+    color: black;
+  }
+
+  @media (max-width: 640px) {
+    .vue-simple-drawer,
+    .mx-calendar-panel-date,
+    .custom-timepicker {
+      width: 100% !important;
+    }
+
+    .custom-timepicker {
+      padding-left: 10px !important;
+    }
+
+    .quote-time-dropdown {
+      display: block !important;
+    }
+
+    .service-description {
+      font-size: 14px;
+    }
+  }
+</style>

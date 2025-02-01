@@ -4,7 +4,7 @@
       <div v-if="open">
           <div style="padding-bottom: 20px;">
             <h3>{{ selectedService.title }}</h3>
-            <p>{{ selectedService.short_description }}</p>
+            <p class="service-description">{{ selectedService.short_description }}</p>
           </div>
           <div style="margin-bottom: 20px;">
             <h3>Preferred Dates</h3>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
               </div>
-            <!-- <template v-if="isShowMobile">
+            <template v-if="isShowMobile">
               <div class="mobile-timepicker" v-show="showTimeMobileTimePicker">
                 <div class="time-options-container">
                   <div>
@@ -127,7 +127,7 @@
                   </div>
                 </div>
               </div>
-            </template> -->
+            </template>
             </div>
           </div>
           <p style="padding: 10px 0px; font-size: 14px;">(GMT-05:00) Central Time (US & Canada)</p>
@@ -220,12 +220,6 @@ export default {
 
   .mx-datepicker {
     width: 100%;
-  }
-
-  .vue-simple-drawer {
-    width: 40%;
-    background-color: white;
-    color: black;
   }
 
   .vue-simple-drawer .close-btn .leftright,
