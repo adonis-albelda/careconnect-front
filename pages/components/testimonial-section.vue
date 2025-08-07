@@ -38,7 +38,7 @@ export default {
         if (this.isRequesting) return
         this.isRequesting = true
         const { data, status } = await this.$axios.post('/testimonial', {
-          testimonial: this.testimonial,
+          testimony: this.testimonial,
         })
 
         setTimeout(() => {
