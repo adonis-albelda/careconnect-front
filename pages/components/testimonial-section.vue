@@ -16,6 +16,7 @@
       <button
         :class="['send-btn btn block', isRequesting ? 'uc-spinner black' : '']"
         @click="handleSubmitTestimonial"
+        :disabled="!testimonial.length"
       >
         Submit
       </button>
@@ -35,6 +36,10 @@ export default {
   methods: {
     async handleSubmitTestimonial() {
       try {
+        if (this.testimonial.length < 10) {
+          this.showError('The testimony must be at least 10 characters!')
+          return
+        }
         if (this.isRequesting) return
         this.isRequesting = true
         const { data, status } = await this.$axios.post('/testimonial', {
