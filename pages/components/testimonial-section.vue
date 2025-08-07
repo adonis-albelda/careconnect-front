@@ -37,10 +37,9 @@ export default {
       try {
         if (this.isRequesting) return
         this.isRequesting = true
-        const { data, status } = await this.$axios.post(
-          '/testimonial',
-          this.inquiry
-        )
+        const { data, status } = await this.$axios.post('/testimonial', {
+          testimonial: this.testimonial,
+        })
 
         setTimeout(() => {
           if (status !== 200 && status !== 201) {
