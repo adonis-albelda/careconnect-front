@@ -12,13 +12,22 @@
         <p>Care Connect</p>
       </div>
       <ul class="nav-item">
-        <li :class="{ active: isRouteSelected('index') }" @click="goTo('index')">
+        <li
+          :class="{ active: isRouteSelected('index') }"
+          @click="goTo('index')"
+        >
           <span>Home</span>
         </li>
-        <li :class="{ active: isRouteSelected('services') }" @click="goTo('services')">
+        <li
+          :class="{ active: isRouteSelected('services') }"
+          @click="goTo('services')"
+        >
           <span>Services</span>
         </li>
-        <li :class="{ active: isRouteSelected('contact') }" @click="goTo('contact')">
+        <li
+          :class="{ active: isRouteSelected('contact') }"
+          @click="goTo('contact')"
+        >
           <span>Contact us</span>
         </li>
         <li class="nav-menu-icons" v-if="!$auth.user">
@@ -38,8 +47,7 @@
             </p>
           </span>
         </li>
-        <li class="logout-ds"
-          @click="signOutUser" v-if="$auth.user">
+        <li class="logout-ds" @click="signOutUser" v-if="$auth.user">
           <span>
             SIGN OUT
             <i class="icon-close"></i>
@@ -103,6 +111,7 @@
 
     <Nuxt></Nuxt>
     <subscriptionSection />
+    <testimonialSection v-if="$auth.user" />
     <footer>
       <div class="container">
         <div class="link-items">
@@ -159,7 +168,9 @@
           <div class="hft-links">
             <li class="csr" @click="goTo('help')">Help</li>
             <li class="csr" @click="goTo('help-faq')">F.A.Q.</li>
-            <li class="csr" @click="goTo('help-terms_and_condition')">Terms & Conditions</li>
+            <li class="csr" @click="goTo('help-terms_and_condition')">
+              Terms & Conditions
+            </li>
           </div>
         </div>
       </div>
@@ -173,16 +184,18 @@
 
 <script>
 import subscriptionSection from '@/pages/components/subscription-section.vue'
+import testimonialSection from '@/pages/components/testimonial-section.vue'
 
 export default {
   auth: false,
   components: {
     subscriptionSection,
+    testimonialSection,
   },
   data() {
     return {
       isShow: false,
-      showLogout:false
+      showLogout: false,
     }
   },
   methods: {
@@ -195,7 +208,7 @@ export default {
     signOutUser() {
       this.$auth.logout()
       this.isShow = false
-      this.showLogout=!this.showLogout
+      this.showLogout = !this.showLogout
       this.goTo('login')
     },
   },
