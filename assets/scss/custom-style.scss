@@ -31,42 +31,36 @@
   .content-area {
     padding-top: 2rem;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       padding-top: 6rem;
     }
 
     .container {
-
-      @media(max-width: 1400px) {
+      @media (max-width: 1400px) {
         padding-left: 25px;
         padding-right: 25px;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         width: 100%;
       }
-      
+
       h2 {
         font-size: 2rem;
         line-height: 3rem;
         margin-bottom: 30px;
-  
-        @media(max-width: 480px) {
+
+        @media (max-width: 480px) {
           font-size: 1.5rem;
           margin-bottom: 12px;
         }
       }
     }
-    
   }
-  
 }
 
-
 .booking-options {
-
   .list-services {
-
     .filter-selected {
       p {
         font-size: $fontSize400;
@@ -75,7 +69,7 @@
         font-weight: $fontWeightSemiBold;
         text-align: left;
 
-        @media(max-width: 1400px) {
+        @media (max-width: 1400px) {
           display: -webkit-box;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
@@ -84,7 +78,7 @@
           font-size: 1.125rem;
         }
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: $fontSize200;
           line-height: $fontSize500;
         }
@@ -103,20 +97,20 @@
         overflow: hidden;
         text-overflow: ellipsis;
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: 0.625rem;
           line-height: $fontSize350;
         }
       }
     }
 
-    .vs__dropdown-toggle{
+    .vs__dropdown-toggle {
       height: 70px;
-      background: #F5F5F5;
-      border: 1px solid #E9E9E9;
+      background: #f5f5f5;
+      border: 1px solid #e9e9e9;
       border-radius: 6px;
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         height: 60px;
       }
 
@@ -127,22 +121,22 @@
       }
     }
     ul {
-      background-color: #F5F5F5;
+      background-color: #f5f5f5;
       padding: 0px 0;
       max-height: max-content;
       min-width: 500px;
       overflow: hidden;
       border-radius: 6px;
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         min-width: 100%;
       }
-  
+
       li {
         padding: 0;
         padding: 15px;
         white-space: normal;
-        
+
         h4 {
           font-size: $fontSize400;
           line-height: 30px;
@@ -150,7 +144,7 @@
           font-weight: $fontWeightSemiBold;
           margin-bottom: 10px;
 
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             font-size: 0.875rem;
             line-height: 1rem;
           }
@@ -162,16 +156,15 @@
           color: $invertedColor;
           font-weight: $fontWeightLight;
 
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             font-size: 0.75rem;
             line-height: 1.063rem;
           }
         }
-  
+
         &:hover {
           background-color: $normalColor;
           color: $invertedColor;
-  
         }
       }
     }
@@ -191,15 +184,15 @@
       color: $invertedColor;
       font-weight: $fontWeightSemiBold;
 
-      @media(max-width: 1400px) {
+      @media (max-width: 1400px) {
         font-size: 0.875rem;
       }
-      
-      @media(max-width: 991px) {
+
+      @media (max-width: 991px) {
         margin-left: 9%;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         margin-left: 10%;
       }
     }
@@ -218,15 +211,15 @@
       overflow: hidden;
       text-overflow: ellipsis;
 
-      @media(max-width: 1400px) {
+      @media (max-width: 1400px) {
         font-size: 1rem;
       }
 
-      @media(max-width: 991px) {
+      @media (max-width: 991px) {
         padding-left: 9%;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         font-size: 0.75rem;
         line-height: $fontSize500;
         padding-left: 10%;
@@ -240,11 +233,11 @@
       top: 18px;
       font-size: 14px;
 
-      @media(max-width: 1400px) {
+      @media (max-width: 1400px) {
         left: 7px;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         left: 10px;
       }
 
@@ -253,8 +246,6 @@
       }
     }
   }
-
-
 
   // .time-picker {
   //   .time-picker-cont {
@@ -278,13 +269,11 @@
   //     }
   //   }
   // }
-
 }
 
 .mx-datepicker-popup,
 .mx-datepicker-inline {
   border-radius: 6px;
-
 
   .mx-datepicker-content {
     .mx-datepicker-body {
@@ -292,7 +281,7 @@
         width: 360px;
         background-color: $primaryColor;
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           width: 340px;
         }
 
@@ -339,8 +328,7 @@
                   font-weight: $fontWeightSemiBold;
                   color: $invertedColor;
 
-                  
-                  @media(max-width: 480px) {
+                  @media (max-width: 480px) {
                     font-size: 0.625rem !important;
                   }
                 }
@@ -349,7 +337,6 @@
 
             tbody {
               tr {
-
                 .not-current-month {
                   div {
                     color: #ececec;
@@ -357,7 +344,7 @@
                 }
 
                 .today {
-                  background-color:$accentColor100;
+                  background-color: $accentColor100;
                   border-radius: 6px;
 
                   div {
@@ -371,12 +358,11 @@
                     color: $invertedColor;
                     font-weight: $fontWeightSemiBold;
 
-                    @media(max-width: 480px) {
+                    @media (max-width: 480px) {
                       font-size: 0.75rem;
                     }
                   }
                 }
-
               }
             }
           }
@@ -385,32 +371,28 @@
     }
 
     .mx-datepicker-footer {
-      background-color: #F5F5F5;
+      background-color: #f5f5f5;
       border-top: none;
       display: flex;
       gap: 15px;
       padding: 10px 30px;
 
       button {
-
         width: 50%;
         cursor: pointer;
-
-       
 
         &:first-child {
           font-size: $fontSize250;
           color: $invertedColor;
           font-weight: $fontWeightSemiBold;
-          background: #ECECEC;
+          background: #ececec;
           border: none;
           padding: 8px 0;
           border-radius: 6px;
 
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             font-size: 0.75rem;
           }
-      
         }
 
         &:last-child {
@@ -422,7 +404,7 @@
           padding: 8px 0;
           border-radius: 6px;
 
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             font-size: 0.75rem;
           }
         }
@@ -439,15 +421,14 @@
           -webkit-line-clamp: inherit;
         }
       }
-      
+
       .desc {
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-line-clamp: 3;
-        display: -webkit-box;
         -webkit-box-orient: vertical;
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           -webkit-line-clamp: inherit;
           margin-bottom: 1rem;
         }
@@ -458,11 +439,10 @@
 
 // SERVICE PAGE
 
-
 .service-wrapper {
   margin-bottom: 80px;
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     margin-bottom: 30px;
   }
 
@@ -474,7 +454,7 @@
     padding: 22px;
     border-radius: 12px;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       padding: 14px;
     }
 
@@ -483,548 +463,532 @@
       gap: 30px;
       width: 100%;
 
-      @media(max-width: 991px) {
+      @media (max-width: 991px) {
         display: block;
       }
 
-        .service-img {
-          width: 25%;
+      .service-img {
+        width: 25%;
 
-          @media(max-width: 991px) {
-            width: 30%;
-          }
+        @media (max-width: 991px) {
+          width: 30%;
+        }
 
-          @media(max-width: 600px) {
-            width: 60%;
-          }
+        @media (max-width: 600px) {
+          width: 60%;
+        }
 
-          @media(max-width: 480px) {
-            width: 100%;
-          }
+        @media (max-width: 480px) {
+          width: 100%;
+        }
 
+        img {
+          width: 100%;
+        }
+      }
 
-          img {
-            width: 100%;
+      .services-avail {
+        width: 75%;
+
+        @media (max-width: 991px) {
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .service-option {
+          p {
+            font-size: $fontSize300;
+            line-height: $fontSize500;
+            color: $invertedColor;
+            font-weight: $fontWeightSemiBold;
+            margin-bottom: 0;
+            margin-top: 10px;
           }
         }
 
-        .services-avail {
-          width: 75%;
+        .caregiver-cont {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
 
-          @media(max-width: 991px) {
-            width: 100%;
-            margin-top: 10px;
+          @media (max-width: 767px) {
+            display: block;
           }
 
-          .service-option {
+          .caregivers {
+            display: flex;
+            align-items: center;
+
+            img {
+              margin-left: -5%;
+
+              @media (max-width: 767px) {
+                margin-left: -2%;
+              }
+
+              @media (max-width: 480px) {
+                margin-left: -5%;
+              }
+
+              &:first-child {
+                margin-left: 0;
+              }
+            }
 
             p {
               font-size: $fontSize300;
-              line-height: $fontSize500;
-              color: $invertedColor;
+              line-height: $fontSize450;
+              color: $accentColor100;
               font-weight: $fontWeightSemiBold;
-              margin-bottom: 0;
-              margin-top: 10px;
+              margin-left: 20px;
+              padding-right: 0;
+
+              @media (max-width: 480px) {
+                font-size: 0.75rem;
+              }
             }
           }
 
-          .caregiver-cont {
+          .book-btn {
             display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+            flex-flow: row-reverse;
+            gap: 10px;
 
-            @media(max-width: 767px) {
-              display: block;
+            @media (max-width: 767px) {
+              justify-content: left;
+              margin-top: 20px;
             }
 
-            .caregivers {
-              display: flex;
-              align-items: center;
-
-              img {
-                margin-left: -5%;
-
-                @media(max-width: 767px) {
-                  margin-left: -2%;
-                }
-
-                @media(max-width: 480px) {
-                  margin-left: -5%;
-                }
-
-                &:first-child {
-                  margin-left: 0;
-                }
-              }
-
-              p {
-                font-size: $fontSize300;
-                line-height: $fontSize450;
-                color: $accentColor100;
+            a {
+              &:first-child {
+                font-size: $fontSize200;
+                line-height: $fontSize500;
+                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                width: 200px;
+                height: 60px;
+                gap: 10px;
+                color: #fff;
+                background: #183891;
+                border-radius: 6px;
+                border: none;
                 font-weight: $fontWeightSemiBold;
-                margin-left: 20px;
-                padding-right: 0;
+                cursor: pointer;
 
-                @media(max-width: 480px) {
+                @media (max-width: 480px) {
                   font-size: 0.75rem;
+                  width: 180px;
+                  height: 50px;
                 }
               }
-            }
 
-            .book-btn {
-              display: flex;
-              flex-flow: row-reverse;
-              gap: 10px;
-
-              @media(max-width: 767px) {
-                justify-content: left;
-                margin-top: 20px;
-              }
-
-              a {
-                &:first-child {
-                  font-size: $fontSize200;
-                  line-height: $fontSize500;
-                  text-decoration: none;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 10px;
-                  width: 200px;
-                  height: 60px;
-                  gap: 10px;
-                  color: #fff;
-                  background: #183891;
-                  border-radius: 6px;
-                  border: none;
-                  font-weight: $fontWeightSemiBold;
-                  cursor: pointer;
-
-                  @media(max-width: 480px) {
-                    font-size: 0.75rem;
-                    width: 180px;
-                    height: 50px;
-                  }
-                }
-
-                &:last-child {
-                  @media(max-width: 480px) {
-                    font-size: 0.75rem;
-                    width: 180px;
-                    height: 50px;
-                  }
+              &:last-child {
+                @media (max-width: 480px) {
+                  font-size: 0.75rem;
+                  width: 180px;
+                  height: 50px;
                 }
               }
             }
           }
         }
+      }
 
-        h3 {
-          font-size: 1.5rem;
-          line-height: 2.25rem;
-          color: #000;
+      h3 {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        color: #000;
+        font-weight: $fontWeightSemiBold;
+
+        @media (max-width: 480px) {
+          font-size: 1.063rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: #000;
+        font-weight: $fontWeightRegular;
+        padding-right: 34%;
+
+        @media (max-width: 991px) {
+          padding-right: 0;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 0.813rem;
+          line-height: 1.125rem;
+        }
+      }
+
+      .care-services-cont {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+
+        @media (max-width: 600px) {
+          gap: 4px;
+          column-gap: 10px;
+        }
+
+        button {
+          font-size: 0.75rem;
+          line-height: 1.125rem;
+          background-color: transparent;
+          border: none;
+          color: #183891;
+          background-color: transparent;
+          border: none;
+          padding: 6px 16px;
           font-weight: $fontWeightSemiBold;
-
-          @media(max-width: 480px) {
-            font-size: 1.063rem;
-          }
-        }
-  
-        p {
-          font-size: 1rem;
-          line-height: 1.5rem;
-          color: #000;
-          font-weight: $fontWeightRegular;
-          padding-right: 34%;
-
-          @media(max-width: 991px) {
-            padding-right: 0;
-          }
-
-          @media(max-width: 480px) {
-            font-size: 0.813rem;
-            line-height: 1.125rem;
-          }
-        }
-
-        .care-services-cont {
-          margin-top: 20px;
           display: flex;
-          flex-wrap: wrap;
           align-items: center;
-          gap: 10px;
-
-          @media(max-width: 600px){
-            gap: 4px;
-            column-gap: 10px;
-          }
-          
-          
-          button {
-            font-size: 0.75rem;
-            line-height: 1.125rem;
-            background-color: transparent;
-            border: none;
-            color: #183891;
-            background-color: transparent;
-            border: none;
-            padding: 6px 16px;
-            font-weight: $fontWeightSemiBold;
-            display: flex;
-            align-items: center;
-          }
-          
-          a {
-            font-size: 0.75rem;
-            line-height: 1.125rem;
-            display: inline-flex;
-            color: #183891;
-            text-decoration: none;
-            flex-direction: row;
-            align-items: center;
-            padding: 6px 16px;
-            gap: 6px;
-            border-radius: 6px;
-            border: 1px solid #183891 !important;
-            font-weight: $fontWeightSemiBold;
-            background: rgba(24, 56, 145, 0.1) !important;
-
-            @media(max-width: 600px){
-              display: inline-block;
-            }
-
-            @media(max-width: 500px){
-             margin-top: 5px;
-            }
-
-            @media(max-width: 480px){
-              display: inline-flex;
-              font-size: 0.563rem;
-              padding: 4px 12px;
-              gap: 4px;
-            }
-          
-
-            i {
-              font-size: $fontSize350;
-              
-              @media(max-width: 480px) {
-                font-size: 0.875rem;
-              }
-            }
-          }
-
         }
 
-    }
-}
+        a {
+          font-size: 0.75rem;
+          line-height: 1.125rem;
+          display: inline-flex;
+          color: #183891;
+          text-decoration: none;
+          flex-direction: row;
+          align-items: center;
+          padding: 6px 16px;
+          gap: 6px;
+          border-radius: 6px;
+          border: 1px solid #183891 !important;
+          font-weight: $fontWeightSemiBold;
+          background: rgba(24, 56, 145, 0.1) !important;
 
+          @media (max-width: 600px) {
+            display: inline-block;
+          }
+
+          @media (max-width: 500px) {
+            margin-top: 5px;
+          }
+
+          @media (max-width: 480px) {
+            display: inline-flex;
+            font-size: 0.563rem;
+            padding: 4px 12px;
+            gap: 4px;
+          }
+
+          i {
+            font-size: $fontSize350;
+
+            @media (max-width: 480px) {
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // LOGIN PAGE AND REGISTER
 
 .login-wrapper {
+  .login-col-1 {
+    background-image: url('/images/login-img.png');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 800px;
+    position: relative;
 
-    .login-col-1 {
-        background-image: url('/images/login-img.png');
-        background-position: center;
-        background-size: cover;
-        height: 100vh;
-        width: 800px;
-        position: relative;
+    .login-logo {
+      margin-top: 5%;
+      margin-left: 8%;
+    }
 
-        .login-logo {
-            margin-top: 5%;
-            margin-left: 8%;
+    .back {
+      position: absolute;
+      right: 8%;
+      top: 6%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $normalColor;
+    }
+
+    .login-title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      h1 {
+        font-size: 3rem;
+        line-height: 3.75rem;
+        color: #fff;
+        font-weight: $fontWeightSemiBold;
+      }
+
+      p {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        color: #fff;
+        font-weight: $fontWeightLight;
+      }
+    }
+
+    .login-socmed {
+      display: flex;
+      gap: 30px;
+      position: absolute;
+      bottom: 20px;
+      left: 8%;
+
+      a {
+        font-size: 0.875rem;
+        line-height: 1.313rem;
+        color: #fff;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        font-weight: $fontWeightLight;
+      }
+    }
+  }
+
+  display: flex;
+  .login-col-1 {
+    background-color: rgba(24, 56, 145, 0.9);
+  }
+
+  .login-col-2 {
+    position: relative;
+    background: $normalColor;
+    width: calc(100% - 800px);
+    .login-menu {
+      display: flex;
+      gap: 20px;
+      justify-content: end;
+      margin-top: 5%;
+      margin-right: 8%;
+      a {
+        font-size: $fontSize300;
+        line-height: $fontSize500;
+        color: $invertedColor;
+        font-weight: $fontWeightSemiBold;
+        text-decoration: none;
+      }
+    }
+
+    .login-header-logo {
+      position: relative;
+
+      .back {
+        position: absolute;
+        right: 8%;
+        top: 6%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $normalColor;
+
+        @media (max-width: 991px) {
+          top: 0;
+          bottom: 0;
         }
+      }
+    }
 
-        .back {
+    .login-cont {
+      width: 540px;
+      margin: auto;
+
+      .login-socmed {
+        margin-top: 5%;
+        margin-bottom: 5%;
+      }
+
+      h2 {
+        font-size: $fontSize550;
+        line-height: $fontSize650;
+        color: $invertedColor;
+      }
+
+      p {
+        font-size: $fontSize500;
+        line-height: $fontSize600;
+        font-weight: $fontWeightLight;
+      }
+
+      .divider {
+        background-color: #e9e9e9;
+        position: relative;
+        height: 2px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        p {
+          font-size: $fontSize200;
+          line-height: $fontSize400;
+          font-weight: $fontWeightRegular;
           position: absolute;
-          right: 8%;
-          top: 6%;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          color: $normalColor;
+          top: -2px;
+          bottom: 0;
+          margin: auto;
+          left: 0;
+          right: 0;
+          display: table;
+          justify-content: center;
+          background-color: $normalColor;
+          padding: 0px 10px;
+          text-transform: capitalize;
         }
+      }
 
-        .login-title {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+      .login-form {
+        .input-cont {
+          margin-bottom: 10px;
+          label {
+            font-size: $fontSize250;
+            line-height: $fontSize450;
+            color: $invertedColor;
+            font-weight: $fontWeightSemiBold;
+            margin-bottom: 5px;
+            display: block;
+            line-height: 1.3;
 
-            h1 {
-                font-size: 3rem;
-                line-height: 3.75rem;
-                color: #fff;
-                font-weight: $fontWeightSemiBold;
+            span {
+              color: $accentColor100;
             }
-    
+
+            @media (max-width: 480px) {
+              font-size: $fontSize100;
+            }
+          }
+
+          .for-cont,
+          .input-cont,
+          .for-input {
+            position: relative;
+
             p {
-                font-size: 1.5rem;
-                line-height: 2.25rem;
-                color: #fff;
-                font-weight: $fontWeightLight;
-            }
-        }
-
-
-        .login-socmed {
-            display: flex;
-            gap: 30px;
-            position: absolute;
-            bottom: 20px;
-            left: 8%;
-
-            a {
-                font-size: 0.875rem;
-                line-height: 1.313rem;
-                color: #fff;
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                text-decoration: none;
-                font-weight: $fontWeightLight;
-            }
-        }
-    }
-
-    display: flex;
-    .login-col-1 {
-        background-color: rgba(24, 56, 145, 0.9);
-    }
-
-    .login-col-2 {
-        position: relative;
-        background: $normalColor;
-        width: calc(100% - 800px);
-        .login-menu {
-            display: flex;
-            gap: 20px;
-            justify-content: end;
-            margin-top: 5%;
-            margin-right: 8%;
-            a {
-                font-size: $fontSize300;
-                line-height: $fontSize500;
-                color: $invertedColor;
-                font-weight: $fontWeightSemiBold;
-                text-decoration: none;
-            }
-        }
-
-        .login-header-logo {
-          position: relative;
-
-          .back {
-            position: absolute;
-            right: 8%;
-            top: 6%;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: $normalColor;
-  
-            @media(max-width: 991px) {
+              position: absolute;
+              right: 4%;
               top: 0;
               bottom: 0;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              color: #cacaca;
+              font-size: $fontSize200;
+              font-weight: $fontWeightRegular;
+            }
+          }
+        }
+        .forgot-pass {
+          display: flex;
+          justify-content: space-between;
+
+          div {
+            label {
+              font-size: $fontSize250;
+              line-height: $fontSize450;
+              color: $invertedColor;
+              font-weight: $fontWeightRegular;
+
+              @media (max-width: 480px) {
+                font-size: $fontSize100;
+              }
+            }
+
+            p {
+              font-size: $fontSize250;
+              line-height: $fontSize450;
+              color: $accentColor100;
+              font-weight: $fontWeightRegular;
+
+              @media (max-width: 480px) {
+                font-size: $fontSize100;
+              }
             }
           }
         }
 
-        .login-cont {
-            width: 540px;
-            margin: auto;
+        .no-account {
+          // font-size: $fontSize250;
+          font-size: 16px !important;
+          line-height: $fontSize450;
+          font-weight: $fontWeightLight;
 
-            .login-socmed {
-              margin-top: 5%;
-              margin-bottom: 5%;
+          @media (max-width: 480px) {
+            font-size: 0.75rem !important;
+            padding-bottom: 0 !important;
+          }
+
+          a {
+            // font-size: $fontSize250;
+            font-size: 16px !important;
+            line-height: $fontSize450;
+            font-weight: $fontWeightSemiBold;
+            text-decoration: none;
+            @media (max-width: 480px) {
+              font-size: 0.75rem !important;
             }
-
-            h2 {
-                font-size: $fontSize550;
-                line-height: $fontSize650;
-                color: $invertedColor;
-            }
-
-            p {
-                font-size: $fontSize500;
-                line-height: $fontSize600;
-                font-weight: $fontWeightLight;
-            }
-
-            .divider {
-                background-color: #E9E9E9;
-                position: relative;
-                height: 2px;
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                p {
-                    font-size: $fontSize200;
-                    line-height: $fontSize400;
-                    font-weight: $fontWeightRegular;
-                    position: absolute;
-                    top: -2px;
-                    bottom: 0;
-                    margin: auto;
-                    left: 0;
-                    right: 0;
-                    display: table;
-                    justify-content: center;
-                    background-color: $normalColor;
-                    padding: 0px 10px;
-                    text-transform: capitalize;
-                }
-            }
-
-            .login-form {
-                .input-cont {
-                    margin-bottom: 10px;
-                    label {
-                        font-size: $fontSize250;
-                        line-height: $fontSize450;
-                        color: $invertedColor;
-                        font-weight: $fontWeightSemiBold;
-                        margin-bottom: 5px;
-                        display: block;
-                        line-height: 1.3;
-
-                        span {
-                          color: $accentColor100;
-                        }
-
-                        @media(max-width: 480px) {
-                          font-size: $fontSize100;
-                        }
-                    }
-
-                    .for-cont,
-                    .input-cont,
-                    .for-input {
-                      position: relative;
-
-                      p {
-                        position: absolute;
-                        right: 4%;
-                        top: 0;
-                        bottom: 0;
-                        display: flex;
-                        align-items: center;
-                        cursor: pointer;
-                        color: #CACACA;
-                        font-size: $fontSize200;
-                        font-weight: $fontWeightRegular;
-                      }
-                    }
-
-
-                }
-                .forgot-pass {
-                    display: flex;
-                    justify-content: space-between;
-                    
-                    div {
-                        label {
-                            font-size: $fontSize250;
-                            line-height: $fontSize450;
-                            color: $invertedColor;
-                            font-weight: $fontWeightRegular;
-
-                            @media(max-width: 480px) {
-                              font-size: $fontSize100;
-                            }
-                        }
-
-                        p {
-                            font-size: $fontSize250;
-                            line-height: $fontSize450;
-                            color: $accentColor100;
-                            font-weight: $fontWeightRegular;
-
-                            @media(max-width: 480px) {
-                              font-size: $fontSize100;
-                            }
-                        }
-                    }
-                }
-
-                .no-account {
-                    // font-size: $fontSize250;
-                    font-size: 16px !important;
-                    line-height: $fontSize450;
-                    font-weight: $fontWeightLight;
-
-                    @media(max-width: 480px) {
-                      font-size: 0.75rem !important;
-                      padding-bottom: 0 !important;
-                    }
-
-                    a {
-                        // font-size: $fontSize250;
-                        font-size: 16px !important;
-                        line-height: $fontSize450;
-                        font-weight: $fontWeightSemiBold;
-                        text-decoration: none;
-                        @media(max-width: 480px) {
-                          font-size: 0.75rem !important;
-                        }
-                    }
-                }
-            }
-
-            .login-copyright {
-                position: absolute;
-                bottom: 4%;
-                right: 8%;
-                p {
-                    font-size: $fontSize100;
-                    line-height: $fontSize400;
-                    color: $invertedColor;
-                    font-weight: $fontWeightRegular;
-                }
-            }
+          }
         }
+      }
+
+      .login-copyright {
+        position: absolute;
+        bottom: 4%;
+        right: 8%;
+        p {
+          font-size: $fontSize100;
+          line-height: $fontSize400;
+          color: $invertedColor;
+          font-weight: $fontWeightRegular;
+        }
+      }
     }
+  }
 }
 
 // PERSONAL CARE SERVICE
 
-
 .personal-care-wrapper {
-
-  background: #E5E5E5;
+  background: #e5e5e5;
   padding-top: 1%;
   padding-bottom: 4%;
 
-  @media(max-width: 991px) {
+  @media (max-width: 991px) {
     padding-top: 3%;
     padding-bottom: 6%;
   }
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding-top: 15%;
   }
 
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     padding-top: 16%;
   }
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     padding-top: 6rem;
   }
 
-
-
   .container {
-
     .personalcare-banner {
       margin-top: 2%;
       margin-bottom: 3%;
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         margin-top: 4%;
       }
 
@@ -1038,19 +1002,18 @@
       display: flex;
       margin-top: 2%;
 
-      @media(max-width: 991px) {
+      @media (max-width: 991px) {
         display: block;
       }
 
       .p-col-1 {
-
         width: 30%;
 
-        @media(max-width: 991px) {
+        @media (max-width: 991px) {
           width: 60%;
         }
 
-        @media(max-width: 600px) {
+        @media (max-width: 600px) {
           width: 100%;
         }
 
@@ -1066,11 +1029,11 @@
             font-weight: $fontWeightSemiBold;
             text-decoration: none;
 
-            @media(max-width: 767px) {
+            @media (max-width: 767px) {
               font-size: $fontSize300;
             }
 
-            @media(max-width: 480px) {
+            @media (max-width: 480px) {
               font-size: $fontSize200;
             }
           }
@@ -1086,26 +1049,25 @@
           font-size: $fontSize600;
           line-height: $fontSize700;
 
-          @media(max-width: 767px) {
+          @media (max-width: 767px) {
             font-size: 1.563rem;
           }
 
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             font-size: 1rem;
           }
         }
       }
 
       .p-col-2 {
-
         width: 70%;
 
-        @media(max-width: 991px) {
+        @media (max-width: 991px) {
           width: 100%;
           margin-top: 30px;
         }
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           margin-top: 0px;
         }
 
@@ -1117,12 +1079,12 @@
             color: $invertedColor;
             font-weight: $fontWeightLight;
 
-            @media(max-width: 767px) {
+            @media (max-width: 767px) {
               font-size: 14px;
               line-height: 20px;
             }
 
-            @media(max-width: 480px) {
+            @media (max-width: 480px) {
               font-size: $fontSize100;
               line-height: $fontSize400;
             }
@@ -1136,12 +1098,12 @@
             color: $invertedColor;
             font-weight: $fontWeightRegular;
 
-            @media(max-width: 767px) {
+            @media (max-width: 767px) {
               font-size: 14px;
               line-height: 20px;
             }
 
-            @media(max-width: 480px) {
+            @media (max-width: 480px) {
               font-size: $fontSize100;
               line-height: $fontSize400;
               margin-top: 20px;
@@ -1150,7 +1112,6 @@
           }
 
           ul {
-
             padding-left: 18px;
             margin-bottom: 30px;
 
@@ -1162,7 +1123,7 @@
               list-style-type: decimal;
               padding-left: 10px;
 
-              @media(max-width: 480px) {
+              @media (max-width: 480px) {
                 font-size: $fontSize100;
                 line-height: $fontSize400;
               }
@@ -1173,7 +1134,7 @@
                 color: $accentColor100;
                 font-weight: $fontWeightSemiBold;
 
-                @media(max-width: 480px) {
+                @media (max-width: 480px) {
                   font-size: $fontSize100;
                   line-height: $fontSize400;
                 }
@@ -1271,7 +1232,7 @@
           display: block;
 
           span {
-            color: #E68A25;
+            color: #e68a25;
           }
         }
 
@@ -1284,7 +1245,7 @@
             line-height: $fontSize500;
             font-weight: $fontWeightRegular;
             color: rgba(255, 255, 255, 0.2);
-          } 
+          }
         }
 
         textarea {
@@ -1528,15 +1489,14 @@ form .contact-col-1 .input-cont {
 
 .get-quote-wrapper,
 .services-wrapper {
-
   padding-top: 2%;
   padding-bottom: 5%;
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     padding-top: 14%;
   }
 
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     padding-top: 23%;
   }
 
@@ -1559,10 +1519,9 @@ form .contact-col-1 .input-cont {
                   font-size: $fontSize500;
                   line-height: $fontSize550;
 
-                  @media(max-width: 480px) {
+                  @media (max-width: 480px) {
                     font-size: 0.75rem;
                   }
-
                 }
               }
             }
@@ -1595,11 +1554,8 @@ form .contact-col-1 .input-cont {
               }
             }
           }
-
         }
       }
-      
-
     }
   }
 
@@ -1609,7 +1565,7 @@ form .contact-col-1 .input-cont {
     margin-top: 2%;
     margin-bottom: 3%;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       font-size: $fontSize400;
     }
   }
@@ -1621,7 +1577,7 @@ form .contact-col-1 .input-cont {
     color: $invertedColor;
     margin-bottom: 3%;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       font-size: 1rem;
     }
   }
@@ -1630,27 +1586,27 @@ form .contact-col-1 .input-cont {
     display: flex;
     gap: 40px;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       flex-wrap: wrap;
       gap: 30px;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       display: block;
     }
 
     .quote-service {
       width: 30%;
 
-      @media(max-width: 991px) {
+      @media (max-width: 991px) {
         width: 48%;
       }
 
-      @media(max-width: 767px) {
+      @media (max-width: 767px) {
         width: 100%;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         width: 100%;
         margin-bottom: 15%;
       }
@@ -1660,23 +1616,23 @@ form .contact-col-1 .input-cont {
         padding-left: 3%;
         margin-bottom: 6%;
 
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
           margin-bottom: 3%;
         }
 
         h3 {
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             font-size: 0.813rem;
           }
         }
-        
+
         p {
           font-size: $fontSize100;
           line-height: $fontSize350;
           font-weight: $fontWeightLight;
           color: $invertedColor;
 
-          @media(max-width: 480px) {
+          @media (max-width: 480px) {
             font-size: 0.625rem;
             line-height: $fontSize300;
           }
@@ -1684,19 +1640,18 @@ form .contact-col-1 .input-cont {
       }
     }
 
-
     .quote-date {
       width: 40%;
 
-      @media(max-width: 991px) {
+      @media (max-width: 991px) {
         width: 48%;
       }
 
-      @media(max-width: 767px) {
+      @media (max-width: 767px) {
         width: 100%;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         width: 100%;
       }
 
@@ -1707,8 +1662,7 @@ form .contact-col-1 .input-cont {
               .mx-range-wrapper {
                 display: block;
 
-                .mx-calendar-panel-date{
-                  
+                .mx-calendar-panel-date {
                   &:first-child {
                     margin-bottom: 50px;
                   }
@@ -1721,8 +1675,8 @@ form .contact-col-1 .input-cont {
                             div {
                               font-size: $fontSize300;
                               font-weight: $fontWeightSemiBold;
-                              
-                              @media(max-width: 480px) {
+
+                              @media (max-width: 480px) {
                                 font-size: 0.938rem;
                               }
                             }
@@ -1742,15 +1696,15 @@ form .contact-col-1 .input-cont {
     .quote-time {
       width: 30%;
 
-      @media(max-width: 991px) {
+      @media (max-width: 991px) {
         width: 48%;
       }
 
-      @media(max-width: 767px) {
+      @media (max-width: 767px) {
         width: 100%;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         width: 100%;
         margin-top: 30px;
       }
@@ -1771,8 +1725,6 @@ form .contact-col-1 .input-cont {
         i {
           left: 10px;
         }
-
-        
       }
 
       .time-picker {
@@ -1785,7 +1737,7 @@ form .contact-col-1 .input-cont {
         color: $invertedColor;
         font-weight: $fontWeightRegular;
 
-        @media(max-width: 480px) {
+        @media (max-width: 480px) {
           font-size: 0.75rem;
         }
       }
@@ -1800,7 +1752,6 @@ form .contact-col-1 .input-cont {
     margin-top: 15%;
   }
 }
-
 
 // QUOTE DIALOG
 
@@ -1817,7 +1768,7 @@ form .contact-col-1 .input-cont {
     transform: inherit;
     align-items: center;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       top: 0;
       bottom: 0;
       display: flex;
@@ -1830,7 +1781,7 @@ form .contact-col-1 .input-cont {
       padding: 0;
       background-color: transparent;
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         width: 92%;
       }
 
@@ -1853,9 +1804,8 @@ form .contact-col-1 .input-cont {
             color: $normalColor;
             font-weight: $fontWeightSemiBold;
 
-            @media(max-width: 480px) {
+            @media (max-width: 480px) {
               font-size: 1.563rem;
-
             }
           }
 
@@ -1865,7 +1815,7 @@ form .contact-col-1 .input-cont {
             color: $normalColor;
             font-weight: $fontWeightLight;
 
-            @media(max-width: 480px) {
+            @media (max-width: 480px) {
               font-size: 0.75rem;
               line-height: 0.75rem;
             }
@@ -1885,25 +1835,25 @@ form .contact-col-1 .input-cont {
               color: $invertedColor;
               font-weight: $fontWeightRegular;
 
-              @media(max-width: 480px) {
+              @media (max-width: 480px) {
                 font-size: 0.875rem;
                 line-height: 1.25rem;
               }
-  
+
               a {
                 color: $accentColor100;
                 text-decoration: none;
-  
+
                 &:hover {
                   text-decoration: none;
                 }
               }
             }
-  
+
             .email-cont {
               margin-top: 15px;
               margin-bottom: 20px;
-  
+
               label {
                 font-size: $fontSize250;
                 line-height: $fontSize450;
@@ -1912,44 +1862,43 @@ form .contact-col-1 .input-cont {
                 margin-bottom: 10px;
                 display: block;
 
-                @media(max-width: 480px) {
+                @media (max-width: 480px) {
                   font-size: $fontSize100;
                 }
               }
-  
+
               .text-box {
                 border-color: rgba(0, 0, 0, 0.1);
 
-                @media(max-width: 480px) {
+                @media (max-width: 480px) {
                   height: 50px;
                   font-size: $fontSize200;
                 }
               }
             }
-  
+
             .book-btn {
               display: flex;
               flex-direction: row-reverse;
               gap: 20px;
 
               button {
-                @media(max-width: 480px) {
+                @media (max-width: 480px) {
                   font-size: 0.75rem;
                   width: 180px;
                   height: 50px;
                 }
               }
-  
+
               a {
-  
                 &:first-child {
                   width: 160px;
                 }
-                
+
                 &:last-child {
                   width: 200px;
 
-                  @media(max-width: 480px) {
+                  @media (max-width: 480px) {
                     font-size: 0.75rem;
                     width: 180px;
                     height: 50px;
@@ -1957,7 +1906,6 @@ form .contact-col-1 .input-cont {
                 }
               }
             }
-
           }
 
           .quote-sent {
@@ -1969,7 +1917,7 @@ form .contact-col-1 .input-cont {
               text-align: center;
               margin-top: 5%;
 
-              @media(max-width: 480px) {
+              @media (max-width: 480px) {
                 font-size: 1rem;
                 line-height: 1.563rem;
               }
@@ -1991,65 +1939,61 @@ form .contact-col-1 .input-cont {
               margin-top: 10%;
               cursor: pointer;
 
-              @media(max-width: 480px) {
+              @media (max-width: 480px) {
                 font-size: 12px;
                 width: 130px;
                 padding: 5px;
               }
             }
           }
-
         }
       }
     }
   }
 }
 
-
 // help
 .help-mainwrapper .personal-inner-cont {
   display: flex;
   margin-top: 2%;
 
-  @media(max-width: 991px) {
+  @media (max-width: 991px) {
     display: block;
   }
 
   .p-col-1 {
-
     width: 30%;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       width: 60%;
     }
 
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       width: 100%;
     }
     h1 {
       font-size: $fontSize600;
       line-height: $fontSize700;
 
-      @media(max-width: 767px) {
+      @media (max-width: 767px) {
         font-size: 1.563rem;
       }
 
-      @media(max-width: 480px) {
+      @media (max-width: 480px) {
         font-size: 1rem;
       }
     }
   }
 
   .p-col-2 {
-
     width: 70%;
 
-    @media(max-width: 991px) {
+    @media (max-width: 991px) {
       width: 100%;
       margin-top: 30px;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       margin-top: 0px;
     }
   }

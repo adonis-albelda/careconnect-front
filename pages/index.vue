@@ -9,16 +9,27 @@
       </div>
     </section>
     <div class="booking-options">
-      <VSelect :searchable="false" :clearable="false" v-model="selectedService" class="list-services"  :options="services" placeholder="dsdadad">
-        <template v-slot:selected-option-container="{option: {title, short_description}}">
+      <VSelect
+        :searchable="false"
+        :clearable="false"
+        v-model="selectedService"
+        class="list-services"
+        :options="services"
+        placeholder="dsdadad"
+      >
+        <template
+          v-slot:selected-option-container="{
+            option: { title, short_description },
+          }"
+        >
           <div class="filter-selected">
-            <p>{{title}}</p>
-            <span>{{short_description}}</span>
+            <p>{{ title }}</p>
+            <span>{{ short_description }}</span>
           </div>
         </template>
         <template v-slot:option="option">
-          <h4>{{option.title}}</h4>
-          <p>{{option.short_description}}</p>
+          <h4>{{ option.title }}</h4>
+          <p>{{ option.short_description }}</p>
         </template>
         <template v-slot:no-options="{ search, searching }">
           <template v-if="searching">
@@ -30,81 +41,167 @@
           >
         </template>
       </VSelect>
-      <VDatePicker  :open="dateOptionstatus" format="MMM DD YYYY" range v-model="selectedDates" :editable="false" class="home-datepicker"  valueType="format">
+      <VDatePicker
+        :open="dateOptionstatus"
+        format="MMM DD YYYY"
+        range
+        v-model="selectedDates"
+        :editable="false"
+        class="home-datepicker"
+        valueType="format"
+      >
         <template v-slot:header>
-          <strong><h4>Please set your start date and end date. For one day only, just double tap the same day.</h4></strong>
+          <strong
+            ><h4>
+              Please set your start date and end date. For one day only, just
+              double tap the same day.
+            </h4></strong
+          >
         </template>
         <template v-slot:input="item">
-          <div @click="dateOptionstatus=true">
+          <div @click="dateOptionstatus = true">
             <label class="date-lbl">Date</label>
             <div class="selected-date">
-              {{selectedDates.length ? `${selectedDates[0]}-${selectedDates[1]}` : 'Select Dates'}}
+              {{
+                selectedDates.length
+                  ? `${selectedDates[0]}-${selectedDates[1]}`
+                  : 'Select Dates'
+              }}
             </div>
           </div>
         </template>
         <template class="datepicker-btns" v-slot:footer="item">
-          <button @click="dateOptionstatus=!dateOptionstatus">CLOSE</button>
-          <button @click="dateOptionstatus=!dateOptionstatus">DONE</button>
+          <button @click="dateOptionstatus = !dateOptionstatus">CLOSE</button>
+          <button @click="dateOptionstatus = !dateOptionstatus">DONE</button>
         </template>
       </VDatePicker>
       <div @click="openTimeSelection()" class="custom-timepicker">
         <p>Start Time</p>
-        <span>{{`${selectedTime.start.hour}:${selectedTime.start.minutes} ${selectedTime.start.time}`}}</span>
+        <span>{{
+          `${selectedTime.start.hour}:${selectedTime.start.minutes} ${selectedTime.start.time}`
+        }}</span>
         <i class="icon-stopwatch"></i>
         <div v-if="isShowTime" class="timepicker-dropdown">
           <div class="time-options-container">
-              <div>
-                <h4>Start Time</h4>
-                <div class="time-input">
-                  <div>
-                    <input v-model="selectedTime.start.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
-                    <span>:</span>
-                    <input v-model="selectedTime.start.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
-                  </div>
-                  <div>
-                    <p @click.stop="selectedTime.start.time = 'AM'" :class="selectedTime.start.time == 'AM' ? 'period-selected' :'' ">AM</p>
-                    <p @click.stop="selectedTime.start.time = 'PM'" :class="selectedTime.start.time == 'PM' ? 'period-selected' :'' ">PM</p>
-                  </div>
+            <div>
+              <h4>Start Time</h4>
+              <div class="time-input">
+                <div>
+                  <input
+                    v-model="selectedTime.start.hour"
+                    class="text-box"
+                    pattern="\d*"
+                    minlength="2"
+                    maxlength="2"
+                    type="text"
+                    @click.stop=""
+                  />
+                  <span>:</span>
+                  <input
+                    v-model="selectedTime.start.minutes"
+                    class="text-box"
+                    pattern="\d*"
+                    minlength="2"
+                    maxlength="2"
+                    type="text"
+                    @click.stop=""
+                  />
+                </div>
+                <div>
+                  <p
+                    @click.stop="selectedTime.start.time = 'AM'"
+                    :class="
+                      selectedTime.start.time == 'AM' ? 'period-selected' : ''
+                    "
+                  >
+                    AM
+                  </p>
+                  <p
+                    @click.stop="selectedTime.start.time = 'PM'"
+                    :class="
+                      selectedTime.start.time == 'PM' ? 'period-selected' : ''
+                    "
+                  >
+                    PM
+                  </p>
                 </div>
               </div>
-              <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
-              <div class="time-footer">
-                <button @click.stop="resetStartTime">Reset</button>
-                <button>Done</button>
-              </div>
             </div>
+            <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+            <div class="time-footer">
+              <button @click.stop="resetStartTime">Reset</button>
+              <button>Done</button>
+            </div>
+          </div>
         </div>
       </div>
       <div @click="openTimeSelection2()" class="custom-timepicker">
         <p>End Time</p>
-        <span>{{`${selectedTime.end.hour}:${selectedTime.end.minutes} ${selectedTime.end.time}`}}</span>
+        <span>{{
+          `${selectedTime.end.hour}:${selectedTime.end.minutes} ${selectedTime.end.time}`
+        }}</span>
         <i class="icon-stopwatch"></i>
         <div v-if="isShowTime2" class="timepicker-dropdown">
           <div class="time-options-container">
-              <div>
-                <h4>End Time</h4>
-                <div class="time-input">
-                  <div>
-                    <input v-model="selectedTime.end.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
-                    <span>:</span>
-                    <input v-model="selectedTime.end.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
-                  </div>
-                  <div>
-                    <p @click.stop="selectedTime.end.time = 'AM'" :class="selectedTime.end.time == 'AM' ? 'period-selected' :'' ">AM</p>
-                    <p @click.stop="selectedTime.end.time = 'PM'" :class="selectedTime.end.time == 'PM' ? 'period-selected' :'' ">PM</p>
-                  </div>
+            <div>
+              <h4>End Time</h4>
+              <div class="time-input">
+                <div>
+                  <input
+                    v-model="selectedTime.end.hour"
+                    class="text-box"
+                    pattern="\d*"
+                    minlength="2"
+                    maxlength="2"
+                    type="text"
+                    @click.stop=""
+                  />
+                  <span>:</span>
+                  <input
+                    v-model="selectedTime.end.minutes"
+                    class="text-box"
+                    pattern="\d*"
+                    minlength="2"
+                    maxlength="2"
+                    type="text"
+                    @click.stop=""
+                  />
+                </div>
+                <div>
+                  <p
+                    @click.stop="selectedTime.end.time = 'AM'"
+                    :class="
+                      selectedTime.end.time == 'AM' ? 'period-selected' : ''
+                    "
+                  >
+                    AM
+                  </p>
+                  <p
+                    @click.stop="selectedTime.end.time = 'PM'"
+                    :class="
+                      selectedTime.end.time == 'PM' ? 'period-selected' : ''
+                    "
+                  >
+                    PM
+                  </p>
                 </div>
               </div>
-              <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
-              <div class="time-footer">
-                  <button @click.stop="resetEndTime">Reset</button>
-                  <button>Done</button>
-              </div>
             </div>
+            <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
+            <div class="time-footer">
+              <button @click.stop="resetEndTime">Reset</button>
+              <button>Done</button>
+            </div>
+          </div>
         </div>
       </div>
       <div>
-        <button :class="['btn accent full', isRequesting ? 'uc-spinner' : '']" @click="createBookingQuote">Get A Quote</button>
+        <button
+          :class="['btn accent full', isRequesting ? 'uc-spinner' : '']"
+          @click="createBookingQuote"
+        >
+          Get A Quote
+        </button>
       </div>
       <template v-if="isShowMobile">
         <div class="mobile-timepicker" v-show="showTimeMobileTimePicker">
@@ -113,13 +210,43 @@
               <h4>Start Time</h4>
               <div class="time-input">
                 <div>
-                  <input v-model="selectedTime.start.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                  <input
+                    v-model="selectedTime.start.hour"
+                    class="text-box"
+                    pattern="\d*"
+                    minlength="2"
+                    maxlength="2"
+                    type="text"
+                    @click.stop=""
+                  />
                   <span>:</span>
-                  <input v-model="selectedTime.start.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                  <input
+                    v-model="selectedTime.start.minutes"
+                    class="text-box"
+                    pattern="\d*"
+                    minlength="2"
+                    maxlength="2"
+                    type="text"
+                    @click.stop=""
+                  />
                 </div>
                 <div>
-                  <p @click.stop="selectedTime.start.time = 'AM'" :class="selectedTime.start.time == 'AM' ? 'period-selected' :'' ">AM</p>
-                  <p @click.stop="selectedTime.start.time = 'PM'" :class="selectedTime.start.time == 'PM' ? 'period-selected' :'' ">PM</p>
+                  <p
+                    @click.stop="selectedTime.start.time = 'AM'"
+                    :class="
+                      selectedTime.start.time == 'AM' ? 'period-selected' : ''
+                    "
+                  >
+                    AM
+                  </p>
+                  <p
+                    @click.stop="selectedTime.start.time = 'PM'"
+                    :class="
+                      selectedTime.start.time == 'PM' ? 'period-selected' : ''
+                    "
+                  >
+                    PM
+                  </p>
                 </div>
               </div>
             </div>
@@ -127,21 +254,58 @@
               <h4>End Time</h4>
               <div class="time-input">
                 <div>
-                  <input v-model="selectedTime.end.hour" class="text-box" pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                  <input
+                    v-model="selectedTime.end.hour"
+                    class="text-box"
+                    pattern="\d*"
+                    minlength="2"
+                    maxlength="2"
+                    type="text"
+                    @click.stop=""
+                  />
                   <span>:</span>
-                  <input v-model="selectedTime.end.minutes" class="text-box"  pattern="\d*" minlength="2" maxlength="2" type="text" @click.stop="">
+                  <input
+                    v-model="selectedTime.end.minutes"
+                    class="text-box"
+                    pattern="\d*"
+                    minlength="2"
+                    maxlength="2"
+                    type="text"
+                    @click.stop=""
+                  />
                 </div>
                 <div>
-                  <p @click.stop="selectedTime.end.time = 'AM'" :class="selectedTime.end.time == 'AM' ? 'period-selected' :'' ">AM</p>
-                  <p @click.stop="selectedTime.end.time = 'PM'" :class="selectedTime.end.time == 'PM' ? 'period-selected' :'' ">PM</p>
+                  <p
+                    @click.stop="selectedTime.end.time = 'AM'"
+                    :class="
+                      selectedTime.end.time == 'AM' ? 'period-selected' : ''
+                    "
+                  >
+                    AM
+                  </p>
+                  <p
+                    @click.stop="selectedTime.end.time = 'PM'"
+                    :class="
+                      selectedTime.end.time == 'PM' ? 'period-selected' : ''
+                    "
+                  >
+                    PM
+                  </p>
                 </div>
               </div>
             </div>
             <div class="time-btns">
               <p class="central-time">(GMT-05:00) Central Time (US & Canada)</p>
               <div class="time-footer">
-                  <button @click.stop="resetStartTime();resetEndTime()">Reset</button>
-                  <button @click="showTimeMobileTimePicker = false">Done</button>
+                <button
+                  @click.stop="
+                    resetStartTime()
+                    resetEndTime()
+                  "
+                >
+                  Reset
+                </button>
+                <button @click="showTimeMobileTimePicker = false">Done</button>
               </div>
             </div>
           </div>
@@ -151,18 +315,46 @@
     <section class="services-sec">
       <div class="container">
         <h1 data-aos="fade-up" data-aos-once="true">Our Services</h1>
-        <div class="items" >
+        <div class="items">
           <client-only>
-            <carousel :perPage="3" v-if="services.length" :autoplay="true" :loop="true" :autoplayTimeout="5000">
-              <slide v-for="(service, index) of services" :key="index">
+            <carousel
+              style="width: 100%"
+              :perPage="3"
+              v-if="services.length"
+              :autoplay="true"
+              :loop="true"
+              :autoplayTimeout="5000"
+            >
+              <slide
+                style="flex: 1 0 auto; width: 100%"
+                v-for="(service, index) of services"
+                :key="index"
+              >
                 <div class="service">
-                  <img style="width: 100%; height: 200px;" v-if="service.banner" :src="service.banner">
-                  <img v-else style="width: 50%; height: 50%" src="images/icons/service-placeholder.svg" alt="service placeholder" />
-                  <h3 class="title">{{service.title}}</h3>
-                  <div class="desc" v-html="service.short_description">
+                  <div>
+                    <img
+                      style="width: 100%; height: 200px; margin-bottom: 20px"
+                      v-if="service.banner"
+                      :src="service.banner"
+                    />
+                    <img
+                      v-else
+                      style="width: 50%; height: 200px; margin-bottom: 20px"
+                      src="images/icons/service-placeholder.svg"
+                      alt="service placeholder"
+                    />
+                    <h3 class="title">{{ service.title }}</h3>
+                    <div class="desc" v-html="service.short_description"></div>
                   </div>
                   <div>
-                    <button class="btn block accent" @click="goTo(`service-details`, {}, {'type': service.slug})">LEARN MORE</button>
+                    <button
+                      class="btn block accent"
+                      @click="
+                        goTo(`service-details`, {}, { type: service.slug })
+                      "
+                    >
+                      LEARN MORE
+                    </button>
                   </div>
                 </div>
               </slide>
@@ -172,11 +364,13 @@
       </div>
     </section>
     <section class="introducing-sec">
-      <div :class="[isShowMobile ? 'mobile-banner' : 'banner' ]">
+      <div :class="[isShowMobile ? 'mobile-banner' : 'banner']">
         <div class="content">
           <div class="container">
             <h1 data-aos="fade" data-aos-once="true">Who we are</h1>
-            <p data-aos="fade-up" data-aos-once="true">Let us provide you with high-quality care!</p>
+            <p data-aos="fade-up" data-aos-once="true">
+              Let us provide you with high-quality care!
+            </p>
           </div>
         </div>
         <!-- <img src="images/who-img.webp" alt="groupie of nurses" /> -->
@@ -230,7 +424,12 @@
           </h1>
         </div>
         <div>
-          <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="10">
+          <div
+            class="testimonial"
+            data-aos="fade-down"
+            data-aos-once="true"
+            data-aos-delay="10"
+          >
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
             <p>
@@ -239,7 +438,12 @@
               result-driven approach is what I love about them. “
             </p>
           </div>
-          <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="30">
+          <div
+            class="testimonial"
+            data-aos="fade-down"
+            data-aos-once="true"
+            data-aos-delay="30"
+          >
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
             <p>
@@ -248,7 +452,12 @@
               result-driven approach is what I love about them. “
             </p>
           </div>
-          <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="50">
+          <div
+            class="testimonial"
+            data-aos="fade-down"
+            data-aos-once="true"
+            data-aos-delay="50"
+          >
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
             <p>
@@ -257,7 +466,12 @@
               result-driven approach is what I love about them. “
             </p>
           </div>
-          <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="70">
+          <div
+            class="testimonial"
+            data-aos="fade-down"
+            data-aos-once="true"
+            data-aos-delay="70"
+          >
             <h3>John Doe</h3>
             <small>60 y/o Veteran</small>
             <p>
@@ -282,49 +496,71 @@
           <client-only>
             <carousel
               :perPage="1"
-              :autoplay="true" :loop="true" :autoplayTimeout="4000"
+              :autoplay="true"
+              :loop="true"
+              :autoplayTimeout="4000"
             >
               <slide>
-                <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="10">
+                <div
+                  class="testimonial"
+                  data-aos="fade-down"
+                  data-aos-once="true"
+                  data-aos-delay="10"
+                >
                   <h3>John Doe</h3>
                   <small>60 y/o Veteran</small>
                   <p>
-                    “ If you are looking for some awesome, knowledgeable people, these
-                    are the people I highly recommend. Their friendliness and
-                    result-driven approach is what I love about them. “
+                    “ If you are looking for some awesome, knowledgeable people,
+                    these are the people I highly recommend. Their friendliness
+                    and result-driven approach is what I love about them. “
                   </p>
                 </div>
               </slide>
               <slide>
-                <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="30">
+                <div
+                  class="testimonial"
+                  data-aos="fade-down"
+                  data-aos-once="true"
+                  data-aos-delay="30"
+                >
                   <h3>John Doe</h3>
                   <small>60 y/o Veteran</small>
                   <p>
-                    “ If you are looking for some awesome, knowledgeable people, these
-                    are the people I highly recommend. Their friendliness and
-                    result-driven approach is what I love about them. “
+                    “ If you are looking for some awesome, knowledgeable people,
+                    these are the people I highly recommend. Their friendliness
+                    and result-driven approach is what I love about them. “
                   </p>
                 </div>
               </slide>
               <slide>
-                <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="50">
+                <div
+                  class="testimonial"
+                  data-aos="fade-down"
+                  data-aos-once="true"
+                  data-aos-delay="50"
+                >
                   <h3>John Doe</h3>
                   <small>60 y/o Veteran</small>
                   <p>
-                    “ If you are looking for some awesome, knowledgeable people, these
-                    are the people I highly recommend. Their friendliness and
-                    result-driven approach is what I love about them. “
+                    “ If you are looking for some awesome, knowledgeable people,
+                    these are the people I highly recommend. Their friendliness
+                    and result-driven approach is what I love about them. “
                   </p>
                 </div>
               </slide>
               <slide>
-                <div class="testimonial" data-aos="fade-down" data-aos-once="true" data-aos-delay="70">
+                <div
+                  class="testimonial"
+                  data-aos="fade-down"
+                  data-aos-once="true"
+                  data-aos-delay="70"
+                >
                   <h3>John Doe</h3>
                   <small>60 y/o Veteran</small>
                   <p>
-                    “ If you are looking for some awesome, knowledgeable people, these
-                    are the people I highly recommend. Their friendliness and
-                    result-driven approach is what I love about them. “
+                    “ If you are looking for some awesome, knowledgeable people,
+                    these are the people I highly recommend. Their friendliness
+                    and result-driven approach is what I love about them. “
                   </p>
                 </div>
               </slide>
@@ -333,34 +569,32 @@
         </div>
       </div>
     </section>
-
   </div>
 </template>
 <script>
 import BookingHelper from '../mixins/Booking.vue'
 import AOS from 'aos'
 export default {
-  auth:false,
+  auth: false,
   name: 'LandingPage',
-  layout:'MainLayout',
+  layout: 'MainLayout',
   head: {
     bodyAttrs: {
       id: 'home-page',
     },
-
   },
-  mixins:[BookingHelper],
+  mixins: [BookingHelper],
   data() {
     return {
       selectedService: {
         title: 'Select Service',
         short_description: 'pleae select service',
-        default:true
+        default: true,
       },
       services: [],
-      times:[],
-      dateOptionstatus:false,
-      isRequesting:false
+      times: [],
+      dateOptionstatus: false,
+      isRequesting: false,
     }
   },
   mounted() {
@@ -374,16 +608,23 @@ export default {
       const { data, status } = await this.$axios.get('active/services')
 
       this.services = data
-    }
+    },
   },
   watch: {
     selectedService: {
       handler(val) {
         this.serviceId = val.id
       },
-      deep:true
-    }
-  }
+      deep: true,
+    },
+  },
 }
 </script>
 <style>
+.VueCarousel-wrapper {
+  display: flex !important;
+}
+/* .VueCarousel-inner {
+  flex: 1 !important;
+} */
+</style>
