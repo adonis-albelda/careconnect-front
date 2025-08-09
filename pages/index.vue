@@ -415,7 +415,10 @@
         </div>
       </div>
     </section>
-    <section class="testimonial-sec big-scrn-testimonial">
+    <section
+      v-if="testimonials.length"
+      class="testimonial-sec big-scrn-testimonial"
+    >
       <div class="container">
         <div data-aos="fade" data-aos-once="true">
           <h1>
@@ -429,62 +432,22 @@
             data-aos="fade-down"
             data-aos-once="true"
             data-aos-delay="10"
+            v-for="(testimonial, index) of testimonials"
+            :key="index"
           >
-            <h3>John Doe</h3>
-            <small>60 y/o Veteran</small>
-            <p>
-              “ If you are looking for some awesome, knowledgeable people, these
-              are the people I highly recommend. Their friendliness and
-              result-driven approach is what I love about them. “
-            </p>
-          </div>
-          <div
-            class="testimonial"
-            data-aos="fade-down"
-            data-aos-once="true"
-            data-aos-delay="30"
-          >
-            <h3>John Doe</h3>
-            <small>60 y/o Veteran</small>
-            <p>
-              “ If you are looking for some awesome, knowledgeable people, these
-              are the people I highly recommend. Their friendliness and
-              result-driven approach is what I love about them. “
-            </p>
-          </div>
-          <div
-            class="testimonial"
-            data-aos="fade-down"
-            data-aos-once="true"
-            data-aos-delay="50"
-          >
-            <h3>John Doe</h3>
-            <small>60 y/o Veteran</small>
-            <p>
-              “ If you are looking for some awesome, knowledgeable people, these
-              are the people I highly recommend. Their friendliness and
-              result-driven approach is what I love about them. “
-            </p>
-          </div>
-          <div
-            class="testimonial"
-            data-aos="fade-down"
-            data-aos-once="true"
-            data-aos-delay="70"
-          >
-            <h3>John Doe</h3>
-            <small>60 y/o Veteran</small>
-            <p>
-              “ If you are looking for some awesome, knowledgeable people, these
-              are the people I highly recommend. Their friendliness and
-              result-driven approach is what I love about them. “
-            </p>
+            <h3 style="text-transform: capitalize">
+              {{ testimonial.client_name }}
+            </h3>
+            <p>“ {{ testimonial.message }} “</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="testimonial-sect2 small-scrn-testimonial">
+    <section
+      v-if="testimonials.length"
+      class="testimonial-sect2 small-scrn-testimonial"
+    >
       <div class="container">
         <div data-aos="fade" data-aos-once="true">
           <h1>
@@ -500,20 +463,15 @@
               :loop="true"
               :autoplayTimeout="4000"
             >
-              <slide>
+              <slide v-for="(testimonial, index) of testimonials" :key="index">
                 <div
                   class="testimonial"
                   data-aos="fade-down"
                   data-aos-once="true"
                   data-aos-delay="10"
                 >
-                  <h3>John Doe</h3>
-                  <small>60 y/o Veteran</small>
-                  <p>
-                    “ If you are looking for some awesome, knowledgeable people,
-                    these are the people I highly recommend. Their friendliness
-                    and result-driven approach is what I love about them. “
-                  </p>
+                  <h3>{{ testimonial.client_name }}</h3>
+                  <p>“ {{ testimonial.message }} “</p>
                 </div>
               </slide>
               <slide>
@@ -592,6 +550,7 @@ export default {
         default: true,
       },
       services: [],
+      testimonials: [],
       times: [],
       dateOptionstatus: false,
       isRequesting: false,
@@ -602,12 +561,17 @@ export default {
   },
   created() {
     this.getServices()
+    this.getApproveTestimonials()
   },
   methods: {
     async getServices() {
       const { data, status } = await this.$axios.get('active/services')
 
       this.services = data
+    },
+    async getApproveTestimonials() {
+      const { data, status } = await this.$axios.get('testimonials')
+      this.testimonials = data.data
     },
   },
   watch: {
